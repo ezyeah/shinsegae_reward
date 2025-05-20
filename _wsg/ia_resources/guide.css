@@ -1,0 +1,101 @@
+
+code{font-family: 'Pretendard', "SF Pro Display", AppleSDGothicNeo-Light, Helvetica,"Malgun Gothic", 'MalgunGothic', '맑은고딕', sans-serif; }
+code {display: inline-block; margin-right: 3px; padding: 0 4px; color: #d63384; background-color: #fff; border: 1px solid #d7d7d7; border-radius: 3px; box-sizing: border-box;}
+code.title {display: inline-block; margin-right: 3px; padding: 0 4px; color: #fff; background-color: #444; border: 1px solid #444; border-radius: 3px; box-sizing: border-box;}
+
+
+.fc-red {color: red;}
+.fc-blue {color: blue;}
+.fw-bold {font-weight: bold;}
+
+.guide-wrap {padding: 10px 0; /*padding-bottom: 150px;*/}
+.guide-wrap + .guide-wrap {margin-top: 40px;}
+.guide-inner + .guide-inner {margin-top: 40px; }
+
+.guide-ptit {position: relative; padding: 10px 25px 10px 0; font-size: 30px; font-weight: 800; margin-bottom: 15px; color: #000; letter-spacing: -0.025em;}
+.guide-ptit > span{ background: #012E29; color:#fff; font-size: inherit; font-weight: inherit;}
+
+/*.guide-ptit:before {content: ''; position: absolute; display: inline-block; width: 20%; height: 10%; left: 0; top: 0; background: #FF1212; z-index: 0}*/
+
+.guide-btit {position: relative; padding: 5px 20px 5px 25px; font-size: 24px; font-weight: 800; margin-bottom: 8px; color: #000; letter-spacing: -0.025em; word-break: break-word}
+.guide-btit:before {content: ''; position: absolute; display: inline-block; width: 14px; height: 32px; left: 0; top: 3px; background: #B79683;}
+
+/*.guide-sbtit {position: relative; padding: 5px 15px 5px 25px; font-size: 20px; font-weight: 800; margin-bottom: 8px; color: #000; letter-spacing: -0.025em;}*/
+.guide-sbtit {position:relative; padding-left: 8px; font-size: 18px; background: #f6f6f6; line-height: 35px; border-top: 5px solid #eee; border-right: 5px solid #eee; border-bottom: 5px solid #ccc; border-left: 5px solid #ccc; margin-bottom: 20px; font-weight: 600; letter-spacing: -0.025em; word-break: break-word}
+/*.guide-sbtit:before {content: ''; position: absolute; display: inline-block; width: 12px; height: 27px; left: 0; top: 3px; background: #ff7012;}*/
+
+/*.guide-sbtit {padding-left: 8px; font-size: 16px; font-weight: 700; background: #f6f6f6; line-height: 35px; border-top: 5px solid #eee; border-right: 5px solid #eee; border-bottom: 5px solid #ccc; border-left: 5px solid #ccc; margin-bottom: 20px;}*/
+
+
+.guide-xsbtit {position: relative; padding: 5px 15px 5px 25px; font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #000; letter-spacing: -0.01em;}
+.guide-xsbtit:before {content: ''; position: absolute; display: inline-block; width: 10px; height: 22px; left: 0; top: 3px; background: #000;}
+
+
+.guide-xxsbtit {position: relative; padding: 5px 15px 5px 25px; font-size: 14px; font-weight: 700; margin-bottom: 20px; color: #000}
+.guide-xxsbtit:before {content: ''; position: absolute; display: inline-block; width: 10px; height: 18px; left: 0; top: 5px; background: #41a500;}
+
+.guide-xxsbtit ~ .guide-xsbtit, .guide-desc-list + .guide-xsbtit, pre + .guide-xsbtit {margin-top: 35px;}
+
+
+.guide-btit .text-size, .guide-sbtit .text-size {color: #777; font-size: 16px;}
+.guide-btit + .guide-inner, .dialog-contents .guide-btit + .guide-inner {margin-top: 20px; margin-bottom: 20px;}
+.guide-wrap ~ h2, .guide-wrap + .guide-wrap,
+.dialog-contents > .guide-wrap ~ h2, .dialog-contents > .guide-wrap + .guide-wrap {margin-top: 50px;}
+
+.guide-btit ~ .guide-sbtit {margin-top: 25px;}
+.guide-btit + .guide-sbtit {margin-top: 15px;}
+.guide-sbtit ~ .guide-sbtit, .guide-desc-list + .guide-sbtit, pre + .guide-sbtit {margin-top: 50px;}
+.guide-sbtit ~ .guide-xsbtit {margin-top: 20px;}
+.guide-xsbtit ~ .guide-xsbtit, .guide-desc-list + .guide-xsbtit, pre + .guide-xsbtit {margin-top: 35px;}
+.guide-sbtit + .guide-xsbtit {margin-top: 10px;}
+
+.guide-inner pre code,
+.dialog-contents .guide-inner pre code { max-height: 350px; overflow: auto; }
+
+.guide-wrap .guide-inner ~ .guide-inner,
+.dialog-contents > .guide-wrap .guide-inner ~ .guide-inner {margin-top: 50px; padding-top: 50px; border-top: solid 3px #000;}
+
+.guide-inner .guide-sbtit + .guide-desc-list{padding: 15px 20px; margin-bottom: 30px;}
+.guide-desc-list{padding: 30px 20px; margin-bottom: 30px; background-color: #eee;}
+.guide-desc-list + .guide-inner {margin-top: 50px;}
+.guide-desc-list li {margin-left: 24px; font-size: 15px; line-height: 23px; list-style: decimal-leading-zero; word-break: break-all; }
+.guide-desc-list li img {max-width: 100%; margin-top: 10px;}
+.guide-desc-list li ~ li {margin-top: 20px;}
+
+.guide-desc-list.none li { list-style: none !important; }
+
+.guide-desc-list li code {height: 25px; font-size: 13px; letter-spacing: 0;}
+.guide-desc-list li code.title {min-width: 34px; text-align: center}
+.guide-desc-list li > a ~ .guide-desc-list {margin-top: 5px;}
+
+.guide-desc-list li > .guide-desc-list {padding: 0; margin-bottom: 0;}
+.guide-desc-list li > .guide-desc-list li {margin-left: 15px; font-size: 14px; list-style: initial;}
+.guide-desc-list li > .guide-desc-list li ~ li {margin-top: 5px;}
+.guide-desc-list li .desc {margin-left: 50px; font-size: 13px; color: #444;}
+.guide-desc-list li .desc > span {font-size: inherit}
+
+.todo-text { display: block; margin: 20px 0; padding: 5px 10px; font-size: 14px; line-height: 22px; color: red; background: #ffe9e9;}
+.highlight-text {padding: 0 5px; font-weight: 500; background: #fff6ae; border: 1px solid #eddf6f;}
+.btn-guide-link {position: relative; color: #338bb5;}
+.btn-guide-link:after {content: ''; display: inline-block; position: absolute; left: 0; bottom: 3px; width: 100%; height: 1px; border-bottom: 1px dashed #338bb5;}
+
+.hljs { margin: 15px auto; font-size: 13px; line-height: 18px;}
+
+
+/* Layout Frame */
+.wsg-frame-wrap {position:relative; background: #fff;}
+.wsg-frame-wrap .wsg-frame {position:relative; margin-top:15px; padding:15px; border:1px solid #ddd;}
+.wsg-frame-wrap .wsg-frame .wsg-frame-title {padding:0; line-height:1; background-color:#fff; color:#666;}
+.wsg-frame-wrap .wsg-frame .wsg-frame-cont {margin-top:10px; line-height:1; color:#f33413;}
+.wsg-frame-wrap .wsg-frame-outer {padding:0 15px;}
+.wsg-frame-wrap .wsg-frame-section {border:1px solid #f33413;}
+.wsg-frame-wrap .wsg-frame-section > .wsg-frame-title {color:#333;}
+.wsg-frame-wrap > .wsg-frame {margin-top:0;}
+
+.wsg-frame + .wsg-frame {margin-top:10px;}
+
+.wsg-frame ul.wsg-frame-list {margin: 10px;}
+.wsg-frame ul.wsg-frame-list li {margin: 0; list-style: inside; }
+.wsg-frame ul.wsg-frame-list li code { font-size: 12px; line-height: 14px; height: 16px}
+
+a.link {text-decoration: underline}
