@@ -147,20 +147,20 @@
                         <li>
                             <p>[ color : 클래스 필수 지정 ]</p>
                             <ul class="guide-desc-list">
-                                <li><p><code>blue</code> : border, background : $colorBlue100 (#6987A1)</p></li>
-                                <li><p><code>light-blue</code> : border, background : $colorBlue10 (#F0F4F5)</p></li>
-                                <li><p><code>gray90</code> : border, background : $colorGray90 (#333) </p></li>
-                                <li><p><code>gray20</code> : border, background : $colorGray20 (#F0F0F0) </p></li>
-                                <li><p><code>line-blue</code> : border : $colorBlue100 (#6987A1) background : $colorGray00(#FFF)</p></li>
-                                <li><p><code>line-brown</code> : $colorBrown100 (#B09785) background : $colorGray00(#FFF)</p></li>
-                                <li><p><code>line-gray40</code> : $colorGray40 (#DDD) background : $colorGray00(#FFF)</p></li>
+                                <li><p><code>blue</code> background, border : $colorBlue100 (#6987A1)</p></li>
+                                <li><p><code>light-blue</code> background, border : $colorBlue10 (#F0F4F5)</p></li>
+                                <li><p><code>gray90</code> background, border : $colorGray90 (#333) </p></li>
+                                <li><p><code>gray20</code> background, border : $colorGray20 (#F0F0F0) </p></li>
+                                <li><p><code>line-blue</code> background : $colorGray00(#FFF) / border : $colorBlue100 (#6987A1)</p></li>
+                                <li><p><code>line-brown</code> background : $colorGray00(#FFF) / border : $colorBrown100 (#B09785)</p></li>
+                                <li><p><code>line-gray40</code> background : $colorGray00(#FFF) / border: $colorGray40 (#DDD)</p></li>
                             </ul>
                         </li>
                         <li>
-                            <p>[ text + icon ]</p>
+                            <p>그 외 text, icon button</p>
                         </li>
                         <li>
-                            <p>[ btn-wrap : 버튼 양 옆 여백 ]</p>
+                            <p>버튼 정렬 (btn-wrap)</p>
                             <ul class="guide-desc-list">
                                 <li><p>btn-wrap : 20px</p></li>
                                 <li><p>btn-wrap .bottom: 버튼이 바닥에 위치 할 경우 margin -5px을 가짐</p></li>
@@ -172,8 +172,8 @@
                     <ol class="guide-desc-list">
                         <li><a href="#idx1" style="text-decoration: underline">버튼 컬러</a></li>
                         <li><a href="#idx2" style="text-decoration: underline">버튼 사이즈</a></li>
-                        <li><a href="#idx3" style="text-decoration: underline"> text + icon</a></li>
-                        <li><a href="#idx4" style="text-decoration: underline">btn-wrap</a></li>
+                        <li><a href="#idx3" style="text-decoration: underline">그 외 text, icon button</a></li>
+                        <li><a href="#idx4" style="text-decoration: underline">버튼 정렬 (.btn-wrap)</a></li>
                     </ol>
                 </div>
 
@@ -221,7 +221,149 @@
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-md line-gray40&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
                         </code>
                     </pre>
+                </div>
 
+                <div class="guide-inner">
+                    <div class="guide-btit" id="idx2">Button Size Guide</div>
+                    <div class="guide-sbtit">btn-lg (h54)</div>
+                    <button type="button" class="btn-round-lg blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-lg light-blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-lg gray90"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-lg gray20"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-lg line-blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-lg line-brown"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-lg line-gray40"><span class="text">버튼</span></button>
+                    <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-lg blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-lg light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-lg gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-lg gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-lg line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-lg line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-lg line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                        </code>
+                    </pre>
+
+                    <div class="guide-sbtit">btn-md (h44)</div>
+                    <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-md light-blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-md gray90"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-md gray20"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-md line-blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-md line-brown"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
+                    <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-md blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-md light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-md gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-md gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-md line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-md line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-md line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                        </code>
+                    </pre>
+
+                    <div class="guide-sbtit">btn-sm (h36)</div>
+                    <button type="button" class="btn-round-sm blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-sm light-blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-sm gray90"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-sm gray20"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-sm line-blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-sm line-brown"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-sm line-gray40"><span class="text">버튼</span></button>
+                    <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-sm blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-sm light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-sm gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-sm gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-sm line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-sm line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-sm line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                        </code>
+                    </pre>
+
+                    <div class="guide-sbtit">btn-xs (h32)</div>
+                    <button type="button" class="btn-round-xs blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-xs light-blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-xs gray90"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-xs gray20"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-xs line-blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-xs line-brown"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-xs line-gray40"><span class="text">버튼</span></button>
+                    <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-xs blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-xs light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-xs gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-xs gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-xs line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-xs line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-xs line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                        </code>
+                    </pre>
+
+                    <div class="guide-sbtit">btn-2xs (h30)</div>
+                    <button type="button" class="btn-round-2xs blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-2xs light-blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-2xs gray90"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-2xs gray20"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-2xs line-blue"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-2xs line-brown"><span class="text">버튼</span></button>
+                    <button type="button" class="btn-round-2xs line-gray40"><span class="text">버튼</span></button>
+                    <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-2xs blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-2xs light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-2xs gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-2xs gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-2xs line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-2xs line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-round-2xs line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="guide-inner">
+                    <div class="guide-btit" id="idx3">그 외 text, icon button</div>
+                    <div class="guide-sbtit">icon 버튼</div>
+
+                    <a type="button" class="btn-round-md gray20">
+                        <span class="ico-plus18"></span><span class="text">버튼명</span>
+                    </a>
+
+                    <button type="button" class="btn-round-md gray20">
+                        <span class="text">버튼명</span><span class="ico-plus18"></span>
+                    </button>
+                </div>
+
+                <div class="guide-inner">
+                    <div class="guide-btit" id="idx4">버튼 정렬</div>
+                    <div class="guide-sbtit">btn-wrap (기본  - 버튼사이 여백 6px, 상단 여백)</div>
+                    <div class="btn-wrap">
+                        <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                    </div>
+
+                    <div class="guide-sbtit">btn-wrap-md (기본  - 버튼사이 여백 6px, 상단 여백 20px)</div>
+                    <div class="btn-wrap-md">
+                        <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                    </div>
+
+                    <div class="guide-sbtit">btn-wrap-lg (기본  - 버튼사이 여백 6px, 상단 여백 30px)</div>
+                    <div class="btn-wrap-lg">
+                        <button type="button" class="btn-round-lg line-gray40"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-lg blue"><span class="text">버튼</span></button>
+                    </div>
+
+                    <div class="guide-sbtit">btn-wrap.row (세로정렬 - 버튼사이 여백 10px)</div>
+                    <div class="btn-wrap row">
+                        <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                    </div>
                 </div>
             </div>
         </div>

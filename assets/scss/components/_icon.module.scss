@@ -8,3 +8,16 @@
   vertical-align: top;
   overflow: hidden;
 }
+
+.header-wrapper {
+  [class^=ico-] {
+    @extend %icon;
+  }
+}
+
+.ico-plus18 {
+  @extend %icon;
+  width: 18px;
+  height: 18px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_plus_h18');
+}

@@ -44,6 +44,15 @@ a, button {
     font-weight: variables.$fontWeightSemibold;
     letter-spacing: variables.$letterSpacing;
   }
+
+  [class^=ico] {
+    width: 18px;
+    height: 18px;
+
+    +.text {
+      margin-left: 4px;
+    }
+  }
 }
 
 
@@ -55,11 +64,15 @@ a, button {
     font-size: variables.$fontSizeMd;
     font-weight: variables.$fontWeightSemibold;
     letter-spacing: variables.$letterSpacing;
+
+    ~[class^=ico]{
+      margin-left: 4px;
+    }
   }
 
   [class^=ico] {
     +.text {
-      margin-left: 6px;
+      margin-left: 4px;
     }
   }
 }
@@ -72,6 +85,19 @@ a, button {
     font-size: variables.$fontSizeSm;
     font-weight: variables.$fontWeightSemibold;
     letter-spacing: variables.$letterSpacing;
+
+    + [class^=ico] {
+      margin-left: 4px;
+    }
+  }
+
+  [class^=ico]{
+    width: 18px;
+    height: 18px;
+
+    +.text {
+      margin-left: 4px;
+    }
   }
 }
 
@@ -247,4 +273,34 @@ button.btn, a.btn {
     @extend %btnSize2xs;
     border-radius: 99px;
   }
+}
+
+
+%btnWrap {
+  display: flex;
+  gap: 6px;
+
+  [class^=btn] {
+    width: 100%;
+  }
+}
+
+.btn-wrap {
+  @extend %btnWrap;
+
+
+  &.row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.btn-wrap-md {
+  @extend %btnWrap;
+  margin-top: 20px;
+}
+
+.btn-wrap-lg {
+  @extend %btnWrap;
+  margin-top: 30px;
 }
