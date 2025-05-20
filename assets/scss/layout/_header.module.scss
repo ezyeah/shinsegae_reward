@@ -1,0 +1,33 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/* header */
+.header-wrapper {
+  position:  fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: variables.$colorGray00;
+
+  .header-inner {
+    padding: 16px 18px;
+    @include mixins.justify_width(center, between);
+
+    .header-left {
+      @include mixins.justify_width(center);
+
+      .btn-header-back {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        @include mixins.ratio_images('../images/common/comm_ico_back');
+        vertical-align: top;
+      }
+
+      .ptitle {
+        margin-left: 3px;
+      }
+    }
+  }
+}

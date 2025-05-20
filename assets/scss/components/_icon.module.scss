@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+
+%icon {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.header-wrapper {
+  [class^=ico-] {
+    @extend %icon;
+  }
+}
