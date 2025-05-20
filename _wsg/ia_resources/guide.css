@@ -1,6 +1,6 @@
 
 code{font-family: 'Pretendard', "SF Pro Display", AppleSDGothicNeo-Light, Helvetica,"Malgun Gothic", 'MalgunGothic', '맑은고딕', sans-serif; }
-code {display: inline-block; margin-right: 3px; padding: 0 4px; color: #d63384; background-color: #fff; border: 1px solid #d7d7d7; border-radius: 3px; box-sizing: border-box;}
+code {display: inline-block; margin-right: 3px; padding: 0 4px !important; color: #d63384; background-color: #fff; border: 1px solid #d7d7d7 !important; border-radius: 3px; box-sizing: border-box;}
 code.title {display: inline-block; margin-right: 3px; padding: 0 4px; color: #fff; background-color: #444; border: 1px solid #444; border-radius: 3px; box-sizing: border-box;}
 
 
@@ -13,12 +13,12 @@ code.title {display: inline-block; margin-right: 3px; padding: 0 4px; color: #ff
 .guide-inner + .guide-inner {margin-top: 40px; }
 
 .guide-ptit {position: relative; padding: 10px 25px 10px 0; font-size: 30px; font-weight: 800; margin-bottom: 15px; color: #000; letter-spacing: -0.025em;}
-.guide-ptit > span{ background: #012E29; color:#fff; font-size: inherit; font-weight: inherit;}
+.guide-ptit > span{ background: #000; color:#fff; font-size: inherit; font-weight: inherit;}
 
 /*.guide-ptit:before {content: ''; position: absolute; display: inline-block; width: 20%; height: 10%; left: 0; top: 0; background: #FF1212; z-index: 0}*/
 
 .guide-btit {position: relative; padding: 5px 20px 5px 25px; font-size: 24px; font-weight: 800; margin-bottom: 8px; color: #000; letter-spacing: -0.025em; word-break: break-word}
-.guide-btit:before {content: ''; position: absolute; display: inline-block; width: 14px; height: 32px; left: 0; top: 3px; background: #B79683;}
+.guide-btit:before {content: ''; position: absolute; display: inline-block; width: 14px; height: 32px; left: 0; top: 3px; background: #FE4400;}
 
 /*.guide-sbtit {position: relative; padding: 5px 15px 5px 25px; font-size: 20px; font-weight: 800; margin-bottom: 8px; color: #000; letter-spacing: -0.025em;}*/
 .guide-sbtit {position:relative; padding-left: 8px; font-size: 18px; background: #f6f6f6; line-height: 35px; border-top: 5px solid #eee; border-right: 5px solid #eee; border-bottom: 5px solid #ccc; border-left: 5px solid #ccc; margin-bottom: 20px; font-weight: 600; letter-spacing: -0.025em; word-break: break-word}
@@ -32,7 +32,7 @@ code.title {display: inline-block; margin-right: 3px; padding: 0 4px; color: #ff
 
 
 .guide-xxsbtit {position: relative; padding: 5px 15px 5px 25px; font-size: 14px; font-weight: 700; margin-bottom: 20px; color: #000}
-.guide-xxsbtit:before {content: ''; position: absolute; display: inline-block; width: 10px; height: 18px; left: 0; top: 5px; background: #41a500;}
+.guide-xxsbtit:before {content: ''; position: absolute; display: inline-block; width: 10px; height: 18px; left: 0; top: 5px; background: #ff7d00;}
 
 .guide-xxsbtit ~ .guide-xsbtit, .guide-desc-list + .guide-xsbtit, pre + .guide-xsbtit {margin-top: 35px;}
 
