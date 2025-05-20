@@ -1,0 +1,9 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.wrapper {
+  min-height: var(--reVh);
+}
+.container-wrapper {
+}

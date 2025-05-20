@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+$contSize: ('zero': 0px, 'md': 20px, 'lg': 30px);
+
+@each $size, $px in $contSize {
+  .cont-#{$size}-box {
+    padding-top: $px;
+  }
+}

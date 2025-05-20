@@ -4,20 +4,22 @@
 
 /* header */
 .header-wrapper {
-  position:  fixed;
-  left: 0;
-  right: 0;
+  position:  sticky;
   top: 0;
   background-color: variables.$colorGray00;
 
   .header-inner {
-    padding: 16px 18px;
     @include mixins.justify_width(center, between);
+    padding: 16px 18px;
 
     .header-left {
-      @include mixins.justify_width(center);
+      flex: 1;
+      overflow: hidden;
+      @include mixins.justify_width;
+      width: 100%;
 
       .btn-header-back {
+        flex-shrink: 0;
         display: inline-block;
         width: 24px;
         height: 24px;
@@ -27,7 +29,14 @@
 
       .ptitle {
         margin-left: 3px;
+        @include mixins.font_size_xl;
+        @include mixins.ellipsis(false);
       }
     }
+  }
+
+  .header-right {
+    flex-shrink: 0;
+    margin-left: 3px;
   }
 }

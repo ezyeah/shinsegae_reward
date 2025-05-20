@@ -1,3 +1,5 @@
 // @import 'components/button.module';
 // @import 'components/tabs.module';
-@import 'components/common.module';
+@use 'components/icon.module';
+@use 'components/common.module';
+@use 'components/contBox.module';
