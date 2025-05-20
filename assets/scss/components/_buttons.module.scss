@@ -1,0 +1,250 @@
+@use '../abstracts/variables';
+//@use '../abstracts/mixins';
+
+
+/* button */
+a, button {
+  &[disabled], &[aria-disabled=true], &.disabled {
+    pointer-events: none !important;
+    cursor: default !important;
+    text-decoration: none !important;
+
+    * {
+      text-decoration: none !important;
+    }
+  }
+
+  /* 버튼 공통 */
+  &[class^=btn] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+
+    .text {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+    }
+  }
+
+  &[class^=link-] {
+    -webkit-touch-callout: none;
+  }
+}
+
+/* size */
+%btnSizeLg {
+  height: 54px;
+  padding: 0 24px;
+
+  .text {
+    font-size: variables.$fontSizeLg;
+    font-weight: variables.$fontWeightSemibold;
+    letter-spacing: variables.$letterSpacing;
+  }
+}
+
+
+%btnSizeMd {
+  height: 44px;
+  padding: 0 20px;
+
+  .text {
+    font-size: variables.$fontSizeMd;
+    font-weight: variables.$fontWeightSemibold;
+    letter-spacing: variables.$letterSpacing;
+  }
+
+  [class^=ico] {
+    +.text {
+      margin-left: 6px;
+    }
+  }
+}
+
+%btnSizeSm {
+  height: 36px;
+  padding: 0 16px;
+
+  .text {
+    font-size: variables.$fontSizeSm;
+    font-weight: variables.$fontWeightSemibold;
+    letter-spacing: variables.$letterSpacing;
+  }
+}
+
+%btnSizeXs {
+  height: 32px;
+  padding: 0 16px;
+
+  .text {
+    font-size: variables.$fontSizeMd;
+    font-weight: variables.$fontWeightRegular;
+    letter-spacing: variables.$letterSpacing;
+  }
+}
+
+%btnSize2xs {
+  height: 30px;
+  padding: 0 12px;
+
+  .text {
+    font-size: variables.$fontSizeSm;
+    font-weight: variables.$fontWeightMedium;
+    letter-spacing: variables.$letterSpacing;
+  }
+}
+/* size */
+
+
+button.btn, a.btn {
+  &-lg, &-md, &-sm, &-xs, &-2xs, &-round-lg, &-round-md, &-round-sm, &-round-xs, &-round-2xs {
+
+    &[disabled], &[aria-disabled=true], &.disabled {
+      opacity: 0.4;
+    }
+
+    &.blue {
+      background-color: variables.$colorBlue100;
+      border: 1px solid variables.$colorBlue100;
+
+      .text {
+        color: variables.$colorGray00;
+      }
+
+      &:active {
+        background-color: variables.$colorBlue120;
+      }
+    }
+
+    &.light-blue {
+      background-color: variables.$colorBlue10;
+      border: 1px solid variables.$colorBlue10;
+
+      .text {
+        color: variables.$colorBlue120;
+      }
+
+      &:active {
+        background-color: #E4E9EA;
+        border-color: #E4E9EA;
+      }
+    }
+
+    &.gray90 {
+      background-color: variables.$colorGray90;
+      border: 1px solid variables.$colorGray90;
+
+      .text {
+        color: variables.$colorGray00;
+      }
+
+      &:active {
+        background-color: variables.$colorGray80;
+        border-color: variables.$colorGray80;
+      }
+    }
+
+    &.gray20 {
+      background-color: variables.$colorGray20;
+      border: 1px solid variables.$colorGray20;
+
+      .text {
+        color: variables.$colorGray80;
+      }
+
+      &:active {
+        background-color: variables.$colorGray40;
+        border-color: variables.$colorGray40;
+      }
+    }
+
+    &.line-blue {
+      background-color: variables.$colorGray00;
+      border: 1px solid variables.$colorBlue100;
+
+      .text {
+        color: variables.$colorBlue120;
+      }
+
+      &:active {
+        background-color: variables.$colorBlue10;
+      }
+    }
+
+    &.line-brown {
+      background-color: variables.$colorGray00;
+      border: 1px solid variables.$colorBrown100;
+
+      .text {
+        color: variables.$colorBrown120;
+      }
+
+      &:active {
+        background-color: variables.$colorBrown10;
+      }
+    }
+
+    &.line-gray40 {
+      background-color: variables.$colorGray00;
+      border: 1px solid variables.$colorGray40;
+
+      .text {
+        color: variables.$colorGray80;
+      }
+
+      &:active {
+        background-color: variables.$colorGray30;
+      }
+    }
+  }
+
+
+  &-lg {
+    @extend %btnSizeLg;
+  }
+
+  &-md {
+    @extend %btnSizeMd;
+  }
+
+  &-sm {
+    @extend %btnSizeSm;
+  }
+
+  &-xs {
+    @extend %btnSizeXs;
+  }
+
+  &-2xs {
+    @extend %btnSize2xs;
+  }
+
+
+  &-round-lg {
+    @extend %btnSizeLg;
+    border-radius: 27px;
+  }
+
+  &-round-md {
+    @extend %btnSizeMd;
+    border-radius: 22px;
+  }
+
+  &-round-sm {
+    @extend %btnSizeSm;
+    border-radius: 18px;
+  }
+
+  &-round-xs {
+    @extend %btnSizeXs;
+    border-radius: 18px;
+  }
+
+  &-round-2xs {
+    @extend %btnSize2xs;
+    border-radius: 99px;
+  }
+}
