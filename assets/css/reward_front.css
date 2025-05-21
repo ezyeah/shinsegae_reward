@@ -356,8 +356,6 @@ button {
 }
 
 /* // reset */
-/* Grayscale */
-/* Primary */
 /* button */
 a, button {
   /* 버튼 공통 */
@@ -574,8 +572,6 @@ button.btn-round-2xs, a.btn-round-2xs {
   margin-top: 30px;
 }
 
-/* Grayscale */
-/* Primary */
 /* Font Vari */
 .ico-plus18, .header-wrapper [class^=ico-] {
   display: inline-block;
@@ -591,9 +587,6 @@ button.btn-round-2xs, a.btn-round-2xs {
   background-size: cover;
 }
 
-/* Grayscale */
-/* Primary */
-/* Font Vari */
 .offscreen {
   position: absolute !important;
   display: block;
@@ -604,9 +597,6 @@ button.btn-round-2xs, a.btn-round-2xs {
   font-size: 14px !important;
 }
 
-/* Grayscale */
-/* Primary */
-/* Font Vari */
 .cont-zero-box {
   padding-top: 0px;
 }
@@ -619,9 +609,6 @@ button.btn-round-2xs, a.btn-round-2xs {
   padding-top: 30px;
 }
 
-/* Grayscale */
-/* Primary */
-/* Font Vari */
 /* header */
 .header-wrapper {
   position: sticky;
@@ -702,16 +689,10 @@ button.btn-round-2xs, a.btn-round-2xs {
   margin-left: 3px;
 }
 
-/* Grayscale */
-/* Primary */
-/* Font Vari */
 .wrapper {
   min-height: var(--reVh);
 }
 
-/* Grayscale */
-/* Primary */
-/* Font Vari */
 .docker-wrapper {
   position: fixed;
   bottom: 0;

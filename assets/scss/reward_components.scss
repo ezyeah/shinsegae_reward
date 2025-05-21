@@ -1,5 +1,4 @@
- @import 'components/buttons.module';
-// @import 'components/tabs.module';
-@import 'components/icon.module';
-@import 'components/common.module';
-@import 'components/contBox.module';
+@forward 'components/buttons.module';
+@forward 'components/icon.module';
+@forward 'components/common.module';
+@forward 'components/contBox.module';

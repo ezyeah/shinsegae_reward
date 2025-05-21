@@ -217,8 +217,6 @@ button.btn-round-2xs, a.btn-round-2xs {
   margin-top: 30px;
 }
 
-/* Grayscale */
-/* Primary */
 /* Font Vari */
 .ico-plus18, .header-wrapper [class^=ico-] {
   display: inline-block;
@@ -234,9 +232,6 @@ button.btn-round-2xs, a.btn-round-2xs {
   background-size: cover;
 }
 
-/* Grayscale */
-/* Primary */
-/* Font Vari */
 .offscreen {
   position: absolute !important;
   display: block;
@@ -247,9 +242,6 @@ button.btn-round-2xs, a.btn-round-2xs {
   font-size: 14px !important;
 }
 
-/* Grayscale */
-/* Primary */
-/* Font Vari */
 .cont-zero-box {
   padding-top: 0px;
 }

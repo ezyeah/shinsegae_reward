@@ -1,10 +1,10 @@
 // reset
-@import 'base/reset';
+@forward 'base/reset';
 
 // components
-@import 'reward_components';
+@forward 'reward_components';
 
 // layout
-@import 'layout/header.module';
-@import 'layout/grid.module';
-@import 'layout/docker.module';
+@forward 'layout/header.module';
+@forward 'layout/grid.module';
+@forward 'layout/docker.module';
