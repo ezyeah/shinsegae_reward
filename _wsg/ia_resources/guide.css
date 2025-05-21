@@ -64,7 +64,7 @@ code.title {display: inline-block; margin-right: 3px; padding: 0 4px; color: #ff
 
 .guide-desc-list.none li { list-style: none !important; }
 
-.guide-desc-list li code {height: 25px; font-size: 13px; letter-spacing: 0;}
+.guide-desc-list li code {height: 25px; font-size: 13px; letter-spacing: 0;line-height: 23px}
 .guide-desc-list li code.title {min-width: 34px; text-align: center}
 .guide-desc-list li > a ~ .guide-desc-list {margin-top: 5px;}
 
