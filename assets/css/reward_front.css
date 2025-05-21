@@ -675,9 +675,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .cont-zero-box {
   background-color: #FFF;
-  padding-top: 0;
-}
-.cont-zero-box:last-child {
+  padding: 0 0;
   padding-bottom: 30px;
 }
 .cont-zero-box .cont-inner {
@@ -686,9 +684,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .gcont-zero-box {
   background-color: #F5F5F5;
-  padding-top: 0;
-}
-.gcont-zero-box:last-child {
+  padding: 0 0;
   padding-bottom: 30px;
 }
 .gcont-zero-box .cont-inner {
@@ -697,11 +693,9 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .rcont-zero-box {
   background-color: #F0F0F0;
-  padding-top: 0;
-  border-radius: 16px 16px 0 0;
-}
-.rcont-zero-box:last-child {
+  padding: 0 0;
   padding-bottom: 30px;
+  border-radius: 16px 16px 0 0;
 }
 .rcont-zero-box .cont-inner {
   padding: 0 20px;
@@ -709,10 +703,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .cont-xs-box {
   background-color: #FFF;
-  padding-top: 10px;
-}
-.cont-xs-box:last-child {
-  padding-bottom: 30px;
+  padding: 10px 0;
 }
 .cont-xs-box .cont-inner {
   padding: 0 20px;
@@ -720,10 +711,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .gcont-xs-box {
   background-color: #F5F5F5;
-  padding-top: 10px;
-}
-.gcont-xs-box:last-child {
-  padding-bottom: 30px;
+  padding: 10px 0;
 }
 .gcont-xs-box .cont-inner {
   padding: 0 20px;
@@ -731,11 +719,8 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .rcont-xs-box {
   background-color: #F0F0F0;
-  padding-top: 10px;
+  padding: 10px 0;
   border-radius: 16px 16px 0 0;
-}
-.rcont-xs-box:last-child {
-  padding-bottom: 30px;
 }
 .rcont-xs-box .cont-inner {
   padding: 0 20px;
@@ -743,10 +728,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .cont-sm-box {
   background-color: #FFF;
-  padding-top: 16px;
-}
-.cont-sm-box:last-child {
-  padding-bottom: 30px;
+  padding: 16px 0;
 }
 .cont-sm-box .cont-inner {
   padding: 0 20px;
@@ -754,10 +736,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .gcont-sm-box {
   background-color: #F5F5F5;
-  padding-top: 16px;
-}
-.gcont-sm-box:last-child {
-  padding-bottom: 30px;
+  padding: 16px 0;
 }
 .gcont-sm-box .cont-inner {
   padding: 0 20px;
@@ -765,11 +744,8 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .rcont-sm-box {
   background-color: #F0F0F0;
-  padding-top: 16px;
+  padding: 16px 0;
   border-radius: 16px 16px 0 0;
-}
-.rcont-sm-box:last-child {
-  padding-bottom: 30px;
 }
 .rcont-sm-box .cont-inner {
   padding: 0 20px;
@@ -777,10 +753,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .cont-md-box {
   background-color: #FFF;
-  padding-top: 20px;
-}
-.cont-md-box:last-child {
-  padding-bottom: 30px;
+  padding: 20px 0;
 }
 .cont-md-box .cont-inner {
   padding: 0 20px;
@@ -788,10 +761,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .gcont-md-box {
   background-color: #F5F5F5;
-  padding-top: 20px;
-}
-.gcont-md-box:last-child {
-  padding-bottom: 30px;
+  padding: 20px 0;
 }
 .gcont-md-box .cont-inner {
   padding: 0 20px;
@@ -799,11 +769,8 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .rcont-md-box {
   background-color: #F0F0F0;
-  padding-top: 20px;
+  padding: 20px 0;
   border-radius: 16px 16px 0 0;
-}
-.rcont-md-box:last-child {
-  padding-bottom: 30px;
 }
 .rcont-md-box .cont-inner {
   padding: 0 20px;
@@ -811,10 +778,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .cont-lg-box {
   background-color: #FFF;
-  padding-top: 30px;
-}
-.cont-lg-box:last-child {
-  padding-bottom: 30px;
+  padding: 30px 0;
 }
 .cont-lg-box .cont-inner {
   padding: 0 20px;
@@ -822,10 +786,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .gcont-lg-box {
   background-color: #F5F5F5;
-  padding-top: 30px;
-}
-.gcont-lg-box:last-child {
-  padding-bottom: 30px;
+  padding: 30px 0;
 }
 .gcont-lg-box .cont-inner {
   padding: 0 20px;
@@ -833,11 +794,8 @@ button.btn-round-2xs, a.btn-round-2xs {
 
 .rcont-lg-box {
   background-color: #F0F0F0;
-  padding-top: 30px;
+  padding: 30px 0;
   border-radius: 16px 16px 0 0;
-}
-.rcont-lg-box:last-child {
-  padding-bottom: 30px;
 }
 .rcont-lg-box .cont-inner {
   padding: 0 20px;
@@ -847,6 +805,7 @@ button.btn-round-2xs, a.btn-round-2xs {
 .header-wrapper {
   position: sticky;
   top: 0;
+  z-index: 30;
   background-color: #FFF;
 }
 .header-wrapper .header-inner {

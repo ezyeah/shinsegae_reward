@@ -10,14 +10,15 @@ $contType: ('': variables.$colorGray00, 'g': variables.$colorGray10, 'r': variab
   @each $type, $color in $contType {
     .#{$type}cont-#{$size}-box {
       background-color: $color;
-      padding-top: $px;
-
-      &:last-child {
-        padding-bottom: 30px;
-      }
+      padding: $px 0;
 
       .cont-inner {
         padding: 0 20px;
+      }
+
+      // TODO: 상단 여백 없는 경우 하단 gap 임시 지정
+      @if ($size == 'zero') {
+        padding-bottom: 30px;
       }
 
       @if ($type == 'r') {
