@@ -7,8 +7,8 @@
 */
 
 var $_wrapper,
-    $_container,
-    $_docker;
+  $_container,
+  $_docker;
 
 var rewardPub = rewardPub || {};
 
@@ -27,6 +27,11 @@ rewardPub.front = rewardPub.front || (function () {
   function setContainerBottomGap(selector) {
     selector = selector || $_docker;
     if ($(selector).length === 0) return false;
+
+    var dockerHeight = $(selector).height();
+    if ( dockerHeight !== 0 ) {
+      $_container.css('padding-bottom', dockerHeight + 'px');
+    }
   }
 
   _front.setContainerBottomGap = setContainerBottomGap;
