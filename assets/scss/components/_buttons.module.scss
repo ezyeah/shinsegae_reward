@@ -1,5 +1,5 @@
 @use '../abstracts/variables';
-//@use '../abstracts/mixins';
+@use '../abstracts/mixins';
 
 
 /* button */
@@ -272,6 +272,82 @@ button.btn, a.btn {
   &-round-2xs {
     @extend %btnSize2xs;
     border-radius: 99px;
+  }
+}
+
+.link-text{
+  &-lg, &-md, &-sm, &-xs {
+    @include mixins.justify_width(center, center, row, true);
+
+    [class^=ico] {
+      + .text {
+        margin-left: 6px;
+      }
+    }
+
+
+    .text {
+      display: inline-block;
+      vertical-align: top;
+      color: variables.$colorGray80;
+      letter-spacing: variables.$letterSpacing;
+      font-weight: variables.$fontWeightMedium;
+
+      +[class^=ico] {
+        vertical-align: top;
+      }
+    }
+
+    &.color-blue {
+      .text {
+        color: variables.$colorBlue120 !important;
+
+        +[class^=ico] {
+          background: variables.$colorBlue120;
+        }
+      }
+    }
+  }
+
+
+  &-lg {
+    .text {
+      font-size: variables.$fontSizeLg;
+      line-height: variables.$fontSizeLgLineHeight;
+
+      //+[class^=ico] {
+      //  margin-top: 2.5px;
+      //}
+    }
+  }
+
+  &-md {
+    .text {
+      font-size: variables.$fontSizeMd;
+      line-height: variables.$fontSizeMdLineHeight;
+
+      //+[class^=ico] {
+      //  margin-top: 2px;
+      //}
+    }
+  }
+
+  &-sm {
+    .text {
+      font-size: variables.$fontSizeSm;
+      line-height: variables.$fontSizeSmLineHeight;
+
+      //+[class^=ico] {
+      //  margin-top: 1px;
+      //}
+    }
+  }
+
+  &-xs {
+    .text {
+      font-size: variables.$fontSizeXs;
+      line-height: variables.$fontSizeXsLineHeight;
+    }
   }
 }
 

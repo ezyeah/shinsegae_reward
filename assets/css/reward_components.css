@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* Grayscale */
 /* Primary */
+/* Font Vari */
 /* button */
 a, button {
   /* 버튼 공통 */
@@ -196,6 +197,63 @@ button.btn-round-2xs, a.btn-round-2xs {
   border-radius: 99px;
 }
 
+.link-text-lg, .link-text-md, .link-text-sm, .link-text-xs {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.link-text-lg [class^=ico] + .text, .link-text-md [class^=ico] + .text, .link-text-sm [class^=ico] + .text, .link-text-xs [class^=ico] + .text {
+  margin-left: 6px;
+}
+.link-text-lg .text, .link-text-md .text, .link-text-sm .text, .link-text-xs .text {
+  display: inline-block;
+  vertical-align: top;
+  color: #666;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+}
+.link-text-lg .text + [class^=ico], .link-text-md .text + [class^=ico], .link-text-sm .text + [class^=ico], .link-text-xs .text + [class^=ico] {
+  vertical-align: top;
+}
+.link-text-lg.color-blue .text, .link-text-md.color-blue .text, .link-text-sm.color-blue .text, .link-text-xs.color-blue .text {
+  color: #536F86 !important;
+}
+.link-text-lg.color-blue .text + [class^=ico], .link-text-md.color-blue .text + [class^=ico], .link-text-sm.color-blue .text + [class^=ico], .link-text-xs.color-blue .text + [class^=ico] {
+  background: #536F86;
+}
+.link-text-lg .text {
+  font-size: 15px;
+  line-height: 21px;
+}
+.link-text-md .text {
+  font-size: 14px;
+  line-height: 20px;
+}
+.link-text-sm .text {
+  font-size: 13px;
+  line-height: 18px;
+}
+.link-text-xs .text {
+  font-size: 12px;
+  line-height: 17px;
+}
+
 .btn-wrap-lg, .btn-wrap-md, .btn-wrap {
   display: flex;
   gap: 6px;
@@ -217,8 +275,7 @@ button.btn-round-2xs, a.btn-round-2xs {
   margin-top: 30px;
 }
 
-/* Font Vari */
-.ico-plus18, .header-wrapper [class^=ico-] {
+.ico-arrow16, .ico-coupon18, .ico-plus18, .header-wrapper [class^=ico-] {
   display: inline-block;
   position: relative;
   vertical-align: top;
@@ -230,6 +287,21 @@ button.btn-round-2xs, a.btn-round-2xs {
   height: 18px;
   background: url("/assets/images/common/comm_ico_plus_h18.svg") 0 0 no-repeat;
   background-size: cover;
+}
+
+.ico-coupon18 {
+  width: 18px;
+  height: 18px;
+  background: url("/assets/images/common/comm_ico_coupon_h18.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.ico-arrow16 {
+  width: 16px;
+  height: 16px;
+  background: #666;
+  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_gray_h16.svg");
+  mask-image: url("/assets/images/common/comm_ico_arrow_gray_h16.svg");
 }
 
 .offscreen {

@@ -21,3 +21,19 @@
   height: 18px;
   @include mixins.ratio_images('/assets/images/common/comm_ico_plus_h18');
 }
+
+.ico-coupon18 {
+  @extend %icon;
+  width: 18px;
+  height: 18px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_coupon_h18');
+}
+
+.ico-arrow16 {
+  @extend %icon;
+  width: 16px;
+  height: 16px;
+  background: variables.$colorGray80;
+  -webkit-mask-image: url('/assets/images/common/comm_ico_arrow_gray_h16.svg');
+  mask-image: url('/assets/images/common/comm_ico_arrow_gray_h16.svg');
+}
