@@ -31,172 +31,173 @@ a[class^=link-], button[class^=link-] {
 }
 
 /* size */
-button.btn-round-lg, a.btn-round-lg, button.btn-lg, a.btn-lg {
+button.btn-square-lg, a.btn-square-lg, button.btn-lg, a.btn-lg {
   height: 54px;
   padding: 0 24px;
 }
-button.btn-round-lg .text, a.btn-round-lg .text, button.btn-lg .text, a.btn-lg .text {
+button.btn-square-lg .text, a.btn-square-lg .text, button.btn-lg .text, a.btn-lg .text {
   font-size: 15px;
-  font-weight: 600;
+  line-height: 21px;
   letter-spacing: -0.5px;
+  font-weight: 600;
 }
-button.btn-round-lg [class^=ico], a.btn-round-lg [class^=ico], button.btn-lg [class^=ico], a.btn-lg [class^=ico] {
+button.btn-square-lg [class^=ico], a.btn-square-lg [class^=ico], button.btn-lg [class^=ico], a.btn-lg [class^=ico] {
   width: 18px;
   height: 18px;
 }
-button.btn-round-lg [class^=ico] + .text, a.btn-round-lg [class^=ico] + .text, button.btn-lg [class^=ico] + .text, a.btn-lg [class^=ico] + .text {
+button.btn-square-lg [class^=ico] ~ .text, a.btn-square-lg [class^=ico] ~ .text, button.btn-lg [class^=ico] ~ .text, a.btn-lg [class^=ico] ~ .text {
   margin-left: 4px;
 }
 
-button.btn-round-md, a.btn-round-md, button.btn-md, a.btn-md {
+button.btn-square-md, a.btn-square-md, button.btn-md, a.btn-md {
   height: 44px;
   padding: 0 20px;
 }
-button.btn-round-md .text, a.btn-round-md .text, button.btn-md .text, a.btn-md .text {
+button.btn-square-md .text, a.btn-square-md .text, button.btn-md .text, a.btn-md .text {
   font-size: 14px;
-  font-weight: 600;
+  line-height: 20px;
   letter-spacing: -0.5px;
+  font-weight: 600;
 }
-button.btn-round-md .text ~ [class^=ico], a.btn-round-md .text ~ [class^=ico], button.btn-md .text ~ [class^=ico], a.btn-md .text ~ [class^=ico] {
+button.btn-square-md .text ~ [class^=ico], a.btn-square-md .text ~ [class^=ico], button.btn-md .text ~ [class^=ico], a.btn-md .text ~ [class^=ico] {
   margin-left: 4px;
 }
-button.btn-round-md [class^=ico] + .text, a.btn-round-md [class^=ico] + .text, button.btn-md [class^=ico] + .text, a.btn-md [class^=ico] + .text {
+button.btn-square-md [class^=ico] ~ .text, a.btn-square-md [class^=ico] ~ .text, button.btn-md [class^=ico] ~ .text, a.btn-md [class^=ico] ~ .text {
   margin-left: 4px;
 }
 
-button.btn-round-sm, a.btn-round-sm, button.btn-sm, a.btn-sm {
+button.btn-square-sm, a.btn-square-sm, button.btn-sm, a.btn-sm {
   height: 36px;
   padding: 0 16px;
 }
-button.btn-round-sm .text, a.btn-round-sm .text, button.btn-sm .text, a.btn-sm .text {
+button.btn-square-sm .text, a.btn-square-sm .text, button.btn-sm .text, a.btn-sm .text {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: -0.5px;
 }
-button.btn-round-sm .text + [class^=ico], a.btn-round-sm .text + [class^=ico], button.btn-sm .text + [class^=ico], a.btn-sm .text + [class^=ico] {
+button.btn-square-sm .text ~ [class^=ico], a.btn-square-sm .text ~ [class^=ico], button.btn-sm .text ~ [class^=ico], a.btn-sm .text ~ [class^=ico] {
   margin-left: 4px;
 }
-button.btn-round-sm [class^=ico], a.btn-round-sm [class^=ico], button.btn-sm [class^=ico], a.btn-sm [class^=ico] {
+button.btn-square-sm [class^=ico], a.btn-square-sm [class^=ico], button.btn-sm [class^=ico], a.btn-sm [class^=ico] {
   width: 18px;
   height: 18px;
 }
-button.btn-round-sm [class^=ico] + .text, a.btn-round-sm [class^=ico] + .text, button.btn-sm [class^=ico] + .text, a.btn-sm [class^=ico] + .text {
+button.btn-square-sm [class^=ico] ~ .text, a.btn-square-sm [class^=ico] ~ .text, button.btn-sm [class^=ico] ~ .text, a.btn-sm [class^=ico] ~ .text {
   margin-left: 4px;
 }
 
-button.btn-round-xs, a.btn-round-xs, button.btn-xs, a.btn-xs {
+button.btn-square-xs, a.btn-square-xs, button.btn-xs, a.btn-xs {
   height: 32px;
   padding: 0 16px;
 }
-button.btn-round-xs .text, a.btn-round-xs .text, button.btn-xs .text, a.btn-xs .text {
+button.btn-square-xs .text, a.btn-square-xs .text, button.btn-xs .text, a.btn-xs .text {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.5px;
 }
 
-button.btn-round-2xs, a.btn-round-2xs, button.btn-2xs, a.btn-2xs {
+button.btn-square-2xs, a.btn-square-2xs, button.btn-2xs, a.btn-2xs {
   height: 30px;
   padding: 0 12px;
 }
-button.btn-round-2xs .text, a.btn-round-2xs .text, button.btn-2xs .text, a.btn-2xs .text {
+button.btn-square-2xs .text, a.btn-square-2xs .text, button.btn-2xs .text, a.btn-2xs .text {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: -0.5px;
 }
 
 /* size */
-button.btn-lg[disabled], button.btn-lg[aria-disabled=true], button.btn-lg.disabled, button.btn-md[disabled], button.btn-md[aria-disabled=true], button.btn-md.disabled, button.btn-sm[disabled], button.btn-sm[aria-disabled=true], button.btn-sm.disabled, button.btn-xs[disabled], button.btn-xs[aria-disabled=true], button.btn-xs.disabled, button.btn-2xs[disabled], button.btn-2xs[aria-disabled=true], button.btn-2xs.disabled, button.btn-round-lg[disabled], button.btn-round-lg[aria-disabled=true], button.btn-round-lg.disabled, button.btn-round-md[disabled], button.btn-round-md[aria-disabled=true], button.btn-round-md.disabled, button.btn-round-sm[disabled], button.btn-round-sm[aria-disabled=true], button.btn-round-sm.disabled, button.btn-round-xs[disabled], button.btn-round-xs[aria-disabled=true], button.btn-round-xs.disabled, button.btn-round-2xs[disabled], button.btn-round-2xs[aria-disabled=true], button.btn-round-2xs.disabled, button.btn-box[disabled], button.btn-box[aria-disabled=true], button.btn-box.disabled, a.btn-lg[disabled], a.btn-lg[aria-disabled=true], a.btn-lg.disabled, a.btn-md[disabled], a.btn-md[aria-disabled=true], a.btn-md.disabled, a.btn-sm[disabled], a.btn-sm[aria-disabled=true], a.btn-sm.disabled, a.btn-xs[disabled], a.btn-xs[aria-disabled=true], a.btn-xs.disabled, a.btn-2xs[disabled], a.btn-2xs[aria-disabled=true], a.btn-2xs.disabled, a.btn-round-lg[disabled], a.btn-round-lg[aria-disabled=true], a.btn-round-lg.disabled, a.btn-round-md[disabled], a.btn-round-md[aria-disabled=true], a.btn-round-md.disabled, a.btn-round-sm[disabled], a.btn-round-sm[aria-disabled=true], a.btn-round-sm.disabled, a.btn-round-xs[disabled], a.btn-round-xs[aria-disabled=true], a.btn-round-xs.disabled, a.btn-round-2xs[disabled], a.btn-round-2xs[aria-disabled=true], a.btn-round-2xs.disabled, a.btn-box[disabled], a.btn-box[aria-disabled=true], a.btn-box.disabled {
+button.btn-lg[disabled], button.btn-lg[aria-disabled=true], button.btn-lg.disabled, button.btn-md[disabled], button.btn-md[aria-disabled=true], button.btn-md.disabled, button.btn-sm[disabled], button.btn-sm[aria-disabled=true], button.btn-sm.disabled, button.btn-xs[disabled], button.btn-xs[aria-disabled=true], button.btn-xs.disabled, button.btn-2xs[disabled], button.btn-2xs[aria-disabled=true], button.btn-2xs.disabled, button.btn-square-lg[disabled], button.btn-square-lg[aria-disabled=true], button.btn-square-lg.disabled, button.btn-square-md[disabled], button.btn-square-md[aria-disabled=true], button.btn-square-md.disabled, button.btn-square-sm[disabled], button.btn-square-sm[aria-disabled=true], button.btn-square-sm.disabled, button.btn-square-xs[disabled], button.btn-square-xs[aria-disabled=true], button.btn-square-xs.disabled, button.btn-square-2xs[disabled], button.btn-square-2xs[aria-disabled=true], button.btn-square-2xs.disabled, button.btn-box[disabled], button.btn-box[aria-disabled=true], button.btn-box.disabled, a.btn-lg[disabled], a.btn-lg[aria-disabled=true], a.btn-lg.disabled, a.btn-md[disabled], a.btn-md[aria-disabled=true], a.btn-md.disabled, a.btn-sm[disabled], a.btn-sm[aria-disabled=true], a.btn-sm.disabled, a.btn-xs[disabled], a.btn-xs[aria-disabled=true], a.btn-xs.disabled, a.btn-2xs[disabled], a.btn-2xs[aria-disabled=true], a.btn-2xs.disabled, a.btn-square-lg[disabled], a.btn-square-lg[aria-disabled=true], a.btn-square-lg.disabled, a.btn-square-md[disabled], a.btn-square-md[aria-disabled=true], a.btn-square-md.disabled, a.btn-square-sm[disabled], a.btn-square-sm[aria-disabled=true], a.btn-square-sm.disabled, a.btn-square-xs[disabled], a.btn-square-xs[aria-disabled=true], a.btn-square-xs.disabled, a.btn-square-2xs[disabled], a.btn-square-2xs[aria-disabled=true], a.btn-square-2xs.disabled, a.btn-box[disabled], a.btn-box[aria-disabled=true], a.btn-box.disabled {
   opacity: 0.4;
 }
-button.btn-lg.blue, button.btn-md.blue, button.btn-sm.blue, button.btn-xs.blue, button.btn-2xs.blue, button.btn-round-lg.blue, button.btn-round-md.blue, button.btn-round-sm.blue, button.btn-round-xs.blue, button.btn-round-2xs.blue, button.btn-box.blue, a.btn-lg.blue, a.btn-md.blue, a.btn-sm.blue, a.btn-xs.blue, a.btn-2xs.blue, a.btn-round-lg.blue, a.btn-round-md.blue, a.btn-round-sm.blue, a.btn-round-xs.blue, a.btn-round-2xs.blue, a.btn-box.blue {
+button.btn-lg.blue100, button.btn-md.blue100, button.btn-sm.blue100, button.btn-xs.blue100, button.btn-2xs.blue100, button.btn-square-lg.blue100, button.btn-square-md.blue100, button.btn-square-sm.blue100, button.btn-square-xs.blue100, button.btn-square-2xs.blue100, button.btn-box.blue100, a.btn-lg.blue100, a.btn-md.blue100, a.btn-sm.blue100, a.btn-xs.blue100, a.btn-2xs.blue100, a.btn-square-lg.blue100, a.btn-square-md.blue100, a.btn-square-sm.blue100, a.btn-square-xs.blue100, a.btn-square-2xs.blue100, a.btn-box.blue100 {
   background-color: #6987A1;
   border: 1px solid #6987A1;
 }
-button.btn-lg.blue .text, button.btn-md.blue .text, button.btn-sm.blue .text, button.btn-xs.blue .text, button.btn-2xs.blue .text, button.btn-round-lg.blue .text, button.btn-round-md.blue .text, button.btn-round-sm.blue .text, button.btn-round-xs.blue .text, button.btn-round-2xs.blue .text, button.btn-box.blue .text, a.btn-lg.blue .text, a.btn-md.blue .text, a.btn-sm.blue .text, a.btn-xs.blue .text, a.btn-2xs.blue .text, a.btn-round-lg.blue .text, a.btn-round-md.blue .text, a.btn-round-sm.blue .text, a.btn-round-xs.blue .text, a.btn-round-2xs.blue .text, a.btn-box.blue .text {
+button.btn-lg.blue100 .text, button.btn-md.blue100 .text, button.btn-sm.blue100 .text, button.btn-xs.blue100 .text, button.btn-2xs.blue100 .text, button.btn-square-lg.blue100 .text, button.btn-square-md.blue100 .text, button.btn-square-sm.blue100 .text, button.btn-square-xs.blue100 .text, button.btn-square-2xs.blue100 .text, button.btn-box.blue100 .text, a.btn-lg.blue100 .text, a.btn-md.blue100 .text, a.btn-sm.blue100 .text, a.btn-xs.blue100 .text, a.btn-2xs.blue100 .text, a.btn-square-lg.blue100 .text, a.btn-square-md.blue100 .text, a.btn-square-sm.blue100 .text, a.btn-square-xs.blue100 .text, a.btn-square-2xs.blue100 .text, a.btn-box.blue100 .text {
   color: #FFF;
 }
-button.btn-lg.blue:active, button.btn-lg.blue:hover, button.btn-md.blue:active, button.btn-md.blue:hover, button.btn-sm.blue:active, button.btn-sm.blue:hover, button.btn-xs.blue:active, button.btn-xs.blue:hover, button.btn-2xs.blue:active, button.btn-2xs.blue:hover, button.btn-round-lg.blue:active, button.btn-round-lg.blue:hover, button.btn-round-md.blue:active, button.btn-round-md.blue:hover, button.btn-round-sm.blue:active, button.btn-round-sm.blue:hover, button.btn-round-xs.blue:active, button.btn-round-xs.blue:hover, button.btn-round-2xs.blue:active, button.btn-round-2xs.blue:hover, button.btn-box.blue:active, button.btn-box.blue:hover, a.btn-lg.blue:active, a.btn-lg.blue:hover, a.btn-md.blue:active, a.btn-md.blue:hover, a.btn-sm.blue:active, a.btn-sm.blue:hover, a.btn-xs.blue:active, a.btn-xs.blue:hover, a.btn-2xs.blue:active, a.btn-2xs.blue:hover, a.btn-round-lg.blue:active, a.btn-round-lg.blue:hover, a.btn-round-md.blue:active, a.btn-round-md.blue:hover, a.btn-round-sm.blue:active, a.btn-round-sm.blue:hover, a.btn-round-xs.blue:active, a.btn-round-xs.blue:hover, a.btn-round-2xs.blue:active, a.btn-round-2xs.blue:hover, a.btn-box.blue:active, a.btn-box.blue:hover {
+button.btn-lg.blue100:active, button.btn-lg.blue100:hover, button.btn-md.blue100:active, button.btn-md.blue100:hover, button.btn-sm.blue100:active, button.btn-sm.blue100:hover, button.btn-xs.blue100:active, button.btn-xs.blue100:hover, button.btn-2xs.blue100:active, button.btn-2xs.blue100:hover, button.btn-square-lg.blue100:active, button.btn-square-lg.blue100:hover, button.btn-square-md.blue100:active, button.btn-square-md.blue100:hover, button.btn-square-sm.blue100:active, button.btn-square-sm.blue100:hover, button.btn-square-xs.blue100:active, button.btn-square-xs.blue100:hover, button.btn-square-2xs.blue100:active, button.btn-square-2xs.blue100:hover, button.btn-box.blue100:active, button.btn-box.blue100:hover, a.btn-lg.blue100:active, a.btn-lg.blue100:hover, a.btn-md.blue100:active, a.btn-md.blue100:hover, a.btn-sm.blue100:active, a.btn-sm.blue100:hover, a.btn-xs.blue100:active, a.btn-xs.blue100:hover, a.btn-2xs.blue100:active, a.btn-2xs.blue100:hover, a.btn-square-lg.blue100:active, a.btn-square-lg.blue100:hover, a.btn-square-md.blue100:active, a.btn-square-md.blue100:hover, a.btn-square-sm.blue100:active, a.btn-square-sm.blue100:hover, a.btn-square-xs.blue100:active, a.btn-square-xs.blue100:hover, a.btn-square-2xs.blue100:active, a.btn-square-2xs.blue100:hover, a.btn-box.blue100:active, a.btn-box.blue100:hover {
   background-color: #536F86;
 }
-button.btn-lg.light-blue, button.btn-md.light-blue, button.btn-sm.light-blue, button.btn-xs.light-blue, button.btn-2xs.light-blue, button.btn-round-lg.light-blue, button.btn-round-md.light-blue, button.btn-round-sm.light-blue, button.btn-round-xs.light-blue, button.btn-round-2xs.light-blue, button.btn-box.light-blue, a.btn-lg.light-blue, a.btn-md.light-blue, a.btn-sm.light-blue, a.btn-xs.light-blue, a.btn-2xs.light-blue, a.btn-round-lg.light-blue, a.btn-round-md.light-blue, a.btn-round-sm.light-blue, a.btn-round-xs.light-blue, a.btn-round-2xs.light-blue, a.btn-box.light-blue {
+button.btn-lg.blue10, button.btn-md.blue10, button.btn-sm.blue10, button.btn-xs.blue10, button.btn-2xs.blue10, button.btn-square-lg.blue10, button.btn-square-md.blue10, button.btn-square-sm.blue10, button.btn-square-xs.blue10, button.btn-square-2xs.blue10, button.btn-box.blue10, a.btn-lg.blue10, a.btn-md.blue10, a.btn-sm.blue10, a.btn-xs.blue10, a.btn-2xs.blue10, a.btn-square-lg.blue10, a.btn-square-md.blue10, a.btn-square-sm.blue10, a.btn-square-xs.blue10, a.btn-square-2xs.blue10, a.btn-box.blue10 {
   background-color: #F0F4F5;
   border: 1px solid #F0F4F5;
 }
-button.btn-lg.light-blue .text, button.btn-md.light-blue .text, button.btn-sm.light-blue .text, button.btn-xs.light-blue .text, button.btn-2xs.light-blue .text, button.btn-round-lg.light-blue .text, button.btn-round-md.light-blue .text, button.btn-round-sm.light-blue .text, button.btn-round-xs.light-blue .text, button.btn-round-2xs.light-blue .text, button.btn-box.light-blue .text, a.btn-lg.light-blue .text, a.btn-md.light-blue .text, a.btn-sm.light-blue .text, a.btn-xs.light-blue .text, a.btn-2xs.light-blue .text, a.btn-round-lg.light-blue .text, a.btn-round-md.light-blue .text, a.btn-round-sm.light-blue .text, a.btn-round-xs.light-blue .text, a.btn-round-2xs.light-blue .text, a.btn-box.light-blue .text {
+button.btn-lg.blue10 .text, button.btn-md.blue10 .text, button.btn-sm.blue10 .text, button.btn-xs.blue10 .text, button.btn-2xs.blue10 .text, button.btn-square-lg.blue10 .text, button.btn-square-md.blue10 .text, button.btn-square-sm.blue10 .text, button.btn-square-xs.blue10 .text, button.btn-square-2xs.blue10 .text, button.btn-box.blue10 .text, a.btn-lg.blue10 .text, a.btn-md.blue10 .text, a.btn-sm.blue10 .text, a.btn-xs.blue10 .text, a.btn-2xs.blue10 .text, a.btn-square-lg.blue10 .text, a.btn-square-md.blue10 .text, a.btn-square-sm.blue10 .text, a.btn-square-xs.blue10 .text, a.btn-square-2xs.blue10 .text, a.btn-box.blue10 .text {
   color: #536F86;
 }
-button.btn-lg.light-blue:active, button.btn-lg.light-blue:hover, button.btn-md.light-blue:active, button.btn-md.light-blue:hover, button.btn-sm.light-blue:active, button.btn-sm.light-blue:hover, button.btn-xs.light-blue:active, button.btn-xs.light-blue:hover, button.btn-2xs.light-blue:active, button.btn-2xs.light-blue:hover, button.btn-round-lg.light-blue:active, button.btn-round-lg.light-blue:hover, button.btn-round-md.light-blue:active, button.btn-round-md.light-blue:hover, button.btn-round-sm.light-blue:active, button.btn-round-sm.light-blue:hover, button.btn-round-xs.light-blue:active, button.btn-round-xs.light-blue:hover, button.btn-round-2xs.light-blue:active, button.btn-round-2xs.light-blue:hover, button.btn-box.light-blue:active, button.btn-box.light-blue:hover, a.btn-lg.light-blue:active, a.btn-lg.light-blue:hover, a.btn-md.light-blue:active, a.btn-md.light-blue:hover, a.btn-sm.light-blue:active, a.btn-sm.light-blue:hover, a.btn-xs.light-blue:active, a.btn-xs.light-blue:hover, a.btn-2xs.light-blue:active, a.btn-2xs.light-blue:hover, a.btn-round-lg.light-blue:active, a.btn-round-lg.light-blue:hover, a.btn-round-md.light-blue:active, a.btn-round-md.light-blue:hover, a.btn-round-sm.light-blue:active, a.btn-round-sm.light-blue:hover, a.btn-round-xs.light-blue:active, a.btn-round-xs.light-blue:hover, a.btn-round-2xs.light-blue:active, a.btn-round-2xs.light-blue:hover, a.btn-box.light-blue:active, a.btn-box.light-blue:hover {
+button.btn-lg.blue10:active, button.btn-lg.blue10:hover, button.btn-md.blue10:active, button.btn-md.blue10:hover, button.btn-sm.blue10:active, button.btn-sm.blue10:hover, button.btn-xs.blue10:active, button.btn-xs.blue10:hover, button.btn-2xs.blue10:active, button.btn-2xs.blue10:hover, button.btn-square-lg.blue10:active, button.btn-square-lg.blue10:hover, button.btn-square-md.blue10:active, button.btn-square-md.blue10:hover, button.btn-square-sm.blue10:active, button.btn-square-sm.blue10:hover, button.btn-square-xs.blue10:active, button.btn-square-xs.blue10:hover, button.btn-square-2xs.blue10:active, button.btn-square-2xs.blue10:hover, button.btn-box.blue10:active, button.btn-box.blue10:hover, a.btn-lg.blue10:active, a.btn-lg.blue10:hover, a.btn-md.blue10:active, a.btn-md.blue10:hover, a.btn-sm.blue10:active, a.btn-sm.blue10:hover, a.btn-xs.blue10:active, a.btn-xs.blue10:hover, a.btn-2xs.blue10:active, a.btn-2xs.blue10:hover, a.btn-square-lg.blue10:active, a.btn-square-lg.blue10:hover, a.btn-square-md.blue10:active, a.btn-square-md.blue10:hover, a.btn-square-sm.blue10:active, a.btn-square-sm.blue10:hover, a.btn-square-xs.blue10:active, a.btn-square-xs.blue10:hover, a.btn-square-2xs.blue10:active, a.btn-square-2xs.blue10:hover, a.btn-box.blue10:active, a.btn-box.blue10:hover {
   background-color: #E4E9EA;
   border-color: #E4E9EA;
 }
-button.btn-lg.gray90, button.btn-md.gray90, button.btn-sm.gray90, button.btn-xs.gray90, button.btn-2xs.gray90, button.btn-round-lg.gray90, button.btn-round-md.gray90, button.btn-round-sm.gray90, button.btn-round-xs.gray90, button.btn-round-2xs.gray90, button.btn-box.gray90, a.btn-lg.gray90, a.btn-md.gray90, a.btn-sm.gray90, a.btn-xs.gray90, a.btn-2xs.gray90, a.btn-round-lg.gray90, a.btn-round-md.gray90, a.btn-round-sm.gray90, a.btn-round-xs.gray90, a.btn-round-2xs.gray90, a.btn-box.gray90 {
+button.btn-lg.gray90, button.btn-md.gray90, button.btn-sm.gray90, button.btn-xs.gray90, button.btn-2xs.gray90, button.btn-square-lg.gray90, button.btn-square-md.gray90, button.btn-square-sm.gray90, button.btn-square-xs.gray90, button.btn-square-2xs.gray90, button.btn-box.gray90, a.btn-lg.gray90, a.btn-md.gray90, a.btn-sm.gray90, a.btn-xs.gray90, a.btn-2xs.gray90, a.btn-square-lg.gray90, a.btn-square-md.gray90, a.btn-square-sm.gray90, a.btn-square-xs.gray90, a.btn-square-2xs.gray90, a.btn-box.gray90 {
   background-color: #333;
   border: 1px solid #333;
 }
-button.btn-lg.gray90 .text, button.btn-md.gray90 .text, button.btn-sm.gray90 .text, button.btn-xs.gray90 .text, button.btn-2xs.gray90 .text, button.btn-round-lg.gray90 .text, button.btn-round-md.gray90 .text, button.btn-round-sm.gray90 .text, button.btn-round-xs.gray90 .text, button.btn-round-2xs.gray90 .text, button.btn-box.gray90 .text, a.btn-lg.gray90 .text, a.btn-md.gray90 .text, a.btn-sm.gray90 .text, a.btn-xs.gray90 .text, a.btn-2xs.gray90 .text, a.btn-round-lg.gray90 .text, a.btn-round-md.gray90 .text, a.btn-round-sm.gray90 .text, a.btn-round-xs.gray90 .text, a.btn-round-2xs.gray90 .text, a.btn-box.gray90 .text {
+button.btn-lg.gray90 .text, button.btn-md.gray90 .text, button.btn-sm.gray90 .text, button.btn-xs.gray90 .text, button.btn-2xs.gray90 .text, button.btn-square-lg.gray90 .text, button.btn-square-md.gray90 .text, button.btn-square-sm.gray90 .text, button.btn-square-xs.gray90 .text, button.btn-square-2xs.gray90 .text, button.btn-box.gray90 .text, a.btn-lg.gray90 .text, a.btn-md.gray90 .text, a.btn-sm.gray90 .text, a.btn-xs.gray90 .text, a.btn-2xs.gray90 .text, a.btn-square-lg.gray90 .text, a.btn-square-md.gray90 .text, a.btn-square-sm.gray90 .text, a.btn-square-xs.gray90 .text, a.btn-square-2xs.gray90 .text, a.btn-box.gray90 .text {
   color: #FFF;
 }
-button.btn-lg.gray90:active, button.btn-lg.gray90:hover, button.btn-md.gray90:active, button.btn-md.gray90:hover, button.btn-sm.gray90:active, button.btn-sm.gray90:hover, button.btn-xs.gray90:active, button.btn-xs.gray90:hover, button.btn-2xs.gray90:active, button.btn-2xs.gray90:hover, button.btn-round-lg.gray90:active, button.btn-round-lg.gray90:hover, button.btn-round-md.gray90:active, button.btn-round-md.gray90:hover, button.btn-round-sm.gray90:active, button.btn-round-sm.gray90:hover, button.btn-round-xs.gray90:active, button.btn-round-xs.gray90:hover, button.btn-round-2xs.gray90:active, button.btn-round-2xs.gray90:hover, button.btn-box.gray90:active, button.btn-box.gray90:hover, a.btn-lg.gray90:active, a.btn-lg.gray90:hover, a.btn-md.gray90:active, a.btn-md.gray90:hover, a.btn-sm.gray90:active, a.btn-sm.gray90:hover, a.btn-xs.gray90:active, a.btn-xs.gray90:hover, a.btn-2xs.gray90:active, a.btn-2xs.gray90:hover, a.btn-round-lg.gray90:active, a.btn-round-lg.gray90:hover, a.btn-round-md.gray90:active, a.btn-round-md.gray90:hover, a.btn-round-sm.gray90:active, a.btn-round-sm.gray90:hover, a.btn-round-xs.gray90:active, a.btn-round-xs.gray90:hover, a.btn-round-2xs.gray90:active, a.btn-round-2xs.gray90:hover, a.btn-box.gray90:active, a.btn-box.gray90:hover {
+button.btn-lg.gray90:active, button.btn-lg.gray90:hover, button.btn-md.gray90:active, button.btn-md.gray90:hover, button.btn-sm.gray90:active, button.btn-sm.gray90:hover, button.btn-xs.gray90:active, button.btn-xs.gray90:hover, button.btn-2xs.gray90:active, button.btn-2xs.gray90:hover, button.btn-square-lg.gray90:active, button.btn-square-lg.gray90:hover, button.btn-square-md.gray90:active, button.btn-square-md.gray90:hover, button.btn-square-sm.gray90:active, button.btn-square-sm.gray90:hover, button.btn-square-xs.gray90:active, button.btn-square-xs.gray90:hover, button.btn-square-2xs.gray90:active, button.btn-square-2xs.gray90:hover, button.btn-box.gray90:active, button.btn-box.gray90:hover, a.btn-lg.gray90:active, a.btn-lg.gray90:hover, a.btn-md.gray90:active, a.btn-md.gray90:hover, a.btn-sm.gray90:active, a.btn-sm.gray90:hover, a.btn-xs.gray90:active, a.btn-xs.gray90:hover, a.btn-2xs.gray90:active, a.btn-2xs.gray90:hover, a.btn-square-lg.gray90:active, a.btn-square-lg.gray90:hover, a.btn-square-md.gray90:active, a.btn-square-md.gray90:hover, a.btn-square-sm.gray90:active, a.btn-square-sm.gray90:hover, a.btn-square-xs.gray90:active, a.btn-square-xs.gray90:hover, a.btn-square-2xs.gray90:active, a.btn-square-2xs.gray90:hover, a.btn-box.gray90:active, a.btn-box.gray90:hover {
   background-color: #666;
   border-color: #666;
 }
-button.btn-lg.gray20, button.btn-md.gray20, button.btn-sm.gray20, button.btn-xs.gray20, button.btn-2xs.gray20, button.btn-round-lg.gray20, button.btn-round-md.gray20, button.btn-round-sm.gray20, button.btn-round-xs.gray20, button.btn-round-2xs.gray20, button.btn-box.gray20, a.btn-lg.gray20, a.btn-md.gray20, a.btn-sm.gray20, a.btn-xs.gray20, a.btn-2xs.gray20, a.btn-round-lg.gray20, a.btn-round-md.gray20, a.btn-round-sm.gray20, a.btn-round-xs.gray20, a.btn-round-2xs.gray20, a.btn-box.gray20 {
+button.btn-lg.gray20, button.btn-md.gray20, button.btn-sm.gray20, button.btn-xs.gray20, button.btn-2xs.gray20, button.btn-square-lg.gray20, button.btn-square-md.gray20, button.btn-square-sm.gray20, button.btn-square-xs.gray20, button.btn-square-2xs.gray20, button.btn-box.gray20, a.btn-lg.gray20, a.btn-md.gray20, a.btn-sm.gray20, a.btn-xs.gray20, a.btn-2xs.gray20, a.btn-square-lg.gray20, a.btn-square-md.gray20, a.btn-square-sm.gray20, a.btn-square-xs.gray20, a.btn-square-2xs.gray20, a.btn-box.gray20 {
   background-color: #F0F0F0;
   border: 1px solid #F0F0F0;
 }
-button.btn-lg.gray20 .text, button.btn-md.gray20 .text, button.btn-sm.gray20 .text, button.btn-xs.gray20 .text, button.btn-2xs.gray20 .text, button.btn-round-lg.gray20 .text, button.btn-round-md.gray20 .text, button.btn-round-sm.gray20 .text, button.btn-round-xs.gray20 .text, button.btn-round-2xs.gray20 .text, button.btn-box.gray20 .text, a.btn-lg.gray20 .text, a.btn-md.gray20 .text, a.btn-sm.gray20 .text, a.btn-xs.gray20 .text, a.btn-2xs.gray20 .text, a.btn-round-lg.gray20 .text, a.btn-round-md.gray20 .text, a.btn-round-sm.gray20 .text, a.btn-round-xs.gray20 .text, a.btn-round-2xs.gray20 .text, a.btn-box.gray20 .text {
+button.btn-lg.gray20 .text, button.btn-md.gray20 .text, button.btn-sm.gray20 .text, button.btn-xs.gray20 .text, button.btn-2xs.gray20 .text, button.btn-square-lg.gray20 .text, button.btn-square-md.gray20 .text, button.btn-square-sm.gray20 .text, button.btn-square-xs.gray20 .text, button.btn-square-2xs.gray20 .text, button.btn-box.gray20 .text, a.btn-lg.gray20 .text, a.btn-md.gray20 .text, a.btn-sm.gray20 .text, a.btn-xs.gray20 .text, a.btn-2xs.gray20 .text, a.btn-square-lg.gray20 .text, a.btn-square-md.gray20 .text, a.btn-square-sm.gray20 .text, a.btn-square-xs.gray20 .text, a.btn-square-2xs.gray20 .text, a.btn-box.gray20 .text {
   color: #666;
 }
-button.btn-lg.gray20:active, button.btn-lg.gray20:hover, button.btn-md.gray20:active, button.btn-md.gray20:hover, button.btn-sm.gray20:active, button.btn-sm.gray20:hover, button.btn-xs.gray20:active, button.btn-xs.gray20:hover, button.btn-2xs.gray20:active, button.btn-2xs.gray20:hover, button.btn-round-lg.gray20:active, button.btn-round-lg.gray20:hover, button.btn-round-md.gray20:active, button.btn-round-md.gray20:hover, button.btn-round-sm.gray20:active, button.btn-round-sm.gray20:hover, button.btn-round-xs.gray20:active, button.btn-round-xs.gray20:hover, button.btn-round-2xs.gray20:active, button.btn-round-2xs.gray20:hover, button.btn-box.gray20:active, button.btn-box.gray20:hover, a.btn-lg.gray20:active, a.btn-lg.gray20:hover, a.btn-md.gray20:active, a.btn-md.gray20:hover, a.btn-sm.gray20:active, a.btn-sm.gray20:hover, a.btn-xs.gray20:active, a.btn-xs.gray20:hover, a.btn-2xs.gray20:active, a.btn-2xs.gray20:hover, a.btn-round-lg.gray20:active, a.btn-round-lg.gray20:hover, a.btn-round-md.gray20:active, a.btn-round-md.gray20:hover, a.btn-round-sm.gray20:active, a.btn-round-sm.gray20:hover, a.btn-round-xs.gray20:active, a.btn-round-xs.gray20:hover, a.btn-round-2xs.gray20:active, a.btn-round-2xs.gray20:hover, a.btn-box.gray20:active, a.btn-box.gray20:hover {
+button.btn-lg.gray20:active, button.btn-lg.gray20:hover, button.btn-md.gray20:active, button.btn-md.gray20:hover, button.btn-sm.gray20:active, button.btn-sm.gray20:hover, button.btn-xs.gray20:active, button.btn-xs.gray20:hover, button.btn-2xs.gray20:active, button.btn-2xs.gray20:hover, button.btn-square-lg.gray20:active, button.btn-square-lg.gray20:hover, button.btn-square-md.gray20:active, button.btn-square-md.gray20:hover, button.btn-square-sm.gray20:active, button.btn-square-sm.gray20:hover, button.btn-square-xs.gray20:active, button.btn-square-xs.gray20:hover, button.btn-square-2xs.gray20:active, button.btn-square-2xs.gray20:hover, button.btn-box.gray20:active, button.btn-box.gray20:hover, a.btn-lg.gray20:active, a.btn-lg.gray20:hover, a.btn-md.gray20:active, a.btn-md.gray20:hover, a.btn-sm.gray20:active, a.btn-sm.gray20:hover, a.btn-xs.gray20:active, a.btn-xs.gray20:hover, a.btn-2xs.gray20:active, a.btn-2xs.gray20:hover, a.btn-square-lg.gray20:active, a.btn-square-lg.gray20:hover, a.btn-square-md.gray20:active, a.btn-square-md.gray20:hover, a.btn-square-sm.gray20:active, a.btn-square-sm.gray20:hover, a.btn-square-xs.gray20:active, a.btn-square-xs.gray20:hover, a.btn-square-2xs.gray20:active, a.btn-square-2xs.gray20:hover, a.btn-box.gray20:active, a.btn-box.gray20:hover {
   background-color: #DDD;
   border-color: #DDD;
 }
-button.btn-lg.line-blue, button.btn-md.line-blue, button.btn-sm.line-blue, button.btn-xs.line-blue, button.btn-2xs.line-blue, button.btn-round-lg.line-blue, button.btn-round-md.line-blue, button.btn-round-sm.line-blue, button.btn-round-xs.line-blue, button.btn-round-2xs.line-blue, button.btn-box.line-blue, a.btn-lg.line-blue, a.btn-md.line-blue, a.btn-sm.line-blue, a.btn-xs.line-blue, a.btn-2xs.line-blue, a.btn-round-lg.line-blue, a.btn-round-md.line-blue, a.btn-round-sm.line-blue, a.btn-round-xs.line-blue, a.btn-round-2xs.line-blue, a.btn-box.line-blue {
+button.btn-lg.line-blue, button.btn-md.line-blue, button.btn-sm.line-blue, button.btn-xs.line-blue, button.btn-2xs.line-blue, button.btn-square-lg.line-blue, button.btn-square-md.line-blue, button.btn-square-sm.line-blue, button.btn-square-xs.line-blue, button.btn-square-2xs.line-blue, button.btn-box.line-blue, a.btn-lg.line-blue, a.btn-md.line-blue, a.btn-sm.line-blue, a.btn-xs.line-blue, a.btn-2xs.line-blue, a.btn-square-lg.line-blue, a.btn-square-md.line-blue, a.btn-square-sm.line-blue, a.btn-square-xs.line-blue, a.btn-square-2xs.line-blue, a.btn-box.line-blue {
   background-color: #FFF;
   border: 1px solid #6987A1;
 }
-button.btn-lg.line-blue .text, button.btn-md.line-blue .text, button.btn-sm.line-blue .text, button.btn-xs.line-blue .text, button.btn-2xs.line-blue .text, button.btn-round-lg.line-blue .text, button.btn-round-md.line-blue .text, button.btn-round-sm.line-blue .text, button.btn-round-xs.line-blue .text, button.btn-round-2xs.line-blue .text, button.btn-box.line-blue .text, a.btn-lg.line-blue .text, a.btn-md.line-blue .text, a.btn-sm.line-blue .text, a.btn-xs.line-blue .text, a.btn-2xs.line-blue .text, a.btn-round-lg.line-blue .text, a.btn-round-md.line-blue .text, a.btn-round-sm.line-blue .text, a.btn-round-xs.line-blue .text, a.btn-round-2xs.line-blue .text, a.btn-box.line-blue .text {
+button.btn-lg.line-blue .text, button.btn-md.line-blue .text, button.btn-sm.line-blue .text, button.btn-xs.line-blue .text, button.btn-2xs.line-blue .text, button.btn-square-lg.line-blue .text, button.btn-square-md.line-blue .text, button.btn-square-sm.line-blue .text, button.btn-square-xs.line-blue .text, button.btn-square-2xs.line-blue .text, button.btn-box.line-blue .text, a.btn-lg.line-blue .text, a.btn-md.line-blue .text, a.btn-sm.line-blue .text, a.btn-xs.line-blue .text, a.btn-2xs.line-blue .text, a.btn-square-lg.line-blue .text, a.btn-square-md.line-blue .text, a.btn-square-sm.line-blue .text, a.btn-square-xs.line-blue .text, a.btn-square-2xs.line-blue .text, a.btn-box.line-blue .text {
   color: #536F86;
 }
-button.btn-lg.line-blue:active, button.btn-lg.line-blue:hover, button.btn-md.line-blue:active, button.btn-md.line-blue:hover, button.btn-sm.line-blue:active, button.btn-sm.line-blue:hover, button.btn-xs.line-blue:active, button.btn-xs.line-blue:hover, button.btn-2xs.line-blue:active, button.btn-2xs.line-blue:hover, button.btn-round-lg.line-blue:active, button.btn-round-lg.line-blue:hover, button.btn-round-md.line-blue:active, button.btn-round-md.line-blue:hover, button.btn-round-sm.line-blue:active, button.btn-round-sm.line-blue:hover, button.btn-round-xs.line-blue:active, button.btn-round-xs.line-blue:hover, button.btn-round-2xs.line-blue:active, button.btn-round-2xs.line-blue:hover, button.btn-box.line-blue:active, button.btn-box.line-blue:hover, a.btn-lg.line-blue:active, a.btn-lg.line-blue:hover, a.btn-md.line-blue:active, a.btn-md.line-blue:hover, a.btn-sm.line-blue:active, a.btn-sm.line-blue:hover, a.btn-xs.line-blue:active, a.btn-xs.line-blue:hover, a.btn-2xs.line-blue:active, a.btn-2xs.line-blue:hover, a.btn-round-lg.line-blue:active, a.btn-round-lg.line-blue:hover, a.btn-round-md.line-blue:active, a.btn-round-md.line-blue:hover, a.btn-round-sm.line-blue:active, a.btn-round-sm.line-blue:hover, a.btn-round-xs.line-blue:active, a.btn-round-xs.line-blue:hover, a.btn-round-2xs.line-blue:active, a.btn-round-2xs.line-blue:hover, a.btn-box.line-blue:active, a.btn-box.line-blue:hover {
+button.btn-lg.line-blue:active, button.btn-lg.line-blue:hover, button.btn-md.line-blue:active, button.btn-md.line-blue:hover, button.btn-sm.line-blue:active, button.btn-sm.line-blue:hover, button.btn-xs.line-blue:active, button.btn-xs.line-blue:hover, button.btn-2xs.line-blue:active, button.btn-2xs.line-blue:hover, button.btn-square-lg.line-blue:active, button.btn-square-lg.line-blue:hover, button.btn-square-md.line-blue:active, button.btn-square-md.line-blue:hover, button.btn-square-sm.line-blue:active, button.btn-square-sm.line-blue:hover, button.btn-square-xs.line-blue:active, button.btn-square-xs.line-blue:hover, button.btn-square-2xs.line-blue:active, button.btn-square-2xs.line-blue:hover, button.btn-box.line-blue:active, button.btn-box.line-blue:hover, a.btn-lg.line-blue:active, a.btn-lg.line-blue:hover, a.btn-md.line-blue:active, a.btn-md.line-blue:hover, a.btn-sm.line-blue:active, a.btn-sm.line-blue:hover, a.btn-xs.line-blue:active, a.btn-xs.line-blue:hover, a.btn-2xs.line-blue:active, a.btn-2xs.line-blue:hover, a.btn-square-lg.line-blue:active, a.btn-square-lg.line-blue:hover, a.btn-square-md.line-blue:active, a.btn-square-md.line-blue:hover, a.btn-square-sm.line-blue:active, a.btn-square-sm.line-blue:hover, a.btn-square-xs.line-blue:active, a.btn-square-xs.line-blue:hover, a.btn-square-2xs.line-blue:active, a.btn-square-2xs.line-blue:hover, a.btn-box.line-blue:active, a.btn-box.line-blue:hover {
   background-color: #F0F4F5;
 }
-button.btn-lg.line-brown, button.btn-md.line-brown, button.btn-sm.line-brown, button.btn-xs.line-brown, button.btn-2xs.line-brown, button.btn-round-lg.line-brown, button.btn-round-md.line-brown, button.btn-round-sm.line-brown, button.btn-round-xs.line-brown, button.btn-round-2xs.line-brown, button.btn-box.line-brown, a.btn-lg.line-brown, a.btn-md.line-brown, a.btn-sm.line-brown, a.btn-xs.line-brown, a.btn-2xs.line-brown, a.btn-round-lg.line-brown, a.btn-round-md.line-brown, a.btn-round-sm.line-brown, a.btn-round-xs.line-brown, a.btn-round-2xs.line-brown, a.btn-box.line-brown {
+button.btn-lg.line-brown, button.btn-md.line-brown, button.btn-sm.line-brown, button.btn-xs.line-brown, button.btn-2xs.line-brown, button.btn-square-lg.line-brown, button.btn-square-md.line-brown, button.btn-square-sm.line-brown, button.btn-square-xs.line-brown, button.btn-square-2xs.line-brown, button.btn-box.line-brown, a.btn-lg.line-brown, a.btn-md.line-brown, a.btn-sm.line-brown, a.btn-xs.line-brown, a.btn-2xs.line-brown, a.btn-square-lg.line-brown, a.btn-square-md.line-brown, a.btn-square-sm.line-brown, a.btn-square-xs.line-brown, a.btn-square-2xs.line-brown, a.btn-box.line-brown {
   background-color: #FFF;
   border: 1px solid #B09785;
 }
-button.btn-lg.line-brown .text, button.btn-md.line-brown .text, button.btn-sm.line-brown .text, button.btn-xs.line-brown .text, button.btn-2xs.line-brown .text, button.btn-round-lg.line-brown .text, button.btn-round-md.line-brown .text, button.btn-round-sm.line-brown .text, button.btn-round-xs.line-brown .text, button.btn-round-2xs.line-brown .text, button.btn-box.line-brown .text, a.btn-lg.line-brown .text, a.btn-md.line-brown .text, a.btn-sm.line-brown .text, a.btn-xs.line-brown .text, a.btn-2xs.line-brown .text, a.btn-round-lg.line-brown .text, a.btn-round-md.line-brown .text, a.btn-round-sm.line-brown .text, a.btn-round-xs.line-brown .text, a.btn-round-2xs.line-brown .text, a.btn-box.line-brown .text {
+button.btn-lg.line-brown .text, button.btn-md.line-brown .text, button.btn-sm.line-brown .text, button.btn-xs.line-brown .text, button.btn-2xs.line-brown .text, button.btn-square-lg.line-brown .text, button.btn-square-md.line-brown .text, button.btn-square-sm.line-brown .text, button.btn-square-xs.line-brown .text, button.btn-square-2xs.line-brown .text, button.btn-box.line-brown .text, a.btn-lg.line-brown .text, a.btn-md.line-brown .text, a.btn-sm.line-brown .text, a.btn-xs.line-brown .text, a.btn-2xs.line-brown .text, a.btn-square-lg.line-brown .text, a.btn-square-md.line-brown .text, a.btn-square-sm.line-brown .text, a.btn-square-xs.line-brown .text, a.btn-square-2xs.line-brown .text, a.btn-box.line-brown .text {
   color: #907C6B;
 }
-button.btn-lg.line-brown:active, button.btn-lg.line-brown:hover, button.btn-md.line-brown:active, button.btn-md.line-brown:hover, button.btn-sm.line-brown:active, button.btn-sm.line-brown:hover, button.btn-xs.line-brown:active, button.btn-xs.line-brown:hover, button.btn-2xs.line-brown:active, button.btn-2xs.line-brown:hover, button.btn-round-lg.line-brown:active, button.btn-round-lg.line-brown:hover, button.btn-round-md.line-brown:active, button.btn-round-md.line-brown:hover, button.btn-round-sm.line-brown:active, button.btn-round-sm.line-brown:hover, button.btn-round-xs.line-brown:active, button.btn-round-xs.line-brown:hover, button.btn-round-2xs.line-brown:active, button.btn-round-2xs.line-brown:hover, button.btn-box.line-brown:active, button.btn-box.line-brown:hover, a.btn-lg.line-brown:active, a.btn-lg.line-brown:hover, a.btn-md.line-brown:active, a.btn-md.line-brown:hover, a.btn-sm.line-brown:active, a.btn-sm.line-brown:hover, a.btn-xs.line-brown:active, a.btn-xs.line-brown:hover, a.btn-2xs.line-brown:active, a.btn-2xs.line-brown:hover, a.btn-round-lg.line-brown:active, a.btn-round-lg.line-brown:hover, a.btn-round-md.line-brown:active, a.btn-round-md.line-brown:hover, a.btn-round-sm.line-brown:active, a.btn-round-sm.line-brown:hover, a.btn-round-xs.line-brown:active, a.btn-round-xs.line-brown:hover, a.btn-round-2xs.line-brown:active, a.btn-round-2xs.line-brown:hover, a.btn-box.line-brown:active, a.btn-box.line-brown:hover {
+button.btn-lg.line-brown:active, button.btn-lg.line-brown:hover, button.btn-md.line-brown:active, button.btn-md.line-brown:hover, button.btn-sm.line-brown:active, button.btn-sm.line-brown:hover, button.btn-xs.line-brown:active, button.btn-xs.line-brown:hover, button.btn-2xs.line-brown:active, button.btn-2xs.line-brown:hover, button.btn-square-lg.line-brown:active, button.btn-square-lg.line-brown:hover, button.btn-square-md.line-brown:active, button.btn-square-md.line-brown:hover, button.btn-square-sm.line-brown:active, button.btn-square-sm.line-brown:hover, button.btn-square-xs.line-brown:active, button.btn-square-xs.line-brown:hover, button.btn-square-2xs.line-brown:active, button.btn-square-2xs.line-brown:hover, button.btn-box.line-brown:active, button.btn-box.line-brown:hover, a.btn-lg.line-brown:active, a.btn-lg.line-brown:hover, a.btn-md.line-brown:active, a.btn-md.line-brown:hover, a.btn-sm.line-brown:active, a.btn-sm.line-brown:hover, a.btn-xs.line-brown:active, a.btn-xs.line-brown:hover, a.btn-2xs.line-brown:active, a.btn-2xs.line-brown:hover, a.btn-square-lg.line-brown:active, a.btn-square-lg.line-brown:hover, a.btn-square-md.line-brown:active, a.btn-square-md.line-brown:hover, a.btn-square-sm.line-brown:active, a.btn-square-sm.line-brown:hover, a.btn-square-xs.line-brown:active, a.btn-square-xs.line-brown:hover, a.btn-square-2xs.line-brown:active, a.btn-square-2xs.line-brown:hover, a.btn-box.line-brown:active, a.btn-box.line-brown:hover {
   background-color: #EEEBEB;
 }
-button.btn-lg.line-gray40, button.btn-md.line-gray40, button.btn-sm.line-gray40, button.btn-xs.line-gray40, button.btn-2xs.line-gray40, button.btn-round-lg.line-gray40, button.btn-round-md.line-gray40, button.btn-round-sm.line-gray40, button.btn-round-xs.line-gray40, button.btn-round-2xs.line-gray40, button.btn-box.line-gray40, a.btn-lg.line-gray40, a.btn-md.line-gray40, a.btn-sm.line-gray40, a.btn-xs.line-gray40, a.btn-2xs.line-gray40, a.btn-round-lg.line-gray40, a.btn-round-md.line-gray40, a.btn-round-sm.line-gray40, a.btn-round-xs.line-gray40, a.btn-round-2xs.line-gray40, a.btn-box.line-gray40 {
+button.btn-lg.line-gray40, button.btn-md.line-gray40, button.btn-sm.line-gray40, button.btn-xs.line-gray40, button.btn-2xs.line-gray40, button.btn-square-lg.line-gray40, button.btn-square-md.line-gray40, button.btn-square-sm.line-gray40, button.btn-square-xs.line-gray40, button.btn-square-2xs.line-gray40, button.btn-box.line-gray40, a.btn-lg.line-gray40, a.btn-md.line-gray40, a.btn-sm.line-gray40, a.btn-xs.line-gray40, a.btn-2xs.line-gray40, a.btn-square-lg.line-gray40, a.btn-square-md.line-gray40, a.btn-square-sm.line-gray40, a.btn-square-xs.line-gray40, a.btn-square-2xs.line-gray40, a.btn-box.line-gray40 {
   background-color: #FFF;
   border: 1px solid #DDD;
 }
-button.btn-lg.line-gray40 .text, button.btn-md.line-gray40 .text, button.btn-sm.line-gray40 .text, button.btn-xs.line-gray40 .text, button.btn-2xs.line-gray40 .text, button.btn-round-lg.line-gray40 .text, button.btn-round-md.line-gray40 .text, button.btn-round-sm.line-gray40 .text, button.btn-round-xs.line-gray40 .text, button.btn-round-2xs.line-gray40 .text, button.btn-box.line-gray40 .text, a.btn-lg.line-gray40 .text, a.btn-md.line-gray40 .text, a.btn-sm.line-gray40 .text, a.btn-xs.line-gray40 .text, a.btn-2xs.line-gray40 .text, a.btn-round-lg.line-gray40 .text, a.btn-round-md.line-gray40 .text, a.btn-round-sm.line-gray40 .text, a.btn-round-xs.line-gray40 .text, a.btn-round-2xs.line-gray40 .text, a.btn-box.line-gray40 .text {
+button.btn-lg.line-gray40 .text, button.btn-md.line-gray40 .text, button.btn-sm.line-gray40 .text, button.btn-xs.line-gray40 .text, button.btn-2xs.line-gray40 .text, button.btn-square-lg.line-gray40 .text, button.btn-square-md.line-gray40 .text, button.btn-square-sm.line-gray40 .text, button.btn-square-xs.line-gray40 .text, button.btn-square-2xs.line-gray40 .text, button.btn-box.line-gray40 .text, a.btn-lg.line-gray40 .text, a.btn-md.line-gray40 .text, a.btn-sm.line-gray40 .text, a.btn-xs.line-gray40 .text, a.btn-2xs.line-gray40 .text, a.btn-square-lg.line-gray40 .text, a.btn-square-md.line-gray40 .text, a.btn-square-sm.line-gray40 .text, a.btn-square-xs.line-gray40 .text, a.btn-square-2xs.line-gray40 .text, a.btn-box.line-gray40 .text {
   color: #666;
 }
-button.btn-lg.line-gray40:active, button.btn-lg.line-gray40:hover, button.btn-md.line-gray40:active, button.btn-md.line-gray40:hover, button.btn-sm.line-gray40:active, button.btn-sm.line-gray40:hover, button.btn-xs.line-gray40:active, button.btn-xs.line-gray40:hover, button.btn-2xs.line-gray40:active, button.btn-2xs.line-gray40:hover, button.btn-round-lg.line-gray40:active, button.btn-round-lg.line-gray40:hover, button.btn-round-md.line-gray40:active, button.btn-round-md.line-gray40:hover, button.btn-round-sm.line-gray40:active, button.btn-round-sm.line-gray40:hover, button.btn-round-xs.line-gray40:active, button.btn-round-xs.line-gray40:hover, button.btn-round-2xs.line-gray40:active, button.btn-round-2xs.line-gray40:hover, button.btn-box.line-gray40:active, button.btn-box.line-gray40:hover, a.btn-lg.line-gray40:active, a.btn-lg.line-gray40:hover, a.btn-md.line-gray40:active, a.btn-md.line-gray40:hover, a.btn-sm.line-gray40:active, a.btn-sm.line-gray40:hover, a.btn-xs.line-gray40:active, a.btn-xs.line-gray40:hover, a.btn-2xs.line-gray40:active, a.btn-2xs.line-gray40:hover, a.btn-round-lg.line-gray40:active, a.btn-round-lg.line-gray40:hover, a.btn-round-md.line-gray40:active, a.btn-round-md.line-gray40:hover, a.btn-round-sm.line-gray40:active, a.btn-round-sm.line-gray40:hover, a.btn-round-xs.line-gray40:active, a.btn-round-xs.line-gray40:hover, a.btn-round-2xs.line-gray40:active, a.btn-round-2xs.line-gray40:hover, a.btn-box.line-gray40:active, a.btn-box.line-gray40:hover {
+button.btn-lg.line-gray40:active, button.btn-lg.line-gray40:hover, button.btn-md.line-gray40:active, button.btn-md.line-gray40:hover, button.btn-sm.line-gray40:active, button.btn-sm.line-gray40:hover, button.btn-xs.line-gray40:active, button.btn-xs.line-gray40:hover, button.btn-2xs.line-gray40:active, button.btn-2xs.line-gray40:hover, button.btn-square-lg.line-gray40:active, button.btn-square-lg.line-gray40:hover, button.btn-square-md.line-gray40:active, button.btn-square-md.line-gray40:hover, button.btn-square-sm.line-gray40:active, button.btn-square-sm.line-gray40:hover, button.btn-square-xs.line-gray40:active, button.btn-square-xs.line-gray40:hover, button.btn-square-2xs.line-gray40:active, button.btn-square-2xs.line-gray40:hover, button.btn-box.line-gray40:active, button.btn-box.line-gray40:hover, a.btn-lg.line-gray40:active, a.btn-lg.line-gray40:hover, a.btn-md.line-gray40:active, a.btn-md.line-gray40:hover, a.btn-sm.line-gray40:active, a.btn-sm.line-gray40:hover, a.btn-xs.line-gray40:active, a.btn-xs.line-gray40:hover, a.btn-2xs.line-gray40:active, a.btn-2xs.line-gray40:hover, a.btn-square-lg.line-gray40:active, a.btn-square-lg.line-gray40:hover, a.btn-square-md.line-gray40:active, a.btn-square-md.line-gray40:hover, a.btn-square-sm.line-gray40:active, a.btn-square-sm.line-gray40:hover, a.btn-square-xs.line-gray40:active, a.btn-square-xs.line-gray40:hover, a.btn-square-2xs.line-gray40:active, a.btn-square-2xs.line-gray40:hover, a.btn-box.line-gray40:active, a.btn-box.line-gray40:hover {
   background-color: #EAEAEA;
 }
-button.btn-round-lg, a.btn-round-lg {
+button.btn-lg, a.btn-lg {
   border-radius: 27px;
 }
-button.btn-round-md, a.btn-round-md {
+button.btn-md, a.btn-md {
   border-radius: 22px;
 }
-button.btn-round-sm, a.btn-round-sm {
+button.btn-sm, a.btn-sm {
   border-radius: 18px;
 }
-button.btn-round-xs, a.btn-round-xs {
+button.btn-xs, a.btn-xs {
   border-radius: 18px;
 }
-button.btn-round-2xs, a.btn-round-2xs {
+button.btn-2xs, a.btn-2xs {
   border-radius: 99px;
 }
-
 .link-text-lg, .link-text-md, .link-text-sm, .link-text-xs {
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -218,7 +219,7 @@ button.btn-round-2xs, a.btn-round-2xs {
   -webkit-flex-direction: row;
   flex-direction: row;
 }
-.link-text-lg [class^=ico] + .text, .link-text-md [class^=ico] + .text, .link-text-sm [class^=ico] + .text, .link-text-xs [class^=ico] + .text {
+.link-text-lg [class^=ico] ~ .text, .link-text-md [class^=ico] ~ .text, .link-text-sm [class^=ico] ~ .text, .link-text-xs [class^=ico] ~ .text {
   margin-left: 6px;
 }
 .link-text-lg .text, .link-text-md .text, .link-text-sm .text, .link-text-xs .text {
@@ -228,13 +229,13 @@ button.btn-round-2xs, a.btn-round-2xs {
   letter-spacing: -0.5px;
   font-weight: 500;
 }
-.link-text-lg .text + [class^=ico], .link-text-md .text + [class^=ico], .link-text-sm .text + [class^=ico], .link-text-xs .text + [class^=ico] {
+.link-text-lg .text ~ [class^=ico], .link-text-md .text ~ [class^=ico], .link-text-sm .text ~ [class^=ico], .link-text-xs .text ~ [class^=ico] {
   vertical-align: top;
 }
 .link-text-lg.color-blue .text, .link-text-md.color-blue .text, .link-text-sm.color-blue .text, .link-text-xs.color-blue .text {
   color: #536F86 !important;
 }
-.link-text-lg.color-blue .text + [class^=ico], .link-text-md.color-blue .text + [class^=ico], .link-text-sm.color-blue .text + [class^=ico], .link-text-xs.color-blue .text + [class^=ico] {
+.link-text-lg.color-blue .text ~ [class^=ico], .link-text-md.color-blue .text ~ [class^=ico], .link-text-sm.color-blue .text ~ [class^=ico], .link-text-xs.color-blue .text ~ [class^=ico] {
   background: #536F86;
 }
 .link-text-lg .text {
@@ -294,10 +295,6 @@ button.btn-round-2xs, a.btn-round-2xs {
 .btn-wrap.row {
   flex-direction: column;
   gap: 10px;
-}
-.btn-wrap.bottom {
-  margin-left: -5px;
-  margin-right: -5px;
 }
 
 .btn-wrap-md {

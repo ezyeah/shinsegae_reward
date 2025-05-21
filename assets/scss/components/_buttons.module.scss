@@ -40,16 +40,14 @@ a, button {
   padding: 0 24px;
 
   .text {
-    font-size: variables.$fontSizeLg;
-    font-weight: variables.$fontWeightSemibold;
-    letter-spacing: variables.$letterSpacing;
+    @include mixins.font_size_lg('sb');
   }
 
   [class^=ico] {
     width: 18px;
     height: 18px;
 
-    +.text {
+    ~.text {
       margin-left: 4px;
     }
   }
@@ -61,9 +59,7 @@ a, button {
   padding: 0 20px;
 
   .text {
-    font-size: variables.$fontSizeMd;
-    font-weight: variables.$fontWeightSemibold;
-    letter-spacing: variables.$letterSpacing;
+    @include mixins.font_size_md('sb');
 
     ~[class^=ico]{
       margin-left: 4px;
@@ -71,7 +67,7 @@ a, button {
   }
 
   [class^=ico] {
-    +.text {
+    ~.text {
       margin-left: 4px;
     }
   }
@@ -86,7 +82,7 @@ a, button {
     font-weight: variables.$fontWeightSemibold;
     letter-spacing: variables.$letterSpacing;
 
-    + [class^=ico] {
+    ~ [class^=ico] {
       margin-left: 4px;
     }
   }
@@ -95,7 +91,7 @@ a, button {
     width: 18px;
     height: 18px;
 
-    +.text {
+    ~.text {
       margin-left: 4px;
     }
   }
@@ -126,13 +122,13 @@ a, button {
 
 
 button.btn, a.btn {
-  &-lg, &-md, &-sm, &-xs, &-2xs, &-round-lg, &-round-md, &-round-sm, &-round-xs, &-round-2xs, &-box {
+  &-lg, &-md, &-sm, &-xs, &-2xs, &-square-lg, &-square-md, &-square-sm, &-square-xs, &-square-2xs, &-box {
 
     &[disabled], &[aria-disabled=true], &.disabled {
       opacity: 0.4;
     }
 
-    &.blue {
+    &.blue100 {
       background-color: variables.$colorBlue100;
       border: 1px solid variables.$colorBlue100;
 
@@ -145,7 +141,7 @@ button.btn, a.btn {
       }
     }
 
-    &.light-blue {
+    &.blue10 {
       background-color: variables.$colorBlue10;
       border: 1px solid variables.$colorBlue10;
 
@@ -230,48 +226,48 @@ button.btn, a.btn {
 
   &-lg {
     @extend %btnSizeLg;
+    border-radius: 27px;
   }
 
   &-md {
     @extend %btnSizeMd;
+    border-radius: 22px;
   }
 
   &-sm {
     @extend %btnSizeSm;
+    border-radius: 18px;
   }
 
   &-xs {
     @extend %btnSizeXs;
+    border-radius: 18px;
   }
 
   &-2xs {
     @extend %btnSize2xs;
-  }
-
-
-  &-round-lg {
-    @extend %btnSizeLg;
-    border-radius: 27px;
-  }
-
-  &-round-md {
-    @extend %btnSizeMd;
-    border-radius: 22px;
-  }
-
-  &-round-sm {
-    @extend %btnSizeSm;
-    border-radius: 18px;
-  }
-
-  &-round-xs {
-    @extend %btnSizeXs;
-    border-radius: 18px;
-  }
-
-  &-round-2xs {
-    @extend %btnSize2xs;
     border-radius: 99px;
+  }
+
+
+  &-square-lg {
+    @extend %btnSizeLg;
+  }
+
+  &-square-md {
+    @extend %btnSizeMd;
+  }
+
+  &-square-sm {
+    @extend %btnSizeSm;
+  }
+
+  &-square-xs {
+    @extend %btnSizeXs;
+  }
+
+  &-square-2xs {
+    @extend %btnSize2xs;
   }
 }
 
@@ -280,7 +276,7 @@ button.btn, a.btn {
     @include mixins.justify_width(center, center, row, true);
 
     [class^=ico] {
-      + .text {
+      ~ .text {
         margin-left: 6px;
       }
     }
@@ -293,7 +289,7 @@ button.btn, a.btn {
       letter-spacing: variables.$letterSpacing;
       font-weight: variables.$fontWeightMedium;
 
-      +[class^=ico] {
+      ~[class^=ico] {
         vertical-align: top;
       }
     }
@@ -302,7 +298,7 @@ button.btn, a.btn {
       .text {
         color: variables.$colorBlue120 !important;
 
-        +[class^=ico] {
+        ~[class^=ico] {
           background: variables.$colorBlue120;
         }
       }
@@ -315,7 +311,7 @@ button.btn, a.btn {
       font-size: variables.$fontSizeLg;
       line-height: variables.$fontSizeLgLineHeight;
 
-      //+[class^=ico] {
+      //~[class^=ico] {
       //  margin-top: 2.5px;
       //}
     }
@@ -326,7 +322,7 @@ button.btn, a.btn {
       font-size: variables.$fontSizeMd;
       line-height: variables.$fontSizeMdLineHeight;
 
-      //+[class^=ico] {
+      //~[class^=ico] {
       //  margin-top: 2px;
       //}
     }
@@ -337,7 +333,7 @@ button.btn, a.btn {
       font-size: variables.$fontSizeSm;
       line-height: variables.$fontSizeSmLineHeight;
 
-      //+[class^=ico] {
+      //~[class^=ico] {
       //  margin-top: 1px;
       //}
     }
@@ -402,17 +398,9 @@ button.btn, a.btn {
 .btn-wrap {
   @extend %btnWrap;
 
-
   &.row {
     flex-direction: column;
     gap: 10px;
-  }
-
-  &.bottom {
-    margin: {
-      left: -5px;
-      right: -5px;
-    }
   }
 }
 
