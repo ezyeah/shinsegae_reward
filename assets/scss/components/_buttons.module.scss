@@ -49,7 +49,7 @@ a, button {
     width: 18px;
     height: 18px;
 
-    +.text {
+    ~.text {
       margin-left: 4px;
     }
   }
@@ -71,7 +71,7 @@ a, button {
   }
 
   [class^=ico] {
-    +.text {
+    ~.text {
       margin-left: 4px;
     }
   }
@@ -86,7 +86,7 @@ a, button {
     font-weight: variables.$fontWeightSemibold;
     letter-spacing: variables.$letterSpacing;
 
-    + [class^=ico] {
+    ~ [class^=ico] {
       margin-left: 4px;
     }
   }
@@ -95,7 +95,7 @@ a, button {
     width: 18px;
     height: 18px;
 
-    +.text {
+    ~.text {
       margin-left: 4px;
     }
   }
@@ -280,7 +280,7 @@ button.btn, a.btn {
     @include mixins.justify_width(center, center, row, true);
 
     [class^=ico] {
-      + .text {
+      ~ .text {
         margin-left: 6px;
       }
     }
@@ -293,7 +293,7 @@ button.btn, a.btn {
       letter-spacing: variables.$letterSpacing;
       font-weight: variables.$fontWeightMedium;
 
-      +[class^=ico] {
+      ~[class^=ico] {
         vertical-align: top;
       }
     }
@@ -302,7 +302,7 @@ button.btn, a.btn {
       .text {
         color: variables.$colorBlue120 !important;
 
-        +[class^=ico] {
+        ~[class^=ico] {
           background: variables.$colorBlue120;
         }
       }
@@ -315,7 +315,7 @@ button.btn, a.btn {
       font-size: variables.$fontSizeLg;
       line-height: variables.$fontSizeLgLineHeight;
 
-      //+[class^=ico] {
+      //~[class^=ico] {
       //  margin-top: 2.5px;
       //}
     }
@@ -326,7 +326,7 @@ button.btn, a.btn {
       font-size: variables.$fontSizeMd;
       line-height: variables.$fontSizeMdLineHeight;
 
-      //+[class^=ico] {
+      //~[class^=ico] {
       //  margin-top: 2px;
       //}
     }
@@ -337,7 +337,7 @@ button.btn, a.btn {
       font-size: variables.$fontSizeSm;
       line-height: variables.$fontSizeSmLineHeight;
 
-      //+[class^=ico] {
+      //~[class^=ico] {
       //  margin-top: 1px;
       //}
     }

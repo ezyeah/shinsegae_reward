@@ -400,7 +400,7 @@ button.btn-round-lg [class^=ico], a.btn-round-lg [class^=ico], button.btn-lg [cl
   width: 18px;
   height: 18px;
 }
-button.btn-round-lg [class^=ico] + .text, a.btn-round-lg [class^=ico] + .text, button.btn-lg [class^=ico] + .text, a.btn-lg [class^=ico] + .text {
+button.btn-round-lg [class^=ico] ~ .text, a.btn-round-lg [class^=ico] ~ .text, button.btn-lg [class^=ico] ~ .text, a.btn-lg [class^=ico] ~ .text {
   margin-left: 4px;
 }
 
@@ -416,7 +416,7 @@ button.btn-round-md .text, a.btn-round-md .text, button.btn-md .text, a.btn-md .
 button.btn-round-md .text ~ [class^=ico], a.btn-round-md .text ~ [class^=ico], button.btn-md .text ~ [class^=ico], a.btn-md .text ~ [class^=ico] {
   margin-left: 4px;
 }
-button.btn-round-md [class^=ico] + .text, a.btn-round-md [class^=ico] + .text, button.btn-md [class^=ico] + .text, a.btn-md [class^=ico] + .text {
+button.btn-round-md [class^=ico] ~ .text, a.btn-round-md [class^=ico] ~ .text, button.btn-md [class^=ico] ~ .text, a.btn-md [class^=ico] ~ .text {
   margin-left: 4px;
 }
 
@@ -429,14 +429,14 @@ button.btn-round-sm .text, a.btn-round-sm .text, button.btn-sm .text, a.btn-sm .
   font-weight: 600;
   letter-spacing: -0.5px;
 }
-button.btn-round-sm .text + [class^=ico], a.btn-round-sm .text + [class^=ico], button.btn-sm .text + [class^=ico], a.btn-sm .text + [class^=ico] {
+button.btn-round-sm .text ~ [class^=ico], a.btn-round-sm .text ~ [class^=ico], button.btn-sm .text ~ [class^=ico], a.btn-sm .text ~ [class^=ico] {
   margin-left: 4px;
 }
 button.btn-round-sm [class^=ico], a.btn-round-sm [class^=ico], button.btn-sm [class^=ico], a.btn-sm [class^=ico] {
   width: 18px;
   height: 18px;
 }
-button.btn-round-sm [class^=ico] + .text, a.btn-round-sm [class^=ico] + .text, button.btn-sm [class^=ico] + .text, a.btn-sm [class^=ico] + .text {
+button.btn-round-sm [class^=ico] ~ .text, a.btn-round-sm [class^=ico] ~ .text, button.btn-sm [class^=ico] ~ .text, a.btn-sm [class^=ico] ~ .text {
   margin-left: 4px;
 }
 
@@ -574,7 +574,7 @@ button.btn-round-2xs, a.btn-round-2xs {
   -webkit-flex-direction: row;
   flex-direction: row;
 }
-.link-text-lg [class^=ico] + .text, .link-text-md [class^=ico] + .text, .link-text-sm [class^=ico] + .text, .link-text-xs [class^=ico] + .text {
+.link-text-lg [class^=ico] ~ .text, .link-text-md [class^=ico] ~ .text, .link-text-sm [class^=ico] ~ .text, .link-text-xs [class^=ico] ~ .text {
   margin-left: 6px;
 }
 .link-text-lg .text, .link-text-md .text, .link-text-sm .text, .link-text-xs .text {
@@ -584,13 +584,13 @@ button.btn-round-2xs, a.btn-round-2xs {
   letter-spacing: -0.5px;
   font-weight: 500;
 }
-.link-text-lg .text + [class^=ico], .link-text-md .text + [class^=ico], .link-text-sm .text + [class^=ico], .link-text-xs .text + [class^=ico] {
+.link-text-lg .text ~ [class^=ico], .link-text-md .text ~ [class^=ico], .link-text-sm .text ~ [class^=ico], .link-text-xs .text ~ [class^=ico] {
   vertical-align: top;
 }
 .link-text-lg.color-blue .text, .link-text-md.color-blue .text, .link-text-sm.color-blue .text, .link-text-xs.color-blue .text {
   color: #536F86 !important;
 }
-.link-text-lg.color-blue .text + [class^=ico], .link-text-md.color-blue .text + [class^=ico], .link-text-sm.color-blue .text + [class^=ico], .link-text-xs.color-blue .text + [class^=ico] {
+.link-text-lg.color-blue .text ~ [class^=ico], .link-text-md.color-blue .text ~ [class^=ico], .link-text-sm.color-blue .text ~ [class^=ico], .link-text-xs.color-blue .text ~ [class^=ico] {
   background: #536F86;
 }
 .link-text-lg .text {
