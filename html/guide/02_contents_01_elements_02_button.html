@@ -2,31 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Vendors CSS================================================== -->
-    <!--
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="../../assets/vendors/jquery-ui-1.13.3/jquery-ui.css" />
-    <link rel="stylesheet" href="../../assets/vendors/swiper@11/swiper-bundle.css" />
-    <link rel="stylesheet" href="../../assets/vendors/star-rating-4.1.2/star-rating.min.css" />
-    <link rel="stylesheet" href="../../assets/vendors/aos@3.0.0/aos.css" />
-    -->
+    <meta name="robots" content="index,nofollow">
+    <meta name="description" content="신세계백화점">
 
-    <!-- Vendors javascript================================================== -->
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="../../assets/images/favicon/share.png">-->
+    <meta property="og:site_name" content="신세계백화점">
+    <meta property="og:title" content="신세계백화점">
+    <meta property="og:description" content="신세계백화점 공식몰">
 
-    <script src="/_wsg/ia_resources/jquery-3.6.0.min.js"></script>
-    <!--<script src="../../assets/vendors/jquery-ui-1.13.3/jquery-ui.min.js"></script>
-    <script src="../../assets/vendors/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../../assets/vendors/scrollpos-styler/scrollPosStyler.min.js"></script>
-    <script src="../../assets/vendors/star-rating-4.1.2/star-rating.min.js"></script>
-    <script src="../../assets/vendors/star-rating-4.1.2/themes/krajee-gly/theme.js"></script>
-    <script src="../../assets/vendors/star-rating-4.1.2/locales/ko.js"></script>
-    <script src="../../assets/vendors/aos@3.0.0/aos.js"></script>
-    -->
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>신세계백화점 가이드 - 버튼</title>
+    <!-- Vendors CSS
+   ================================================== -->
+
+    <!-- Custom styles for this template
+    ================================================== -->
+    <link rel="stylesheet" href="../../assets/css/reward_front.css">
+
+    <!-- Vendors javascript
+    ================================================== -->
+    <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+
+    <!-- UI JavaScript
+    ================================================== -->
+    <script src="../../assets/js/reward.front.ui.js"></script>
 
     <!-- 가이드 전용 -->
     <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
@@ -104,92 +110,101 @@
         });
     </script>
     <!-- // 가이드 전용 -->
-
-    <link rel="stylesheet" href="/assets/css/reward_front.css">
-    <title>버튼</title>
 </head>
 <body>
-<!-- header -->
-<header>
-</header>
-<!--// header -->
-<main class="container-wrapper">
-    <div class="content-wrap">
-        <div class="content-inner">
-            <div class="guide-wrap">
-                <div class="guide-inner">
-                    <div class="guide-ptit"><span># Button 공통규칙</span></div>
-                    <ul class="guide-desc-list">
-                        <li>
-                            <p>[태그 구분] 버튼 기능에 따라 사용 필요</p>
-                            <p style="margin-top: 10px; color: red">* 버튼 타입 전체에 해당되는 사항입니다.</p>
-                            <ul class="guide-desc-list">
-                                <li>
-                                    <p>a 태그 - 링크성 버튼일 경우 사용</p>
-                                    <p style="margin-top: 8px">┗ 비활성화시 : <code>.disabled</code> 클래스 추가</p>
-                                </li>
-                            </ul>
-                        </li>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
+                <div class="ptitle">타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀</div>
+            </div>
+            <div class="header-right">
+                <div style="height: 24px; background: rgba(255, 0, 0, .2)">btn</div>
+            </div>
+        </div>
+    </div>
+    <!-- // header-wrapper -->
+    <!-- container-wrapper -->
+    <div class="container-wrapper">
+        <div class="cont-zero-box">
+            <div class="cont-inner">
+                <div class="guide-wrap">
+                    <div class="guide-inner">
+                        <div class="guide-ptit"><span># Button 공통규칙</span></div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p>[태그 구분] 버튼 기능에 따라 사용 필요</p>
+                                <p style="margin-top: 10px; color: red">* 버튼 타입 전체에 해당되는 사항입니다.</p>
+                                <ul class="guide-desc-list">
+                                    <li>
+                                        <p>a 태그 - 링크성 버튼일 경우 사용</p>
+                                        <p style="margin-top: 8px">┗ 비활성화시 : <code>.disabled</code> 클래스 추가</p>
+                                    </li>
+                                </ul>
+                            </li>
 
-                        <li style="color: red;">
-                            버튼 class는 반드시 <span style="background: #ffd4f4; padding:1px; font-size:16px;">버튼 사이즈 클래스 1개 + color 클래스 1개의 조합</span>으로 작업한다.
-                        </li>
-                        <li>
-                            <p>[ size 네이밍 정의 ]</p>
-                            <ul class="guide-desc-list">
-                                <li><p><code>btn-lg / btn-round-lg</code> : height: 54 / font-size: 15px / font-weight: 600</p></li>
-                                <li><p><code>btn-md / btn-round-md</code> : height: 44 / font-size: 14px / font-weight: 600</p></li>
-                                <li><p><code>btn-sm / btn-round-sm</code> : height: 36 /font-size: 13px / font-weight: 600</p></li>
-                                <li><p><code>btn-xs / btn-round-xs</code> : height: 32 /font-size: 14px / font-weight: 400</p></li>
-                                <li><p><code>btn-2xs / btn-round-2xs</code> : height: 30 /font-size: 13px / font-weight: 500</p></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <p>[ color : 클래스 필수 지정 ]</p>
-                            <ul class="guide-desc-list">
-                                <li><p><code>blue</code> background, border : $colorBlue100 (#6987A1)</p></li>
-                                <li><p><code>light-blue</code> background, border : $colorBlue10 (#F0F4F5)</p></li>
-                                <li><p><code>gray90</code> background, border : $colorGray90 (#333) </p></li>
-                                <li><p><code>gray20</code> background, border : $colorGray20 (#F0F0F0) </p></li>
-                                <li><p><code>line-blue</code> background : $colorGray00(#FFF) / border : $colorBlue100 (#6987A1)</p></li>
-                                <li><p><code>line-brown</code> background : $colorGray00(#FFF) / border : $colorBrown100 (#B09785)</p></li>
-                                <li><p><code>line-gray40</code> background : $colorGray00(#FFF) / border: $colorGray40 (#DDD)</p></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <p>그 외 text, icon button</p>
-                        </li>
-                        <li>
-                            <p>버튼 정렬 (btn-wrap)</p>
-                            <ul class="guide-desc-list">
-                                <li><p>btn-wrap : 20px</p></li>
-                                <li><p>btn-wrap .bottom: 버튼이 바닥에 위치 할 경우 margin -5px을 가짐</p></li>
-                            </ul>
-                        </li>
-                    </ul>
+                            <li style="color: red;">
+                                버튼 class는 반드시 <span style="background: #ffd4f4; padding:1px; font-size:16px;">버튼 사이즈 클래스 1개 + color 클래스 1개의 조합</span>으로 작업한다.
+                            </li>
+                            <li>
+                                <p>[ size 네이밍 정의 ]</p>
+                                <ul class="guide-desc-list">
+                                    <li><p><code>btn-lg / btn-round-lg</code> : height: 54 / font-size: 15px / font-weight: 600</p></li>
+                                    <li><p><code>btn-md / btn-round-md</code> : height: 44 / font-size: 14px / font-weight: 600</p></li>
+                                    <li><p><code>btn-sm / btn-round-sm</code> : height: 36 /font-size: 13px / font-weight: 600</p></li>
+                                    <li><p><code>btn-xs / btn-round-xs</code> : height: 32 /font-size: 14px / font-weight: 400</p></li>
+                                    <li><p><code>btn-2xs / btn-round-2xs</code> : height: 30 /font-size: 13px / font-weight: 500</p></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>[ color : 클래스 필수 지정 ]</p>
+                                <ul class="guide-desc-list">
+                                    <li><p><code>blue</code> background, border : $colorBlue100 (#6987A1)</p></li>
+                                    <li><p><code>light-blue</code> background, border : $colorBlue10 (#F0F4F5)</p></li>
+                                    <li><p><code>gray90</code> background, border : $colorGray90 (#333) </p></li>
+                                    <li><p><code>gray20</code> background, border : $colorGray20 (#F0F0F0) </p></li>
+                                    <li><p><code>line-blue</code> background : $colorGray00(#FFF) / border : $colorBlue100 (#6987A1)</p></li>
+                                    <li><p><code>line-brown</code> background : $colorGray00(#FFF) / border : $colorBrown100 (#B09785)</p></li>
+                                    <li><p><code>line-gray40</code> background : $colorGray00(#FFF) / border: $colorGray40 (#DDD)</p></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>그 외 text, icon button</p>
+                            </li>
+                            <li>
+                                <p>버튼 정렬 (btn-wrap)</p>
+                                <ul class="guide-desc-list">
+                                    <li><p>btn-wrap : 20px</p></li>
+                                    <li><p>btn-wrap .bottom: 버튼이 바닥에 위치 할 경우 margin -5px을 가짐</p></li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                    <div class="guide-btit">index</div>
-                    <ol class="guide-desc-list">
-                        <li><a href="#idx1" style="text-decoration: underline">버튼 컬러</a></li>
-                        <li><a href="#idx2" style="text-decoration: underline">버튼 사이즈</a></li>
-                        <li><a href="#idx3" style="text-decoration: underline">그 외 text, icon button</a></li>
-                        <li><a href="#idx4" style="text-decoration: underline">버튼 정렬 (.btn-wrap)</a></li>
-                    </ol>
-                </div>
+                        <div class="guide-btit">index</div>
+                        <ol class="guide-desc-list">
+                            <li><a href="#idx1" style="text-decoration: underline">버튼 컬러</a></li>
+                            <li><a href="#idx2" style="text-decoration: underline">버튼 사이즈</a></li>
+                            <li><a href="#idx3" style="text-decoration: underline">그 외 text, icon button</a></li>
+                            <li><a href="#idx4" style="text-decoration: underline">버튼 정렬 (.btn-wrap)</a></li>
+                        </ol>
+                    </div>
 
-                <div class="guide-inner">
-                    <div class="guide-btit" id="idx1">Button Color Guide</div>
-                    <p style="color:red">* 참고용으로 .btn-round-md(h44) 사용</p>
-                    <div class="guide-xsbtit">default</div>
-                    <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md light-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md gray90"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md gray20"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md line-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md line-brown"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx1">Button Color Guide</div>
+                        <p style="color:red">* 참고용으로 .btn-round-md(h44) 사용</p>
+                        <div class="guide-xsbtit">default</div>
+                        <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md light-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
 
-                    <pre>
+                        <pre>
                         <code class="html">
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-md blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-md light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
@@ -201,16 +216,16 @@
                         </code>
                     </pre>
 
-                    <div class="guide-xsbtit">disabled</div>
-                    <button type="button" class="btn-round-md blue" disabled><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md light-blue" disabled><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md gray90" disabled><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md gray20" disabled><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md line-blue" disabled><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md line-brown" disabled><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md line-gray40" disabled><span class="text">버튼</span></button>
+                        <div class="guide-xsbtit">disabled</div>
+                        <button type="button" class="btn-round-md blue" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md light-blue" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md gray90" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md gray20" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md line-blue" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md line-brown" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md line-gray40" disabled><span class="text">버튼</span></button>
 
-                    <pre>
+                        <pre>
                         <code class="html">
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-md blue&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-md light-blue&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
@@ -221,19 +236,19 @@
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-md line-gray40&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
                         </code>
                     </pre>
-                </div>
+                    </div>
 
-                <div class="guide-inner">
-                    <div class="guide-btit" id="idx2">Button Size Guide</div>
-                    <div class="guide-sbtit">btn-lg (h54)</div>
-                    <button type="button" class="btn-round-lg blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-lg light-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-lg gray90"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-lg gray20"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-lg line-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-lg line-brown"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-lg line-gray40"><span class="text">버튼</span></button>
-                    <pre>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">Button Size Guide</div>
+                        <div class="guide-sbtit">btn-lg (h54)</div>
+                        <button type="button" class="btn-round-lg blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-lg light-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-lg gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-lg gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-lg line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-lg line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-lg line-gray40"><span class="text">버튼</span></button>
+                        <pre>
                         <code class="html">
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-lg blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-lg light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
@@ -245,15 +260,15 @@
                         </code>
                     </pre>
 
-                    <div class="guide-sbtit">btn-md (h44)</div>
-                    <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md light-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md gray90"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md gray20"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md line-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md line-brown"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
-                    <pre>
+                        <div class="guide-sbtit">btn-md (h44)</div>
+                        <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md light-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
+                        <pre>
                         <code class="html">
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-md blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-md light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
@@ -265,15 +280,15 @@
                         </code>
                     </pre>
 
-                    <div class="guide-sbtit">btn-sm (h36)</div>
-                    <button type="button" class="btn-round-sm blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-sm light-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-sm gray90"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-sm gray20"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-sm line-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-sm line-brown"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-sm line-gray40"><span class="text">버튼</span></button>
-                    <pre>
+                        <div class="guide-sbtit">btn-sm (h36)</div>
+                        <button type="button" class="btn-round-sm blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-sm light-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-sm gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-sm gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-sm line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-sm line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-sm line-gray40"><span class="text">버튼</span></button>
+                        <pre>
                         <code class="html">
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-sm blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-sm light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
@@ -285,15 +300,15 @@
                         </code>
                     </pre>
 
-                    <div class="guide-sbtit">btn-xs (h32)</div>
-                    <button type="button" class="btn-round-xs blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-xs light-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-xs gray90"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-xs gray20"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-xs line-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-xs line-brown"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-xs line-gray40"><span class="text">버튼</span></button>
-                    <pre>
+                        <div class="guide-sbtit">btn-xs (h32)</div>
+                        <button type="button" class="btn-round-xs blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-xs light-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-xs gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-xs gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-xs line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-xs line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-xs line-gray40"><span class="text">버튼</span></button>
+                        <pre>
                         <code class="html">
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-xs blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-xs light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
@@ -305,15 +320,15 @@
                         </code>
                     </pre>
 
-                    <div class="guide-sbtit">btn-2xs (h30)</div>
-                    <button type="button" class="btn-round-2xs blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-2xs light-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-2xs gray90"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-2xs gray20"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-2xs line-blue"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-2xs line-brown"><span class="text">버튼</span></button>
-                    <button type="button" class="btn-round-2xs line-gray40"><span class="text">버튼</span></button>
-                    <pre>
+                        <div class="guide-sbtit">btn-2xs (h30)</div>
+                        <button type="button" class="btn-round-2xs blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-2xs light-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-2xs gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-2xs gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-2xs line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-2xs line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-round-2xs line-gray40"><span class="text">버튼</span></button>
+                        <pre>
                         <code class="html">
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-2xs blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-2xs light-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
@@ -324,19 +339,19 @@
                             &lt;button type=&quot;button&quot; class=&quot;btn-round-2xs line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
                         </code>
                     </pre>
-                </div>
+                    </div>
 
-                <div class="guide-inner">
-                    <div class="guide-btit" id="idx3">그 외 text, icon button</div>
-                    <div class="guide-sbtit">icon 버튼</div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx3">그 외 text, icon button</div>
+                        <div class="guide-sbtit">icon 버튼</div>
 
-                    <a type="button" class="btn-round-md gray20">
-                        <span class="ico-plus18"></span><span class="text">버튼명</span>
-                    </a>
-                    <button type="button" class="btn-round-md gray20">
-                        <span class="text">버튼명</span><span class="ico-plus18"></span>
-                    </button>
-                    <pre>
+                        <a type="button" class="btn-round-md gray20">
+                            <span class="ico-plus18"></span><span class="text">버튼명</span>
+                        </a>
+                        <button type="button" class="btn-round-md gray20">
+                            <span class="text">버튼명</span><span class="ico-plus18"></span>
+                        </button>
+                        <pre>
                         <code class="html">
                             &lt;a type=&quot;button&quot; class=&quot;btn-round-md gray20&quot;&gt;
                               &lt;span class=&quot;ico-plus18&quot;&gt;&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;버튼명&lt;/span&gt;
@@ -347,52 +362,52 @@
                         </code>
                     </pre>
 
-                    <div class="guide-sbtit">텍스트 버튼 (기본 / blue)</div>
-                    <button type="button" class="link-text-xs">
-                        <span class="text">텍스트버튼_12px</span><span class="ico-arrow16"></span>
-                    </button>
-                    <button type="button" class="link-text-sm">
-                        <span class="text">텍스트버튼_13px</span><span class="ico-arrow16"></span>
-                    </button>
-                    <button type="button" class="link-text-md">
-                        <span class="text">텍스트버튼_14px</span><span class="ico-arrow16"></span>
-                    </button>
-                    <button type="button" class="link-text-lg">
-                        <span class="text">텍스트버튼_15px</span><span class="ico-arrow16"></span>
-                    </button>
+                        <div class="guide-sbtit">텍스트 버튼 (기본 / blue)</div>
+                        <button type="button" class="link-text-xs">
+                            <span class="text">텍스트버튼_12px</span><span class="ico-arrow16"></span>
+                        </button>
+                        <button type="button" class="link-text-sm">
+                            <span class="text">텍스트버튼_13px</span><span class="ico-arrow16"></span>
+                        </button>
+                        <button type="button" class="link-text-md">
+                            <span class="text">텍스트버튼_14px</span><span class="ico-arrow16"></span>
+                        </button>
+                        <button type="button" class="link-text-lg">
+                            <span class="text">텍스트버튼_15px</span><span class="ico-arrow16"></span>
+                        </button>
 
-                    <br>
+                        <br>
 
-                    <button type="button" class="link-text-xs color-blue">
-                        <span class="text">텍스트버튼_12px</span><span class="ico-arrow16"></span>
-                    </button>
-                    <button type="button" class="link-text-sm color-blue">
-                        <span class="text">텍스트버튼_13px</span><span class="ico-arrow16"></span>
-                    </button>
-                    <button type="button" class="link-text-md color-blue">
-                        <span class="text">텍스트버튼_14px</span><span class="ico-arrow16"></span>
-                    </button>
-                    <button type="button" class="link-text-lg color-blue">
-                        <span class="text">텍스트버튼_15px</span><span class="ico-arrow16"></span>
-                    </button>
+                        <button type="button" class="link-text-xs color-blue">
+                            <span class="text">텍스트버튼_12px</span><span class="ico-arrow16"></span>
+                        </button>
+                        <button type="button" class="link-text-sm color-blue">
+                            <span class="text">텍스트버튼_13px</span><span class="ico-arrow16"></span>
+                        </button>
+                        <button type="button" class="link-text-md color-blue">
+                            <span class="text">텍스트버튼_14px</span><span class="ico-arrow16"></span>
+                        </button>
+                        <button type="button" class="link-text-lg color-blue">
+                            <span class="text">텍스트버튼_15px</span><span class="ico-arrow16"></span>
+                        </button>
 
-                    <br>
+                        <br>
 
-                    <button type="button" class="link-text-xs">
-                        <span class="ico-coupon18"></span><span class="text">텍스트버튼_12px</span><span class="ico-arrow16"></span>
-                    </button>
-                    <button type="button" class="link-text-sm">
-                        <span class="ico-coupon18"></span><span class="text">텍스트버튼_13px</span><span class="ico-arrow16"></span>
-                    </button>
-                    <button type="button" class="link-text-md">
-                        <span class="ico-coupon18"></span><span class="text">텍스트버튼_14px</span><span class="ico-arrow16"></span>
-                    </button>
-                    <button type="button" class="link-text-lg">
-                        <span class="ico-coupon18"></span><span class="text">텍스트버튼_15px</span><span class="ico-arrow16"></span>
-                    </button>
+                        <button type="button" class="link-text-xs">
+                            <span class="ico-coupon18"></span><span class="text">텍스트버튼_12px</span><span class="ico-arrow16"></span>
+                        </button>
+                        <button type="button" class="link-text-sm">
+                            <span class="ico-coupon18"></span><span class="text">텍스트버튼_13px</span><span class="ico-arrow16"></span>
+                        </button>
+                        <button type="button" class="link-text-md">
+                            <span class="ico-coupon18"></span><span class="text">텍스트버튼_14px</span><span class="ico-arrow16"></span>
+                        </button>
+                        <button type="button" class="link-text-lg">
+                            <span class="ico-coupon18"></span><span class="text">텍스트버튼_15px</span><span class="ico-arrow16"></span>
+                        </button>
 
 
-                    <pre>
+                        <pre>
                         <code class="html">
                              <button type="button" class="link-text-xs">
                         <span class="text">텍스트버튼_12px</span><span class="ico-arrow16"></span>
@@ -438,44 +453,52 @@
                     </button>
                         </code>
                     </pre>
-                </div>
-
-                <div class="guide-inner">
-                    <div class="guide-btit" id="idx4">버튼 정렬</div>
-                    <div class="guide-sbtit">btn-wrap (기본  - 버튼사이 여백 6px, 상단 여백)</div>
-                    <div class="btn-wrap">
-                        <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
-                        <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
                     </div>
 
-                    <div class="guide-sbtit">btn-wrap-md (기본  - 버튼사이 여백 6px, 상단 여백 20px)</div>
-                    <div class="btn-wrap-md">
-                        <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
-                        <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
-                    </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx4">버튼 정렬</div>
+                        <div class="guide-sbtit">btn-wrap (기본  - 버튼사이 여백 6px, 상단 여백)</div>
+                        <div class="btn-wrap">
+                            <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
+                            <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                        </div>
 
-                    <div class="guide-sbtit">btn-wrap-lg (기본  - 버튼사이 여백 6px, 상단 여백 30px)</div>
-                    <div class="btn-wrap-lg">
-                        <button type="button" class="btn-round-lg line-gray40"><span class="text">버튼</span></button>
-                        <button type="button" class="btn-round-lg blue"><span class="text">버튼</span></button>
-                    </div>
+                        <div class="guide-sbtit">btn-wrap-md (기본  - 버튼사이 여백 6px, 상단 여백 20px)</div>
+                        <div class="btn-wrap-md">
+                            <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
+                            <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                        </div>
 
-                    <div class="guide-sbtit">btn-wrap.row (세로정렬 - 버튼사이 여백 10px)</div>
-                    <div class="btn-wrap row">
-                        <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
-                        <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                        <div class="guide-sbtit">btn-wrap-lg (기본  - 버튼사이 여백 6px, 상단 여백 30px)</div>
+                        <div class="btn-wrap-lg">
+                            <button type="button" class="btn-round-lg line-gray40"><span class="text">버튼</span></button>
+                            <button type="button" class="btn-round-lg blue"><span class="text">버튼</span></button>
+                        </div>
+
+                        <div class="guide-sbtit">btn-wrap.row (세로정렬 - 버튼사이 여백 10px)</div>
+                        <div class="btn-wrap row">
+                            <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
+                            <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                        </div>
+
+                        <div class="guide-sbtit">btn-wrap.bottom (버튼이 바닥에 위치될 경우 좌우 마진 -5px)</div>
+                        <div class="btn-wrap bottom">
+                            <button type="button" class="btn-round-md line-gray40"><span class="text">버튼</span></button>
+                            <button type="button" class="btn-round-md blue"><span class="text">버튼</span></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- // content-wrap -->
-</main>
-<!-- container-wrapper -->
-<!-- footer -->
-<footer>
-
-</footer>
-<!-- // footer -->
+    <!-- // container-wrapper -->
+    <!-- docker-wrapper -->
+    <div class="docker-wrapper">
+        <div class="btn-wrap">
+            <button type="button" class="btn-round-lg blue"><span class="text">버튼</span></button>
+        </div>
+    </div>
+    <!-- // docker-wrapper -->
+</div>
 </body>
 </html>

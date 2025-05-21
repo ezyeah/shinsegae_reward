@@ -266,6 +266,10 @@ button.btn-round-2xs, a.btn-round-2xs {
   flex-direction: column;
   gap: 10px;
 }
+.btn-wrap.bottom {
+  margin-left: -5px;
+  margin-right: -5px;
+}
 
 .btn-wrap-md {
   margin-top: 20px;

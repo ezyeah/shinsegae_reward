@@ -369,6 +369,13 @@ button.btn, a.btn {
     flex-direction: column;
     gap: 10px;
   }
+
+  &.bottom {
+    margin: {
+      left: -5px;
+      right: -5px;
+    }
+  }
 }
 
 .btn-wrap-md {
