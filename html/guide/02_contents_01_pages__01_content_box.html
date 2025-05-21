@@ -129,35 +129,154 @@
     <!-- // header-wrapper -->
     <!-- container-wrapper -->
     <div class="container-wrapper">
-        <div class="cont-zero-box">
+        <div class="cont-box-zero">
             <div class="cont-inner">
                 <div class="guide-wrap">
                     <div class="guide-inner">
                         <div class="guide-ptit"><span># Content Box 공통규칙</span></div>
                         <ul class="guide-desc-list">
                             <li>
-                                <p>content</p>
+                                <code class="title">cont type</code>, <code class="title">top size</code> 구분하여 class 사용 필요
+                                <ul class="guide-desc-list">
+                                    <li style="margin-top: 4px;">
+                                        <code>{$type}cont-box-{$size}</code>의 형태로 조합
+                                        <p style="margin-top: 4px; font-weight: 400;">ㄴ type gray, top gap 20px 필요한 경우 : gcont-md-box</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <code class="title">cont type</code>
+                                <ul class="guide-desc-list">
+                                    <li style="margin-top: 4px;"><code>cont</code> bg-color: #FFF</li>
+                                    <li style="margin-top: 4px;"><code>gcont</code> bg-color: #F5F5F5</li>
+                                    <li style="margin-top: 4px;"><code>rcont</code> bg-color: #F0F0F0 / border-radius: 16px</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <code class="title">top size</code>
+                                <ul class="guide-desc-list">
+                                    <li style="margin-top: 4px;"><code>zero</code> padding-top: 0</li>
+                                    <li style="margin-top: 4px;"><code>xs</code> padding-top: 10px</li>
+                                    <li style="margin-top: 4px;"><code>sm</code> padding-top: 16px</li>
+                                    <li style="margin-top: 4px;"><code>md</code> padding-top: 20px</li>
+                                    <li style="margin-top: 4px;"><code>lg</code> padding-top: 30px</li>
+                                </ul>
                             </li>
                         </ul>
 
                         <div class="guide-btit">index</div>
                         <ol class="guide-desc-list">
-                            <li><a href="#idx1" style="text-decoration: underline">상단 Gap</a></li>
+                            <li><a href="#idx1" style="text-decoration: underline">cont type</a></li>
+                            <li><a href="#idx2" style="text-decoration: underline">top size</a></li>
                         </ol>
                     </div>
 
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx1">Content Box Type Guide</div>
+                        <div class="guide-xsbtit">cont-box-{$size}</div>
+                        <div class="cont-box-md">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.cont-box-{$size}</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-md&quot;&gt;
+                                        &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.cont-box-md&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">gcont-box-{$size}</div>
+                        <div class="gcont-box-md">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.gcont-box-{$size}</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;gcont-box-md&quot;&gt;
+                                        &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.gcont-box-md&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">rcont-box-{$size}</div>
+                        <div class="rcont-box-md">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.rcont-box-{$size}</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;rcont-box-md&quot;&gt;
+                                        &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.rcont-box-md&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">Content Box Top Size Guide</div>
+                        <div class="guide-xsbtit">{$type}cont-box-zero</div>
+                        <div class="cont-box-zero">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-zero</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-zero&quot;&gt;
+                                    &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.{$type}cont-box-zero&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">{$type}cont-box-xs</div>
+                        <div class="cont-box-xs">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-xs</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-xs&quot;&gt;
+                                    &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.{$type}cont-box-xs&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">{$type}cont-box-sm</div>
+                        <div class="cont-box-sm">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-sm</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-sm&quot;&gt;
+                                    &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.{$type}cont-box-sm&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">{$type}cont-box-md</div>
+                        <div class="cont-box-md">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-md</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-md&quot;&gt;
+                                    &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.{$type}cont-box-md&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">{$type}cont-box-lg</div>
+                        <div class="cont-box-lg">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-lg</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-lg&quot;&gt;
+                                    &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.{$type}cont-box-lg&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- // container-wrapper -->
-    <!-- docker-wrapper -->
-    <div class="docker-wrapper">
-        <div class="btn-wrap">
-            <button type="button" class="btn-round-lg blue"><span class="text">버튼</span></button>
-        </div>
-    </div>
-    <!-- // docker-wrapper -->
 </div>
 </body>
 </html>

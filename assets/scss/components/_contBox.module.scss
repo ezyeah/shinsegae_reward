@@ -8,7 +8,7 @@ $contType: ('': variables.$colorGray00, 'g': variables.$colorGray10, 'r': variab
 
 @each $size, $px in $contTopGap {
   @each $type, $color in $contType {
-    .#{$type}cont-#{$size}-box {
+    .#{$type}cont-box-#{$size} {
       background-color: $color;
       padding: $px 0;
 
