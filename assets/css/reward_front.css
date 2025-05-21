@@ -340,10 +340,11 @@ textarea::-webkit-scrollbar-thumb {
 
 /* Disable orange highlight */
 label, a, button, select {
-  -o-tap-highlight-color: #000;
-  -ms-tap-highlight-color: #000;
-  -moz-tap-highlight-color: #000;
-  -webkit-tap-highlight-color: #000;
+  -o-tap-highlight-color: transparent;
+  -ms-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 button {
