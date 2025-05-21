@@ -126,7 +126,7 @@ a, button {
 
 
 button.btn, a.btn {
-  &-lg, &-md, &-sm, &-xs, &-2xs, &-round-lg, &-round-md, &-round-sm, &-round-xs, &-round-2xs {
+  &-lg, &-md, &-sm, &-xs, &-2xs, &-round-lg, &-round-md, &-round-sm, &-round-xs, &-round-2xs, &-box {
 
     &[disabled], &[aria-disabled=true], &.disabled {
       opacity: 0.4;
@@ -140,7 +140,7 @@ button.btn, a.btn {
         color: variables.$colorGray00;
       }
 
-      &:active {
+      &:active, &:hover  {
         background-color: variables.$colorBlue120;
       }
     }
@@ -153,7 +153,7 @@ button.btn, a.btn {
         color: variables.$colorBlue120;
       }
 
-      &:active {
+      &:active, &:hover  {
         background-color: #E4E9EA;
         border-color: #E4E9EA;
       }
@@ -167,7 +167,7 @@ button.btn, a.btn {
         color: variables.$colorGray00;
       }
 
-      &:active {
+      &:active, &:hover  {
         background-color: variables.$colorGray80;
         border-color: variables.$colorGray80;
       }
@@ -181,7 +181,7 @@ button.btn, a.btn {
         color: variables.$colorGray80;
       }
 
-      &:active {
+      &:active, &:hover  {
         background-color: variables.$colorGray40;
         border-color: variables.$colorGray40;
       }
@@ -195,7 +195,7 @@ button.btn, a.btn {
         color: variables.$colorBlue120;
       }
 
-      &:active {
+      &:active, &:hover  {
         background-color: variables.$colorBlue10;
       }
     }
@@ -208,7 +208,7 @@ button.btn, a.btn {
         color: variables.$colorBrown120;
       }
 
-      &:active {
+      &:active, &:hover  {
         background-color: variables.$colorBrown10;
       }
     }
@@ -221,7 +221,7 @@ button.btn, a.btn {
         color: variables.$colorGray80;
       }
 
-      &:active {
+      &:active, &:hover {
         background-color: variables.$colorGray30;
       }
     }
@@ -347,6 +347,44 @@ button.btn, a.btn {
     .text {
       font-size: variables.$fontSizeXs;
       line-height: variables.$fontSizeXsLineHeight;
+    }
+  }
+}
+
+.btn-box {
+  height: 44px;
+  border-radius: 12px;
+  padding: 0 36px 0 16px;
+  width: auto;
+  justify-content: flex-start !important;
+  position: relative;
+
+  [class^=ico-arrow] {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+  }
+
+  [class^=ico-]:not([class^=ico-arrow]){
+    margin-right: 6px;
+    flex: 0 0 16px;
+  }
+
+  .text {
+    margin-right: 4px;
+    text-align: left !important;
+  }
+
+  &.line-brown {
+    .ico-arrow18 {
+      background: variables.$colorBrown120;
+    }
+  }
+
+  &.line-blue {
+    .ico-arrow18 {
+      background: variables.$colorBlue120;
     }
   }
 }
