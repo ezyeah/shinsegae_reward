@@ -2,10 +2,27 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-$contSize: ('zero': 0px, 'md': 20px, 'lg': 30px);
+$contTopGap: ('zero': 0, 'xs': 10px, 'sm': 16px, 'md': 20px, 'lg': 30px);
+$contType: ('': variables.$colorGray00, 'g': variables.$colorGray10, 'r': variables.$colorGray20); // default - bg: #fff | g - bg: #f5f5f5 | r - bg: #f0f0f0/border-radius: 16px
 
-@each $size, $px in $contSize {
-  .cont-#{$size}-box {
-    padding-top: $px;
+
+@each $size, $px in $contTopGap {
+  @each $type, $color in $contType {
+    .#{$type}cont-#{$size}-box {
+      background-color: $color;
+      padding-top: $px;
+
+      &:last-child {
+        padding-bottom: 30px;
+      }
+
+      .cont-inner {
+        padding: 0 20px;
+      }
+
+      @if ($type == 'r') {
+        border-radius: 16px 16px 0 0;
+      }
+    }
   }
 }
