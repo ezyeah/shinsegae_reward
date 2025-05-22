@@ -100,6 +100,74 @@
 }
 
 /* Font Vari */
+// 4xl - font-size: 22px ------------- title: 2xl
+@mixin font_size_xl($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSizeXl;
+  line-height: variables.$fontSize2xlLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+
+// 3xl - font-size: 20px ------------- title: xl
+@mixin font_size_xl($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSizeXl;
+  line-height: variables.$fontSize2xlLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+
+// 2xl - font-size:18px ------------- title: lg
+@mixin font_size_xl($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSizeXl;
+  line-height: variables.$fontSize2xlLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
 // xl - font-size: 16px ------------- title: md | body: xl
 @mixin font_size_xl($type : 'heading', $lineHeight : 'default') {
   font-size: variables.$fontSizeXl;
