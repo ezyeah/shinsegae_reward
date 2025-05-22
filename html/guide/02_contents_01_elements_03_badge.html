@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="robots" content="index,nofollow">
+    <meta name="description" content="신세계백화점">
+
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="../../assets/images/favicon/share.png">-->
+    <meta property="og:site_name" content="신세계백화점">
+    <meta property="og:title" content="신세계백화점">
+    <meta property="og:description" content="신세계백화점 공식몰">
+
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>신세계백화점 가이드 - 뱃지</title>
+    <!-- Vendors CSS
+   ================================================== -->
+
+    <!-- Custom styles for this template
+    ================================================== -->
+    <link rel="stylesheet" href="../../assets/css/reward_front.css">
+
+    <!-- Vendors javascript
+    ================================================== -->
+    <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+
+    <!-- UI JavaScript
+    ================================================== -->
+    <script src="../../assets/js/reward.front.ui.js"></script>
+
+    <!-- 가이드 전용 -->
+    <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
+    <link rel="stylesheet" href="/_wsg/ia_resources/monokai-sublime.css">
+    <script src="/_wsg/ia_resources/highlight.pack.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/highlight.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/xml.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/javascript.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/css.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/scss.min.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/standalone.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/plugins/html.js"></script>
+    <script>
+        $(() => {
+            String.prototype.unescapeHtml = function () {
+                return this.replace(/&amp;/g, '&')
+                    .replace(/&lt;/g, '<')
+                    .replace(/&gt;/g, '>')
+                    .replace(/&quot;/g, '"');
+            };
+            String.prototype.escapeHtml = function () {
+                return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\"/g, '&quot;');
+            };
+
+            $('pre code').each((index, item) => {
+                var lines;
+                lines = item.innerHTML.replace('    ', '\t').split('\n');
+
+                if (lines.length > 1) {
+                    let removeTabCnt = Number.MAX_SAFE_INTEGER;
+
+                    lines.forEach((lineItem, lineIndex) => {
+                        if (lineIndex !== 0) {
+                            removeTabCnt = lineItem.lastIndexOf('\t') + 1 < removeTabCnt ? lineItem.lastIndexOf('\t') + 1 : removeTabCnt;
+                            // console.log(lineItem, removeTabCnt);
+                        }
+                    });
+                    // console.log(removeTabCnt);
+                    lines.forEach((lineItem, lineIndex) => {
+                        // console.log(lineIndex);
+                        if (lineIndex !== 0) {
+                            let splitAr;
+                            splitAr = lineItem.split('\t');
+
+                            for (var i = 0, n = removeTabCnt; i < n; i++) {
+                                splitAr.shift();
+                                // console.log('shift');
+                            }
+                            // console.log(splitAr);
+                            lines[lineIndex] = splitAr.join('\t');
+                        }
+                    });
+                }
+                item.innerHTML = lines.join('\n');
+
+                (async () => {
+                    formatted = await prettier.format(item.innerHTML.unescapeHtml(), {
+                        parser: 'html',
+                        plugins: prettierPlugins,
+                        trailingComma: 'es5',
+                        printWidth: 1000,
+                        useTabs: true,
+                        tabWidth: 1,
+                        semi: true,
+                        singleQuote: true,
+                        arrowParens: 'never',
+                        bracketSameLine: true,
+                    })
+                        .then((value) => {
+                            item.innerHTML = value.escapeHtml();
+                            hljs.highlightElement(item);
+                        });
+                })();
+            });
+        });
+    </script>
+    <!-- // 가이드 전용 -->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
+                <div class="ptitle">타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀</div>
+            </div>
+            <div class="header-right">
+                <div style="height: 24px; background: rgba(255, 0, 0, .2)">btn</div>
+            </div>
+        </div>
+    </div>
+    <!-- // header-wrapper -->
+    <!-- container-wrapper -->
+    <div class="container-wrapper">
+        <div class="cont-zero-box">
+            <div class="cont-inner">
+                <div class="guide-wrap">
+                    <div class="guide-inner">
+                        <div class="guide-ptit"><span># Badge 공통규칙</span></div>
+                        <ul class="guide-desc-list">
+                            <li><code class="title">badge</code> : size + color 클래스 조합을 사용하여 작업한다.</li>
+                            <li>
+                                <p>[ badge 사이즈 네이밍 정의 ]</p>
+                                <ul class="guide-desc-list">
+                                    <li><p><code>badge-lg, badge-lg-round</code> : height: 26 / font-size: 13px / font-weight: 400</p></li>
+                                    <li><p><code>badge-md, badge-md-round</code> : height: 22 / font-size: 12px / font-weight: 500</p></li>
+                                    <li><p><code>badge, beta</code> : height: 16 / font-size: 11px / font-weight: 600</p></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>[ color : 클래스 필수 지정 ]</p>
+                                <ul class="guide-desc-list">
+                                    <li><p><code>gray20</code> background, border : $colorGray20 (#F0F0F0) </p></li>
+                                    <li><p><code>blue100</code> background, border : $colorBlue100 (#6987A1)</p></li>
+                                    <li><p><code>brown100</code> background, border : $colorBrown100 (#B09785) </p></li>
+                                    <li><p><code>gray90</code> background : $colorGray90(#333) / border : $colorGray90 (#333)</p></li>
+                                    <li><p><code>line-gray40</code> background : $colorGray00(#FFF) / border: $colorGray40 (#DDD)</p></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="guide-btit">index</div>
+                        <ol class="guide-desc-list">
+                            <li><a href="#idx1" style="text-decoration: underline">뱃지 컬러</a></li>
+                            <li><a href="#idx2" style="text-decoration: underline">뱃지 사이즈</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx1">Badge Color Guide</div>
+                        <p style="color:red">* 참고용으로 .badge-md(h22) 사용</p>
+                        <br>
+                        <span class="badge-md gray20"><span class="text">gray20</span></span>
+                        <span class="badge-md blue100"><span class="text">blue100</span></span>
+                        <span class="badge-md brown100"><span class="text">brown100</span></span>
+                        <span class="badge-md gray90"><span class="text">gray90</span></span>
+                        <span class="badge-md line-gray40"><span class="text">line-gray40</span></span>
+
+
+                        <pre>
+                            <code class="html">
+
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">Badge Size Guide</div>
+                        <div class="guide-xsbtit">badge-lg (h26)</div>
+                        <span class="badge-lg gray20"><span class="text">gray20</span></span>
+                        <span class="badge-lg blue100"><span class="text">blue100</span></span>
+                        <span class="badge-lg brown100"><span class="text">brown100</span></span>
+                        <span class="badge-lg gray90"><span class="text">gray90</span></span>
+                        <span class="badge-lg line-gray40"><span class="text">line-gray40</span></span>
+                        <div class="guide-xsbtit">badge-lg-round (h26)</div>
+                        <span class="badge-lg-round gray20"><span class="text">gray20</span></span>
+                        <span class="badge-lg-round blue100"><span class="text">blue100</span></span>
+                        <span class="badge-lg-round brown100"><span class="text">brown100</span></span>
+                        <span class="badge-lg-round gray90"><span class="text">gray90</span></span>
+                        <span class="badge-lg-round line-gray40"><span class="text">line-gray40</span></span>
+                        <div class="guide-xsbtit">badge-md (h22)</div>
+                        <span class="badge-md gray20"><span class="text">gray20</span></span>
+                        <span class="badge-md blue100"><span class="text">blue100</span></span>
+                        <span class="badge-md brown100"><span class="text">brown100</span></span>
+                        <span class="badge-md gray90"><span class="text">gray90</span></span>
+                        <span class="badge-md line-gray40"><span class="text">line-gray40</span></span>
+                        <div class="guide-xsbtit">badge-md-round (h22)</div>
+                        <span class="badge-md-round gray20"><span class="text">gray20</span></span>
+                        <span class="badge-md-round blue100"><span class="text">blue100</span></span>
+                        <span class="badge-md-round brown100"><span class="text">brown100</span></span>
+                        <span class="badge-md-round gray90"><span class="text">gray90</span></span>
+                        <span class="badge-md-round line-gray40"><span class="text">line-gray40</span></span>
+                        <div class="guide-xsbtit">badge.beta (베타 운영시 사용, W32 H16)</div>
+                        <div style="background-color: #EAEAEA; padding: 20px;">
+                            <span class="badge beta blue"><span class="text">Beta</span></span>
+                            <span class="badge beta white"><span class="text">Beta</span></span>
+                        </div>
+
+                        <pre>
+                            <code class="html">
+
+                            </code>
+                        </pre>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // container-wrapper -->
+</div>
+</body>
+</html>

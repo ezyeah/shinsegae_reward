@@ -1,0 +1,131 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/* Badge */
+%badgeCommon {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  border: solid 1px transparent;
+  border-radius: 4px;
+
+  .text {
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+  }
+}
+
+%badgeMd {
+  @extend %badgeCommon;
+  height: 22px;
+  padding: 1.5px 7px;
+
+  .text {
+    font-size: variables.$fontSizeXs;
+    line-height: variables.$fontSizeXsLineHeight;
+    font-weight: variables.$fontWeightRegular;
+  }
+}
+
+%badgeLg {
+  @extend %badgeCommon;
+  height: 26px;
+  padding: 3px 9px;
+
+  .text {
+    font-size: variables.$fontSizeSm;
+    line-height: variables.$fontSizeSmLineHeight;
+    font-weight: variables.$fontWeightRegular;
+  }
+}
+
+span.badge {
+  &-lg, &-md, &-lg-round, &-md-round {
+    //color
+    &.gray20 {
+      background-color: variables.$colorGray20;
+      border-color: variables.$colorGray20;
+
+      .text {
+        color: variables.$colorGray90;
+      }
+    }
+    &.blue100 {
+      background-color: variables.$colorBlue100;
+      border-color: variables.$colorBlue100;
+
+      .text {
+        color: variables.$colorGray00;
+      }
+    }
+    &.brown100 {
+      background-color: variables.$colorBrown100;
+      border-color: variables.$colorBrown100;
+
+      .text {
+        color: variables.$colorGray00;
+      }
+    }
+    &.gray90 {
+      background-color: variables.$colorGray90;
+      border-color: variables.$colorGray90;
+
+      .text {
+        color: variables.$colorGray00;
+      }
+    }
+    &.line-gray40 {
+      background-color: variables.$colorGray00;
+      border-color: variables.$colorGray40;
+
+      .text {
+        color: variables.$colorGray90;
+      }
+    }
+  }
+
+  &-lg, &-lg-round {
+    @extend %badgeLg;
+  }
+
+  &-md, &-md-round {
+    @extend %badgeMd;
+  }
+
+  &-lg-round, &-md-round {
+    border-radius: 20px;
+  }
+
+
+
+  &.beta {
+    @extend %badgeCommon;
+    width: 32px;
+    height: 16px;
+    padding: 0 4px 0 3px;
+    border-radius: 99px;
+    box-sizing: border-box;
+
+    .text {
+      font-size: 11px;
+      //width: 23px;
+      line-height: 15px;
+      font-weight: variables.$fontWeightBold;
+    }
+
+    &.white {
+      background-color: variables.$colorGray00;
+      .text {
+        color: variables.$colorBlue120;
+      }
+    }
+
+    &.blue {
+      background-color: variables.$colorBlue120;
+      .text {
+        color: variables.$colorGray00;
+      }
+    }
+  }
+}
