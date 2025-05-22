@@ -73,6 +73,7 @@ code.title {display: inline-block; margin-right: 3px; padding: 0 4px; color: #ff
 .guide-desc-list li > .guide-desc-list li ~ li {margin-top: 5px;}
 .guide-desc-list li .desc {margin-left: 50px; font-size: 13px; color: #444;}
 .guide-desc-list li .desc > span {font-size: inherit}
+.guide-desc-list li > .guide-desc-list li  > .guide-desc-list li {list-style: circle;}
 
 .todo-text { display: block; margin: 20px 0; padding: 5px 10px; font-size: 14px; line-height: 22px; color: red; background: #ffe9e9;}
 .highlight-text {padding: 0 5px; font-weight: 500; background: #fff6ae; border: 1px solid #eddf6f;}
