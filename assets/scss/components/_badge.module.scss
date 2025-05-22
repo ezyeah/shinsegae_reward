@@ -16,7 +16,7 @@
   }
 }
 
-%badgeMd {
+%badgeMd { //padding 2.5px 8px
   @extend %badgeCommon;
   height: 22px;
   padding: 1.5px 7px;
@@ -28,7 +28,7 @@
   }
 }
 
-%badgeLg {
+%badgeLg { //padding 4px 10px
   @extend %badgeCommon;
   height: 26px;
   padding: 3px 9px;
@@ -93,6 +93,10 @@ span.badge {
     @extend %badgeMd;
   }
 
+  &-md-round { //padding 2.5px 10px
+    padding: 1.5px 9px;
+  }
+
   &-lg-round, &-md-round {
     border-radius: 20px;
   }
@@ -128,4 +132,11 @@ span.badge {
       }
     }
   }
+}
+
+/* badge-wrap */
+.badge-wrap {
+  @include mixins.justify_width(start, start, row);
+  gap: 4px;
+  margin-bottom: 10px;
 }

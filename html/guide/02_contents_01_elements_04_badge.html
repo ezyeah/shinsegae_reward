@@ -141,7 +141,7 @@
                                 <ul class="guide-desc-list">
                                     <li><p><code>badge-lg, badge-lg-round</code> : height: 26 / font-size: 13px / font-weight: 400</p></li>
                                     <li><p><code>badge-md, badge-md-round</code> : height: 22 / font-size: 12px / font-weight: 500</p></li>
-                                    <li><p><code>badge, beta</code> : height: 16 / font-size: 11px / font-weight: 600</p></li>
+                                    <li><p><code>badge.beta</code> : height: 16 / font-size: 11px / font-weight: 600</p></li>
                                 </ul>
                             </li>
                             <li>
@@ -154,12 +154,27 @@
                                     <li><p><code>line-gray40</code> background : $colorGray00(#FFF) / border: $colorGray40 (#DDD)</p></li>
                                 </ul>
                             </li>
+                            <li>
+                                <p>뱃지 정렬 (badge-wrap)</p>
+                                <ul class="guide-desc-list">
+                                    <li><p>뱃지 사이 간격 : 4px</p></li>
+                                    <li><p>하단 여백 : 10px</p></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>태그</p>
+                                <ul class="guide-desc-list">
+                                    <li><p>뱃지 사이 간격 : 4px</p></li>
+                                    <li><p>하단 여백 : 10px</p></li>
+                                </ul>
+                            </li>
                         </ul>
 
                         <div class="guide-btit">index</div>
                         <ol class="guide-desc-list">
                             <li><a href="#idx1" style="text-decoration: underline">뱃지 컬러</a></li>
                             <li><a href="#idx2" style="text-decoration: underline">뱃지 사이즈</a></li>
+                            <li><a href="#idx3" style="text-decoration: underline">뱃지 정렬</a></li>
                         </ol>
                     </div>
 
@@ -176,7 +191,11 @@
 
                         <pre>
                             <code class="html">
-
+                                &lt;span class=&quot;badge-md gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray20&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;blue100&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md brown100&quot;&gt;&lt;span class=&quot;text&quot;&gt;brown100&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray90&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;line-gray40&lt;/span&gt;&lt;/span&gt;
                             </code>
                         </pre>
                     </div>
@@ -189,38 +208,96 @@
                         <span class="badge-lg brown100"><span class="text">brown100</span></span>
                         <span class="badge-lg gray90"><span class="text">gray90</span></span>
                         <span class="badge-lg line-gray40"><span class="text">line-gray40</span></span>
+                        <pre>
+                            <code class="html">
+                                &lt;span class=&quot;badge-lg gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray20&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-lg blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;blue100&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-lg brown100&quot;&gt;&lt;span class=&quot;text&quot;&gt;brown100&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-lg gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray90&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-lg line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;line-gray40&lt;/span&gt;&lt;/span&gt;
+                            </code>
+                        </pre>
+
                         <div class="guide-xsbtit">badge-lg-round (h26)</div>
                         <span class="badge-lg-round gray20"><span class="text">gray20</span></span>
                         <span class="badge-lg-round blue100"><span class="text">blue100</span></span>
                         <span class="badge-lg-round brown100"><span class="text">brown100</span></span>
                         <span class="badge-lg-round gray90"><span class="text">gray90</span></span>
                         <span class="badge-lg-round line-gray40"><span class="text">line-gray40</span></span>
+                        <pre>
+                            <code class="html">
+                                &lt;span class=&quot;badge-lg-round gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray20&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-lg-round blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;blue100&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-lg-round brown100&quot;&gt;&lt;span class=&quot;text&quot;&gt;brown100&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-lg-round gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray90&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-lg-round line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;line-gray40&lt;/span&gt;&lt;/span&gt;
+                            </code>
+                        </pre>
+
                         <div class="guide-xsbtit">badge-md (h22)</div>
                         <span class="badge-md gray20"><span class="text">gray20</span></span>
                         <span class="badge-md blue100"><span class="text">blue100</span></span>
                         <span class="badge-md brown100"><span class="text">brown100</span></span>
                         <span class="badge-md gray90"><span class="text">gray90</span></span>
                         <span class="badge-md line-gray40"><span class="text">line-gray40</span></span>
+                        <pre>
+                            <code class="html">
+                                &lt;span class=&quot;badge-md gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray20&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;blue100&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md brown100&quot;&gt;&lt;span class=&quot;text&quot;&gt;brown100&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray90&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;line-gray40&lt;/span&gt;&lt;/span&gt;
+                            </code>
+                        </pre>
+
                         <div class="guide-xsbtit">badge-md-round (h22)</div>
                         <span class="badge-md-round gray20"><span class="text">gray20</span></span>
                         <span class="badge-md-round blue100"><span class="text">blue100</span></span>
                         <span class="badge-md-round brown100"><span class="text">brown100</span></span>
                         <span class="badge-md-round gray90"><span class="text">gray90</span></span>
                         <span class="badge-md-round line-gray40"><span class="text">line-gray40</span></span>
-                        <div class="guide-xsbtit">badge.beta (베타 운영시 사용, W32 H16)</div>
+                        <pre>
+                            <code class="html">
+                                &lt;span class=&quot;badge-md-round gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray20&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md-round blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;blue100&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md-round brown100&quot;&gt;&lt;span class=&quot;text&quot;&gt;brown100&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md-round gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray90&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge-md-round line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;line-gray40&lt;/span&gt;&lt;/span&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">badge.beta (베타 운영시 사용, W32 H16 / 색상 : blue, white)</div>
                         <div style="background-color: #EAEAEA; padding: 20px;">
                             <span class="badge beta blue"><span class="text">Beta</span></span>
                             <span class="badge beta white"><span class="text">Beta</span></span>
                         </div>
-
                         <pre>
                             <code class="html">
-
+                                &lt;span class=&quot;badge beta blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;Beta&lt;/span&gt;&lt;/span&gt;
+                                &lt;span class=&quot;badge beta white&quot;&gt;&lt;span class=&quot;text&quot;&gt;Beta&lt;/span&gt;&lt;/span&gt;
                             </code>
                         </pre>
                     </div>
 
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx3">뱃지 정렬 (.badge-wrap)</div>
+                        <br>
+                        <div class="badge-wrap">
+                            <span class="badge-lg-round gray20"><span class="text">gray20</span></span>
+                            <span class="badge-lg-round blue100"><span class="text">blue100</span></span>
+                            <span class="badge-lg-round brown100"><span class="text">brown100</span></span>
+                        </div>
 
+                        <pre>
+                                <code class="html">
+                                    &lt;div class=&quot;badge-wrap&quot;&gt;
+                                        &lt;span class=&quot;badge-lg-round gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;gray20&lt;/span&gt;&lt;/span&gt;
+                                        &lt;span class=&quot;badge-lg-round blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;blue100&lt;/span&gt;&lt;/span&gt;
+                                        &lt;span class=&quot;badge-lg-round brown100&quot;&gt;&lt;span class=&quot;text&quot;&gt;brown100&lt;/span&gt;&lt;/span&gt;
+                                    &lt;/div&gt;
+                                </code>
+                            </pre>
+                    </div>
                 </div>
             </div>
         </div>

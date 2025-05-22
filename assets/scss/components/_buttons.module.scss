@@ -37,7 +37,7 @@ a, button {
 /* size */
 %btnSizeLg {
   height: 54px;
-  padding: 0 24px;
+  padding: 0 23px;
 
   .text {
     @include mixins.font_size_lg('sb');
@@ -56,7 +56,7 @@ a, button {
 
 %btnSizeMd {
   height: 44px;
-  padding: 0 20px;
+  padding: 0 19px;
 
   .text {
     @include mixins.font_size_md('sb');
@@ -75,7 +75,7 @@ a, button {
 
 %btnSizeSm {
   height: 36px;
-  padding: 0 16px;
+  padding: 0 15px;
 
   .text {
     font-size: variables.$fontSizeSm;
@@ -99,7 +99,7 @@ a, button {
 
 %btnSizeXs {
   height: 32px;
-  padding: 0 16px;
+  padding: 0 15px;
 
   .text {
     font-size: variables.$fontSizeMd;
@@ -110,7 +110,7 @@ a, button {
 
 %btnSize2xs {
   height: 30px;
-  padding: 0 12px;
+  padding: 0 11px;
 
   .text {
     font-size: variables.$fontSizeSm;
@@ -310,10 +310,6 @@ button.btn, a.btn {
     .text {
       font-size: variables.$fontSizeLg;
       line-height: variables.$fontSizeLgLineHeight;
-
-      //~[class^=ico] {
-      //  margin-top: 2.5px;
-      //}
     }
   }
 
@@ -321,10 +317,6 @@ button.btn, a.btn {
     .text {
       font-size: variables.$fontSizeMd;
       line-height: variables.$fontSizeMdLineHeight;
-
-      //~[class^=ico] {
-      //  margin-top: 2px;
-      //}
     }
   }
 
@@ -332,10 +324,6 @@ button.btn, a.btn {
     .text {
       font-size: variables.$fontSizeSm;
       line-height: variables.$fontSizeSmLineHeight;
-
-      //~[class^=ico] {
-      //  margin-top: 1px;
-      //}
     }
   }
 
@@ -350,7 +338,7 @@ button.btn, a.btn {
 .btn-box {
   height: 44px;
   border-radius: 12px;
-  padding: 0 36px 0 16px;
+  padding: 0 35px 0 15px;
   width: auto;
   justify-content: flex-start !important;
   position: relative;

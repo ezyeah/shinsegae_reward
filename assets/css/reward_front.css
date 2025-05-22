@@ -389,7 +389,7 @@ a[class^=link-], button[class^=link-] {
 /* size */
 button.btn-square-lg, a.btn-square-lg, button.btn-lg, a.btn-lg {
   height: 54px;
-  padding: 0 24px;
+  padding: 0 23px;
 }
 button.btn-square-lg .text, a.btn-square-lg .text, button.btn-lg .text, a.btn-lg .text {
   font-size: 15px;
@@ -407,7 +407,7 @@ button.btn-square-lg [class^=ico] ~ .text, a.btn-square-lg [class^=ico] ~ .text,
 
 button.btn-square-md, a.btn-square-md, button.btn-md, a.btn-md {
   height: 44px;
-  padding: 0 20px;
+  padding: 0 19px;
 }
 button.btn-square-md .text, a.btn-square-md .text, button.btn-md .text, a.btn-md .text {
   font-size: 14px;
@@ -424,7 +424,7 @@ button.btn-square-md [class^=ico] ~ .text, a.btn-square-md [class^=ico] ~ .text,
 
 button.btn-square-sm, a.btn-square-sm, button.btn-sm, a.btn-sm {
   height: 36px;
-  padding: 0 16px;
+  padding: 0 15px;
 }
 button.btn-square-sm .text, a.btn-square-sm .text, button.btn-sm .text, a.btn-sm .text {
   font-size: 13px;
@@ -444,7 +444,7 @@ button.btn-square-sm [class^=ico] ~ .text, a.btn-square-sm [class^=ico] ~ .text,
 
 button.btn-square-xs, a.btn-square-xs, button.btn-xs, a.btn-xs {
   height: 32px;
-  padding: 0 16px;
+  padding: 0 15px;
 }
 button.btn-square-xs .text, a.btn-square-xs .text, button.btn-xs .text, a.btn-xs .text {
   font-size: 14px;
@@ -454,7 +454,7 @@ button.btn-square-xs .text, a.btn-square-xs .text, button.btn-xs .text, a.btn-xs
 
 button.btn-square-2xs, a.btn-square-2xs, button.btn-2xs, a.btn-2xs {
   height: 30px;
-  padding: 0 12px;
+  padding: 0 11px;
 }
 button.btn-square-2xs .text, a.btn-square-2xs .text, button.btn-2xs .text, a.btn-2xs .text {
   font-size: 13px;
@@ -614,7 +614,7 @@ button.btn-2xs, a.btn-2xs {
 .btn-box {
   height: 44px;
   border-radius: 12px;
-  padding: 0 36px 0 16px;
+  padding: 0 35px 0 15px;
   width: auto;
   justify-content: flex-start !important;
   position: relative;
@@ -934,6 +934,9 @@ span.badge-lg.line-gray40, span.badge-md.line-gray40, span.badge-lg-round.line-g
 span.badge-lg.line-gray40 .text, span.badge-md.line-gray40 .text, span.badge-lg-round.line-gray40 .text, span.badge-md-round.line-gray40 .text {
   color: #333;
 }
+span.badge-md-round {
+  padding: 1.5px 9px;
+}
 span.badge-lg-round, span.badge-md-round {
   border-radius: 20px;
 }
@@ -960,6 +963,31 @@ span.badge.beta.blue {
 }
 span.badge.beta.blue .text {
   color: #FFF;
+}
+
+/* badge-wrap */
+.badge-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  gap: 4px;
+  margin-bottom: 10px;
 }
 
 /* header */
