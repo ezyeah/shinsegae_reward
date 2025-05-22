@@ -144,6 +144,7 @@
     line-height: $lineHeight;
   }
 }
+
 // md - font-size: 14px ------------- title: xs | body: md
 @mixin font_size_md($type : 'body', $lineHeight : 'default') {
   font-size: variables.$fontSizeMd;
@@ -152,6 +153,8 @@
 
   @if ($type == 'heading') {
     font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
   } @else if ($type == 'sb') {
     font-weight: variables.$fontWeightSemibold;
   } @else if ($type == 'md') {
@@ -159,6 +162,52 @@
   } @else if ($type == 'rgl') {
     font-weight: variables.$fontWeightRegular;
   } @else if ($type == 'body') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+
+// sm - font-size: 13px ------------- title: 2xs | body: sm
+@mixin font_size_sm($type : 'body', $lineHeight : 'default') {
+  font-size: variables.$fontSizeSm;
+  line-height: variables.$fontSizeSmLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  } @else if ($type == 'body') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+
+// sm - font-size: 13px ------------- body: xs
+@mixin font_size_xs($type : 'body', $lineHeight : 'default') {
+  font-size: variables.$fontSizeXs;
+  line-height: variables.$fontSizeXsLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
     font-weight: variables.$fontWeightRegular;
   }
 
