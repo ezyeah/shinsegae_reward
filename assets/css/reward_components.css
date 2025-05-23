@@ -2,6 +2,72 @@
 /* Grayscale */
 /* Primary */
 /* Font Vari */
+.ico-wallet16, .ico-reward16, .ico-money16, .ico-close16, .ico-coupon18, .ico-plus18, .ico-arrow18, .ico-arrow16, .header-wrapper [class^=ico-] {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.ico-arrow16 {
+  width: 16px;
+  height: 16px;
+  background: #666;
+  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_gray_h16.svg");
+  mask-image: url("/assets/images/common/comm_ico_arrow_gray_h16.svg");
+}
+
+.ico-arrow18 {
+  width: 18px;
+  height: 18px;
+  background: #666;
+  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_brown_h18.svg");
+  mask-image: url("/assets/images/common/comm_ico_arrow_brown_h18.svg");
+  mask-repeat: no-repeat;
+}
+
+.ico-plus18 {
+  width: 18px;
+  height: 18px;
+  background: url("/assets/images/common/comm_ico_plus_h18.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.ico-coupon18 {
+  width: 18px;
+  height: 18px;
+  background: url("/assets/images/common/comm_ico_coupon_h18.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.ico-close16 {
+  width: 16px;
+  height: 16px;
+  background: url("/assets/images/common/comm_ico_close_gray_h16.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.ico-money16 {
+  width: 16px;
+  height: 16px;
+  background: url("/assets/images/common/comm_ico_money_h16.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.ico-reward16 {
+  width: 16px;
+  height: 16px;
+  background: url("/assets/images/common/comm_ico_reward_h16.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.ico-wallet16 {
+  width: 16px;
+  height: 16px;
+  background: url("/assets/images/common/comm_ico_wallet_h16.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
 /* button */
 a, button {
   /* 버튼 공통 */
@@ -305,70 +371,129 @@ button.btn-2xs, a.btn-2xs {
   margin-top: 30px;
 }
 
-.ico-wallet16, .ico-reward16, .ico-money16, .ico-close16, .ico-coupon18, .ico-plus18, .ico-arrow18, .ico-arrow16, .header-wrapper [class^=ico-] {
+/* Badge */
+span.badge.beta, span.badge-lg, span.badge-lg-round, span.badge-md, span.badge-md-round {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  border: solid 1px transparent;
+  border-radius: 4px;
+}
+span.badge.beta .text, span.badge-lg .text, span.badge-lg-round .text, span.badge-md .text, span.badge-md-round .text {
+  vertical-align: top;
   display: inline-block;
   position: relative;
-  vertical-align: top;
-  overflow: hidden;
 }
 
-.ico-arrow16 {
-  width: 16px;
+span.badge-md, span.badge-md-round {
+  height: 22px;
+  padding: 1.5px 7px;
+}
+span.badge-md .text, span.badge-md-round .text {
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 400;
+}
+
+span.badge-lg, span.badge-lg-round {
+  height: 26px;
+  padding: 3px 9px;
+}
+span.badge-lg .text, span.badge-lg-round .text {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+span.badge-lg.gray20, span.badge-md.gray20, span.badge-lg-round.gray20, span.badge-md-round.gray20 {
+  background-color: #F0F0F0;
+  border-color: #F0F0F0;
+}
+span.badge-lg.gray20 .text, span.badge-md.gray20 .text, span.badge-lg-round.gray20 .text, span.badge-md-round.gray20 .text {
+  color: #333;
+}
+span.badge-lg.blue100, span.badge-md.blue100, span.badge-lg-round.blue100, span.badge-md-round.blue100 {
+  background-color: #6987A1;
+  border-color: #6987A1;
+}
+span.badge-lg.blue100 .text, span.badge-md.blue100 .text, span.badge-lg-round.blue100 .text, span.badge-md-round.blue100 .text {
+  color: #FFF;
+}
+span.badge-lg.brown100, span.badge-md.brown100, span.badge-lg-round.brown100, span.badge-md-round.brown100 {
+  background-color: #B09785;
+  border-color: #B09785;
+}
+span.badge-lg.brown100 .text, span.badge-md.brown100 .text, span.badge-lg-round.brown100 .text, span.badge-md-round.brown100 .text {
+  color: #FFF;
+}
+span.badge-lg.gray90, span.badge-md.gray90, span.badge-lg-round.gray90, span.badge-md-round.gray90 {
+  background-color: #333;
+  border-color: #333;
+}
+span.badge-lg.gray90 .text, span.badge-md.gray90 .text, span.badge-lg-round.gray90 .text, span.badge-md-round.gray90 .text {
+  color: #FFF;
+}
+span.badge-lg.line-gray40, span.badge-md.line-gray40, span.badge-lg-round.line-gray40, span.badge-md-round.line-gray40 {
+  background-color: #FFF;
+  border-color: #DDD;
+}
+span.badge-lg.line-gray40 .text, span.badge-md.line-gray40 .text, span.badge-lg-round.line-gray40 .text, span.badge-md-round.line-gray40 .text {
+  color: #333;
+}
+span.badge-md-round {
+  padding: 1.5px 9px;
+}
+span.badge-lg-round, span.badge-md-round {
+  border-radius: 20px;
+}
+span.badge.beta {
+  width: 32px;
   height: 16px;
-  background: #666;
-  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_gray_h16.svg");
-  mask-image: url("/assets/images/common/comm_ico_arrow_gray_h16.svg");
+  padding: 0 4px 0 3px;
+  border-radius: 99px;
+  box-sizing: border-box;
+}
+span.badge.beta .text {
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: 700;
+}
+span.badge.beta.white {
+  background-color: #FFF;
+}
+span.badge.beta.white .text {
+  color: #536F86;
+}
+span.badge.beta.blue {
+  background-color: #536F86;
+}
+span.badge.beta.blue .text {
+  color: #FFF;
 }
 
-.ico-arrow18 {
-  width: 18px;
-  height: 18px;
-  background: #666;
-  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_brown_h18.svg");
-  mask-image: url("/assets/images/common/comm_ico_arrow_brown_h18.svg");
-  mask-repeat: no-repeat;
-}
-
-.ico-plus18 {
-  width: 18px;
-  height: 18px;
-  background: url("/assets/images/common/comm_ico_plus_h18.svg") 0 0 no-repeat;
-  background-size: cover;
-}
-
-.ico-coupon18 {
-  width: 18px;
-  height: 18px;
-  background: url("/assets/images/common/comm_ico_coupon_h18.svg") 0 0 no-repeat;
-  background-size: cover;
-}
-
-.ico-close16 {
-  width: 16px;
-  height: 16px;
-  background: url("/assets/images/common/comm_ico_close_gray_h16.svg") 0 0 no-repeat;
-  background-size: cover;
-}
-
-.ico-money16 {
-  width: 16px;
-  height: 16px;
-  background: url("/assets/images/common/comm_ico_money_h16.svg") 0 0 no-repeat;
-  background-size: cover;
-}
-
-.ico-reward16 {
-  width: 16px;
-  height: 16px;
-  background: url("/assets/images/common/comm_ico_reward_h16.svg") 0 0 no-repeat;
-  background-size: cover;
-}
-
-.ico-wallet16 {
-  width: 16px;
-  height: 16px;
-  background: url("/assets/images/common/comm_ico_wallet_h16.svg") 0 0 no-repeat;
-  background-size: cover;
+/* badge-wrap */
+.badge-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  gap: 4px;
+  margin-bottom: 10px;
 }
 
 .offscreen {
@@ -507,130 +632,5 @@ button.btn-2xs, a.btn-2xs {
 }
 .rcont-box-lg .cont-inner {
   padding: 0 20px;
-}
-
-/* Badge */
-span.badge.beta, span.badge-lg, span.badge-lg-round, span.badge-md, span.badge-md-round {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  border: solid 1px transparent;
-  border-radius: 4px;
-}
-span.badge.beta .text, span.badge-lg .text, span.badge-lg-round .text, span.badge-md .text, span.badge-md-round .text {
-  vertical-align: top;
-  display: inline-block;
-  position: relative;
-}
-
-span.badge-md, span.badge-md-round {
-  height: 22px;
-  padding: 1.5px 7px;
-}
-span.badge-md .text, span.badge-md-round .text {
-  font-size: 12px;
-  line-height: 17px;
-  font-weight: 400;
-}
-
-span.badge-lg, span.badge-lg-round {
-  height: 26px;
-  padding: 3px 9px;
-}
-span.badge-lg .text, span.badge-lg-round .text {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-}
-
-span.badge-lg.gray20, span.badge-md.gray20, span.badge-lg-round.gray20, span.badge-md-round.gray20 {
-  background-color: #F0F0F0;
-  border-color: #F0F0F0;
-}
-span.badge-lg.gray20 .text, span.badge-md.gray20 .text, span.badge-lg-round.gray20 .text, span.badge-md-round.gray20 .text {
-  color: #333;
-}
-span.badge-lg.blue100, span.badge-md.blue100, span.badge-lg-round.blue100, span.badge-md-round.blue100 {
-  background-color: #6987A1;
-  border-color: #6987A1;
-}
-span.badge-lg.blue100 .text, span.badge-md.blue100 .text, span.badge-lg-round.blue100 .text, span.badge-md-round.blue100 .text {
-  color: #FFF;
-}
-span.badge-lg.brown100, span.badge-md.brown100, span.badge-lg-round.brown100, span.badge-md-round.brown100 {
-  background-color: #B09785;
-  border-color: #B09785;
-}
-span.badge-lg.brown100 .text, span.badge-md.brown100 .text, span.badge-lg-round.brown100 .text, span.badge-md-round.brown100 .text {
-  color: #FFF;
-}
-span.badge-lg.gray90, span.badge-md.gray90, span.badge-lg-round.gray90, span.badge-md-round.gray90 {
-  background-color: #333;
-  border-color: #333;
-}
-span.badge-lg.gray90 .text, span.badge-md.gray90 .text, span.badge-lg-round.gray90 .text, span.badge-md-round.gray90 .text {
-  color: #FFF;
-}
-span.badge-lg.line-gray40, span.badge-md.line-gray40, span.badge-lg-round.line-gray40, span.badge-md-round.line-gray40 {
-  background-color: #FFF;
-  border-color: #DDD;
-}
-span.badge-lg.line-gray40 .text, span.badge-md.line-gray40 .text, span.badge-lg-round.line-gray40 .text, span.badge-md-round.line-gray40 .text {
-  color: #333;
-}
-span.badge-md-round {
-  padding: 1.5px 9px;
-}
-span.badge-lg-round, span.badge-md-round {
-  border-radius: 20px;
-}
-span.badge.beta {
-  width: 32px;
-  height: 16px;
-  padding: 0 4px 0 3px;
-  border-radius: 99px;
-  box-sizing: border-box;
-}
-span.badge.beta .text {
-  font-size: 11px;
-  line-height: 15px;
-  font-weight: 700;
-}
-span.badge.beta.white {
-  background-color: #FFF;
-}
-span.badge.beta.white .text {
-  color: #536F86;
-}
-span.badge.beta.blue {
-  background-color: #536F86;
-}
-span.badge.beta.blue .text {
-  color: #FFF;
-}
-
-/* badge-wrap */
-.badge-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  display: -webkit-flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: start;
-  -moz-box-align: start;
-  -ms-flex-align: start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -moz-box-orient: horizontal;
-  -moz-box-direction: normal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  gap: 4px;
-  margin-bottom: 10px;
 }
 /*# sourceMappingURL=reward_components.css.map */
