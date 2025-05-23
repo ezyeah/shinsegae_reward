@@ -68,6 +68,13 @@
   background-size: cover;
 }
 
+.ico-close16 {
+  width: 16px;
+  height: 16px;
+  background: url("/assets/images/common/comm_ico_close_h16.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
 /* button */
 a, button {
   /* 버튼 공통 */
@@ -502,6 +509,76 @@ span.badge.beta.blue .text {
 }
 .badge-wrap-md {
   gap: 2px;
+}
+
+/* tag */
+.tag {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  vertical-align: top;
+  border-radius: 4px;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+}
+.tag .text {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  color: #666;
+}
+
+.tag {
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 11px;
+}
+.tag .btn-delete {
+  margin-left: 4px;
+}
+
+.tag-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.tag-wrap [class^=tag] {
+  margin: 3px 2px;
 }
 
 .offscreen {

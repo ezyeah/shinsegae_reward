@@ -75,3 +75,10 @@
   height: 16px;
   @include mixins.ratio_images('/assets/images/common/comm_ico_wallet_h16');
 }
+
+.ico-close16 {
+  @extend %icon;
+  width: 16px;
+  height: 16px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_close_h16')
+}

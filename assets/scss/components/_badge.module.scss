@@ -150,3 +150,38 @@ span.badge {
     gap: 2px;
   }
 }
+
+/* tag */
+%tagCommon {
+  @include mixins.justify_width('center','center','row', true);
+  vertical-align: top;
+  border-radius: 4px;
+  background-color: variables.$colorGray00;
+  border: 1px solid variables.$colorGray40;
+
+  .text {
+    display: inline-block;
+    vertical-align: top;
+    @include mixins.font_size_md;
+    color: variables.$colorGray80;
+  }
+}
+
+.tag {
+  @extend %tagCommon;
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 11px;
+
+  .btn-delete {
+    margin-left: 4px;
+  }
+}
+
+.tag-wrap {
+  @include mixins.justify_width('start','start');
+
+  [class^=tag] {
+    margin: 3px 2px;
+  }
+}
