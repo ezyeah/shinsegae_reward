@@ -1,0 +1,44 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/* color */
+.fc-black {
+  color: variables.$colorGray100;
+}
+.fc-gray90 {
+  color: variables.$colorGray90;
+}
+.fc-gray80 {
+  color: variables.$colorGray80;
+}
+.fc-gray70 {
+  color: variables.$colorGray70;
+}
+.fc-gray60 {
+  color: variables.$colorGray60;
+}
+.fc-gray50 {
+  color: variables.$colorGray50;
+}
+.fc-gray40 {
+  color: variables.$colorGray40;
+}
+.fc-gray30 {
+  color: variables.$colorGray30;
+}
+.fc-gray20 {
+  color: variables.$colorGray20;
+}
+.fc-gray10 {
+  color: variables.$colorGray10;
+}
+.fc-blue {
+  color: variables.$colorBlue100;
+}
+.fc-brown {
+  color: variables.$colorBrown100;
+}
+.fc-red {
+  color: variables.$colorRed;
+}

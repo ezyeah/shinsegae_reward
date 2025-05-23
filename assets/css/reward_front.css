@@ -939,6 +939,59 @@ span.badge-round-sm {
   margin: 3px 2px;
 }
 
+/* color */
+.fc-black {
+  color: #000;
+}
+
+.fc-gray90 {
+  color: #333;
+}
+
+.fc-gray80 {
+  color: #666;
+}
+
+.fc-gray70 {
+  color: #888;
+}
+
+.fc-gray60 {
+  color: #BBB;
+}
+
+.fc-gray50 {
+  color: #CCC;
+}
+
+.fc-gray40 {
+  color: #DDD;
+}
+
+.fc-gray30 {
+  color: #EAEAEA;
+}
+
+.fc-gray20 {
+  color: #F0F0F0;
+}
+
+.fc-gray10 {
+  color: #F5F5F5;
+}
+
+.fc-blue {
+  color: #6987A1;
+}
+
+.fc-brown {
+  color: #B09785;
+}
+
+.fc-red {
+  color: #EE3030;
+}
+
 /*  title */
 .ctitle-2xl {
   font-size: 22px;
