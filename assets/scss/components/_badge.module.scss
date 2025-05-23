@@ -16,6 +16,19 @@
   }
 }
 
+%badgeSm {
+  @extend %badgeCommon;
+  height: 16px;
+  padding: 0 4px 0 3px;
+
+  .text {
+    font-size: 11px;
+    //width: 23px;
+    line-height: 14px;
+    font-weight: variables.$fontWeightBold;
+  }
+}
+
 %badgeMd { //padding 2.5px 8px
   @extend %badgeCommon;
   height: 22px;
@@ -41,8 +54,15 @@
 }
 
 span.badge {
-  &-lg, &-md, &-lg-round, &-md-round {
+  &-lg, &-md, &-round-lg, &-round-md, &-sm, &-round-sm  {
     //color
+    &.gray00 {
+      background-color: variables.$colorGray00;
+      .text {
+        color: variables.$colorBlue120;
+      }
+    }
+
     &.gray20 {
       background-color: variables.$colorGray20;
       border-color: variables.$colorGray20;
@@ -51,6 +71,7 @@ span.badge {
         color: variables.$colorGray90;
       }
     }
+
     &.blue100 {
       background-color: variables.$colorBlue100;
       border-color: variables.$colorBlue100;
@@ -59,6 +80,15 @@ span.badge {
         color: variables.$colorGray00;
       }
     }
+
+    &.blue120 {
+      background-color: variables.$colorBlue120;
+
+      .text {
+        color: variables.$colorGray00;
+      }
+    }
+
     &.brown100 {
       background-color: variables.$colorBrown100;
       border-color: variables.$colorBrown100;
@@ -67,6 +97,7 @@ span.badge {
         color: variables.$colorGray00;
       }
     }
+
     &.gray90 {
       background-color: variables.$colorGray90;
       border-color: variables.$colorGray90;
@@ -75,6 +106,7 @@ span.badge {
         color: variables.$colorGray00;
       }
     }
+
     &.line-gray40 {
       background-color: variables.$colorGray00;
       border-color: variables.$colorGray40;
@@ -85,58 +117,35 @@ span.badge {
     }
   }
 
-  &-lg, &-lg-round {
+  &-lg, &-round-lg {
     @extend %badgeLg;
   }
 
-  &-md, &-md-round {
+  &-md, &-round-md {
     @extend %badgeMd;
   }
 
-  &-md-round { //padding 2.5px 10px
+  &-round-md { //padding 2.5px 10px
     padding: 1.5px 9px;
   }
 
-  &-lg-round, &-md-round {
+  &-round-lg, &-round-md {
     border-radius: 20px;
   }
 
+  &-sm, &-round-sm {
+    @extend %badgeSm;
+  }
 
-
-  &.beta {
-    @extend %badgeCommon;
-    width: 32px;
-    height: 16px;
-    padding: 0 4px 0 3px;
+  &-round-sm {
     border-radius: 99px;
-    box-sizing: border-box;
-
-    .text {
-      font-size: 11px;
-      //width: 23px;
-      line-height: 15px;
-      font-weight: variables.$fontWeightBold;
-    }
-
-    &.white {
-      background-color: variables.$colorGray00;
-      .text {
-        color: variables.$colorBlue120;
-      }
-    }
-
-    &.blue {
-      background-color: variables.$colorBlue120;
-      .text {
-        color: variables.$colorGray00;
-      }
-    }
   }
 }
 
 /* badge-wrap */
 [class^='badge-wrap']{
   @include mixins.justify_width(start, start, row);
+  flex-wrap: wrap;
 }
 
 .badge-wrap {
