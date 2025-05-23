@@ -336,9 +336,9 @@ button.btn, a.btn {
 }
 
 .btn-box {
-  height: 44px;
+  min-height: 44px;
   border-radius: 12px;
-  padding: 0 35px 0 15px;
+  padding: 11px 35px 11px 15px;
   width: auto;
   justify-content: flex-start !important;
   position: relative;
