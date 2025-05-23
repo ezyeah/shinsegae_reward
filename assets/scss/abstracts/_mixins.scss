@@ -101,9 +101,9 @@
 
 /* Font Vari */
 // 4xl - font-size: 22px ------------- title: 2xl
-@mixin font_size_xl($type : 'heading', $lineHeight : 'default') {
-  font-size: variables.$fontSizeXl;
-  line-height: variables.$fontSize2xlLineHeight;
+@mixin font_size_4xl($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSize4xl;
+  line-height: variables.$fontSize4xlLineHeight;
   letter-spacing: variables.$letterSpacing;
 
   @if ($type == 'heading') {
@@ -124,9 +124,9 @@
 }
 
 // 3xl - font-size: 20px ------------- title: xl
-@mixin font_size_xl($type : 'heading', $lineHeight : 'default') {
-  font-size: variables.$fontSizeXl;
-  line-height: variables.$fontSize2xlLineHeight;
+@mixin font_size_3xl($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSize3xl;
+  line-height: variables.$fontSize3xlLineHeight;
   letter-spacing: variables.$letterSpacing;
 
   @if ($type == 'heading') {
@@ -147,8 +147,8 @@
 }
 
 // 2xl - font-size:18px ------------- title: lg
-@mixin font_size_xl($type : 'heading', $lineHeight : 'default') {
-  font-size: variables.$fontSizeXl;
+@mixin font_size_2xl($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSize2xl;
   line-height: variables.$fontSize2xlLineHeight;
   letter-spacing: variables.$letterSpacing;
 

@@ -153,19 +153,227 @@
 
                         <div class="guide-btit">index</div>
                         <ol class="guide-desc-list">
-                            <li><a href="#idx1" style="text-decoration: underline">cont type</a></li>
+                            <li><a href="#idx1" style="text-decoration: underline">ctitle</a></li>
+                            <li><a href="#idx1" style="text-decoration: underline">stitle</a></li>
+                            <li><a href="#idx1" style="text-decoration: underline">ctitle-wrap</a></li>
                         </ol>
                     </div>
 
                     <div class="guide-inner">
-                        <div class="guide-btit" id="idx1">Content Box Type Guide</div>
-                        <div class="guide-sbtit">cont-box-{$size}</div>
+                        <div class="guide-btit" id="idx1">ctitle</div>
                         <ul class="guide-desc-list">
-                            <li style="margin-top: 4px;">bg-color: #FFF</li>
+                            <li>
+                                font size에 따라 class 사용
+                                <ul class="guide-desc-list" style="margin-top: 4px;">
+                                    <li><code>ctitle-2xl</code> font-size: 22px</li>
+                                    <li><code>ctitle-xl</code> font-size: 20px</li>
+                                    <li><code>ctitle-lg</code> font-size: 18px</li>
+                                    <li><code>ctitle-md</code> font-size: 16px</li>
+                                    <li><code>ctitle-sm</code> font-size: 15px</li>
+                                    <li><code>ctitle-xs</code> font-size: 14px</li>
+                                    <li><code>ctitle-2xs</code> font-size: 13px</li>
+                                </ul>
+                            </li>
                         </ul>
-                        <div class="ctitle-wrap">
+                        <div class="ctitle-2xl">ctitle-2xl</div>
+                        <div class="ctitle-xl">ctitle-xl</div>
+                        <div class="ctitle-lg">ctitle-lg</div>
+                        <div class="ctitle-md">ctitle-md</div>
+                        <div class="ctitle-sm">ctitle-sm</div>
+                        <div class="ctitle-xs">ctitle-xs</div>
+                        <div class="ctitle-2xs">ctitle-2xs</div>
+                        <pre>
+                            <code>
+                                &lt;div class=&quot;ctitle-2xl&quot;&gt;ctitle-2xl&lt;/div&gt;
+                                &lt;div class=&quot;ctitle-xl&quot;&gt;ctitle-xl&lt;/div&gt;
+                                &lt;div class=&quot;ctitle-lg&quot;&gt;ctitle-lg&lt;/div&gt;
+                                &lt;div class=&quot;ctitle-md&quot;&gt;ctitle-md&lt;/div&gt;
+                                &lt;div class=&quot;ctitle-sm&quot;&gt;ctitle-sm&lt;/div&gt;
+                                &lt;div class=&quot;ctitle-xs&quot;&gt;ctitle-xs&lt;/div&gt;
+                                &lt;div class=&quot;ctitle-2xs&quot;&gt;ctitle-2xs&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
 
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">stitle (*임시)</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                font color에 따라 class 사용
+                                <ul class="guide-desc-list" style="margin-top: 4px;">
+                                    <li><code>stitle</code> color: black</li>
+                                    <li><code>stitle-gray80</code> color: #666</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="stitle">stitle</div>
+                        <div class="stitle-gray80">stitle-gray80</div>
+                        <pre>
+                            <code>
+                                &lt;div class=&quot;stitle&quot;&gt;stitle&lt;/div&gt;
+                                &lt;div class=&quot;stitle-gray80&quot;&gt;stitle-gray80&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx3">ctitle-wrap</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <code class="title">기본 구조</code>
+                                <p style="margin-top: 4px;"><code>.ctitle-wrap-{$gap}</code> > <code>left-area</code> > <code>stitle / ctitle / stext</code> | <code>right-area</code></p>
+                            </li>
+                            <li>
+                                하단 여백에 따라 class 사용
+                                <ul class="guide-desc-list" style="margin-top: 4px;">
+                                    <li><code>ctitle-wrap-xl</code> margin-bottom: 30px</li>
+                                    <li><code>ctitle-wrap-lg</code> margin-bottom: 24px</li>
+                                    <li><code>ctitle-wrap-md</code> margin-bottom: 16px</li>
+                                    <li><code>ctitle-wrap-sm</code> margin-bottom: 10px</li>
+                                    <li><code>ctitle-wrap-xs</code> margin-bottom: 6px</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="guide-sbtit">ctitle-wrap-xl</div>
+                        <div class="ctitle-wrap-xl">
+                            <div class="left-area">
+                                <div class="stitle-gray80">stitle ( 다른 요소와 만날 경우 하단 여백 6px )</div>
+                                <div class="ctitle-xl">ctitle-wrap-xl 하단 여백 30px</div>
+                                <span class="stext">stext ( 다른 요소와 만날 경우 상단 여백 6px )</span>
+                            </div>
+                            <div class="right-area">
+                                <div style="background: rgba(255, 0, 0, .2)">right-area</div>
+                            </div>
                         </div>
+                        <div style="width: 100%; height: 30px; background: rgba(255,0,0,.2)">하단 컨텐츠</div>
+                        <pre>
+                            <code>
+                                &lt;div class=&quot;ctitle-wrap-xl&quot;&gt;
+                                    &lt;div class=&quot;left-area&quot;&gt;
+                                        &lt;div class=&quot;stitle-gray80&quot;&gt;stitle ( 다른 요소와 만날 경우 하단 여백 6px )&lt;/div&gt;
+                                        &lt;div class=&quot;ctitle-xl&quot;&gt;ctitle-wrap-xl 하단 여백 30px&lt;/div&gt;
+                                        &lt;span class=&quot;stext&quot;&gt;stext ( 다른 요소와 만날 경우 상단 여백 6px )&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;right-area&quot;&gt;
+                                        &lt;div style=&quot;background: rgba(255, 0, 0, .2)&quot;&gt;right-area&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width: 100%; height: 30px; background: rgba(255,0,0,.2)&quot;&gt;하단 컨텐츠&lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">ctitle-wrap-lg</div>
+                        <div class="ctitle-wrap-lg">
+                            <div class="left-area">
+                                <div class="stitle-gray80">stitle ( 다른 요소와 만날 경우 하단 여백 6px )</div>
+                                <div class="ctitle-xl">ctitle-wrap-lg 하단 여백 24px</div>
+                                <span class="stext">stext ( 다른 요소와 만날 경우 상단 여백 6px )</span>
+                            </div>
+                            <div class="right-area">
+                                <div style="background: rgba(255, 0, 0, .2)">right-area</div>
+                            </div>
+                        </div>
+                        <div style="width: 100%; height: 30px; background: rgba(255,0,0,.2)">하단 컨텐츠</div>
+                        <pre>
+                            <code>
+                                &lt;div class=&quot;ctitle-wrap-lg&quot;&gt;
+                                    &lt;div class=&quot;left-area&quot;&gt;
+                                        &lt;div class=&quot;stitle-gray80&quot;&gt;stitle ( 다른 요소와 만날 경우 하단 여백 6px )&lt;/div&gt;
+                                        &lt;div class=&quot;ctitle-xl&quot;&gt;ctitle-wrap-lg 하단 여백 24px&lt;/div&gt;
+                                        &lt;span class=&quot;stext&quot;&gt;stext ( 다른 요소와 만날 경우 상단 여백 6px )&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;right-area&quot;&gt;
+                                        &lt;div style=&quot;background: rgba(255, 0, 0, .2)&quot;&gt;right-area&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width: 100%; height: 30px; background: rgba(255,0,0,.2)&quot;&gt;하단 컨텐츠&lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">ctitle-wrap-md</div>
+                        <div class="ctitle-wrap-md">
+                            <div class="left-area">
+                                <div class="stitle-gray80">stitle ( 다른 요소와 만날 경우 하단 여백 6px )</div>
+                                <div class="ctitle-xl">ctitle-wrap-md 하단 여백 16px</div>
+                                <span class="stext">stext ( 다른 요소와 만날 경우 상단 여백 6px )</span>
+                            </div>
+                            <div class="right-area">
+                                <div style="background: rgba(255, 0, 0, .2)">right-area</div>
+                            </div>
+                        </div>
+                        <div style="width: 100%; height: 30px; background: rgba(255,0,0,.2)">하단 컨텐츠</div>
+                        <pre>
+                            <code>
+                                &lt;div class=&quot;ctitle-wrap-md&quot;&gt;
+                                    &lt;div class=&quot;left-area&quot;&gt;
+                                        &lt;div class=&quot;stitle-gray80&quot;&gt;stitle ( 다른 요소와 만날 경우 하단 여백 6px )&lt;/div&gt;
+                                        &lt;div class=&quot;ctitle-xl&quot;&gt;ctitle-wrap-md 하단 여백 16px&lt;/div&gt;
+                                        &lt;span class=&quot;stext&quot;&gt;stext ( 다른 요소와 만날 경우 상단 여백 6px )&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;right-area&quot;&gt;
+                                        &lt;div style=&quot;background: rgba(255, 0, 0, .2)&quot;&gt;right-area&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width: 100%; height: 30px; background: rgba(255,0,0,.2)&quot;&gt;하단 컨텐츠&lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">ctitle-wrap-sm</div>
+                        <div class="ctitle-wrap-sm">
+                            <div class="left-area">
+                                <div class="stitle-gray80">stitle ( 다른 요소와 만날 경우 하단 여백 6px )</div>
+                                <div class="ctitle-xl">ctitle-wrap-sm 하단 여백 10px</div>
+                                <span class="stext">stext ( 다른 요소와 만날 경우 상단 여백 6px )</span>
+                            </div>
+                            <div class="right-area">
+                                <div style="background: rgba(255, 0, 0, .2)">right-area</div>
+                            </div>
+                        </div>
+                        <div style="width: 100%; height: 30px; background: rgba(255,0,0,.2)">하단 컨텐츠</div>
+                        <pre>
+                            <code>
+                                &lt;div class=&quot;ctitle-wrap-sm&quot;&gt;
+                                    &lt;div class=&quot;left-area&quot;&gt;
+                                        &lt;div class=&quot;stitle-gray80&quot;&gt;stitle ( 다른 요소와 만날 경우 하단 여백 6px )&lt;/div&gt;
+                                        &lt;div class=&quot;ctitle-xl&quot;&gt;ctitle-wrap-sm 하단 여백 10px&lt;/div&gt;
+                                        &lt;span class=&quot;stext&quot;&gt;stext ( 다른 요소와 만날 경우 상단 여백 6px )&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;right-area&quot;&gt;
+                                        &lt;div style=&quot;background: rgba(255, 0, 0, .2)&quot;&gt;right-area&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width: 100%; height: 30px; background: rgba(255,0,0,.2)&quot;&gt;하단 컨텐츠&lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">ctitle-wrap-xs</div>
+                        <div class="ctitle-wrap-xs">
+                            <div class="left-area">
+                                <div class="stitle-gray80">stitle ( 다른 요소와 만날 경우 하단 여백 6px )</div>
+                                <div class="ctitle-xl">ctitle-wrap-xs 하단 여백 6px</div>
+                                <span class="stext">stext ( 다른 요소와 만날 경우 상단 여백 6px )</span>
+                            </div>
+                            <div class="right-area">
+                                <div style="background: rgba(255, 0, 0, .2)">right-area</div>
+                            </div>
+                        </div>
+                        <div style="width: 100%; height: 30px; background: rgba(255,0,0,.2)">하단 컨텐츠</div>
+                        <pre>
+                            <code>
+                                &lt;div class=&quot;ctitle-wrap-xs&quot;&gt;
+                                    &lt;div class=&quot;left-area&quot;&gt;
+                                        &lt;div class=&quot;stitle-gray80&quot;&gt;stitle ( 다른 요소와 만날 경우 하단 여백 6px )&lt;/div&gt;
+                                        &lt;div class=&quot;ctitle-xl&quot;&gt;ctitle-wrap-xs 하단 여백 6px&lt;/div&gt;
+                                        &lt;span class=&quot;stext&quot;&gt;stext ( 다른 요소와 만날 경우 상단 여백 6px )&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;right-area&quot;&gt;
+                                        &lt;div style=&quot;background: rgba(255, 0, 0, .2)&quot;&gt;right-area&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width: 100%; height: 30px; background: rgba(255,0,0,.2)&quot;&gt;하단 컨텐츠&lt;/div&gt;
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>
