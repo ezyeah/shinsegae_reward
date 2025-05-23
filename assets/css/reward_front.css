@@ -1495,6 +1495,25 @@ span.badge-round-sm {
   padding: 0 20px;
 }
 
+.stext-gray70, .stext-gray80 {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+}
+.stext-gray70-sm, .stext-gray80-sm {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+}
+.stext-gray70, .stext-gray70-sm {
+  color: #888;
+}
+.stext-gray80, .stext-gray80-sm {
+  color: #666;
+}
+
 /* header */
 .header-wrapper {
   position: sticky;
