@@ -472,7 +472,7 @@ span.badge.beta.blue .text {
 }
 
 /* badge-wrap */
-.badge-wrap {
+[class^=badge-wrap] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -492,8 +492,16 @@ span.badge.beta.blue .text {
   -ms-flex-direction: row;
   -webkit-flex-direction: row;
   flex-direction: row;
-  gap: 4px;
+}
+
+.badge-wrap {
   margin-bottom: 10px;
+}
+.badge-wrap-lg {
+  gap: 4px;
+}
+.badge-wrap-md {
+  gap: 2px;
 }
 
 .offscreen {

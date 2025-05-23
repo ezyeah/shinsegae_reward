@@ -135,8 +135,18 @@ span.badge {
 }
 
 /* badge-wrap */
-.badge-wrap {
+[class^='badge-wrap']{
   @include mixins.justify_width(start, start, row);
-  gap: 4px;
+}
+
+.badge-wrap {
   margin-bottom: 10px;
+
+  &-lg {
+    gap: 4px;
+  }
+
+  &-md {
+    gap: 2px;
+  }
 }
