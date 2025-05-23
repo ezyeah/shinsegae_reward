@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="robots" content="index,nofollow">
+    <meta name="description" content="신세계백화점">
+
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="../../assets/images/favicon/share.png">-->
+    <meta property="og:site_name" content="신세계백화점">
+    <meta property="og:title" content="신세계백화점">
+    <meta property="og:description" content="신세계백화점 공식몰">
+
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>신세계백화점 가이드 - Content Box</title>
+    <!-- Vendors CSS
+   ================================================== -->
+
+    <!-- Custom styles for this template
+    ================================================== -->
+    <link rel="stylesheet" href="../../assets/css/reward_front.css">
+
+    <!-- Vendors javascript
+    ================================================== -->
+    <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+
+    <!-- UI JavaScript
+    ================================================== -->
+    <script src="../../assets/js/reward.front.ui.js"></script>
+
+    <!-- 가이드 전용 -->
+    <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
+    <link rel="stylesheet" href="/_wsg/ia_resources/monokai-sublime.css">
+    <script src="/_wsg/ia_resources/highlight.pack.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/highlight.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/xml.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/javascript.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/css.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/scss.min.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/standalone.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/plugins/html.js"></script>
+    <script>
+      $(() => {
+        String.prototype.unescapeHtml = function () {
+          return this.replace(/&amp;/g, '&')
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&quot;/g, '"');
+        };
+        String.prototype.escapeHtml = function () {
+          return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\"/g, '&quot;');
+        };
+
+        $('pre code').each((index, item) => {
+          var lines;
+          lines = item.innerHTML.replace('    ', '\t').split('\n');
+
+          if (lines.length > 1) {
+            let removeTabCnt = Number.MAX_SAFE_INTEGER;
+
+            lines.forEach((lineItem, lineIndex) => {
+              if (lineIndex !== 0) {
+                removeTabCnt = lineItem.lastIndexOf('\t') + 1 < removeTabCnt ? lineItem.lastIndexOf('\t') + 1 : removeTabCnt;
+                // console.log(lineItem, removeTabCnt);
+              }
+            });
+            // console.log(removeTabCnt);
+            lines.forEach((lineItem, lineIndex) => {
+              // console.log(lineIndex);
+              if (lineIndex !== 0) {
+                let splitAr;
+                splitAr = lineItem.split('\t');
+
+                for (var i = 0, n = removeTabCnt; i < n; i++) {
+                  splitAr.shift();
+                  // console.log('shift');
+                }
+                // console.log(splitAr);
+                lines[lineIndex] = splitAr.join('\t');
+              }
+            });
+          }
+          item.innerHTML = lines.join('\n');
+
+          (async () => {
+            formatted = await prettier.format(item.innerHTML.unescapeHtml(), {
+              parser: 'html',
+              plugins: prettierPlugins,
+              trailingComma: 'es5',
+              printWidth: 1000,
+              useTabs: true,
+              tabWidth: 1,
+              semi: true,
+              singleQuote: true,
+              arrowParens: 'never',
+              bracketSameLine: true,
+            })
+              .then((value) => {
+                item.innerHTML = value.escapeHtml();
+                hljs.highlightElement(item);
+              });
+          })();
+        });
+      });
+    </script>
+    <!-- // 가이드 전용 -->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
+                <div class="ptitle">Title Guide</div>
+            </div>
+        </div>
+    </div>
+    <!-- // header-wrapper -->
+    <!-- container-wrapper -->
+    <div class="container-wrapper">
+        <div class="cont-box-zero">
+            <div class="cont-inner">
+                <div class="guide-wrap">
+                    <div class="guide-inner">
+                        <div class="guide-ptit"><span># Typography</span></div>
+                        <div class="guide-btit">index</div>
+                        <ol class="guide-desc-list">
+                            <li><a href="#idx1" style="text-decoration: underline">fc-</a> : font color option</li>
+                            <li><a href="#idx2" style="text-decoration: underline">fw-</a> : font weight option</li>
+                            <li><a href="#idx3" style="text-decoration: underline">ta-</a> : text align option</li>
+                            <li><a href="#idx3" style="text-decoration: underline">ellipsis</a> : text ellipsis option</li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx1">ctitle</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                font color 따라 class 사용
+                                <ul class="guide-desc-list" style="margin-top: 4px;">
+                                    <li><code>fc-black</code> color: #000</li>
+                                    <li><code>fc-gray90</code> color: #333</li>
+                                    <li><code>fc-gray80</code> color: #666</li>
+                                    <li><code>fc-gray70</code> color: #888</li>
+                                    <li><code>fc-gray60</code> color: #BBB</li>
+                                    <li><code>fc-gray50</code> color: #CCC</li>
+                                    <li><code>fc-gray40</code> color: #DDD</li>
+                                    <li><code>fc-gray30</code> color: #EAEAEA</li>
+                                    <li><code>fc-gray20</code> color: #F0F0F0</li>
+                                    <li><code>fc-gray10</code> color: #F5F5F5</li>
+                                    <li><code>fc-blue</code> color: #6987A1</li>
+                                    <li><code>fc-brown</code> color: #B09785</li>
+                                    <li><code>fc-red</code> color: #EE3030</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="fc-black"> fc-black: #000</div>
+                        <div class="fc-gray90"> fc-gray90: #333</div>
+                        <div class="fc-gray80"> fc-gray80: #666</div>
+                        <div class="fc-gray70"> fc-gray70: #888</div>
+                        <div class="fc-gray60"> fc-gray60: #BBB</div>
+                        <div class="fc-gray50"> fc-gray50: #CCC</div>
+                        <div style="background: rgba(0,0,0)"><div class="fc-gray40"> fc-gray40: #DDD</div></div>
+                        <div style="background: rgba(0,0,0)"><div class="fc-gray30"> fc-gray30: #EAEAEA</div></div>
+                        <div style="background: rgba(0,0,0)"><div class="fc-gray20"> fc-gray20: #F0F0F0</div></div>
+                        <div style="background: rgba(0,0,0)"><div class="fc-gray10"> fc-gray10: #F5F5F5</div></div>
+                        <div class="fc-blue"> fc-blue: #6987A1</div>
+                        <div class="fc-brown"> fc-brown: #B09785</div>
+                        <div class="fc-red"> fc-red: #EE3030</div>
+                        <pre>
+                            <code>
+                                &lt;div class=&quot;fc-black&quot;&gt; color: #000&lt;/div&gt;
+                                &lt;div class=&quot;fc-gray90&quot;&gt; color: #333&lt;/div&gt;
+                                &lt;div class=&quot;fc-gray80&quot;&gt; color: #666&lt;/div&gt;
+                                &lt;div class=&quot;fc-gray70&quot;&gt; color: #888&lt;/div&gt;
+                                &lt;div class=&quot;fc-gray60&quot;&gt; color: #BBB&lt;/div&gt;
+                                &lt;div class=&quot;fc-gray50&quot;&gt; color: #CCC&lt;/div&gt;
+                                &lt;div class=&quot;fc-gray40&quot;&gt; color: #DDD&lt;/div&gt;
+                                &lt;div class=&quot;fc-gray30&quot;&gt; color: #EAEAEA&lt;/div&gt;
+                                &lt;div class=&quot;fc-gray20&quot;&gt; color: #F0F0F0&lt;/div&gt;
+                                &lt;div class=&quot;fc-gray10&quot;&gt; color: #F5F5F5&lt;/div&gt;
+                                &lt;div class=&quot;fc-blue&quot;&gt; color: #6987A1&lt;/div&gt;
+                                &lt;div class=&quot;fc-brown&quot;&gt; color: #B09785&lt;/div&gt;
+                                &lt;div class=&quot;fc-red&quot;&gt; color: #EE3030&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // container-wrapper -->
+</div>
+</body>
+</html>

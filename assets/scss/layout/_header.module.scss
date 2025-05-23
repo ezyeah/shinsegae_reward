@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/* header */
+.header-wrapper {
+  position:  sticky;
+  top: 0;
+  z-index: 30;
+  background-color: variables.$colorGray00;
+
+  .header-inner {
+    @include mixins.justify_width(center, between);
+    padding: 16px 18px;
+
+    .header-left {
+      flex: 1;
+      overflow: hidden;
+      @include mixins.justify_width;
+      width: 100%;
+
+      .btn-header-back {
+        flex-shrink: 0;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        @include mixins.ratio_images('../images/common/comm_ico_back');
+        vertical-align: top;
+      }
+
+      .ptitle {
+        margin-left: 3px;
+        @include mixins.font_size_xl;
+        @include mixins.ellipsis(false);
+      }
+    }
+  }
+
+  .header-right {
+    flex-shrink: 0;
+    margin-left: 3px;
+  }
+}
