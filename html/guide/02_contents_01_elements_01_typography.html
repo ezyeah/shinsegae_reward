@@ -136,12 +136,12 @@
                             <li><a href="#idx1" style="text-decoration: underline">fc-</a> : font color option</li>
                             <li><a href="#idx2" style="text-decoration: underline">fw-</a> : font weight option</li>
                             <li><a href="#idx3" style="text-decoration: underline">ta-</a> : text align option</li>
-                            <li><a href="#idx3" style="text-decoration: underline">ellipsis</a> : text ellipsis option</li>
+                            <li><a href="#idx4" style="text-decoration: underline">ellipsis</a> : text ellipsis option</li>
                         </ol>
                     </div>
 
                     <div class="guide-inner">
-                        <div class="guide-btit" id="idx1">ctitle</div>
+                        <div class="guide-btit" id="idx1">font color option</div>
                         <ul class="guide-desc-list">
                             <li>
                                 font color 따라 class 사용
@@ -162,36 +162,97 @@
                                 </ul>
                             </li>
                         </ul>
-                        <div class="fc-black"> fc-black: #000</div>
-                        <div class="fc-gray90"> fc-gray90: #333</div>
-                        <div class="fc-gray80"> fc-gray80: #666</div>
-                        <div class="fc-gray70"> fc-gray70: #888</div>
-                        <div class="fc-gray60"> fc-gray60: #BBB</div>
-                        <div class="fc-gray50"> fc-gray50: #CCC</div>
-                        <div style="background: rgba(0,0,0)"><div class="fc-gray40"> fc-gray40: #DDD</div></div>
-                        <div style="background: rgba(0,0,0)"><div class="fc-gray30"> fc-gray30: #EAEAEA</div></div>
-                        <div style="background: rgba(0,0,0)"><div class="fc-gray20"> fc-gray20: #F0F0F0</div></div>
-                        <div style="background: rgba(0,0,0)"><div class="fc-gray10"> fc-gray10: #F5F5F5</div></div>
-                        <div class="fc-blue"> fc-blue: #6987A1</div>
-                        <div class="fc-brown"> fc-brown: #B09785</div>
-                        <div class="fc-red"> fc-red: #EE3030</div>
+                        <p class="stext">fc-black 사용 시<span class="fc-black">#000</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray90 사용 시 <span class="fc-gray90">#333</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray80 사용 시 <span class="fc-gray80">#666</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray70 사용 시 <span class="fc-gray70">#888</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray60 사용 시 <span class="fc-gray60">#BBB</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray50 사용 시 <span class="fc-gray50">#CCC</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray40 사용 시 <span style="background: rgba(0,0,0)"><span class="fc-gray40">#DDD</span></span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray30 사용 시 <span style="background: rgba(0,0,0)"><span class="fc-gray30">#EAEAEA</span></span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray20 사용 시 <span style="background: rgba(0,0,0)"><span class="fc-gray20">#F0F0F0</span></span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray10 사용 시 <span style="background: rgba(0,0,0)"><span class="fc-gray10">#F5F5F5</span></span>컬러가 적용됩니다.</p>
+                        <p class="stext">fc-blue 사용 시 <span class="fc-blue"> #6987A1</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-brown 사용 시 <span class="fc-brown"> #B09785</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-red 사용 시 <span class="fc-red"> #EE3030</span> 컬러가 적용됩니다.</p>
                         <pre>
                             <code>
-                                &lt;div class=&quot;fc-black&quot;&gt; color: #000&lt;/div&gt;
-                                &lt;div class=&quot;fc-gray90&quot;&gt; color: #333&lt;/div&gt;
-                                &lt;div class=&quot;fc-gray80&quot;&gt; color: #666&lt;/div&gt;
-                                &lt;div class=&quot;fc-gray70&quot;&gt; color: #888&lt;/div&gt;
-                                &lt;div class=&quot;fc-gray60&quot;&gt; color: #BBB&lt;/div&gt;
-                                &lt;div class=&quot;fc-gray50&quot;&gt; color: #CCC&lt;/div&gt;
-                                &lt;div class=&quot;fc-gray40&quot;&gt; color: #DDD&lt;/div&gt;
-                                &lt;div class=&quot;fc-gray30&quot;&gt; color: #EAEAEA&lt;/div&gt;
-                                &lt;div class=&quot;fc-gray20&quot;&gt; color: #F0F0F0&lt;/div&gt;
-                                &lt;div class=&quot;fc-gray10&quot;&gt; color: #F5F5F5&lt;/div&gt;
-                                &lt;div class=&quot;fc-blue&quot;&gt; color: #6987A1&lt;/div&gt;
-                                &lt;div class=&quot;fc-brown&quot;&gt; color: #B09785&lt;/div&gt;
-                                &lt;div class=&quot;fc-red&quot;&gt; color: #EE3030&lt;/div&gt;
+                                &lt;span class=&quot;fc-black&quot;&gt; color: #000&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray90&quot;&gt; color: #333&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray80&quot;&gt; color: #666&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray70&quot;&gt; color: #888&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray60&quot;&gt; color: #BBB&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray50&quot;&gt; color: #CCC&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray40&quot;&gt; color: #DDD&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray30&quot;&gt; color: #EAEAEA&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray20&quot;&gt; color: #F0F0F0&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray10&quot;&gt; color: #F5F5F5&lt;/span&gt;
+                                &lt;span class=&quot;fc-blue&quot;&gt; color: #6987A1&lt;/span&gt;
+                                &lt;span class=&quot;fc-brown&quot;&gt; color: #B09785&lt;/span&gt;
+                                &lt;span class=&quot;fc-red&quot;&gt; color: #EE3030&lt;/span&gt;
                             </code>
                         </pre>
+                    </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">font weight option</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                font weight 따라 class 사용
+                                <ul class="guide-desc-list" style="margin-top: 4px;">
+                                    <li><code>fw-bold</code> font-weight: 700</li>
+                                    <li><code>fw-sb</code> font-weight: 600</li>
+                                    <li><code>fw-md</code> font-weight: 500</li>
+                                    <li><code>fw-rgl</code> font-weight: 400</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p class="stext">fw-bold 사용 시 <span class="fw-bold">700</span> 굵기가 적용됩니다.</p>
+                        <p class="stext">fw-sb 사용 시 <span class="fw-sb">600</span> 굵기가 적용됩니다.</p>
+                        <p class="stext">fw-md 사용 시 <span class="fw-md">500</span> 굵기가 적용됩니다.</p>
+                        <p class="stext">fw-rgl 사용 시 <span class="fw-rgl">400</span> 굵기가 적용됩니다.</p>
+                        <pre><code>
+                            &lt;span class=&quot;fw-bold&quot;&gt;font-weight: 700&lt;/span&gt;
+                            &lt;span class=&quot;fw-sb&quot;&gt;font-weight: 600&lt;/span&gt;
+                            &lt;span class=&quot;fw-md&quot;&gt;font-weight: 500&lt;/span&gt;
+                            &lt;span class=&quot;fw-rgl&quot;&gt;font-weight: 400&lt;/span&gt;
+                        </code></pre>
+                    </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx3">font color option</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                text align 따라 class 사용
+                                <ul class="guide-desc-list" style="margin-top: 4px;">
+                                    <li><code>ta-left</code> text-align: left</li>
+                                    <li><code>ta-center</code> text-align: center</li>
+                                    <li><code>ta-right</code> text-align: right</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div style="padding: 10px; background: #7CC576;">
+                            <p class="ta-left">.ta-left 사용 시 텍스트가 왼쪽 정렬 됩니다.</p>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #7CC576;">
+                            <p class="ta-center">.ta-center 사용 시 텍스트가 가운데 정렬 됩니다.</p>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #7CC576;">
+                            <p class="ta-right">.ta-right 사용 시 텍스트가 오른쪽 정렬 됩니다.</p>
+                        </div>
+                        <pre><code>
+                            &lt;p class=&quot;ta-left&quot;&gt;text-align: left&lt;/p&gt;
+                            &lt;p class=&quot;ta-center&quot;&gt;text-align: center&lt;/p&gt;
+                            &lt;p class=&quot;ta-right&quot;&gt;text-align: right&lt;/p&gt;
+                        </code></pre>
+                    </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx4">text ellipsis option</div>
+                        <ul class="guide-desc-list">
+                            <li><code>ellipsis</code> 텍스트 한 줄 말줄임</li>
+                        </ul>
+                        <p class="ellipsis">ellipsis 사용 시 한 줄 말줄임 됩니다. ellipsis 사용 시 한 줄 말줄임 됩니다. ellipsis 사용 시 한 줄 말줄임 됩니다. ellipsis 사용 시 한 줄 말줄임 됩니다. ellipsis 사용 시 한 줄 말줄임 됩니다.</p>
+                        <pre><code>
+                            &lt;p class=&quot;ellipsis&quot;&gt;ellipsis 사용 시 한 줄 말줄임 됩니다. ellipsis 사용 시 한 줄 말줄임 됩니다.&lt;/p&gt;
+                        </code></pre>
                     </div>
                 </div>
             </div>

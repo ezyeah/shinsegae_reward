@@ -584,56 +584,108 @@ span.badge-round-sm {
 }
 
 /* color */
+[class^=fc-] {
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 .fc-black {
-  color: #000;
+  color: #000 !important;
 }
 
 .fc-gray90 {
-  color: #333;
+  color: #333 !important;
 }
 
 .fc-gray80 {
-  color: #666;
+  color: #666 !important;
 }
 
 .fc-gray70 {
-  color: #888;
+  color: #888 !important;
 }
 
 .fc-gray60 {
-  color: #BBB;
+  color: #BBB !important;
 }
 
 .fc-gray50 {
-  color: #CCC;
+  color: #CCC !important;
 }
 
 .fc-gray40 {
-  color: #DDD;
+  color: #DDD !important;
 }
 
 .fc-gray30 {
-  color: #EAEAEA;
+  color: #EAEAEA !important;
 }
 
 .fc-gray20 {
-  color: #F0F0F0;
+  color: #F0F0F0 !important;
 }
 
 .fc-gray10 {
-  color: #F5F5F5;
+  color: #F5F5F5 !important;
 }
 
 .fc-blue {
-  color: #6987A1;
+  color: #6987A1 !important;
 }
 
 .fc-brown {
-  color: #B09785;
+  color: #B09785 !important;
 }
 
 .fc-red {
-  color: #EE3030;
+  color: #EE3030 !important;
+}
+
+/* weight */
+[class^=fw-] {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-sb {
+  font-weight: 600 !important;
+}
+
+.fw-md {
+  font-weight: 500 !important;
+}
+
+.fw-rgl {
+  font-weight: 400 !important;
+}
+
+/* align */
+.ta-left {
+  text-align: left !important;
+}
+
+.ta-center {
+  text-align: center !important;
+}
+
+.ta-right {
+  text-align: right !important;
+}
+
+/* ellipsis */
+.ellipsis {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /*  title */
