@@ -1,3 +1,78 @@
 @use 'sass:map';
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
+
+%setTabComm {
+  [class^="tab"][class$="list"] {
+    @include mixins.justify_width();
+
+    .tab-item {
+      .tab-link {
+        // display: inline-block;
+        font-size: 0;
+        vertical-align: top;
+        cursor: pointer;
+
+        .tab-text {
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    @include mixins.justify_width(stretch, start, column);
+    flex: 1 0 auto;
+
+    .tab-contents {
+      @include mixins.justify_width(stretch, start, column);
+      flex: auto;
+
+      [class*="cont-box"]:last-child {
+        flex: 1 0 auto;
+      }
+    }
+  }
+}
+
+.tab-wrap {
+  @extend %setTabComm;
+
+  [class^="tab"][class$="list"] {
+    position: relative;
+  }
+
+  .tab-line-list {
+    gap: 20px;
+    padding: 0 20px;
+    border-bottom: 1px solid variables.$colorGray30;
+
+    .tab-item {
+      .tab-link {
+        @include mixins.justify_width(center);
+        min-height: 49px;
+
+        .tab-text {
+          @include mixins.font_size_lg('md');
+          color: variables.$colorGray60;
+        }
+      }
+
+      &.ui-tabs-active {
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: -1px;
+          display: block;
+          width: 100%;
+          height: 2px;
+          border-radius: 2px;
+          background-color: variables.$colorBlue120;
+        }
+      }
+    }
+  }
+}

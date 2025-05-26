@@ -1386,4 +1386,134 @@ span.badge-round-sm {
 .rcont-box-lg .cont-inner {
   padding: 0 20px;
 }
+
+.tab-wrap [class^=tab][class$=list] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.tab-wrap [class^=tab][class$=list] .tab-item .tab-link {
+  font-size: 0;
+  vertical-align: top;
+  cursor: pointer;
+}
+.tab-wrap [class^=tab][class$=list] .tab-item .tab-link .tab-text {
+  display: inline-block;
+  vertical-align: top;
+}
+.tab-wrap:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -moz-box-orient: vertical;
+  -moz-box-direction: reverse;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+.tab-wrap:last-child .tab-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -moz-box-orient: vertical;
+  -moz-box-direction: reverse;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  flex: auto;
+}
+.tab-wrap:last-child .tab-contents [class*=cont-box]:last-child {
+  flex: 1 0 auto;
+}
+
+.tab-wrap [class^=tab][class$=list] {
+  position: relative;
+}
+.tab-wrap .tab-line-list {
+  gap: 20px;
+  padding: 0 20px;
+  border-bottom: 1px solid #EAEAEA;
+}
+.tab-wrap .tab-line-list .tab-item .tab-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  min-height: 49px;
+}
+.tab-wrap .tab-line-list .tab-item .tab-link .tab-text {
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  color: #BBB;
+}
+.tab-wrap .tab-line-list .tab-item.ui-tabs-active {
+  position: relative;
+}
+.tab-wrap .tab-line-list .tab-item.ui-tabs-active:before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #536F86;
+}
+
+/*
+@forward 'components/formElements.module';*/
 /*# sourceMappingURL=reward_components.css.map */
