@@ -138,7 +138,7 @@
                         <ol class="guide-desc-list">
                             <li><a href="#idx1" style="text-decoration: underline">stext</a></li>
                             <li><a href="#idx2" style="text-decoration: underline">text group</a></li>
-                            <li><a href="#idx3" style="text-decoration: underline">text list</a></li>
+                            <li><a href="#idx3" style="text-decoration: underline">info text / info text list</a></li>
                         </ol>
                     </div>
 
@@ -187,19 +187,24 @@
                                 <p><code>bar-text-lg</code></p>
                                 <ul class="guide-desc-list">
                                     <li>font-size : 15px</li>
-                                    <li>font-size : 15px</li>
+                                    <li>font-weight : 400</li>
+                                    <li>color : gray100</li>
                                 </ul>
                             </li>
                             <li>
                                 <p><code>bar-text-md</code></p>
                                 <ul class="guide-desc-list">
                                     <li>font-size : 14px</li>
+                                    <li>font-weight : 400</li>
+                                    <li>color : gray100</li>
                                 </ul>
                             </li>
                             <li>
                                 <p><code>bar-text-sm</code></p>
                                 <ul class="guide-desc-list">
                                     <li>font-size : 13px</li>
+                                    <li>font-weight : 400</li>
+                                    <li>color : gray100</li>
                                 </ul>
                             </li>
                         </ul>
@@ -210,6 +215,15 @@
                             <span class="bar-text-lg">텍스트텍스트</span>
                             <span class="bar-text-lg">텍스트텍스트</span>
                         </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;bar-group&quot;&gt;
+                                    &lt;span class=&quot;bar-text-lg&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-lg&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-lg&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
 
                         <div class="guide-xsbtit">bar-text-md</div>
                         <div class="bar-group">
@@ -217,6 +231,15 @@
                             <span class="bar-text-md">텍스트텍스트</span>
                             <span class="bar-text-md">텍스트텍스트</span>
                         </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;bar-group&quot;&gt;
+                                    &lt;span class=&quot;bar-text-md&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-md&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-md&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
 
                         <div class="guide-xsbtit">bar-text-sm</div>
                         <div class="bar-group">
@@ -224,13 +247,127 @@
                             <span class="bar-text-sm">텍스트텍스트</span>
                             <span class="bar-text-sm">텍스트텍스트</span>
                         </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;bar-group&quot;&gt;
+                                    &lt;span class=&quot;bar-text-sm&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-sm&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-sm&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">dot-group</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p>텍스트 구분을 위한 요소로 dot으로 구분됩니다.</p>
+                            </li>
+                            <li><p>레벨 단계 구조 : <code>dot-group</code> > <code>dot-text</code></p></li>
+                            <li><p>bar size : 2px / height : 2px / bg : Gray_80</p></li>
+                            <li>
+                                <p><code>dot-text</code></p>
+                                <ul class="guide-desc-list">
+                                    <li>font-size : 13px</li>
+                                    <li>font-weight : 400</li>
+                                    <li>color : gray80</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="guide-xsbtit">dot-group > dot-text</div>
+                        <div class="dot-group">
+                            <span class="dot-text">랑콤</span>
+                            <span class="dot-text">2025.02.01</span>
+                        </div>
 
                         <pre>
                             <code class="html">
-
+                                &lt;div class=&quot;dot-group&quot;&gt;
+                                    &lt;span class=&quot;dot-text&quot;&gt;랑콤&lt;/span&gt;
+                                    &lt;span class=&quot;dot-text&quot;&gt;2025.02.01&lt;/span&gt;
+                                &lt;/div&gt;
                             </code>
                         </pre>
                     </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx3">info text / info text list</div>
+                        <div class="guide-sbtit">정보성 텍스트</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p>dash-text</p>
+                                <ul class="guide-desc-list">
+                                    <li><code>default</code>font-size : 13px</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>dot-text</p>
+                                <ul class="guide-desc-list">
+                                    <li><code>default</code>font-size : 13px</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>정보성 리스트</p>
+                                <ul class="guide-desc-list">
+                                    <li><code>default</code>사이 여백 6px</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="guide-xsbtit">dash-text</div>
+                        <p class="dash-text">유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.</p>
+                        <pre>
+                            <code class="html">
+                                &lt;p class=&quot;dash-text&quot;&gt;유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.&lt;/p&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">dot-text</div>
+                        <p class="dot-text">유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.</p>
+                        <pre>
+                            <code class="html">
+                                &lt;p class=&quot;dot-text&quot;&gt;유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.&lt;/p&gt;
+                            </code>
+                        </pre>
+
+
+                        <div class="guide-xsbtit">info-text-list > dash-text</div>
+                        <ul class="info-text-list">
+                            <li class="dash-text">유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다.</li>
+                            <li class="dash-text">유의사항 텍스트 입니다.</li>
+                            <li class="dash-text">유의사항 텍스트 입니다.</li>
+                            <li class="dash-text">유의사항 텍스트 입니다.</li>
+                        </ul>
+                        <pre>
+                            <code class="html">
+                               &lt;ul class=&quot;info-text-list&quot;&gt;
+                                    &lt;li class=&quot;dash-text&quot;&gt;유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dash-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dash-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dash-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                               &lt;/ul&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">info-text-list > dot-text</div>
+                        <ul class="info-text-list">
+                            <li class="dot-text">유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다.</li>
+                            <li class="dot-text">유의사항 텍스트 입니다.</li>
+                            <li class="dot-text">유의사항 텍스트 입니다.</li>
+                            <li class="dot-text">유의사항 텍스트 입니다.</li>
+                        </ul>
+                        <pre>
+                            <code class="html">
+                               &lt;ul class=&quot;info-text-list&quot;&gt;
+                                    &lt;li class=&quot;dot-text&quot;&gt;유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dot-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dot-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dot-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                               &lt;/ul&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    </div>
+
                 </div>
             </div>
         </div>

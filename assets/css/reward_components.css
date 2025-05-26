@@ -564,6 +564,172 @@
   color: #666;
 }
 
+/* bar-group */
+.bar-group .bar-text-sm, .bar-group .bar-text-md, .bar-group .bar-text-lg {
+  display: inline-block;
+  vertical-align: top;
+}
+.bar-group .bar-text-sm::after, .bar-group .bar-text-md::after, .bar-group .bar-text-lg::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background-color: #DDD;
+  vertical-align: top;
+  margin: 0 6px;
+}
+.bar-group .bar-text-sm:last-child::after, .bar-group .bar-text-md:last-child::after, .bar-group .bar-text-lg:last-child::after {
+  content: initial;
+}
+
+.bar-group {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.bar-group .bar-text-lg {
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+}
+.bar-group .bar-text-lg::after {
+  margin-top: 5.5px;
+}
+.bar-group .bar-text-md {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+}
+.bar-group .bar-text-md::after {
+  margin-top: 5px;
+}
+.bar-group .bar-text-sm {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+}
+.bar-group .bar-text-sm::after {
+  margin-top: 4px;
+}
+
+/* dot-group */
+.dot-group {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.dot-group .dot-text {
+  display: inline-block;
+  vertical-align: top;
+  color: #666;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  padding: 0;
+}
+.dot-group .dot-text ~ .dot-text::before {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  background-color: #666;
+  vertical-align: top;
+  margin: 9px 4px 0;
+  border-radius: 100%;
+  position: static;
+}
+.dot-group .dot-text:first-child::before {
+  content: initial;
+}
+
+/* info-text, info-text-list */
+.dash-text,
+.dot-text {
+  position: relative;
+  display: block;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.dash-text {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  padding-left: 8px;
+  color: #888;
+}
+.dash-text::before {
+  display: block;
+  position: absolute;
+  left: 0;
+  content: "-";
+  top: 0;
+}
+
+.dot-text {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  padding-left: 7px;
+  color: #888;
+}
+.dot-text::before {
+  display: block;
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 8px;
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background: #BBB;
+}
+
+.info-text-list .dash-text ~ .dash-text {
+  margin-top: 6px;
+}
+.info-text-list .dot-text ~ .dot-text {
+  margin-top: 6px;
+}
+
 /* button */
 a, button {
   /* 버튼 공통 */
