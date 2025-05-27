@@ -21,6 +21,10 @@
     }
   }
 
+  .tab-content {
+    padding: 0;
+  }
+
   &:last-child {
     @include mixins.justify_width(stretch, start, column);
     flex: 1 0 auto;

@@ -48,7 +48,10 @@ rewardPub.front = rewardPub.front || (function () {
 
     $(selector).each(function () {
       var that = $(this);
-      var initTabItem = that.find('.tab-item.ui-state-active');
+
+      if (that.hasClass('link-tab')) return;
+
+      var initTabItem = that.find('.tab-item.ui-tabs-active');
 
       that.tabs({
         beforeActivate: function (event, ui) {
