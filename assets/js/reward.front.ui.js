@@ -44,25 +44,27 @@ rewardPub.front = rewardPub.front || (function () {
   */
   function setTabs(selector) {
     selector = selector || '.tab-wrap';
+    if ($(selector).length === 0) return false;
 
-    if ($(selector).length > 0) {
-      $(selector).each(function () {
-        var that = $(this);
-        var initTabItem = that.find('.tab-item.ui-state-active');
+    $(selector).each(function () {
+      var that = $(this);
 
-        that.tabs({
-          beforeActivate: function (event, ui) {
-            if ($(ui.newTab).find('a').attr('href').indexOf('#') !== 0) {
-              var tg = $(ui.newTab).find('a').attr('target') === undefined ? '_self' : $(ui.newTab).find('a').attr('target');
-              window.open($(ui.newTab).find('a').attr('href'), tg);
-            }
-          },
-          create: function (event, ui) {
-            that.tabs('option', 'active', initTabItem.index());
-          },
-        });
+      if (that.hasClass('link-tab')) return;
+
+      var initTabItem = that.find('.tab-item.ui-tabs-active');
+
+      that.tabs({
+        beforeActivate: function (event, ui) {
+          if ($(ui.newTab).find('a').attr('href').indexOf('#') !== 0) {
+            var tg = $(ui.newTab).find('a').attr('target') === undefined ? '_self' : $(ui.newTab).find('a').attr('target');
+            window.open($(ui.newTab).find('a').attr('href'), tg);
+          }
+        },
+        create: function (event, ui) {
+          that.tabs('option', 'active', initTabItem.index());
+        },
       });
-    }
+    });
   }
 
   _front.setContainerBottomGap = setContainerBottomGap;

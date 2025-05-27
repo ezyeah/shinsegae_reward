@@ -1773,6 +1773,9 @@ span.badge-round-sm {
   display: inline-block;
   vertical-align: top;
 }
+.tab-wrap .tab-content {
+  padding: 0;
+}
 .tab-wrap:last-child {
   display: -webkit-box;
   display: -ms-flexbox;

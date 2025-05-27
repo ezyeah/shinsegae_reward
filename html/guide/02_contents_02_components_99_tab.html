@@ -19,8 +19,8 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no">
 
     <title>신세계백화점 가이드 - Tab</title>
-    <!-- Vendors CSS
 
+    <!-- Vendors CSS
    ================================================== -->
     <link rel="stylesheet" href="../../assets/vendors/jquery-ui-1.14.1/jquery-ui.min.css">
 
@@ -136,13 +136,13 @@
                         <div class="guide-ptit"><span># Tab</span></div>
                         <div class="guide-btit">index</div>
                         <ol class="guide-desc-list">
-                            <li><a href="#idx1" style="text-decoration: underline">tab-wrap > tab-line-list</a></li>
-                            <li><a href="#idx2" style="text-decoration: underline">tab wrap > tab-pill-list</a></li>
+                            <li><a href="#idx1" style="text-decoration: underline">default</a></li>
+                            <li><a href="#idx2" style="text-decoration: underline">link-tab</a></li>
                         </ol>
                     </div>
 
                     <div class="guide-inner">
-                        <div class="guide-btit" id="idx1">tab-line-list</div>
+                        <div class="guide-btit" id="idx1">default</div>
                         <div class="tab-wrap">
                             <!-- tab-line-list -->
                             <ul class="tab-line-list">
@@ -166,6 +166,26 @@
                             </div>
                             <div id="tabContent3" class="tab-content">
                                 <div style="height: 300px; background:rgba(255, 0 ,0 ,0.2);">tab content 3</div>
+                            </div>
+                            <!-- // tab-content -->
+                        </div>
+                    </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">link-tab</div>
+                        <div class="tab-wrap link-tab">
+                            <!-- tab-line-list -->
+                            <ul class="tab-line-list">
+                                <li class="tab-item ui-tabs-active">
+                                    <a href="javascript:alert('link');" class="tab-link"><span class="tab-text">tab 1</span></a>
+                                </li>
+                                <li class="tab-item">
+                                    <a href="javascript:alert('link');" class="tab-link"><span class="tab-text">tab 2</span></a>
+                                </li>
+                            </ul>
+                            <!-- // tab-line-list -->
+                            <!-- tab-content -->
+                            <div class="tab-content">
+                                <div style="height: 300px; background:rgba(255, 0 ,0 ,0.2);">tab content 1</div>
                             </div>
                             <!-- // tab-content -->
                         </div>
