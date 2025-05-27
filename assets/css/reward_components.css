@@ -551,16 +551,16 @@
   letter-spacing: -0.5px;
   font-weight: 400;
 }
-.stext-gray70-sm, .stext-gray80-sm {
+.stext-sm-gray70, .stext-sm-gray80 {
   font-size: 13px;
   line-height: 18px;
   letter-spacing: -0.5px;
   font-weight: 400;
 }
-.stext-gray70, .stext-gray70-sm {
+.stext-gray70, .stext-sm-gray70 {
   color: #888;
 }
-.stext-gray80, .stext-gray80-sm {
+.stext-gray80, .stext-sm-gray80 {
   color: #666;
 }
 
