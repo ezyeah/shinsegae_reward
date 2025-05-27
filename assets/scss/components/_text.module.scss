@@ -7,15 +7,15 @@
     @include mixins.font_size_md;
   }
 
-  &-gray70-sm, &-gray80-sm {
+  &-sm-gray70, &-sm-gray80 {
     @include mixins.font_size_sm;
   }
 
-  &-gray70, &-gray70-sm {
+  &-gray70, &-sm-gray70 {
     color: variables.$colorGray70;
   }
 
-  &-gray80, &-gray80-sm {
+  &-gray80, &-sm-gray80 {
     color: variables.$colorGray80;
   }
 }

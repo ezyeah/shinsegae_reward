@@ -1,0 +1,134 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+[class^=form] {
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &[type=number] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &[type=date], &[type=month], &[type=time], &[type=week] {
+    &::-webkit-calendar-picker-indicator {
+      background: none;
+    }
+  }
+
+  &[type=search] {
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+/* form - input */
+.ui-input {
+  width: 100%;
+  border: 0;
+  color: variables.$colorGray100;
+  @include mixins.font_size_md;
+  outline: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &[type=number] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: textfield;
+      margin: 0;
+    }
+  }
+
+  &[type=date], &[type=month], &[type=time], &[type=week] {
+    &::-webkit-calendar-picker-indicator {
+      background: none;
+    }
+  }
+
+  &[type=search] {
+    //background: variables.$grayscale70;
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &::placeholder {
+    color: variables.$colorGray70;
+  }
+}
+
+
+%inputBoxStyle {
+  overflow: hidden;
+  @include mixins.justify_width;
+  padding: 0 20px;
+
+  .btn-input-del {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    @include mixins.ratio_images('/assets/images/common/comm_ico_delete_h18');
+    margin-top: 13px;
+    margin-left: 10px;
+    display: none;
+  }
+}
+
+.input-group {
+  ~.input-group {
+    margin-top: 6px;
+  }
+
+
+  .input-box {
+    @extend %inputBoxStyle;
+    border: 1px solid variables.$colorGray40;
+    background-color: variables.$colorGray00;
+    border-radius: 22px;
+
+    .ui-input {
+      height: 44px;
+
+      &.right {
+        text-align: right;
+      }
+    }
+  }
+}
