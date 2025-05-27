@@ -147,7 +147,7 @@
                                     <li><a href="#idx1_2" style="text-decoration: underline">숫자 case</a></li>
                                     <li><a href="#idx1_3" style="text-decoration: underline">휴대폰 번호 case</a></li>
                                     <li><a href="#idx1_4" style="text-decoration: underline">검색 case</a></li>
-                                    <li><a href="#idx1_5" style="text-decoration: underline">하단 텍스트</a></li>
+                                    <li><a href="#idx1_5" style="text-decoration: underline">하단 가이드 텍스트</a></li>
                                     <li><a href="#idx1_6" style="text-decoration: underline">유효성 검사</a></li>
                                     <li><a href="#idx1_7" style="text-decoration: underline">input-flex-box</a></li>
                                 </ul>
@@ -220,17 +220,6 @@
                         <div class="input-group">
                             <!-- input-box -->
                             <div class="input-box">
-                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 중" value="텍스트 입력 중"/>
-                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
-                            </div>
-                            <!-- // input-box -->
-                        </div>
-                        <!-- // input-group-->
-
-                        <!-- input-group -->
-                        <div class="input-group">
-                            <!-- input-box -->
-                            <div class="input-box">
                                 <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 후" value="텍스트 입력 후"/>
                                 <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
                             </div>
@@ -251,7 +240,49 @@
 
                         <pre>
                             <code class="html">
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 전&quot; value=&quot;&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
 
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input right&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 전&quot; value=&quot;&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 후&quot; value=&quot;텍스트 입력 후&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 불가&quot; value=&quot;&quot; disabled /&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
                             </code>
                         </pre>
 
@@ -263,7 +294,7 @@
                         <div class="input-group">
                             <!-- input-box -->
                             <div class="input-box">
-                                <input type="number" class="ui-input" title="사업자 번호" placeholder="- 없이 입력해 주세요." inputmode="numeric"  value=""/>
+                                <input type="number" inputmode="numeric" class="ui-input" title="사업자 번호" placeholder="- 없이 입력해 주세요." value=""/>
                                 <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
                             </div>
                             <!-- // input-box -->
@@ -285,7 +316,7 @@
                         <div class="input-group">
                             <!-- input-box -->
                             <div class="input-box">
-                                <input type="tel" class="ui-input num-maxlength" title="휴대폰 번호" placeholder="-없이 휴대폰 번호를 입력해 주세요." data-maxlength="15"  value=""/>
+                                <input type="number" inputmode="tel" class="ui-input num-maxlength" title="휴대폰 번호" placeholder="-없이 휴대폰 번호를 입력해 주세요." data-maxlength="15"  value=""/>
                                 <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
                             </div>
                             <!-- // input-box -->
@@ -298,7 +329,222 @@
                         </pre>
 
                         <div class="guide-sbtit" id="idx1_4">검색 case</div>
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-search-box -->
+                            <div class="input-search-box">
+                                <input type="search" inputmode="search" class="ui-input" title="검색" placeholder="검색어를 입력하세요." value=""/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                                <button type="button" class="btn-input-search"><span class="offscreen">검색</span></button>
+                            </div>
+                            <!-- // input-search-box -->
+                        </div>
+                        <!-- // input-group-->
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-search-box -->
+                            <div class="input-search-box">
+                                <input type="search" inputmode="search" class="ui-input" title="검색" placeholder="검색어를 입력하세요." value="입력 후"/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                                <button type="button" class="btn-input-search"><span class="offscreen">검색</span></button>
+                            </div>
+                            <!-- // input-search-box -->
+                        </div>
+                        <!-- // input-group-->
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-search-box -->
+                            <div class="input-search-box">
+                                <input type="search" inputmode="search" class="ui-input" title="검색" placeholder="입력 불가" value="" disabled/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                                <button type="button" class="btn-input-search"><span class="offscreen">검색</span></button>
+                            </div>
+                            <!-- // input-search-box -->
+                        </div>
+                        <!-- // input-group-->
+                        <pre>
+                            <code class="html">
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                &lt;!-- input-search-box --&gt;
+                                &lt;div class=&quot;input-search-box&quot;&gt;
+                                    &lt;input type=&quot;search&quot; inputmode=&quot;search&quot; class=&quot;ui-input&quot; title=&quot;검색&quot; placeholder=&quot;검색어를 입력하세요.&quot; value=&quot;&quot;/&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;btn-input-search&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;검색&lt;/span&gt;&lt;/button&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-search-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
 
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-search-box --&gt;
+                                    &lt;div class=&quot;input-search-box&quot;&gt;
+                                        &lt;input type=&quot;search&quot; inputmode=&quot;search&quot; class=&quot;ui-input&quot; title=&quot;검색&quot; placeholder=&quot;검색어를 입력하세요.&quot; value=&quot;입력 후&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-search&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;검색&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-search-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-search-box --&gt;
+                                    &lt;div class=&quot;input-search-box&quot;&gt;
+                                        &lt;input type=&quot;search&quot; inputmode=&quot;search&quot; class=&quot;ui-input&quot; title=&quot;검색&quot; placeholder=&quot;입력 불가&quot; value=&quot;&quot; disabled/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-search&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;검색&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-search-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit" id="idx1_5">하단 가이드 텍스트</div>
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 전" />
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                            <div class="input-guide">하단 텍스트가 노출됩니다.</div>
+                        </div>
+                        <!-- // input-group -->
+                        <pre>
+                            <code class="html">
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 전&quot; /&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                    &lt;div class=&quot;input-guide&quot;&gt;하단 텍스트가 노출됩니다.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group --&gt;
+                            </code>
+                        </pre>
+
+
+                        <div class="guide-sbtit" id="idx1_6">유효성 검사</div>
+                        <!--
+                        DESC : 유효성 검사 결과에 따라 .valid-check 클래스 추가
+                               기본형 : valid-check (하단 문구 노출 안됨)
+			                   유효성 검사 실패 시 : valid-check.fail
+		                 -->
+                        <!-- input-group -->
+                        <div class="input-group valid-check">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트를 입력하세요" value="텍스트 입력 후1" />
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                            <div class="valid-desc">하단 텍스트가 노출됩니다.</div>
+                        </div>
+                        <!-- // input-group -->
+
+                        <!-- input-group -->
+                        <div class="input-group valid-check fail">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트를 입력하세요" value="텍스트 입력 후2" />
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                            <div class="valid-desc">하단 텍스트가 노출됩니다.</div>
+                        </div>
+                        <!-- // input-group -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group valid-check&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트를 입력하세요&quot; value=&quot;텍스트 입력 후1&quot; /&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                    &lt;div class=&quot;valid-desc&quot;&gt;하단 텍스트가 노출됩니다.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group --&gt;
+
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group valid-check fail&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트를 입력하세요&quot; value=&quot;텍스트 입력 후2&quot; /&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                    &lt;div class=&quot;valid-desc&quot;&gt;하단 텍스트가 노출됩니다.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group --&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">textarea</div>
+                        <!-- textarea-box -->
+                        <div class="textarea-box">
+                            <textarea class="ui-textarea" title="타이틀 입력" placeholder="힌트 메시지"></textarea>
+                            <div class="count-check"><span class="count">0</span><span class="total">100</span></div>
+                        </div>
+                        <!-- // textarea-box -->
+
+                        <!-- textarea-box -->
+                        <div class="textarea-box">
+                            <textarea class="ui-textarea" title="타이틀 입력" placeholder="힌트 메시지" disabled></textarea>
+                            <div class="count-check"><span class="count">0</span><span class="total">100</span></div>
+                        </div>
+                        <!-- // textarea-box -->
+
+                        <!-- valid-check -->
+                        <div class="valid-check fail">
+                            <!-- textarea-box -->
+                            <div class="textarea-box">
+                                <textarea class="ui-textarea" title="타이틀 입력" placeholder="힌트 메시지">텍스트 입력 오류</textarea>
+                                <div class="count-check"><span class="count">0</span><span class="total">100</span></div>
+                            </div>
+                            <!-- // textarea-box -->
+                        </div>
+                        <!-- // valid-check -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- textarea-box --&gt;
+                                 &lt;div class=&quot;textarea-box&quot;&gt;
+                                     &lt;textarea class=&quot;ui-textarea&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;힌트 메시지&quot;&gt;&lt;/textarea&gt;
+                                     &lt;div class=&quot;count-check&quot;&gt;&lt;span class=&quot;count&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;total&quot;&gt;100&lt;/span&gt;&lt;/div&gt;
+                                 &lt;/div&gt;
+                                &lt;!-- // textarea-box --&gt;
+
+                                &lt;!-- textarea-box --&gt;
+                                &lt;div class=&quot;textarea-box&quot;&gt;
+                                    &lt;textarea class=&quot;ui-textarea&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;힌트 메시지&quot; disabled&gt;&lt;/textarea&gt;
+                                    &lt;div class=&quot;count-check&quot;&gt;&lt;span class=&quot;count&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;total&quot;&gt;100&lt;/span&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // textarea-box --&gt;
+
+                                &lt;!-- valid-check --&gt;
+                                &lt;div class=&quot;valid-check fail&quot;&gt;
+                                    &lt;!-- textarea-box --&gt;
+                                    &lt;div class=&quot;textarea-box&quot;&gt;
+                                        &lt;textarea class=&quot;ui-textarea&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;힌트 메시지&quot;&gt;텍스트 입력 오류&lt;/textarea&gt;
+                                        &lt;div class=&quot;count-check&quot;&gt;&lt;span class=&quot;count&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;total&quot;&gt;100&lt;/span&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // textarea-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // valid-check --&gt;
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>
