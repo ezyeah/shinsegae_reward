@@ -2040,8 +2040,8 @@ span.badge-round-sm {
   background-color: #FFF;
 }
 .ui-rdo input:checked + label:before {
-  background-color: #666;
-  border-color: #666;
+  background-color: #333;
+  border-color: #333;
 }
 .ui-rdo input:checked[disabled] + label:before, .ui-rdo input:checked[aria-disabled] + label:before, .ui-rdo input:checked[readonly] + label:before {
   opacity: 0.4;

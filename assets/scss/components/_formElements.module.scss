@@ -511,8 +511,8 @@
     &:checked {
       & + label {
         &:before {
-          background-color: variables.$colorGray80;
-          border-color: variables.$colorGray80;
+          background-color: variables.$colorGray90;
+          border-color: variables.$colorGray90;
         }
       }
 
