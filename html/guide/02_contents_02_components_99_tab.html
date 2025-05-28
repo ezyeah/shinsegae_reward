@@ -22,7 +22,7 @@
 
     <!-- Vendors CSS
    ================================================== -->
-    <link rel="stylesheet" href="../../assets/vendors/jquery-ui-1.14.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/jquery-ui-1.14.1/jquery-ui.css">
 
     <!-- Custom styles for this template
     ================================================== -->
@@ -32,6 +32,7 @@
     ================================================== -->
     <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
     <script src="../../assets/vendors/jquery-ui-1.14.1/jquery-ui.min.js"></script>
+    <script src="../../assets/vendors/swiper@11.2.8/swiper-bundle.min.js"></script>
 
     <!-- UI JavaScript
     ================================================== -->
@@ -122,7 +123,7 @@
         <div class="header-inner">
             <div class="header-left">
                 <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
-                <div class="ptitle">Title Guide</div>
+                <div class="ptitle">Tab Guide</div>
             </div>
         </div>
     </div>
@@ -133,30 +134,77 @@
             <div class="cont-inner">
                 <div class="guide-wrap">
                     <div class="guide-inner">
-                        <div class="guide-ptit"><span># Tab</span></div>
+                        <div class="guide-ptit"><span># Tab 공통규칙</span></div>
+                        <ol class="guide-desc-list">
+                            <li>
+                                <code class="title">기본 구조</code>
+                                <p style="margin-top: 4px;"><code>tab-wrap</code>
+                                    <br/> > <code>tab-{$type}-list</code> > <code>tab-item</code> > <code>tab-link</code> > <code>tab-text</code>
+                                    <br/> > <code>tab-content</code>
+                                </p>
+                            </li>
+                            <li>
+                                <code class="title">tab type</code> 구분하여 <code>tab-{$type}-list</code> class 사용 필요
+                                <ul class="guide-desc-list">
+                                    <li style="margin-top: 8px;"><code>tab-line-list</code> 라인형</li>
+                                    <li style="margin-top: 4px;"><code>tab-pill-list</code> 알약형</li>
+                                </ul>
+                            </li>
+                        </ol>
+
                         <div class="guide-btit">index</div>
                         <ol class="guide-desc-list">
-                            <li><a href="#idx1" style="text-decoration: underline">default</a></li>
-                            <li><a href="#idx2" style="text-decoration: underline">link-tab</a></li>
+                            <li>
+                                <a href="#idx1" style="text-decoration: underline">Tab Option</a>
+                                <ul class="guide-desc-list">
+                                    <li>default</li>
+                                    <li>link-tab</li>
+                                    <li>justify-tab</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#idx2" style="text-decoration: underline">Tab Type</a>
+                                <ul class="guide-desc-list">
+                                    <li>tab-line-list</li>
+                                    <li>tab-pill-list</li>
+                                </ul>
+                            </li>
                         </ol>
                     </div>
 
                     <div class="guide-inner">
-                        <div class="guide-btit" id="idx1">default</div>
+                        <div class="guide-btit" id="idx1">Tab Option</div>
+                        <div class="guide-sbtit">default</div>
                         <div class="tab-wrap">
-                            <!-- tab-line-list -->
-                            <ul class="tab-line-list">
-                                <li class="tab-item ui-tabs-active">
-                                    <a href="#tabContent1" class="tab-link"><span class="tab-text">tab 1</span></a>
-                                </li>
-                                <li class="tab-item">
-                                    <a href="#tabContent2" class="tab-link"><span class="tab-text">tab 2</span></a>
-                                </li>
-                                <li class="tab-item">
-                                    <a href="#tabContent3" class="tab-link"><span class="tab-text">tab 3</span></a>
-                                </li>
-                            </ul>
-                            <!-- // tab-line-list -->
+                            <!-- tabs -->
+                            <div class="tabs swiper-auto-wrap">
+                                <!-- tab-list -->
+                                <ul class="tab-line-list swiper-wrapper">
+                                    <li class="tab-item swiper-slide ui-tabs-active">
+                                        <a href="#tabContent1" class="tab-link"><span class="tab-text">tab 1</span></a>
+                                    </li>
+                                    <li class="tab-item swiper-slide">
+                                        <a href="#tabContent2" class="tab-link"><span class="tab-text">tab 2</span></a>
+                                    </li>
+                                    <li class="tab-item swiper-slide">
+                                        <a href="#tabContent3" class="tab-link"><span class="tab-text">tab 3</span></a>
+                                    </li>
+                                    <li class="tab-item swiper-slide">
+                                        <a href="#tabContent3" class="tab-link"><span class="tab-text">tab 3</span></a>
+                                    </li>
+                                    <li class="tab-item swiper-slide">
+                                        <a href="#tabContent3" class="tab-link"><span class="tab-text">tab 3</span></a>
+                                    </li>
+                                    <li class="tab-item swiper-slide">
+                                        <a href="#tabContent3" class="tab-link"><span class="tab-text">tab 3</span></a>
+                                    </li>
+                                    <li class="tab-item swiper-slide">
+                                        <a href="#tabContent3" class="tab-link"><span class="tab-text">tab 3</span></a>
+                                    </li>
+                                </ul>
+                                <!-- // tab-list -->
+                            </div>
+                            <!-- // tabs -->
                             <!-- tab-content -->
                             <div id="tabContent1" class="tab-content">
                                 <div style="height: 300px; background:rgba(255, 0 ,0 ,0.2);">tab content 1</div>
@@ -169,11 +217,42 @@
                             </div>
                             <!-- // tab-content -->
                         </div>
-                    </div>
-                    <div class="guide-inner">
-                        <div class="guide-btit" id="idx2">link-tab</div>
+                        <pre><code>
+                        &lt;div class=&quot;tab-wrap&quot;&gt;
+                            &lt;!-- tab-list --&gt;
+                            &lt;ul class=&quot;tab-line-list&quot;&gt;
+                                &lt;li class=&quot;tab-item ui-tabs-active&quot;&gt;
+                                    &lt;a href=&quot;#tabContent1&quot; class=&quot;tab-link&quot;&gt;&lt;span class=&quot;tab-text&quot;&gt;tab 1&lt;/span&gt;&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class=&quot;tab-item&quot;&gt;
+                                    &lt;a href=&quot;#tabContent2&quot; class=&quot;tab-link&quot;&gt;&lt;span class=&quot;tab-text&quot;&gt;tab 2&lt;/span&gt;&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class=&quot;tab-item&quot;&gt;
+                                    &lt;a href=&quot;#tabContent3&quot; class=&quot;tab-link&quot;&gt;&lt;span class=&quot;tab-text&quot;&gt;tab 3&lt;/span&gt;&lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                                    &lt;!-- // tab-list --&gt;
+                                    &lt;!-- tab-content --&gt;
+                            &lt;div id=&quot;tabContent1&quot; class=&quot;tab-content&quot;&gt;
+                                &lt;div style=&quot;height: 300px; background:rgba(255, 0 ,0 ,0.2);&quot;&gt;tab content 1&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div id=&quot;tabContent2&quot; class=&quot;tab-content&quot;&gt;
+                                &lt;div style=&quot;height: 300px; background:rgba(255, 0 ,0 ,0.2);&quot;&gt;tab content 2&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div id=&quot;tabContent3&quot; class=&quot;tab-content&quot;&gt;
+                                &lt;div style=&quot;height: 300px; background:rgba(255, 0 ,0 ,0.2);&quot;&gt;tab content 3&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;!-- // tab-content --&gt;
+                        &lt;/div&gt;
+                        </code></pre>
+
+                        <div class="guide-sbtit">link-tab</div>
+                        <ul class="guide-desc-list">
+                            <li>탭 선택 시 페이지 이동되어야 하는 경우 사용</li>
+                            <li>기존 <code class="title">tab-wrap</code> 영역에 <code>link-tab</code> multi class로 사용 필요</li>
+                        </ul>
                         <div class="tab-wrap link-tab">
-                            <!-- tab-line-list -->
+                            <!-- tab-list -->
                             <ul class="tab-line-list">
                                 <li class="tab-item ui-tabs-active">
                                     <a href="javascript:alert('link');" class="tab-link"><span class="tab-text">tab 1</span></a>
@@ -182,10 +261,124 @@
                                     <a href="javascript:alert('link');" class="tab-link"><span class="tab-text">tab 2</span></a>
                                 </li>
                             </ul>
-                            <!-- // tab-line-list -->
+                            <!-- // tab-list -->
                             <!-- tab-content -->
                             <div class="tab-content">
                                 <div style="height: 300px; background:rgba(255, 0 ,0 ,0.2);">tab content 1</div>
+                            </div>
+                            <!-- // tab-content -->
+                        </div>
+                        <pre><code>
+                        &lt;div class=&quot;tab-wrap link-tab&quot;&gt;
+                            &lt;!-- tab-list --&gt;
+                            &lt;ul class=&quot;tab-line-list&quot;&gt;
+                                &lt;li class=&quot;tab-item ui-tabs-active&quot;&gt;
+                                    &lt;a href=&quot;javascript:alert(&#39;link&#39;);&quot; class=&quot;tab-link&quot;&gt;&lt;span class=&quot;tab-text&quot;&gt;tab 1&lt;/span&gt;&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class=&quot;tab-item&quot;&gt;
+                                    &lt;a href=&quot;javascript:alert(&#39;link&#39;);&quot; class=&quot;tab-link&quot;&gt;&lt;span class=&quot;tab-text&quot;&gt;tab 2&lt;/span&gt;&lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                           &lt;!-- // tab-list --&gt;
+                           &lt;!-- tab-content --&gt;
+                            &lt;div class=&quot;tab-content&quot;&gt;
+                                &lt;div style=&quot;height: 300px; background:rgba(255, 0 ,0 ,0.2);&quot;&gt;tab content 1&lt;/div&gt;
+                            &lt;/div&gt;
+                           &lt;!-- // tab-content --&gt;
+                        &lt;/div&gt;
+                        </code></pre>
+
+                        <div class="guide-sbtit">justify-tab</div>
+                        <ul class="guide-desc-list">
+                            <li>탭 균등 정렬 필요한 경우 사용</li>
+                            <li>기존 <code class="title">tab-wrap</code> 영역에 <code>justify-tab</code> multi class로 사용 필요</li>
+                        </ul>
+                        <div class="tab-wrap justify-tab">
+                            <!-- tab-list -->
+                            <ul class="tab-line-list">
+                                <li class="tab-item ui-tabs-active">
+                                    <a href="#justifyTabContent1" class="tab-link"><span class="tab-text">tab 1</span></a>
+                                </li>
+                                <li class="tab-item">
+                                    <a href="#justifyTabContent2" class="tab-link"><span class="tab-text">tab 2</span></a>
+                                </li>
+                            </ul>
+                            <!-- // tab-list -->
+                            <!-- tab-content -->
+                            <div id="justifyTabContent1" class="tab-content">
+                                <div style="height: 300px; background:rgba(255, 0 ,0 ,0.2);">tab content 1</div>
+                            </div>
+                            <div id="justifyTabContent2" class="tab-content">
+                                <div style="height: 300px; background:rgba(255, 0 ,0 ,0.2);">tab content 2</div>
+                            </div>
+                            <!-- // tab-content -->
+                        </div>
+                        <pre><code>
+                        &lt;div class=&quot;tab-wrap justify-tab&quot;&gt;
+                            &lt;!-- tab-list --&gt;
+                            &lt;ul class=&quot;tab-line-list&quot;&gt;
+                                &lt;li class=&quot;tab-item ui-tabs-active&quot;&gt;
+                                    &lt;a href=&quot;#justifyTabContent1&quot; class=&quot;tab-link&quot;&gt;&lt;span class=&quot;tab-text&quot;&gt;tab 1&lt;/span&gt;&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class=&quot;tab-item&quot;&gt;
+                                    &lt;a href=&quot;#justifyTabContent2&quot; class=&quot;tab-link&quot;&gt;&lt;span class=&quot;tab-text&quot;&gt;tab 2&lt;/span&gt;&lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                            &lt;!-- // tab-list --&gt;
+                            &lt;!-- tab-content --&gt;
+                            &lt;div id=&quot;justifyTabContent1&quot; class=&quot;tab-content&quot;&gt;
+                                &lt;div style=&quot;height: 300px; background:rgba(255, 0 ,0 ,0.2);&quot;&gt;tab content 1&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div id=&quot;justifyTabContent2&quot; class=&quot;tab-content&quot;&gt;
+                                &lt;div style=&quot;height: 300px; background:rgba(255, 0 ,0 ,0.2);&quot;&gt;tab content 2&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;!-- // tab-content --&gt;
+                        &lt;/div&gt;
+                        </code></pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">Tab Type</div>
+                        <div class="guide-sbtit">tab-line-list</div>
+                        <div class="tab-wrap">
+                            <!-- tab-list -->
+                            <ul class="tab-line-list">
+                                <li class="tab-item ui-tabs-active">
+                                    <a href="#tabContent4" class="tab-link"><span class="tab-text">tab 1</span></a>
+                                </li>
+                                <li class="tab-item">
+                                    <a href="#tabContent5" class="tab-link"><span class="tab-text">tab 2</span></a>
+                                </li>
+                            </ul>
+                            <!-- // tab-list -->
+                            <!-- tab-content -->
+                            <div id="tabContent4" class="tab-content">
+                                <div style="height: 300px; background:rgba(255, 0 ,0 ,0.2);">tab content 1</div>
+                            </div>
+                            <div id="tabContent5" class="tab-content">
+                                <div style="height: 300px; background:rgba(255, 0 ,0 ,0.2);">tab content 2</div>
+                            </div>
+                            <!-- // tab-content -->
+                        </div>
+
+                        <div class="guide-sbtit">tab-pill-list</div>
+                        <div class="tab-wrap">
+                            <!-- tab-list -->
+                            <ul class="tab-pill-list">
+                                <li class="tab-item ui-tabs-active">
+                                    <a href="#tabContent6" class="tab-link"><span class="tab-text">tab 1</span></a>
+                                </li>
+                                <li class="tab-item">
+                                    <a href="#tabContent7" class="tab-link"><span class="tab-text">tab 2</span></a>
+                                </li>
+                            </ul>
+                            <!-- // tab-list -->
+                            <!-- tab-content -->
+                            <div id="tabContent6" class="tab-content">
+                                <div style="height: 300px; background:rgba(255, 0 ,0 ,0.2);">tab content 1</div>
+                            </div>
+                            <div id="tabContent7" class="tab-content">
+                                <div style="height: 300px; background:rgba(255, 0 ,0 ,0.2);">tab content 2</div>
                             </div>
                             <!-- // tab-content -->
                         </div>

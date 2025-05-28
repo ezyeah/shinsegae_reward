@@ -38,6 +38,23 @@ rewardPub.front = rewardPub.front || (function () {
   /*
   * date : 20259999
   * last : 20259999
+  * name : setCommSwiper()
+  * pram : selector - 실행 대상 swiper element
+           customOpt - swiper option custom
+  * desc : set common swiper
+  */
+  function setCommSwiper(selector, customOpt) {
+    selector = selector || '.swiper-auto-wrap';
+    customOpt = customOpt !== undefined ? customOpt : {};
+    let commSwiper = [];
+
+    if ($(selector).length === 0) return false;
+  }
+
+
+  /*
+  * date : 20259999
+  * last : 20259999
   * name : setTabs()
   * pram : selector - Tab 생성 DOM 셀렉터
   * desc : set jQuery UI - Tab

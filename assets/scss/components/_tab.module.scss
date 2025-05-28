@@ -3,12 +3,21 @@
 @use '../abstracts/mixins';
 
 %setTabComm {
-  [class^="tab"][class$="list"] {
-    @include mixins.justify_width();
+  padding:0;
+
+  .tab-line-list,
+  .tab-pill-list {
+    position: relative;
+    @include mixins.justify_width;
+    padding: 0 20px;
 
     .tab-item {
+      margin: 0;
+      padding: 0;
+
       .tab-link {
-        // display: inline-block;
+        @include mixins.justify_width(center, center);
+        width: 100%;
         font-size: 0;
         vertical-align: top;
         cursor: pointer;
@@ -43,18 +52,12 @@
 .tab-wrap {
   @extend %setTabComm;
 
-  [class^="tab"][class$="list"] {
-    position: relative;
-  }
-
+  // type line
   .tab-line-list {
-    gap: 20px;
-    padding: 0 20px;
     border-bottom: 1px solid variables.$colorGray30;
 
     .tab-item {
       .tab-link {
-        @include mixins.justify_width(center);
         min-height: 49px;
 
         .tab-text {
@@ -63,8 +66,19 @@
         }
       }
 
+      ~ .tab-item {
+        margin-left: 20px;
+      }
+
       &.ui-tabs-active {
         position: relative;
+
+        .tab-link {
+          .tab-text {
+            font-weight: variables.$fontWeightBold;
+            color: variables.$colorBlue120;
+          }
+        }
 
         &:before {
           content: '';
@@ -76,6 +90,49 @@
           border-radius: 2px;
           background-color: variables.$colorBlue120;
         }
+      }
+    }
+  }
+
+  // type pill
+  .tab-pill-list {
+    .tab-item {
+      .tab-link {
+        min-height: 38px;
+        padding: 8px 14px;
+        border: 1px solid variables.$colorGray40;
+        border-radius: 25px;
+        background-color: variables.$colorGray00;
+
+        .tab-text {
+          @include mixins.font_size_md;
+          color: variables.$colorGray80;
+        }
+      }
+
+      ~ .tab-item {
+        margin-left: 4px;
+      }
+
+      &.ui-tabs-active {
+        .tab-link {
+          border-color: transparent;
+          background-color: variables.$colorGray90;
+
+          .tab-text {
+            font-weight: variables.$fontWeightSemibold;
+            color: variables.$colorGray00;
+          }
+        }
+      }
+    }
+  }
+
+  &.justify-tab {
+    .tab-line-list,
+    .tab-pill-list {
+      .tab-item {
+        flex: 1;
       }
     }
   }

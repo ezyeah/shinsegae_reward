@@ -45,7 +45,7 @@
 /* ctitle-wrap */
 @mixin ctitleWrap($gap : 'md') {
   @include mixins.justify_width(center, between);
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
 
   .left-area {
     @include mixins.justify_width(start, start, column);
@@ -64,6 +64,7 @@
   }
 
   .right-area {
+    flex-shrink: 0;
     margin-left: 5px; // 임시 여백
   }
 
