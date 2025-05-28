@@ -2,7 +2,8 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-//공통
+/* form - input */
+/* ui-input */
 .ui-input {
   @include mixins.font_size_md;
   width: 100%;
@@ -214,6 +215,7 @@
   }
 }
 
+/* textarea */
 .textarea-box {
   position: relative;
   min-height: 100px;
@@ -267,6 +269,7 @@
   }
 }
 
+/* select */
 .ui-select{
   select {
     outline: none;
@@ -315,4 +318,216 @@
       color: variables.$colorGray100;
     }
   }
+}
+
+/* form - radio, checkbox */
+/* form - radio, checkbox */
+%rdoChkReset {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  vertical-align: top;
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+
+    + label {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      vertical-align: top;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+}
+
+.ui-chk, .ui-rdo {
+  @extend %rdoChkReset;
+  min-height: 24px;
+
+  input {
+    + label {
+      padding-left: 24px;
+      min-height: 24px;
+
+      &:before,
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      > .text {
+        display: inline-block;
+        margin-left: 6px;
+        @include mixins.font_size_md;
+        color: variables.$colorGray100;
+        vertical-align: top;
+        line-height: 24px;
+
+        &-sm {
+          @include mixins.font_size_sm;
+          line-height: 24px;
+          margin-left: 6px;
+        }
+      }
+    }
+
+    &[disabled],
+    &[aria-disabled],
+    &[readonly] {
+      & + label {
+        pointer-events: none;
+
+        &:before {
+          border: 1px solid variables.$colorGray40;
+          background-color: variables.$colorGray10;
+        }
+
+        [class^=text] {
+          color: variables.$colorGray60;
+        }
+      }
+    }
+
+    &:checked {
+      & + label {
+        &:before {
+          background-color: variables.$colorGray80;
+          border-color: variables.$colorGray80;
+        }
+      }
+
+      &[disabled],
+      &[aria-disabled],
+      &[readonly] {
+        + label:before {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
+
+.ui-chk {
+  input {
+    & + label {
+      &:before {
+        border: 1px solid variables.$colorGray40;
+        background-color: variables.$colorGray00;
+        border-radius: 6px;
+      }
+
+      &:after {
+        display: inline-block;
+        width: 12px;
+        height: 10px;
+        background: variables.$colorGray50;
+        -webkit-mask-image: url('/assets/images/common/comm_ico_chk_h10.svg');
+        mask-image: url('/assets/images/common/comm_ico_chk_h10.svg');
+        mask-repeat: no-repeat;
+        left: 6px;
+      }
+    }
+
+    &:checked + label {
+      &:before {
+        transition: all 0.15s ease-out;
+        background-color: variables.$colorGray90;
+        border-color: variables.$colorGray90;
+      }
+
+      &:after {
+        display: inline-block;
+        width: 12px;
+        height: 10px;
+        background: variables.$colorGray00;
+        -webkit-mask-image: url('/assets/images/common/comm_ico_chk_h10.svg');
+        mask-image: url('/assets/images/common/comm_ico_chk_h10.svg');
+        mask-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.ui-rdo {
+  input {
+    & + label {
+      &:before {
+        border: 1px solid variables.$colorGray40;
+        background-color: variables.$colorGray00;
+        border-radius: 50%;
+      }
+
+      &:after {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: variables.$colorGray50;
+        left: 7px;
+      }
+    }
+
+    &:checked + label {
+      &:before {
+        transition: all 0.15s ease-out;
+        background-color: variables.$colorGray90;
+        border-color: variables.$colorGray90;
+      }
+
+      &:after {
+        background-color: variables.$colorGray00;
+      }
+    }
+
+    &[disabled],
+    &[aria-disabled],
+    &[readonly] {
+      & + label {
+        &:before {
+          background-color: variables.$colorGray00;
+        }
+      }
+    }
+
+    &:checked {
+      & + label {
+        &:before {
+          background-color: variables.$colorGray80;
+          border-color: variables.$colorGray80;
+        }
+      }
+
+      &[disabled],
+      &[aria-disabled],
+      &[readonly] {
+        + label:before {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
+
+
+.ui-toggle {
+  @extend %rdoChkReset;
 }
