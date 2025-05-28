@@ -48,7 +48,56 @@ rewardPub.front = rewardPub.front || (function () {
     customOpt = customOpt !== undefined ? customOpt : {};
     let commSwiper = [];
 
+    // common option
+    const commOpt = {
+      observer: true,
+      observeParents: true,
+      watchOverflow: true,
+      spaceBetween: 0,
+      touchStartForcePreventDefault: true,
+      wrapperClass: 'swiper-list',
+      slideClass: 'swiper-item',
+    };
+
+    // auto type ( default )
+    const autoOpt = {
+      init: false,
+      speed: 150,
+      slidesPerView: 'auto',
+      freeMode: {
+        enabled: true,
+        momentumBounceRatio: 0.2,
+      }
+    };
+
+    Object.assign(autoOpt, commOpt);
+
     if ($(selector).length === 0) return false;
+
+    document.querySelectorAll(selector).forEach(function (element, i) {
+      if( $(element)[0].swiper !== undefined ) return;
+
+      if (element.dataset.init === 'false') {
+        element.removeAttribute('data-init');
+        return false;
+      }
+      else {
+        let commInitOpt, autoInitOpt;
+        commInitOpt = {};
+        autoInitOpt = {};
+        Object.assign(commInitOpt, commOpt, customOpt);
+        Object.assign(autoInitOpt, autoOpt, customOpt);
+
+        if ( element.swiper === undefined ) {
+          var className = element.classList.value;
+
+          if (className.indexOf('swiper-auto-wrap') !== -1) {
+            commSwiper[i] = new Swiper(element, autoInitOpt);
+            commSwiper[i].init();
+          }
+        }
+      }
+    });
   }
 
 
@@ -86,6 +135,7 @@ rewardPub.front = rewardPub.front || (function () {
 
   _front.setContainerBottomGap = setContainerBottomGap;
   _front.setTabs = setTabs;
+  _front.setCommSwiper = setCommSwiper;
 
   $(document).ready(function () {
     $_wrapper = $('.wrapper');
@@ -94,6 +144,7 @@ rewardPub.front = rewardPub.front || (function () {
 
     setContainerBottomGap();
     setTabs();
+    setCommSwiper();
   });
 
   return _front;

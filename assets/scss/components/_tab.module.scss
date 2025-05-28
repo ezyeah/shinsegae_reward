@@ -9,6 +9,7 @@
   .tab-pill-list {
     position: relative;
     @include mixins.justify_width;
+    margin: 0 -20px;
     padding: 0 20px;
 
     .tab-item {
@@ -52,13 +53,44 @@
 .tab-wrap {
   @extend %setTabComm;
 
+  &:has(.swiper-auto-wrap) {
+    .swiper-auto-wrap {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        right: -20px;
+        bottom: 0;
+        display: block;
+        height: 1px;
+        background-color: variables.$colorGray30;
+      }
+    }
+  }
+
+  &:not(:has(.swiper-auto-wrap)) {
+    .tab-line-list {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        right: -20px;
+        bottom: 0;
+        display: block;
+        height: 1px;
+        background-color: variables.$colorGray30;
+      }
+    }
+  }
+
   // type line
   .tab-line-list {
-    border-bottom: 1px solid variables.$colorGray30;
-
     .tab-item {
       .tab-link {
-        min-height: 49px;
+        min-height: 50px;
 
         .tab-text {
           @include mixins.font_size_lg('md');
@@ -83,7 +115,7 @@
         &:before {
           content: '';
           position: absolute;
-          bottom: -1px;
+          bottom: 1px;
           display: block;
           width: 100%;
           height: 2px;
