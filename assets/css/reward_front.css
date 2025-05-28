@@ -1751,6 +1751,13 @@ span.badge-round-sm {
 .tab-wrap {
   padding: 0;
 }
+.tab-wrap:has(.swiper-auto-wrap) .swiper-auto-wrap {
+  padding: 0 20px;
+}
+.tab-wrap:not(:has(.swiper-auto-wrap)) .tab-line-list,
+.tab-wrap:not(:has(.swiper-auto-wrap)) .tab-pill-list {
+  padding: 0 20px;
+}
 .tab-wrap .tab-line-list,
 .tab-wrap .tab-pill-list {
   position: relative;
@@ -1773,8 +1780,6 @@ span.badge-round-sm {
   -ms-flex-direction: row;
   -webkit-flex-direction: row;
   flex-direction: row;
-  margin: 0 -20px;
-  padding: 0 20px;
 }
 .tab-wrap .tab-line-list .tab-item,
 .tab-wrap .tab-pill-list .tab-item {
@@ -1813,8 +1818,15 @@ span.badge-round-sm {
   display: inline-block;
   vertical-align: top;
 }
+.tab-wrap .tab-line-list.justify-tab .tab-item,
+.tab-wrap .tab-pill-list.justify-tab .tab-item {
+  flex: 1;
+}
 .tab-wrap .tab-content {
   padding: 0;
+}
+.link-tab.tab-wrap .tab-line-list .tab-item.ui-tabs-active:before {
+  bottom: 0;
 }
 .tab-wrap:last-child {
   display: -webkit-box;
@@ -1862,27 +1874,24 @@ span.badge-round-sm {
   flex: 1 0 auto;
 }
 
-.tab-wrap:has(.swiper-auto-wrap) .swiper-auto-wrap {
+.tab-wrap:has(.swiper-auto-wrap) .swiper-auto-wrap:has(.tab-line-list) {
   position: relative;
 }
-.tab-wrap:has(.swiper-auto-wrap) .swiper-auto-wrap:before {
+.tab-wrap:has(.swiper-auto-wrap) .swiper-auto-wrap:has(.tab-line-list):before {
   content: "";
   position: absolute;
-  left: -20px;
-  right: -20px;
+  left: 0;
+  right: 0;
   bottom: 0;
   display: block;
   height: 1px;
   background-color: #EAEAEA;
 }
-.tab-wrap:not(:has(.swiper-auto-wrap)) .tab-line-list {
-  position: relative;
-}
 .tab-wrap:not(:has(.swiper-auto-wrap)) .tab-line-list:before {
   content: "";
   position: absolute;
-  left: -20px;
-  right: -20px;
+  left: 0;
+  right: 0;
   bottom: 0;
   display: block;
   height: 1px;
@@ -1942,10 +1951,6 @@ span.badge-round-sm {
 .tab-wrap .tab-pill-list .tab-item.ui-tabs-active .tab-link .tab-text {
   font-weight: 600;
   color: #FFF;
-}
-.tab-wrap.justify-tab .tab-line-list .tab-item,
-.tab-wrap.justify-tab .tab-pill-list .tab-item {
-  flex: 1;
 }
 
 /* form - input */

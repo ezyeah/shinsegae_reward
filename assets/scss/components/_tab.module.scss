@@ -5,12 +5,23 @@
 %setTabComm {
   padding:0;
 
+  &:has(.swiper-auto-wrap) {
+    .swiper-auto-wrap {
+      padding: 0 20px;
+    }
+  }
+
+  &:not(:has(.swiper-auto-wrap)) {
+    .tab-line-list,
+    .tab-pill-list {
+      padding: 0 20px;
+    }
+  }
+
   .tab-line-list,
   .tab-pill-list {
     position: relative;
     @include mixins.justify_width;
-    margin: 0 -20px;
-    padding: 0 20px;
 
     .tab-item {
       margin: 0;
@@ -29,10 +40,28 @@
         }
       }
     }
+
+    &.justify-tab {
+      .tab-item {
+        flex: 1;
+      }
+    }
   }
 
   .tab-content {
     padding: 0;
+  }
+
+  &.link-tab {
+    .tab-line-list {
+      .tab-item {
+        &.ui-tabs-active {
+          &:before {
+            bottom: 0;
+          }
+        }
+      }
+    }
   }
 
   &:last-child {
@@ -55,29 +84,30 @@
 
   &:has(.swiper-auto-wrap) {
     .swiper-auto-wrap {
-      position: relative;
-      &:before {
-        content: '';
-        position: absolute;
-        left: -20px;
-        right: -20px;
-        bottom: 0;
-        display: block;
-        height: 1px;
-        background-color: variables.$colorGray30;
+      &:has(.tab-line-list) {
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: block;
+          height: 1px;
+          background-color: variables.$colorGray30;
+        }
       }
     }
   }
 
   &:not(:has(.swiper-auto-wrap)) {
     .tab-line-list {
-      position: relative;
-
       &:before {
         content: '';
         position: absolute;
-        left: -20px;
-        right: -20px;
+        left: 0;
+        right: 0;
         bottom: 0;
         display: block;
         height: 1px;
@@ -156,15 +186,6 @@
             color: variables.$colorGray00;
           }
         }
-      }
-    }
-  }
-
-  &.justify-tab {
-    .tab-line-list,
-    .tab-pill-list {
-      .tab-item {
-        flex: 1;
       }
     }
   }

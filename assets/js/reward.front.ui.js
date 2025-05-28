@@ -50,6 +50,7 @@ rewardPub.front = rewardPub.front || (function () {
 
     // common option
     const commOpt = {
+      resistanceRatio: 0.58,
       observer: true,
       observeParents: true,
       watchOverflow: true,
@@ -72,7 +73,7 @@ rewardPub.front = rewardPub.front || (function () {
 
     Object.assign(autoOpt, commOpt);
 
-    if ($(selector).length === 0) return false;
+    if (document.querySelectorAll(selector).length === 0) return false;
 
     document.querySelectorAll(selector).forEach(function (element, i) {
       if( $(element)[0].swiper !== undefined ) return;
