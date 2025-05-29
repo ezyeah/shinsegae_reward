@@ -2345,12 +2345,15 @@ span.badge-round-sm {
   line-height: 24px;
 }
 .ui-chk input + label > .text-sm, .ui-rdo input + label > .text-sm {
+  display: inline-block;
+  margin-left: 6px;
   font-size: 13px;
   line-height: 18px;
   letter-spacing: -0.5px;
   font-weight: 400;
+  color: #000;
+  vertical-align: top;
   line-height: 24px;
-  margin-left: 6px;
 }
 .ui-chk input[disabled] + label, .ui-chk input[aria-disabled] + label, .ui-chk input[readonly] + label, .ui-rdo input[disabled] + label, .ui-rdo input[aria-disabled] + label, .ui-rdo input[readonly] + label {
   pointer-events: none;
