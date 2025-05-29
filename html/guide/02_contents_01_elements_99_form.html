@@ -98,7 +98,7 @@
                         tabWidth: 1,
                         semi: true,
                         singleQuote: true,
-                        arrowParens: 'never',
+                        arColParens: 'never',
                         bracketSameLine: true,
                     })
                         .then((value) => {
@@ -812,38 +812,200 @@
 
                         <pre>
                             <code class="html">
-                                &lt;!-- ui-rdo --&gt;
-                                &lt;span class=&quot;ui-rdo&quot;&gt;
-                                    &lt;input type=&quot;radio&quot; id=&quot;rdoDemo01&quot;&gt;
-                                    &lt;label for=&quot;rdoDemo01&quot;&gt;
-                                        &lt;span class=&quot;text&quot;&gt;라디오버튼(default)&lt;/span&gt;
-                                    &lt;/label&gt;
-                                &lt;/span&gt;
-                                &lt;!-- // ui-rdo --&gt;
-                                &lt;!-- ui-rdo --&gt;
-                                &lt;span class=&quot;ui-rdo&quot;&gt;
-                                    &lt;input type=&quot;radio&quot; id=&quot;rdoDemo02&quot; checked&gt;
-                                    &lt;label for=&quot;rdoDemo02&quot;&gt;
-                                        &lt;span class=&quot;text&quot;&gt;라디오버튼(checked)&lt;/span&gt;
-                                    &lt;/label&gt;
-                                &lt;/span&gt;
-                                &lt;!-- // ui-rdo --&gt;
-                                &lt;!-- ui-rdo --&gt;
-                                &lt;span class=&quot;ui-rdo&quot;&gt;
-                                    &lt;input type=&quot;radio&quot; id=&quot;rdoDemo03&quot; disabled&gt;
-                                    &lt;label for=&quot;rdoDemo03&quot;&gt;
-                                        &lt;span class=&quot;text&quot;&gt;라디오버튼(disabled)&lt;/span&gt;
-                                    &lt;/label&gt;
-                                &lt;/span&gt;
-                                &lt;!-- // ui-rdo --&gt;
-                                &lt;!-- ui-rdo --&gt;
-                                &lt;span class=&quot;ui-rdo&quot;&gt;
-                                    &lt;input type=&quot;radio&quot; id=&quot;rdoDemo04&quot; checked disabled&gt;
-                                    &lt;label for=&quot;rdoDemo04&quot;&gt;
-                                        &lt;span class=&quot;text&quot;&gt;라디오버튼(checked, disabled)&lt;/span&gt;
-                                    &lt;/label&gt;
-                                &lt;/span&gt;
-                                &lt;!-- // ui-rdo --&gt;
+                                &amp;lt;!-- ui-rdo --&amp;gt;
+                                &amp;lt;span class=&amp;quot;ui-rdo&amp;quot;&amp;gt;
+                                    &amp;lt;input type=&amp;quot;radio&amp;quot; id=&amp;quot;rdoDemo01&amp;quot;&amp;gt;
+                                    &amp;lt;label for=&amp;quot;rdoDemo01&amp;quot;&amp;gt;
+                                        &amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;라디오버튼(default)&amp;lt;/span&amp;gt;
+                                    &amp;lt;/label&amp;gt;
+                                &amp;lt;/span&amp;gt;
+                                &amp;lt;!-- // ui-rdo --&amp;gt;
+
+                                &amp;lt;!-- ui-rdo --&amp;gt;
+                                &amp;lt;span class=&amp;quot;ui-rdo&amp;quot;&amp;gt;
+                                    &amp;lt;input type=&amp;quot;radio&amp;quot; id=&amp;quot;rdoDemo02&amp;quot; checked&amp;gt;
+                                    &amp;lt;label for=&amp;quot;rdoDemo02&amp;quot;&amp;gt;
+                                        &amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;라디오버튼(checked)&amp;lt;/span&amp;gt;
+                                    &amp;lt;/label&amp;gt;
+                                &amp;lt;/span&amp;gt;
+                                &amp;lt;!-- // ui-rdo --&amp;gt;
+
+                                &amp;lt;!-- ui-rdo --&amp;gt;
+                                &amp;lt;span class=&amp;quot;ui-rdo&amp;quot;&amp;gt;
+                                    &amp;lt;input type=&amp;quot;radio&amp;quot; id=&amp;quot;rdoDemo03&amp;quot; disabled&amp;gt;
+                                    &amp;lt;label for=&amp;quot;rdoDemo03&amp;quot;&amp;gt;
+                                        &amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;라디오버튼(disabled)&amp;lt;/span&amp;gt;
+                                    &amp;lt;/label&amp;gt;
+                                &amp;lt;/span&amp;gt;
+                                &amp;lt;!-- // ui-rdo --&amp;gt;
+
+                                &amp;lt;!-- ui-rdo --&amp;gt;
+                                &amp;lt;span class=&amp;quot;ui-rdo&amp;quot;&amp;gt;
+                                    &amp;lt;input type=&amp;quot;radio&amp;quot; id=&amp;quot;rdoDemo04&amp;quot; checked disabled&amp;gt;
+                                    &amp;lt;label for=&amp;quot;rdoDemo04&amp;quot;&amp;gt;
+                                        &amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;라디오버튼(checked, disabled)&amp;lt;/span&amp;gt;
+                                    &amp;lt;/label&amp;gt;
+                                &amp;lt;/span&amp;gt;
+                                &amp;lt;!-- // ui-rdo --&amp;gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">checkbox, radio list</div>
+                        <div class="guide-xsbtit"><code>.ui-col-list</code>세로정렬 (item 사이 간격 10px)</div>
+
+                        <!-- ui-col-list -->
+                        <ul class="ui-col-list">
+                            <li class="item">
+                                <!-- ui-chk -->
+                                <span class="ui-chk">
+                                    <input id="chkColDemo01" type="checkbox" checked>
+                                    <label for="chkColDemo01"><span class="text">체크박스</span></label>
+                                </span>
+                                <!-- // ui-chk -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-chk -->
+                                <span class="ui-chk">
+                                    <input id="chkColDemo02" type="checkbox">
+                                    <label for="chkColDemo02"><span class="text">체크박스</span></label>
+                                </span>
+                                <!-- // ui-chk -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-chk -->
+                                <span class="ui-chk">
+                                    <input id="chkColDemo03" type="checkbox">
+                                    <label for="chkColDemo03"><span class="text">체크박스</span></label>
+                                </span>
+                                <!-- // ui-chk -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-chk -->
+                                <span class="ui-chk">
+                                    <input id="chkColDemo04" type="checkbox">
+                                    <label for="chkColDemo04"><span class="text">체크박스</span></label>
+                                </span>
+                                <!-- // ui-chk -->
+                            </li>
+                        </ul>
+                        <!-- // ui-col-list -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- ui-col-list --&gt;
+                                &lt;ul class=&quot;ui-col-list&quot;&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-chk --&gt;
+                                        &lt;span class=&quot;ui-chk&quot;&gt;
+                                            &lt;input id=&quot;chkColDemo01&quot; type=&quot;checkbox&quot; checked&gt;
+                                            &lt;label for=&quot;chkColDemo01&quot;&gt;&lt;span class=&quot;text&quot;&gt;체크박스&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-chk --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-chk --&gt;
+                                        &lt;span class=&quot;ui-chk&quot;&gt;
+                                            &lt;input id=&quot;chkColDemo02&quot; type=&quot;checkbox&quot;&gt;
+                                            &lt;label for=&quot;chkColDemo02&quot;&gt;&lt;span class=&quot;text&quot;&gt;체크박스&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-chk --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-chk --&gt;
+                                        &lt;span class=&quot;ui-chk&quot;&gt;
+                                            &lt;input id=&quot;chkColDemo03&quot; type=&quot;checkbox&quot;&gt;
+                                            &lt;label for=&quot;chkColDemo03&quot;&gt;&lt;span class=&quot;text&quot;&gt;체크박스&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-chk --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-chk --&gt;
+                                        &lt;span class=&quot;ui-chk&quot;&gt;
+                                            &lt;input id=&quot;chkColDemo04&quot; type=&quot;checkbox&quot;&gt;
+                                            &lt;label for=&quot;chkColDemo04&quot;&gt;&lt;span class=&quot;text&quot;&gt;체크박스&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-chk --&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                                &lt;!-- // ui-col-list --&gt;
+                            </code>
+                        </pre>
+
+                        <!-- ui-col-list -->
+                        <ul class="ui-col-list">
+                            <li class="item">
+                                <!-- ui-rdo -->
+                                <span class="ui-rdo">
+                                    <input id="rdoColDemo01" type="radio" name="rdoColDemo" checked>
+                                    <label for="rdoColDemo01"><span class="text">라디오</span></label>
+                                </span>
+                                <!-- // ui-rdo -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-rdo -->
+                                <span class="ui-rdo">
+                                    <input id="rdoColDemo02" type="radio" name="rdoColDemo">
+                                    <label for="rdoColDemo02"><span class="text">라디오</span></label>
+                                </span>
+                                <!-- // ui-rdo -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-rdo -->
+                                <span class="ui-rdo">
+                                    <input id="rdoColDemo03" type="radio" name="rdoColDemo">
+                                    <label for="rdoColDemo03"><span class="text">라디오</span></label>
+                                </span>
+                                <!-- // ui-rdo -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-rdo -->
+                                <span class="ui-rdo">
+                                    <input id="rdoColDemo04" type="radio" name="rdoColDemo">
+                                    <label for="rdoColDemo04"><span class="text">라디오</span></label>
+                                </span>
+                                <!-- // ui-rdo -->
+                            </li>
+                        </ul>
+                        <!-- // ui-col-list -->
+
+                        <pre>
+                            <code class="html">
+                                <!-- ui-col-list -->
+                                &lt;ul class=&quot;ui-col-list&quot;&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-rdo --&gt;
+                                        &lt;span class=&quot;ui-rdo&quot;&gt;
+                                            &lt;input id=&quot;rdoColDemo01&quot; type=&quot;radio&quot; name=&quot;rdoColDemo&quot; checked&gt;
+                                            &lt;label for=&quot;rdoColDemo01&quot;&gt;&lt;span class=&quot;text&quot;&gt;라디오&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-rdo --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-rdo --&gt;
+                                        &lt;span class=&quot;ui-rdo&quot;&gt;
+                                            &lt;input id=&quot;rdoColDemo02&quot; type=&quot;radio&quot; name=&quot;rdoColDemo&quot;&gt;
+                                            &lt;label for=&quot;rdoColDemo02&quot;&gt;&lt;span class=&quot;text&quot;&gt;라디오&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-rdo --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-rdo --&gt;
+                                        &lt;span class=&quot;ui-rdo&quot;&gt;
+                                            &lt;input id=&quot;rdoColDemo03&quot; type=&quot;radio&quot; name=&quot;rdoColDemo&quot;&gt;
+                                            &lt;label for=&quot;rdoColDemo03&quot;&gt;&lt;span class=&quot;text&quot;&gt;라디오&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-rdo --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-rdo --&gt;
+                                        &lt;span class=&quot;ui-rdo&quot;&gt;
+                                            &lt;input id=&quot;rdoColDemo04&quot; type=&quot;radio&quot; name=&quot;rdoColDemo&quot;&gt;
+                                            &lt;label for=&quot;rdoColDemo04&quot;&gt;&lt;span class=&quot;text&quot;&gt;라디오&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-rdo --&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                                <!-- // ui-col-list -->
                             </code>
                         </pre>
                     </div>
@@ -855,7 +1017,6 @@
                             <li><code>.ui-toggle</code>
                                 <ul class="guide-desc-list" style="margin-top: 8px">
                                     <li><code>text</code>font-size : 14px</li>
-                                    <li><code>text-sm</code>font-size : 13px</li>
                                 </ul>
                             </li>
                         </ul>
@@ -863,27 +1024,63 @@
                         <div class="guide-xsbtit">toggle</div>
                         <!-- ui-toggle -->
                         <span class="ui-toggle">
-                            <input id="toggleDemo09" type="checkbox" checked />
-                            <label for="toggleDemo09"><span class="text">거래진행중 제외</span></label>
+                            <input id="toggleDemo01" type="checkbox">
+                            <label for="toggleDemo01"><span class="text">기본 토글 OFF</span></label>
                         </span>
+                        <!-- // ui-toggle -->
                         <br><br>
                         <!-- ui-toggle -->
                         <span class="ui-toggle">
-                            <input id="toggleDemo10" type="checkbox" />
-                            <label for="toggleDemo10"><span class="text">거래진행중 제외</span></label>
+                            <input id="toggleDemo02" type="checkbox" disabled>
+                            <label for="toggleDemo02"><span class="text">OFF 비활성화</span></label>
                         </span>
+                        <!-- // ui-toggle -->
                         <br><br>
                         <!-- ui-toggle -->
                         <span class="ui-toggle">
-                            <input id="toggleDemo11" type="checkbox" checked />
-                            <label for="toggleDemo11"><span class="text">회색 텍스트</span></label>
+                            <input id="toggleDemo03" type="checkbox" checked>
+                            <label for="toggleDemo03"><span class="text">기본 토글 ON</span></label>
                         </span>
+                        <!-- // ui-toggle -->
                         <br><br>
                         <!-- ui-toggle -->
                         <span class="ui-toggle">
-                            <input id="toggleDemo12" type="checkbox" checked />
-                            <label for="toggleDemo12"><span class="text">오렌지 타입</span></label>
+                            <input id="toggleDemo04" type="checkbox" checked disabled>
+                            <label for="toggleDemo04"><span class="text">ON 비활성화</span></label>
                         </span>
+                        <!-- // ui-toggle -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- ui-toggle --&gt;
+                                &lt;span class=&quot;ui-toggle&quot;&gt;
+                                    &lt;input id=&quot;toggleDemo01&quot; type=&quot;checkbox&quot;&gt;
+                                    &lt;label for=&quot;toggleDemo01&quot;&gt;&lt;span class=&quot;text&quot;&gt;기본 토글 OFF&lt;/span&gt;&lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-toggle --&gt;
+
+                                &lt;!-- ui-toggle --&gt;
+                                &lt;span class=&quot;ui-toggle&quot;&gt;
+                                    &lt;input id=&quot;toggleDemo02&quot; type=&quot;checkbox&quot; disabled&gt;
+                                    &lt;label for=&quot;toggleDemo02&quot;&gt;&lt;span class=&quot;text&quot;&gt;OFF 비활성화&lt;/span&gt;&lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-toggle --&gt;
+
+                                &lt;!-- ui-toggle --&gt;
+                                &lt;span class=&quot;ui-toggle&quot;&gt;
+                                    &lt;input id=&quot;toggleDemo03&quot; type=&quot;checkbox&quot; checked&gt;
+                                    &lt;label for=&quot;toggleDemo03&quot;&gt;&lt;span class=&quot;text&quot;&gt;기본 토글 ON&lt;/span&gt;&lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-toggle --&gt;
+
+                                &lt;!-- ui-toggle --&gt;
+                                &lt;span class=&quot;ui-toggle&quot;&gt;
+                                    &lt;input id=&quot;toggleDemo04&quot; type=&quot;checkbox&quot; checked disabled&gt;
+                                    &lt;label for=&quot;toggleDemo04&quot;&gt;&lt;span class=&quot;text&quot;&gt;ON 비활성화&lt;/span&gt;&lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-toggle --&gt;
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>

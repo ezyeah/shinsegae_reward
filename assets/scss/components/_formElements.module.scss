@@ -321,7 +321,6 @@
 }
 
 /* form - radio, checkbox */
-/* form - radio, checkbox */
 %rdoChkReset {
   position: relative;
   display: inline-block;
@@ -408,19 +407,19 @@
       }
     }
 
+    &[disabled],
+    &[aria-disabled],
+    &[readonly] {
+      + label::before {
+        opacity: 0.4;
+      }
+    }
+
     &:checked {
       & + label {
-        &:before {
+        &::before {
           background-color: variables.$colorGray80;
           border-color: variables.$colorGray80;
-        }
-      }
-
-      &[disabled],
-      &[aria-disabled],
-      &[readonly] {
-        + label:before {
-          opacity: 0.4;
         }
       }
     }
@@ -429,14 +428,14 @@
 
 .ui-chk {
   input {
-    & + label {
-      &:before {
+    + label {
+      &::before {
         border: 1px solid variables.$colorGray40;
         background-color: variables.$colorGray00;
         border-radius: 6px;
       }
 
-      &:after {
+      &::after {
         display: inline-block;
         width: 12px;
         height: 10px;
@@ -449,13 +448,13 @@
     }
 
     &:checked + label {
-      &:before {
+      &::before {
         transition: all 0.15s ease-out;
         background-color: variables.$colorGray90;
         border-color: variables.$colorGray90;
       }
 
-      &:after {
+      &::after {
         display: inline-block;
         width: 12px;
         height: 10px;
@@ -470,14 +469,14 @@
 
 .ui-rdo {
   input {
-    & + label {
-      &:before {
+    + label {
+      &::before {
         border: 1px solid variables.$colorGray40;
         background-color: variables.$colorGray00;
         border-radius: 50%;
       }
 
-      &:after {
+      &::after {
         width: 10px;
         height: 10px;
         border-radius: 50%;
@@ -487,13 +486,13 @@
     }
 
     &:checked + label {
-      &:before {
+      &::before {
         transition: all 0.15s ease-out;
         background-color: variables.$colorGray90;
         border-color: variables.$colorGray90;
       }
 
-      &:after {
+      &::after {
         background-color: variables.$colorGray00;
       }
     }
@@ -510,17 +509,9 @@
 
     &:checked {
       & + label {
-        &:before {
-          background-color: variables.$colorGray90;
-          border-color: variables.$colorGray90;
-        }
-      }
-
-      &[disabled],
-      &[aria-disabled],
-      &[readonly] {
-        + label:before {
-          opacity: 0.4;
+        &::before {
+          background-color: variables.$colorGray80;
+          border-color: variables.$colorGray80;
         }
       }
     }
@@ -530,4 +521,78 @@
 
 .ui-toggle {
   @extend %rdoChkReset;
+  min-height: 26px;
+
+  input {
+    + label {
+      padding-left: 48px;
+      min-height: 26px;
+
+      &::before,
+      &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+
+      &::before {
+        width: 48px;
+        height: 26px;
+        background-color: variables.$colorGray40;
+        border: 1px solid variables.$colorGray40;
+        border-radius: 21px;
+      }
+
+      &::after {
+        width: 20px;
+        height: 20px;
+        background-color: variables.$colorGray00;
+        border: 1px solid variables.$colorGray00;
+        border-radius: 50%;
+        left: 3px;
+        transition: all .3s ease-in-out;
+      }
+
+      .text {
+        @include mixins.font_size_md('md',26px);
+        color: variables.$colorGray100;
+        margin-left: 6px;
+      }
+    }
+
+    &[disabled],
+    &[aria-disabled],
+    &[readonly] {
+      + label:before {
+        opacity: 0.4;
+      }
+    }
+
+    &:checked + label {
+      &::before {
+        background-color: variables.$colorBlue100;
+        border: 1px solid variables.$colorBlue100;
+      }
+
+      &::after {
+        left: 25px;
+      }
+    }
+  }
+}
+
+.ui-col-list {
+  @include mixins.justify_width(start, start, column);
+
+  .item {
+    ~ .item {
+      margin-top: 10px;
+    }
+  }
 }

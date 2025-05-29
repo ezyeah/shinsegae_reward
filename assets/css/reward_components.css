@@ -1930,7 +1930,6 @@ span.badge-round-sm {
 }
 
 /* form - radio, checkbox */
-/* form - radio, checkbox */
 .ui-toggle, .ui-chk, .ui-rdo {
   position: relative;
   display: inline-block;
@@ -2007,20 +2006,20 @@ span.badge-round-sm {
 .ui-chk input[disabled] + label [class^=text], .ui-chk input[aria-disabled] + label [class^=text], .ui-chk input[readonly] + label [class^=text], .ui-rdo input[disabled] + label [class^=text], .ui-rdo input[aria-disabled] + label [class^=text], .ui-rdo input[readonly] + label [class^=text] {
   color: #BBB;
 }
-.ui-chk input:checked + label:before, .ui-rdo input:checked + label:before {
+.ui-chk input[disabled] + label::before, .ui-chk input[aria-disabled] + label::before, .ui-chk input[readonly] + label::before, .ui-rdo input[disabled] + label::before, .ui-rdo input[aria-disabled] + label::before, .ui-rdo input[readonly] + label::before {
+  opacity: 0.4;
+}
+.ui-chk input:checked + label::before, .ui-rdo input:checked + label::before {
   background-color: #666;
   border-color: #666;
 }
-.ui-chk input:checked[disabled] + label:before, .ui-chk input:checked[aria-disabled] + label:before, .ui-chk input:checked[readonly] + label:before, .ui-rdo input:checked[disabled] + label:before, .ui-rdo input:checked[aria-disabled] + label:before, .ui-rdo input:checked[readonly] + label:before {
-  opacity: 0.4;
-}
 
-.ui-chk input + label:before {
+.ui-chk input + label::before {
   border: 1px solid #DDD;
   background-color: #FFF;
   border-radius: 6px;
 }
-.ui-chk input + label:after {
+.ui-chk input + label::after {
   display: inline-block;
   width: 12px;
   height: 10px;
@@ -2030,12 +2029,12 @@ span.badge-round-sm {
   mask-repeat: no-repeat;
   left: 6px;
 }
-.ui-chk input:checked + label:before {
+.ui-chk input:checked + label::before {
   transition: all 0.15s ease-out;
   background-color: #333;
   border-color: #333;
 }
-.ui-chk input:checked + label:after {
+.ui-chk input:checked + label::after {
   display: inline-block;
   width: 12px;
   height: 10px;
@@ -2045,35 +2044,110 @@ span.badge-round-sm {
   mask-repeat: no-repeat;
 }
 
-.ui-rdo input + label:before {
+.ui-rdo input + label::before {
   border: 1px solid #DDD;
   background-color: #FFF;
   border-radius: 50%;
 }
-.ui-rdo input + label:after {
+.ui-rdo input + label::after {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #CCC;
   left: 7px;
 }
-.ui-rdo input:checked + label:before {
+.ui-rdo input:checked + label::before {
   transition: all 0.15s ease-out;
   background-color: #333;
   border-color: #333;
 }
-.ui-rdo input:checked + label:after {
+.ui-rdo input:checked + label::after {
   background-color: #FFF;
 }
 .ui-rdo input[disabled] + label:before, .ui-rdo input[aria-disabled] + label:before, .ui-rdo input[readonly] + label:before {
   background-color: #FFF;
 }
-.ui-rdo input:checked + label:before {
-  background-color: #333;
-  border-color: #333;
+.ui-rdo input:checked + label::before {
+  background-color: #666;
+  border-color: #666;
 }
-.ui-rdo input:checked[disabled] + label:before, .ui-rdo input:checked[aria-disabled] + label:before, .ui-rdo input:checked[readonly] + label:before {
+
+.ui-toggle {
+  min-height: 26px;
+}
+.ui-toggle input + label {
+  padding-left: 48px;
+  min-height: 26px;
+}
+.ui-toggle input + label::before, .ui-toggle input + label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  box-sizing: border-box;
+}
+.ui-toggle input + label::before {
+  width: 48px;
+  height: 26px;
+  background-color: #DDD;
+  border: 1px solid #DDD;
+  border-radius: 21px;
+}
+.ui-toggle input + label::after {
+  width: 20px;
+  height: 20px;
+  background-color: #FFF;
+  border: 1px solid #FFF;
+  border-radius: 50%;
+  left: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.ui-toggle input + label .text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #000;
+  margin-left: 6px;
+}
+.ui-toggle input[disabled] + label:before, .ui-toggle input[aria-disabled] + label:before, .ui-toggle input[readonly] + label:before {
   opacity: 0.4;
+}
+.ui-toggle input:checked + label::before {
+  background-color: #6987A1;
+  border: 1px solid #6987A1;
+}
+.ui-toggle input:checked + label::after {
+  left: 25px;
+}
+
+.ui-col-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -moz-box-orient: vertical;
+  -moz-box-direction: reverse;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.ui-col-list .item ~ .item {
+  margin-top: 10px;
 }
 
 /*
