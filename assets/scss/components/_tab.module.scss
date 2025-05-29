@@ -173,7 +173,7 @@
       }
 
       ~ .tab-item {
-        margin-left: 4px;
+        margin-left: 2px;
       }
 
       &.ui-tabs-active {
@@ -185,6 +185,14 @@
             font-weight: variables.$fontWeightSemibold;
             color: variables.$colorGray00;
           }
+        }
+      }
+    }
+
+    &.justify-tab {
+      .tab-item {
+        ~ .tab-item {
+          margin-left: 4px;
         }
       }
     }

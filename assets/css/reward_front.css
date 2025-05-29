@@ -1942,7 +1942,7 @@ span.badge-round-sm {
   color: #666;
 }
 .tab-wrap .tab-pill-list .tab-item ~ .tab-item {
-  margin-left: 4px;
+  margin-left: 2px;
 }
 .tab-wrap .tab-pill-list .tab-item.ui-tabs-active .tab-link {
   border-color: transparent;
@@ -1951,6 +1951,9 @@ span.badge-round-sm {
 .tab-wrap .tab-pill-list .tab-item.ui-tabs-active .tab-link .tab-text {
   font-weight: 600;
   color: #FFF;
+}
+.tab-wrap .tab-pill-list.justify-tab .tab-item ~ .tab-item {
+  margin-left: 4px;
 }
 
 /* form - input */
