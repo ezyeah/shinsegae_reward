@@ -19,7 +19,8 @@
   }
 
   .tab-line-list,
-  .tab-pill-list {
+  .tab-pill-list,
+  .tab-box-list {
     position: relative;
     @include mixins.justify_width;
 
@@ -38,12 +39,21 @@
           display: inline-block;
           vertical-align: top;
         }
+
+        .val {
+          display: inline-block;
+          vertical-align: middle;
+        }
       }
     }
 
     &.justify-tab {
       .tab-item {
         flex: 1;
+
+        .tab-text {
+          @include mixins.ellipsis;
+        }
       }
     }
   }
@@ -193,6 +203,60 @@
       .tab-item {
         ~ .tab-item {
           margin-left: 4px;
+        }
+      }
+    }
+  }
+
+  // type box
+  .tab-box-list {
+    margin: 0;
+    padding: 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      height: 1px;
+      background-color: variables.$colorGray70;
+      box-shadow: 0 6px 12px rgba(85, 85, 85, 0.12);
+    }
+
+    .tab-item {
+      flex: 1;
+      overflow: hidden;
+      border-radius: 4px 4px 0 0;
+
+      .tab-link {
+        min-height: 50px;
+        padding: 14px 5px;
+        background-color: variables.$colorGray20;
+
+        .tab-text {
+          @include mixins.font_size_xl;
+          color: variables.$colorGray70;
+        }
+
+        .val {
+          @include mixins.font_size_xl;
+          color: variables.$colorGray70;
+        }
+      }
+
+      &.ui-tabs-active {
+        .tab-link {
+          background-color: variables.$colorBlue100;
+
+          .tab-text {
+            color: variables.$colorGray00;
+          }
+
+          .val {
+            color: variables.$colorGray00;
+          }
         }
       }
     }
