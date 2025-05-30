@@ -33,6 +33,9 @@
     <!-- UI JavaScript
     ================================================== -->
     <script src="../../assets/js/reward.front.ui.js"></script>
+    <!-- 작업 완료 시 삭제예정 -->
+    <script src="../../assets/js/reward.front.ui.ydy.js"></script>
+    <!-- // 작업 완료 시 삭제예정 -->
 
     <!-- 가이드 전용 -->
     <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
@@ -119,7 +122,7 @@
         <div class="header-inner">
             <div class="header-left">
                 <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
-                <div class="ptitle">타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀</div>
+                <div class="ptitle">Form Guide</div>
             </div>
             <div class="header-right">
                 <div style="height: 24px; background: rgba(255, 0, 0, .2)">btn</div>
@@ -145,7 +148,7 @@
                                 <ul class="guide-desc-list">
                                     <li><a href="#idx1_1" style="text-decoration: underline">기본형 (.input-box)</a></li>
                                     <li><a href="#idx1_2" style="text-decoration: underline">숫자 case</a></li>
-                                    <!--<li><a href="#idx1_3" style="text-decoration: underline">휴대폰 번호 case</a></li>-->
+                                    <li><a href="#idx1_3" style="text-decoration: underline">휴대폰 번호 case</a></li>
                                     <li><a href="#idx1_4" style="text-decoration: underline">검색 case</a></li>
                                     <li><a href="#idx1_5" style="text-decoration: underline">하단 가이드 텍스트</a></li>
                                     <li><a href="#idx1_6" style="text-decoration: underline">유효성 검사</a></li>
@@ -185,7 +188,6 @@
                                         <p style="margin-top: 8px;">┗ fail : 실패</p>
                                     </li>
                                     <li>
-                                        <p>[ <code>.ui-input</code> multi class 지정 ]</p>
                                         <ul class="guide-desc-list">
                                             <li><p>입력 텍스트 오른쪽 정렬 : <code>.right</code></p></li>
                                         </ul>
@@ -207,8 +209,8 @@
                         <!-- input-group -->
                         <div class="input-group">
                             <!-- input-box -->
-                            <div class="input-box">
-                                <input type="text" class="ui-input right" title="타이틀 입력" placeholder="텍스트 입력 전" value=""/>
+                            <div class="input-box right">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 전" value=""/>
                                 <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
                             </div>
                             <!-- // input-box -->
@@ -253,8 +255,8 @@
                                 &lt;!-- input-group --&gt;
                                 &lt;div class=&quot;input-group&quot;&gt;
                                     &lt;!-- input-box --&gt;
-                                    &lt;div class=&quot;input-box&quot;&gt;
-                                        &lt;input type=&quot;text&quot; class=&quot;ui-input right&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 전&quot; value=&quot;&quot;/&gt;
+                                    &lt;div class=&quot;input-box right&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 전&quot; value=&quot;&quot;/&gt;
                                         &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
                                     &lt;/div&gt;
                                     &lt;!-- // input-box --&gt;
@@ -301,101 +303,119 @@
                         <!-- // input-group-->
                         <pre>
                             <code class="html">
-
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;number&quot; inputmode=&quot;numeric&quot; class=&quot;ui-input&quot; title=&quot;사업자 번호&quot; placeholder=&quot;- 없이 입력해 주세요.&quot; value=&quot;&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
                             </code>
                         </pre>
 
-                       <!-- <div class="guide-sbtit" id="idx1_3">휴대폰 번호 case</div>
+                        <div class="guide-sbtit" id="idx1_3">휴대폰 번호 case</div>
                         <ul class="guide-desc-list">
                             <li><code>type="tel"</code></li>
-                            <li><code>.num-maxlength</code> class 추가 및 <code>.data-maxlength</code>속성으로 입력 최대값 지정 필요</li>
-                            <li>입력한 자릿수에 맞추어 하이픈(-) 노출됨</li>
+<!--                            <li><code>.num-maxlength</code> class 추가 및 <code>.data-maxlength</code>속성으로 입력 최대값 지정 필요</li>-->
+<!--                            <li>입력한 자릿수에 맞추어 하이픈(-) 노출됨</li>-->
                         </ul>
-                        &lt;!&ndash; input-group &ndash;&gt;
+                        <!-- input-group -->
                         <div class="input-group">
-                            &lt;!&ndash; input-box &ndash;&gt;
+                            <!-- input-box -->
                             <div class="input-box">
-                                <input type="number" inputmode="tel" class="ui-input num-maxlength" title="휴대폰 번호" placeholder="-없이 휴대폰 번호를 입력해 주세요." data-maxlength="15"  value=""/>
+                                <input type="tel" inputmode="tel" class="ui-input" title="휴대폰 번호" placeholder="-없이 휴대폰 번호를 입력해 주세요." data-maxlength="15"  value=""/>
                                 <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
                             </div>
-                            &lt;!&ndash; // input-box &ndash;&gt;
+                            <!-- // input-box -->
                         </div>
-                        &lt;!&ndash; // input-group&ndash;&gt;
+                        <!-- // input-group-->
                         <pre>
                             <code class="html">
-
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;tel&quot; inputmode=&quot;tel&quot; class=&quot;ui-input&quot; title=&quot;휴대폰 번호&quot; placeholder=&quot;-없이 휴대폰 번호를 입력해 주세요.&quot; data-maxlength=&quot;15&quot;  value=&quot;&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
                             </code>
-                        </pre>-->
+                        </pre>
 
                         <div class="guide-sbtit" id="idx1_4">검색 case</div>
                         <!-- input-group -->
                         <div class="input-group">
-                            <!-- input-search-box -->
-                            <div class="input-search-box">
+                            <!-- input-box -->
+                            <div class="input-box">
                                 <input type="search" inputmode="search" class="ui-input" title="검색" placeholder="검색어를 입력하세요." value=""/>
                                 <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
                                 <button type="button" class="btn-input-search"><span class="offscreen">검색</span></button>
                             </div>
-                            <!-- // input-search-box -->
+                            <!-- // input-box -->
                         </div>
                         <!-- // input-group-->
                         <!-- input-group -->
                         <div class="input-group">
-                            <!-- input-search-box -->
-                            <div class="input-search-box">
+                            <!-- input-box -->
+                            <div class="input-box">
                                 <input type="search" inputmode="search" class="ui-input" title="검색" placeholder="검색어를 입력하세요." value="입력 후"/>
                                 <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
                                 <button type="button" class="btn-input-search"><span class="offscreen">검색</span></button>
                             </div>
-                            <!-- // input-search-box -->
+                            <!-- // input-box -->
                         </div>
                         <!-- // input-group-->
                         <!-- input-group -->
                         <div class="input-group">
-                            <!-- input-search-box -->
-                            <div class="input-search-box">
+                            <!-- input-box -->
+                            <div class="input-box">
                                 <input type="search" inputmode="search" class="ui-input" title="검색" placeholder="입력 불가" value="" disabled/>
                                 <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
                                 <button type="button" class="btn-input-search"><span class="offscreen">검색</span></button>
                             </div>
-                            <!-- // input-search-box -->
+                            <!-- // input-box -->
                         </div>
                         <!-- // input-group-->
                         <pre>
                             <code class="html">
                                 &lt;!-- input-group --&gt;
                                 &lt;div class=&quot;input-group&quot;&gt;
-                                &lt;!-- input-search-box --&gt;
-                                &lt;div class=&quot;input-search-box&quot;&gt;
+                                &lt;!-- input-box --&gt;
+                                &lt;div class=&quot;input-box&quot;&gt;
                                     &lt;input type=&quot;search&quot; inputmode=&quot;search&quot; class=&quot;ui-input&quot; title=&quot;검색&quot; placeholder=&quot;검색어를 입력하세요.&quot; value=&quot;&quot;/&gt;
                                     &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
                                     &lt;button type=&quot;button&quot; class=&quot;btn-input-search&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;검색&lt;/span&gt;&lt;/button&gt;
                                 &lt;/div&gt;
-                                &lt;!-- // input-search-box --&gt;
+                                &lt;!-- // input-box --&gt;
                                 &lt;/div&gt;
                                 &lt;!-- // input-group--&gt;
 
                                 &lt;!-- input-group --&gt;
                                 &lt;div class=&quot;input-group&quot;&gt;
-                                    &lt;!-- input-search-box --&gt;
-                                    &lt;div class=&quot;input-search-box&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
                                         &lt;input type=&quot;search&quot; inputmode=&quot;search&quot; class=&quot;ui-input&quot; title=&quot;검색&quot; placeholder=&quot;검색어를 입력하세요.&quot; value=&quot;입력 후&quot;/&gt;
                                         &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
                                         &lt;button type=&quot;button&quot; class=&quot;btn-input-search&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;검색&lt;/span&gt;&lt;/button&gt;
                                     &lt;/div&gt;
-                                    &lt;!-- // input-search-box --&gt;
+                                    &lt;!-- // input-box --&gt;
                                 &lt;/div&gt;
                                 &lt;!-- // input-group--&gt;
 
                                 &lt;!-- input-group --&gt;
                                 &lt;div class=&quot;input-group&quot;&gt;
-                                    &lt;!-- input-search-box --&gt;
-                                    &lt;div class=&quot;input-search-box&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
                                         &lt;input type=&quot;search&quot; inputmode=&quot;search&quot; class=&quot;ui-input&quot; title=&quot;검색&quot; placeholder=&quot;입력 불가&quot; value=&quot;&quot; disabled/&gt;
                                         &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
                                         &lt;button type=&quot;button&quot; class=&quot;btn-input-search&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;검색&lt;/span&gt;&lt;/button&gt;
                                     &lt;/div&gt;
-                                    &lt;!-- // input-search-box --&gt;
+                                    &lt;!-- // input-box --&gt;
                                 &lt;/div&gt;
                                 &lt;!-- // input-group--&gt;
                             </code>
@@ -431,6 +451,17 @@
 
 
                         <div class="guide-sbtit" id="idx1_6">유효성 검사</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p style="font-weight: bold; margin-bottom:10px;">유효성 검사 결과에 따라 <code>.valid-check</code> 클래스를 추가한다.</p>
+                            </li>
+                            <li>
+                                <ul class="guide-desc-list">
+                                    <li><p><code>valid-check</code> - 기본형 (하단 문구 노출 안됨)</p></li>
+                                    <li><p><code>.valid-check.fail</code> - 유효성 검사 실패 시</p></li>
+                                </ul>
+                            </li>
+                        </ul>
                         <!--
                         DESC : 유효성 검사 결과에 따라 .valid-check 클래스 추가
                                기본형 : valid-check (하단 문구 노출 안됨)
@@ -609,18 +640,18 @@
                         <ul class="guide-desc-list">
                             <li><code>.ui-chk</code>
                                 <ul class="guide-desc-list" style="margin-top: 8px">
-                                    <li><code>text</code>font-size : 14px</li>
+                                    <li><code>text-md</code>font-size : 14px</li>
                                     <li><code>text-sm</code>font-size : 13px</li>
                                 </ul>
                             </li>
                         </ul>
 
-                        <div class="guide-xsbtit">체크박스 <code>text</code> font-size : 14px</div>
+                        <div class="guide-xsbtit">체크박스 <code>text-md</code> font-size : 14px</div>
                         <!-- ui-chk -->
                         <span class="ui-chk">
 	                        <input id="chkDemo01" type="checkbox"/>
 	                        <label for="chkDemo01">
-	                        	<span class="text">체크박스(default)</span>
+	                        	<span class="text-md">체크박스(default)</span>
 	                        </label>
                         </span>
                         <!-- // ui-chk -->
@@ -629,7 +660,7 @@
                         <span class="ui-chk">
 	                        <input id="chkDemo02" type="checkbox" checked/>
 	                        <label for="chkDemo02">
-	                        	<span class="text">체크박스(checked)</span>
+	                        	<span class="text-md">체크박스(checked)</span>
 	                        </label>
                         </span>
                         <!-- // ui-chk -->
@@ -638,7 +669,7 @@
                         <span class="ui-chk">
 	                        <input id="chkDemo03" type="checkbox" disabled/>
 	                        <label for="chkDemo03">
-	                        	<span class="text">체크박스(disabled)</span>
+	                        	<span class="text-md">체크박스(disabled)</span>
 	                        </label>
                         </span>
                         <!-- // ui-chk -->
@@ -647,7 +678,7 @@
                         <span class="ui-chk">
 	                        <input id="chkDemo04" type="checkbox" checked disabled/>
 	                        <label for="chkDemo04">
-	                        	<span class="text">체크박스(checked, disabled)</span>
+	                        	<span class="text-md">체크박스(checked, disabled)</span>
 	                        </label>
                         </span>
                         <!-- // ui-chk -->
@@ -665,7 +696,7 @@
                                 &lt;span class=&quot;ui-chk&quot;&gt;
 	                                &lt;input id=&quot;chkDemo02&quot; type=&quot;checkbox&quot; checked/&gt;
 	                                &lt;label for=&quot;chkDemo02&quot;&gt;
-	                                	&lt;span class=&quot;text&quot;&gt;체크박스(checked)&lt;/span&gt;
+	                                	&lt;span class=&quot;text-md&quot;&gt;체크박스(checked)&lt;/span&gt;
 	                                &lt;/label&gt;
                                 &lt;/span&gt;
                                 &lt;!-- // ui-chk --&gt;
@@ -674,7 +705,7 @@
                                 &lt;span class=&quot;ui-chk&quot;&gt;
 	                                &lt;input id=&quot;chkDemo03&quot; type=&quot;checkbox&quot; disabled/&gt;
 	                                &lt;label for=&quot;chkDemo03&quot;&gt;
-	                                	&lt;span class=&quot;text&quot;&gt;체크박스(disabled)&lt;/span&gt;
+	                                	&lt;span class=&quot;text-md&quot;&gt;체크박스(disabled)&lt;/span&gt;
 	                                &lt;/label&gt;
                                 &lt;/span&gt;
                                 &lt;!-- // ui-chk --&gt;
@@ -683,7 +714,7 @@
                                 &lt;span class=&quot;ui-chk&quot;&gt;
                                     &lt;input id=&quot;chkDemo04&quot; type=&quot;checkbox&quot; checked disabled/&gt;
                                     &lt;label for=&quot;chkDemo04&quot;&gt;
-                                        &lt;span class=&quot;text&quot;&gt;체크박스(checked, disabled)&lt;/span&gt;
+                                        &lt;span class=&quot;text-md&quot;&gt;체크박스(checked, disabled)&lt;/span&gt;
                                     &lt;/label&gt;
                                 &lt;/span&gt;
                                 &lt;!-- // ui-chk --&gt;
@@ -781,7 +812,7 @@
                         <span class="ui-rdo">
                             <input type="radio" id="rdoDemo01">
                             <label for="rdoDemo01">
-                                <span class="text">라디오버튼(default)</span>
+                                <span class="text-md">라디오버튼(default)</span>
                             </label>
                         </span>
                         <!-- // ui-rdo -->
@@ -789,7 +820,7 @@
                         <span class="ui-rdo">
                             <input type="radio" id="rdoDemo02" checked>
                             <label for="rdoDemo02">
-                                <span class="text">라디오버튼(checked)</span>
+                                <span class="text-md">라디오버튼(checked)</span>
                             </label>
                         </span>
                         <!-- // ui-rdo -->
@@ -797,7 +828,7 @@
                         <span class="ui-rdo">
                             <input type="radio" id="rdoDemo03" disabled>
                             <label for="rdoDemo03">
-                                <span class="text">라디오버튼(disabled)</span>
+                                <span class="text-md">라디오버튼(disabled)</span>
                             </label>
                         </span>
                         <!-- // ui-rdo -->
@@ -805,7 +836,7 @@
                         <span class="ui-rdo">
                             <input type="radio" id="rdoDemo04" checked disabled>
                             <label for="rdoDemo04">
-                                <span class="text">라디오버튼(checked, disabled)</span>
+                                <span class="text-md">라디오버튼(checked, disabled)</span>
                             </label>
                         </span>
                         <!-- // ui-rdo -->
@@ -859,7 +890,7 @@
                                 <!-- ui-chk -->
                                 <span class="ui-chk">
                                     <input id="chkColDemo01" type="checkbox" checked>
-                                    <label for="chkColDemo01"><span class="text">체크박스</span></label>
+                                    <label for="chkColDemo01"><span class="text-md">체크박스</span></label>
                                 </span>
                                 <!-- // ui-chk -->
                             </li>
@@ -867,7 +898,7 @@
                                 <!-- ui-chk -->
                                 <span class="ui-chk">
                                     <input id="chkColDemo02" type="checkbox">
-                                    <label for="chkColDemo02"><span class="text">체크박스</span></label>
+                                    <label for="chkColDemo02"><span class="text-md">체크박스</span></label>
                                 </span>
                                 <!-- // ui-chk -->
                             </li>
@@ -875,7 +906,7 @@
                                 <!-- ui-chk -->
                                 <span class="ui-chk">
                                     <input id="chkColDemo03" type="checkbox">
-                                    <label for="chkColDemo03"><span class="text">체크박스</span></label>
+                                    <label for="chkColDemo03"><span class="text-md">체크박스</span></label>
                                 </span>
                                 <!-- // ui-chk -->
                             </li>
@@ -883,7 +914,7 @@
                                 <!-- ui-chk -->
                                 <span class="ui-chk">
                                     <input id="chkColDemo04" type="checkbox">
-                                    <label for="chkColDemo04"><span class="text">체크박스</span></label>
+                                    <label for="chkColDemo04"><span class="text-md">체크박스</span></label>
                                 </span>
                                 <!-- // ui-chk -->
                             </li>
@@ -937,7 +968,7 @@
                                 <!-- ui-rdo -->
                                 <span class="ui-rdo">
                                     <input id="rdoColDemo01" type="radio" name="rdoColDemo" checked>
-                                    <label for="rdoColDemo01"><span class="text">라디오</span></label>
+                                    <label for="rdoColDemo01"><span class="text-md">라디오</span></label>
                                 </span>
                                 <!-- // ui-rdo -->
                             </li>
@@ -945,7 +976,7 @@
                                 <!-- ui-rdo -->
                                 <span class="ui-rdo">
                                     <input id="rdoColDemo02" type="radio" name="rdoColDemo">
-                                    <label for="rdoColDemo02"><span class="text">라디오</span></label>
+                                    <label for="rdoColDemo02"><span class="text-md">라디오</span></label>
                                 </span>
                                 <!-- // ui-rdo -->
                             </li>
@@ -953,7 +984,7 @@
                                 <!-- ui-rdo -->
                                 <span class="ui-rdo">
                                     <input id="rdoColDemo03" type="radio" name="rdoColDemo">
-                                    <label for="rdoColDemo03"><span class="text">라디오</span></label>
+                                    <label for="rdoColDemo03"><span class="text-md">라디오</span></label>
                                 </span>
                                 <!-- // ui-rdo -->
                             </li>
@@ -961,7 +992,7 @@
                                 <!-- ui-rdo -->
                                 <span class="ui-rdo">
                                     <input id="rdoColDemo04" type="radio" name="rdoColDemo">
-                                    <label for="rdoColDemo04"><span class="text">라디오</span></label>
+                                    <label for="rdoColDemo04"><span class="text-md">라디오</span></label>
                                 </span>
                                 <!-- // ui-rdo -->
                             </li>

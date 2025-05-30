@@ -1747,7 +1747,7 @@ span.badge-round-sm {
   background: url("/assets/images/common/comm_ico_delete_h18.svg") 0 0 no-repeat;
   background-size: cover;
   margin: 12px 0 0 10px;
-  display: none;
+  padding: 3px;
 }
 .input-box .btn-input-search,
 .input-search-box .btn-input-search {
@@ -1756,11 +1756,7 @@ span.badge-round-sm {
   height: 18px;
   background: url("/assets/images/common/comm_ico_search_h18.svg") 0 0 no-repeat;
   background-size: cover;
-  margin: 12px 20px 0 10px;
-}
-.has-value.input-box .btn-input-del,
-.has-value.input-search-box .btn-input-del {
-  display: block;
+  margin: 12px 0 0 10px;
 }
 .input-box:focus-within,
 .input-search-box:focus-within {
@@ -1800,8 +1796,8 @@ span.badge-round-sm {
 .input-search-box .ui-input {
   height: 100%;
 }
-.input-box .ui-input.right,
-.input-search-box .ui-input.right {
+.input-box.right .ui-input,
+.input-search-box.right .ui-input {
   text-align: right;
 }
 .input-box .btn-input-del,
@@ -1824,63 +1820,18 @@ span.badge-round-sm {
 .input-box:focus-within {
   border: 1px solid #6987A1;
 }
-
-.input-search-box {
-  height: 44px;
+.input-box:has(input[type=search]) {
   border: 1px solid #BBB;
-  padding-left: 20px;
 }
-.input-search-box:has(.ui-input:disabled) {
+.input-box:has(input[type=search]):has(.ui-input:disabled) {
   background-color: #F5F5F5;
   border-color: #BBB;
 }
-.input-search-box:has(.ui-input:disabled) .ui-input {
+.input-box:has(input[type=search]):has(.ui-input:disabled) .ui-input {
   background-color: #F5F5F5;
 }
-.input-search-box:has(.ui-input:disabled) .text {
-  color: #BBB;
-}
-.input-search-box:focus-within {
+.input-box:has(input[type=search]):focus-within {
   border: 1px solid #333;
-}
-.input-search-box .ui-input {
-  padding: 0;
-}
-
-.input-flex-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  display: -webkit-flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -moz-box-orient: horizontal;
-  -moz-box-direction: normal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.input-flex-box .gap {
-  margin-left: 4px;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.5px;
-  font-weight: 400;
-}
-.input-flex-box .input-group ~ .ui-select, .input-flex-box .ui-select ~ .ui-select {
-  margin-left: 4px;
-}
-.input-flex-box .input-group, .input-flex-box .ui-select {
-  flex: 1;
-}
-.input-flex-box .input-group .input-box, .input-flex-box .input-group select, .input-flex-box .ui-select .input-box, .input-flex-box .ui-select select {
-  height: 50px;
 }
 
 /* textarea */
@@ -2050,27 +2001,24 @@ span.badge-round-sm {
   text-align: center;
   box-sizing: border-box;
 }
-.ui-chk input + label > .text, .ui-rdo input + label > .text {
+.ui-chk input + label [class^=text], .ui-rdo input + label [class^=text] {
   display: inline-block;
   margin-left: 6px;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.5px;
-  font-weight: 400;
   color: #000;
   vertical-align: top;
   line-height: 24px;
 }
-.ui-chk input + label > .text-sm, .ui-rdo input + label > .text-sm {
-  display: inline-block;
-  margin-left: 6px;
+.ui-chk input + label .text-md, .ui-rdo input + label .text-md {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+}
+.ui-chk input + label .text-sm, .ui-rdo input + label .text-sm {
   font-size: 13px;
   line-height: 18px;
   letter-spacing: -0.5px;
   font-weight: 400;
-  color: #000;
-  vertical-align: top;
-  line-height: 24px;
 }
 .ui-chk input[disabled] + label, .ui-chk input[aria-disabled] + label, .ui-chk input[readonly] + label, .ui-rdo input[disabled] + label, .ui-rdo input[aria-disabled] + label, .ui-rdo input[readonly] + label {
   pointer-events: none;
@@ -2140,13 +2088,6 @@ span.badge-round-sm {
 .ui-rdo input:checked + label::after {
   background-color: #FFF;
 }
-.ui-rdo input[disabled] + label:before, .ui-rdo input[aria-disabled] + label:before, .ui-rdo input[readonly] + label:before {
-  background-color: #FFF;
-}
-.ui-rdo input:checked + label::before {
-  background-color: #666;
-  border-color: #666;
-}
 
 .ui-toggle {
   min-height: 26px;
@@ -2182,6 +2123,8 @@ span.badge-round-sm {
   transition: all 0.3s ease-in-out;
 }
 .ui-toggle input + label .text {
+  display: inline-block;
+  vertical-align: top;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.5px;
