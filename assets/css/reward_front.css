@@ -2071,18 +2071,20 @@ span.badge-round-sm {
 
 .input-box,
 .input-search-box {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: start;
-  -moz-box-align: start;
-  -ms-flex-align: start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -moz-box-orient: horizontal;
@@ -2090,33 +2092,43 @@ span.badge-round-sm {
   -ms-flex-direction: row;
   -webkit-flex-direction: row;
   flex-direction: row;
-  overflow: hidden;
-  border-radius: 22px;
+  column-gap: 10px;
   border: 1px solid #DDD;
+  border-radius: 22px;
   background-color: #FFF;
 }
 .input-box .btn-input-del,
 .input-search-box .btn-input-del {
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  background: url("/assets/images/common/comm_ico_delete_h18.svg") 0 0 no-repeat;
-  background-size: cover;
-  margin: 12px 0 0 10px;
+  margin: -3px;
   padding: 3px;
+  width: 24px;
+  height: 24px;
+  background: url("/assets/images/common/comm_ico_delete_h18.svg") center no-repeat;
+  background-size: 18px;
 }
 .input-box .btn-input-search,
 .input-search-box .btn-input-search {
   flex-shrink: 0;
   width: 18px;
   height: 18px;
+  /*margin: 12px 0 0 10px;*/
   background: url("/assets/images/common/comm_ico_search_h18.svg") 0 0 no-repeat;
   background-size: cover;
-  margin: 12px 0 0 10px;
 }
 .input-box:focus-within,
 .input-search-box:focus-within {
   transition: border 0.2s ease-out;
+}
+.input-box:has(.btn-input-search) .ui-input,
+.input-search-box:has(.btn-input-search) .ui-input {
+  margin-right: -24px;
+  padding-right: 24px;
+}
+.input-box:has(.btn-input-search):has(.btn-input-search) .ui-input,
+.input-search-box:has(.btn-input-search):has(.btn-input-search) .ui-input {
+  margin-right: -42px;
+  padding-right: 42px;
 }
 
 .input-group .input-guide {
@@ -2148,6 +2160,12 @@ span.badge-round-sm {
   display: block;
 }
 
+.input-box,
+.input-search-box {
+  /*.btn-input-del {
+    margin-top: 12px;
+  }*/
+}
 .input-box .ui-input,
 .input-search-box .ui-input {
   height: 100%;
@@ -2155,10 +2173,6 @@ span.badge-round-sm {
 .input-box.right .ui-input,
 .input-search-box.right .ui-input {
   text-align: right;
-}
-.input-box .btn-input-del,
-.input-search-box .btn-input-del {
-  margin-top: 12px;
 }
 
 .input-box {

@@ -65,31 +65,46 @@
 }
 
 %inputBox {
-  @include mixins.justify_width;
   overflow: hidden;
-  border-radius: 22px;
+  @include mixins.justify_width(center, center);
+  column-gap: 10px;
   border: 1px solid variables.$colorGray40;
+  border-radius: 22px;
   background-color: variables.$colorGray00;
 
   .btn-input-del {
     flex-shrink: 0;
-    width: 18px;
-    height: 18px;
-    @include mixins.ratio_images('/assets/images/common/comm_ico_delete_h18');
-    margin: 12px 0 0 10px;
+    margin: -3px;
     padding: 3px;
+    width: 24px;
+    height: 24px;
+    @include mixins.ratio_images('/assets/images/common/comm_ico_delete_h18', 18px, center);
   }
 
   .btn-input-search {
     flex-shrink: 0;
     width: 18px;
     height: 18px;
+    /*margin: 12px 0 0 10px;*/
     @include mixins.ratio_images('/assets/images/common/comm_ico_search_h18');
-    margin: 12px 0 0 10px;
   }
 
   &:focus-within {
     transition : border 0.2s ease-out;
+  }
+
+  &:has(.btn-input-search) {
+    .ui-input {
+      margin-right: -24px;
+      padding-right: 24px;
+    }
+
+    &:has(.btn-input-search) {
+      .ui-input {
+        margin-right: -42px;
+        padding-right: 42px;
+      }
+    }
   }
 }
 
@@ -136,9 +151,9 @@
     }
   }
 
-  .btn-input-del {
+  /*.btn-input-del {
     margin-top: 12px;
-  }
+  }*/
 }
 
 //input-box
