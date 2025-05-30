@@ -92,20 +92,6 @@
   &:focus-within {
     transition : border 0.2s ease-out;
   }
-
-  &:has(.btn-input-search) {
-    .ui-input {
-      margin-right: -24px;
-      padding-right: 24px;
-    }
-
-    &:has(.btn-input-search) {
-      .ui-input {
-        margin-right: -42px;
-        padding-right: 42px;
-      }
-    }
-  }
 }
 
 .input-group {
@@ -116,32 +102,29 @@
   }
 }
 
-.valid-check {
-  .valid-desc {
-    @include mixins.font_size_md;
-    margin-top: 6px;
-    display: none;
-  }
-
-  &.fail {
-    .input-box, .textarea-box {
-      border-color: variables.$colorRed;
-    }
-
-    .valid-desc {
-      @include mixins.font_size_md;
-      color: variables.$colorRed;
-      display: block;
-    }
-  }
-}
-
 .input-box,
 .input-search-box {
   @extend %inputBox;
 
   .ui-input {
+    flex: 1;
     height: 100%;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  &:not(:has(.btn-input-del[style*="display: none"])) {
+    .ui-input {
+      margin-right: -28px;
+      padding-right: 28px;
+    }
+
+    &:has(.btn-input-search) {
+      .ui-input {
+        margin-right: -56px;
+        padding-right: 56px;
+      }
+    }
   }
 
 
@@ -294,6 +277,26 @@
 
     &:has(option.selected) {
       color: variables.$colorGray100;
+    }
+  }
+}
+
+.valid-check {
+  .valid-desc {
+    @include mixins.font_size_md;
+    margin-top: 6px;
+    display: none;
+  }
+
+  &.fail {
+    .input-box, .textarea-box {
+      border-color: variables.$colorRed;
+    }
+
+    .valid-desc {
+      @include mixins.font_size_md;
+      color: variables.$colorRed;
+      display: block;
     }
   }
 }

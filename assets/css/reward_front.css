@@ -2120,16 +2120,6 @@ span.badge-round-sm {
 .input-search-box:focus-within {
   transition: border 0.2s ease-out;
 }
-.input-box:has(.btn-input-search) .ui-input,
-.input-search-box:has(.btn-input-search) .ui-input {
-  margin-right: -24px;
-  padding-right: 24px;
-}
-.input-box:has(.btn-input-search):has(.btn-input-search) .ui-input,
-.input-search-box:has(.btn-input-search):has(.btn-input-search) .ui-input {
-  margin-right: -42px;
-  padding-right: 42px;
-}
 
 .input-group .input-guide {
   margin-top: 6px;
@@ -2140,26 +2130,6 @@ span.badge-round-sm {
   color: #888;
 }
 
-.valid-check .valid-desc {
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.5px;
-  font-weight: 400;
-  margin-top: 6px;
-  display: none;
-}
-.valid-check.fail .input-box, .valid-check.fail .textarea-box {
-  border-color: #EE3030;
-}
-.valid-check.fail .valid-desc {
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.5px;
-  font-weight: 400;
-  color: #EE3030;
-  display: block;
-}
-
 .input-box,
 .input-search-box {
   /*.btn-input-del {
@@ -2168,7 +2138,20 @@ span.badge-round-sm {
 }
 .input-box .ui-input,
 .input-search-box .ui-input {
+  flex: 1;
   height: 100%;
+  margin-right: 0;
+  padding-right: 0;
+}
+.input-box:not(:has(.btn-input-del[style*="display: none"])) .ui-input,
+.input-search-box:not(:has(.btn-input-del[style*="display: none"])) .ui-input {
+  margin-right: -28px;
+  padding-right: 28px;
+}
+.input-box:not(:has(.btn-input-del[style*="display: none"])):has(.btn-input-search) .ui-input,
+.input-search-box:not(:has(.btn-input-del[style*="display: none"])):has(.btn-input-search) .ui-input {
+  margin-right: -56px;
+  padding-right: 56px;
 }
 .input-box.right .ui-input,
 .input-search-box.right .ui-input {
@@ -2321,6 +2304,26 @@ span.badge-round-sm {
 }
 .ui-select select:has(option.selected) {
   color: #000;
+}
+
+.valid-check .valid-desc {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  margin-top: 6px;
+  display: none;
+}
+.valid-check.fail .input-box, .valid-check.fail .textarea-box {
+  border-color: #EE3030;
+}
+.valid-check.fail .valid-desc {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  color: #EE3030;
+  display: block;
 }
 
 /* form - radio, checkbox */
