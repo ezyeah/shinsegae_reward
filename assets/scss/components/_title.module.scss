@@ -1,0 +1,102 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/*  title */
+.ctitle-2xl { // 22px
+  @include mixins.font_size_4xl;
+  color: variables.$colorGray100;
+}
+.ctitle-xl { // 20px
+  @include mixins.font_size_3xl;
+  color: variables.$colorGray100;
+}
+.ctitle-lg { // 18px
+  @include mixins.font_size_2xl;
+  color: variables.$colorGray100;
+}
+.ctitle-md { // 16px
+  @include mixins.font_size_xl;
+  color: variables.$colorGray100;
+}
+.ctitle-sm { // 15px
+  @include mixins.font_size_lg;
+  color: variables.$colorGray100;
+}
+.ctitle-xs { // 14px
+  @include mixins.font_size_md;
+  color: variables.$colorGray100;
+}
+.ctitle-2xs { // 13px
+  @include mixins.font_size_sm;
+  color: variables.$colorGray100;
+}
+
+/* stitle */
+.stitle {
+  @include mixins.font_size_md;
+  color: variables.$colorGray100;
+}
+.stitle-gray80 {
+  @include mixins.font_size_md;
+  color: variables.$colorGray80;
+}
+
+/* ctitle-wrap */
+@mixin ctitleWrap($gap : 'md') {
+  @include mixins.justify_width(center, between);
+  /*flex-wrap: wrap;*/
+
+  .left-area {
+    @include mixins.justify_width(start, start, column);
+
+    [class*="stitle"] {
+      &:not(:last-child) {
+        margin-bottom: 6px;
+      }
+    }
+
+    [class*="stext"] {
+      &:not(:first-child) {
+        margin-top: 6px;
+      }
+    }
+  }
+
+  .right-area {
+    flex-shrink: 0;
+    margin-left: 5px; // 임시 여백
+  }
+
+  [class*="stext"] {
+    width: 100%;
+  }
+
+  @if ($gap == 'md') {
+    margin-bottom: 16px;
+  } @else if ($gap == 'xl') {
+    margin-bottom: 30px;
+  } @else if ($gap == 'lg') {
+    margin-bottom: 24px;
+  } @else if ($gap == 'sm') {
+    margin-bottom: 10px;
+  } @else if ($gap == 'xs') {
+    margin-bottom: 6px;
+  }
+}
+
+.ctitle-wrap-xl {
+  @include ctitleWrap('xl');
+}
+.ctitle-wrap-lg {
+  @include ctitleWrap('lg');
+}
+.ctitle-wrap-md {
+  @include ctitleWrap;
+}
+.ctitle-wrap-sm {
+  @include ctitleWrap('sm');
+}
+.ctitle-wrap-xs {
+  @include ctitleWrap('xs');
+}

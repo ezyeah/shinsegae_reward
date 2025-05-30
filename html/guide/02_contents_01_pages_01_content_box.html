@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="robots" content="index,nofollow">
+    <meta name="description" content="신세계백화점">
+
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="../../assets/images/favicon/share.png">-->
+    <meta property="og:site_name" content="신세계백화점">
+    <meta property="og:title" content="신세계백화점">
+    <meta property="og:description" content="신세계백화점 공식몰">
+
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>신세계백화점 가이드 - Content Box</title>
+    <!-- Vendors CSS
+   ================================================== -->
+
+    <!-- Custom styles for this template
+    ================================================== -->
+    <link rel="stylesheet" href="../../assets/css/reward_front.css">
+
+    <!-- Vendors javascript
+    ================================================== -->
+    <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+
+    <!-- UI JavaScript
+    ================================================== -->
+    <script src="../../assets/js/reward.front.ui.js"></script>
+
+    <!-- 가이드 전용 -->
+    <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
+    <link rel="stylesheet" href="/_wsg/ia_resources/monokai-sublime.css">
+    <script src="/_wsg/ia_resources/highlight.pack.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/highlight.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/xml.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/javascript.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/css.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/scss.min.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/standalone.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/plugins/html.js"></script>
+    <script>
+      $(() => {
+        String.prototype.unescapeHtml = function () {
+          return this.replace(/&amp;/g, '&')
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&quot;/g, '"');
+        };
+        String.prototype.escapeHtml = function () {
+          return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\"/g, '&quot;');
+        };
+
+        $('pre code').each((index, item) => {
+          var lines;
+          lines = item.innerHTML.replace('    ', '\t').split('\n');
+
+          if (lines.length > 1) {
+            let removeTabCnt = Number.MAX_SAFE_INTEGER;
+
+            lines.forEach((lineItem, lineIndex) => {
+              if (lineIndex !== 0) {
+                removeTabCnt = lineItem.lastIndexOf('\t') + 1 < removeTabCnt ? lineItem.lastIndexOf('\t') + 1 : removeTabCnt;
+                // console.log(lineItem, removeTabCnt);
+              }
+            });
+            // console.log(removeTabCnt);
+            lines.forEach((lineItem, lineIndex) => {
+              // console.log(lineIndex);
+              if (lineIndex !== 0) {
+                let splitAr;
+                splitAr = lineItem.split('\t');
+
+                for (var i = 0, n = removeTabCnt; i < n; i++) {
+                  splitAr.shift();
+                  // console.log('shift');
+                }
+                // console.log(splitAr);
+                lines[lineIndex] = splitAr.join('\t');
+              }
+            });
+          }
+          item.innerHTML = lines.join('\n');
+
+          (async () => {
+            formatted = await prettier.format(item.innerHTML.unescapeHtml(), {
+              parser: 'html',
+              plugins: prettierPlugins,
+              trailingComma: 'es5',
+              printWidth: 1000,
+              useTabs: true,
+              tabWidth: 1,
+              semi: true,
+              singleQuote: true,
+              arrowParens: 'never',
+              bracketSameLine: true,
+            })
+              .then((value) => {
+                item.innerHTML = value.escapeHtml();
+                hljs.highlightElement(item);
+              });
+          })();
+        });
+      });
+    </script>
+    <!-- // 가이드 전용 -->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
+                <div class="ptitle">Content Box Guide</div>
+            </div>
+        </div>
+    </div>
+    <!-- // header-wrapper -->
+    <!-- container-wrapper -->
+    <div class="container-wrapper">
+        <div class="cont-box-zero">
+            <div class="cont-inner">
+                <div class="guide-wrap">
+                    <div class="guide-inner">
+                        <div class="guide-ptit"><span># Content Box 공통규칙</span></div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <code class="title">cont type</code>, <code class="title">top size</code> 구분하여 class 사용 필요
+                                <ul class="guide-desc-list">
+                                    <li style="margin-top: 4px;">
+                                        <code>{$type}cont-box-{$size}</code>의 형태로 조합
+                                        <p style="margin-top: 4px; font-weight: 400;">ㄴ type gray, top gap 20px 필요한 경우 : gcont-md-box</p>
+                                    </li>
+                                    <li style="margin-top: 8px;">
+                                        <code class="title">cont type</code>
+                                        <ul class="guide-desc-list">
+                                            <li style="margin-top: 4px;"><code>cont</code> bg-color: #FFF</li>
+                                            <li style="margin-top: 4px;"><code>gcont</code> bg-color: #F5F5F5</li>
+                                            <li style="margin-top: 4px;"><code>rcont</code> bg-color: #F0F0F0 / border-radius: 16px</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                            </li>
+                            <li>
+                                <code class="title">top size</code>
+                                <ul class="guide-desc-list">
+                                    <li style="margin-top: 4px;"><code>zero</code> padding-top: 0/padding-bottom: 30px *임시</li>
+                                    <li style="margin-top: 4px;"><code>xs</code> padding-top/bottom: 10px</li>
+                                    <li style="margin-top: 4px;"><code>sm</code> padding-top/bottom: 16px</li>
+                                    <li style="margin-top: 4px;"><code>md</code> padding-top/bottom: 20px</li>
+                                    <li style="margin-top: 4px;"><code>lg</code> padding-top/bottom: 30px</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="guide-btit">index</div>
+                        <ol class="guide-desc-list">
+                            <li><a href="#idx1" style="text-decoration: underline">cont type</a></li>
+                            <li><a href="#idx2" style="text-decoration: underline">top size</a></li>
+                            <li><a href="#idx3" style="text-decoration: underline">Content Inner</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx1">Content Box Type Guide</div>
+                        <div class="guide-sbtit">cont-box-{$size}</div>
+                        <ul class="guide-desc-list">
+                            <li style="margin-top: 4px;">bg-color: #FFF</li>
+                        </ul>
+                        <div class="cont-box-md">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.cont-box-{$size}</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-md&quot;&gt;
+                                        &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.cont-box-md&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">gcont-box-{$size}</div>
+                        <ul class="guide-desc-list">
+                            <li style="margin-top: 4px;">bg-color: #F5F5F5</li>
+                        </ul>
+                        <div class="gcont-box-md">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.gcont-box-{$size}</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;gcont-box-md&quot;&gt;
+                                        &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.gcont-box-md&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">rcont-box-{$size}</div>
+                        <ul class="guide-desc-list">
+                            <li style="margin-top: 4px;">bg-color: #F0F0F0 / border-radius: 16px</li>
+                        </ul>
+                        <div class="rcont-box-md">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.rcont-box-{$size}</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;rcont-box-md&quot;&gt;
+                                        &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.rcont-box-md&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">Content Box Top Size Guide</div>
+                        <div class="guide-sbtit">{$type}cont-box-zero</div>
+                        <ul class="guide-desc-list">
+                            <li style="margin-top: 4px;">padding-top/bottom: 0</li>
+                        </ul>
+                        <div class="gcont-box-zero">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-zero</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-zero&quot;&gt;
+                                    &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.{$type}cont-box-zero&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">{$type}cont-box-xs</div>
+                        <ul class="guide-desc-list">
+                            <li style="margin-top: 4px;">padding-top/bottom: 10px</li>
+                        </ul>
+                        <div class="gcont-box-xs">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-xs</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-xs&quot;&gt;
+                                    &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.{$type}cont-box-xs&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">{$type}cont-box-sm</div>
+                        <ul class="guide-desc-list">
+                            <li style="margin-top: 4px;">padding-top/bottom: 16px</li>
+                        </ul>
+                        <div class="gcont-box-sm">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-sm</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-sm&quot;&gt;
+                                    &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.{$type}cont-box-sm&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">{$type}cont-box-md</div>
+                        <ul class="guide-desc-list">
+                            <li style="margin-top: 4px;">padding-top/bottom: 20px</li>
+                        </ul>
+                        <div class="gcont-box-md">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-md</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-md&quot;&gt;
+                                    &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.{$type}cont-box-md&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">{$type}cont-box-lg</div>
+                        <ul class="guide-desc-list">
+                            <li style="margin-top: 4px;">padding-top/bottom: 30px</li>
+                        </ul>
+                        <div class="gcont-box-lg">
+                            <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-lg</div>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;cont-box-lg&quot;&gt;
+                                    &lt;div style=&quot;height: 500px; background: rgba(255, 0, 0, .2)&quot;&gt;.{$type}cont-box-lg&lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx3">Content Inner Guide</div>
+                        <ul class="guide-desc-list">
+                            <li style="margin-top: 4px;">Content 내부 좌우 15px 여백 필요한 경우 유동적으로 사용함</li>
+                        </ul>
+                        <div class="gcont-box-md">
+                            <div class="cont-inner">
+                                <div style="height: 500px; background: rgba(255, 0, 0, .2)">.{$type}cont-box-lg</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // container-wrapper -->
+</div>
+</body>
+</html>

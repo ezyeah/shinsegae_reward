@@ -240,7 +240,7 @@ textarea::-webkit-scrollbar-thumb { background: #ccc; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{font-family: variables.$fontDefault; }
 
 /* Disable orange highlight */
-label, a, button, select {-o-tap-highlight-color: variables.$colorGray100;-ms-tap-highlight-color: variables.$colorGray100;-moz-tap-highlight-color: variables.$colorGray100;-webkit-tap-highlight-color: variables.$colorGray100;}
+label, a, button, select {-o-tap-highlight-color: transparent; -ms-tap-highlight-color: transparent; -moz-tap-highlight-color: transparent; outline: none;  -webkit-tap-highlight-color: rgba(0,0,0,0)}
 button {padding:0;background-color:transparent; border-width:0; outline: none; font-family: variables.$fontDefault; text-align: center;}
 
 /* // reset */
