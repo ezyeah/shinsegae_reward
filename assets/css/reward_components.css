@@ -1792,11 +1792,6 @@ span.badge-round-sm {
   margin-right: -28px;
   padding-right: 28px;
 }
-.input-box:not(:has(.btn-input-del[style*="display: none"])):has(.btn-input-search) .ui-input,
-.input-search-box:not(:has(.btn-input-del[style*="display: none"])):has(.btn-input-search) .ui-input {
-  margin-right: -56px;
-  padding-right: 56px;
-}
 .input-box.right .ui-input,
 .input-search-box.right .ui-input {
   text-align: right;
