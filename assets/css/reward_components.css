@@ -1754,11 +1754,12 @@ span.badge-round-sm {
 .input-box .btn-input-search,
 .input-search-box .btn-input-search {
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  /*margin: 12px 0 0 10px;*/
-  background: url("/assets/images/common/comm_ico_search_h18.svg") 0 0 no-repeat;
-  background-size: cover;
+  width: 24px;
+  height: 24px;
+  margin: -3px;
+  padding: 3px;
+  background: url("/assets/images/common/comm_ico_search_h18.svg") center no-repeat;
+  background-size: 18px;
 }
 .input-box:focus-within,
 .input-search-box:focus-within {
@@ -2018,19 +2019,20 @@ span.badge-round-sm {
   margin-left: 6px;
   color: #000;
   vertical-align: top;
-  line-height: 24px;
 }
 .ui-chk input + label .text-md, .ui-rdo input + label .text-md {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.5px;
   font-weight: 400;
+  line-height: 24px;
 }
 .ui-chk input + label .text-sm, .ui-rdo input + label .text-sm {
   font-size: 13px;
   line-height: 18px;
   letter-spacing: -0.5px;
   font-weight: 400;
+  line-height: 24px;
 }
 .ui-chk input[disabled] + label, .ui-chk input[aria-disabled] + label, .ui-chk input[readonly] + label, .ui-rdo input[disabled] + label, .ui-rdo input[aria-disabled] + label, .ui-rdo input[readonly] + label {
   pointer-events: none;
@@ -2179,6 +2181,56 @@ span.badge-round-sm {
 }
 .ui-col-list .item ~ .item {
   margin-top: 10px;
+}
+
+.form-item .form-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.form-item .form-title .title-text {
+  color: #000;
+}
+.form-item .form-title .right-area {
+  margin-left: auto;
+}
+.form-item .form-cont {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+}
+
+.form-list .form-item .form-title {
+  margin-bottom: 10px;
+  display: flex;
+}
+.form-list .form-item .form-title .title-text {
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+  color: #333;
+}
+.form-list .form-item ~ .form-item {
+  margin-top: 30px;
 }
 
 /*
