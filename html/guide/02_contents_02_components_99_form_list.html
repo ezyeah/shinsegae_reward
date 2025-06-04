@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="robots" content="index,nofollow">
+    <meta name="description" content="신세계백화점">
+
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="../../assets/images/favicon/share.png">-->
+    <meta property="og:site_name" content="신세계백화점">
+    <meta property="og:title" content="신세계백화점">
+    <meta property="og:description" content="신세계백화점 공식몰">
+
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>신세계백화점 가이드</title>
+    <!-- Vendors CSS
+   ================================================== -->
+
+    <!-- Custom styles for this template
+    ================================================== -->
+    <link rel="stylesheet" href="../../assets/css/reward_front.css">
+
+    <!-- Vendors javascript
+    ================================================== -->
+    <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+
+    <!-- UI JavaScript
+    ================================================== -->
+    <script src="../../assets/js/reward.front.ui.js"></script>
+    <!-- 작업 완료 시 삭제예정 -->
+    <script src="../../assets/js/reward.front.ui.ydy.js"></script>
+    <!-- // 작업 완료 시 삭제예정 -->
+
+    <!-- 가이드 전용 -->
+    <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
+    <link rel="stylesheet" href="/_wsg/ia_resources/monokai-sublime.css">
+    <script src="/_wsg/ia_resources/highlight.pack.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/highlight.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/xml.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/javascript.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/css.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/scss.min.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/standalone.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/plugins/html.js"></script>
+    <script>
+        $(() => {
+            String.prototype.unescapeHtml = function () {
+                return this.replace(/&amp;/g, '&')
+                    .replace(/&lt;/g, '<')
+                    .replace(/&gt;/g, '>')
+                    .replace(/&quot;/g, '"');
+            };
+            String.prototype.escapeHtml = function () {
+                return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\"/g, '&quot;');
+            };
+
+            $('pre code').each((index, item) => {
+                var lines;
+                lines = item.innerHTML.replace('    ', '\t').split('\n');
+
+                if (lines.length > 1) {
+                    let removeTabCnt = Number.MAX_SAFE_INTEGER;
+
+                    lines.forEach((lineItem, lineIndex) => {
+                        if (lineIndex !== 0) {
+                            removeTabCnt = lineItem.lastIndexOf('\t') + 1 < removeTabCnt ? lineItem.lastIndexOf('\t') + 1 : removeTabCnt;
+                            // console.log(lineItem, removeTabCnt);
+                        }
+                    });
+                    // console.log(removeTabCnt);
+                    lines.forEach((lineItem, lineIndex) => {
+                        // console.log(lineIndex);
+                        if (lineIndex !== 0) {
+                            let splitAr;
+                            splitAr = lineItem.split('\t');
+
+                            for (var i = 0, n = removeTabCnt; i < n; i++) {
+                                splitAr.shift();
+                                // console.log('shift');
+                            }
+                            // console.log(splitAr);
+                            lines[lineIndex] = splitAr.join('\t');
+                        }
+                    });
+                }
+                item.innerHTML = lines.join('\n');
+
+                (async () => {
+                    formatted = await prettier.format(item.innerHTML.unescapeHtml(), {
+                        parser: 'html',
+                        plugins: prettierPlugins,
+                        trailingComma: 'es5',
+                        printWidth: 1000,
+                        useTabs: true,
+                        tabWidth: 1,
+                        semi: true,
+                        singleQuote: true,
+                        arColParens: 'never',
+                        bracketSameLine: true,
+                    })
+                        .then((value) => {
+                            item.innerHTML = value.escapeHtml();
+                            hljs.highlightElement(item);
+                        });
+                })();
+            });
+        });
+    </script>
+    <!-- // 가이드 전용 -->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
+                <div class="ptitle">Form List Guide</div>
+            </div>
+            <div class="header-right">
+                <div style="height: 24px; background: rgba(255, 0, 0, .2)">btn</div>
+            </div>
+        </div>
+    </div>
+    <!-- // header-wrapper -->
+    <!-- container-wrapper -->
+    <div class="container-wrapper">
+        <div class="cont-box-md">
+            <div class="cont-inner">
+                <div class="guide-wrap">
+                    <div class="guide-inner">
+                        <div class="guide-ptit"><span>Form List 공통규칙</span></div>
+                        <ul class="guide-desc-list">
+                            <li><code>ul.form-list</code> &gt; { <code>li.form-item</code> &gt;
+                                <code>div.form-title</code> + <code>div.form-cont</code> } * n 의 구조를 가진다.
+                            </li>
+                            <li>
+                                <code>div.form-title</code> > <code>.right-area</code> : 타이틀 내 오른쪽 영역이 있는 경우 사용
+                            </li>
+                            <li>
+                                <p class="fw-md">[ class 정의 ]</p>
+                                <ul class="guide-desc-list">
+                                    <li><code class="title">.form-list</code> : <code>li.form-item</code> 상단 여백 30px
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx1">form list</div>
+
+                        <!-- form-list -->
+                        <ul class="form-list">
+                            <!-- form-item -->
+                            <li class="form-item">
+                                <!-- form-title -->
+                                <div class="form-title">
+                                    <div class="title-text">폼타이틀 15px</div>
+                                </div>
+                                <!-- // form-title -->
+                                <!-- form-cont -->
+                                <div class="form-cont">
+                                    <!-- input-group -->
+                                    <div class="input-group">
+                                        <!-- input-box -->
+                                        <div class="input-box">
+                                            <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 전" value=""/>
+                                            <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                                        </div>
+                                        <!-- // input-box -->
+                                    </div>
+                                    <!-- // input-group-->
+                                </div>
+                                <!-- // form-cont -->
+                            </li>
+                            <!-- //form-item -->
+                            <!-- form-item -->
+                            <li class="form-item">
+                                <!-- form-title -->
+                                <div class="form-title">
+                                    <div class="title-text">폼타이틀</div>
+                                    <div class="right-area">
+                                        <a href="javascript:" class="link-text-xs"> <span class="text">텍스트버튼_12px</span><span class="ico-arrow16"></span></a>
+                                    </div>
+                                </div>
+                                <!-- // form-title -->
+                                <!-- form-cont -->
+                                <div class="form-cont">
+                                    <!-- input-group -->
+                                    <div class="input-group">
+                                        <!-- input-box -->
+                                        <div class="input-box">
+                                            <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 전" value=""/>
+                                            <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                                        </div>
+                                        <!-- // input-box -->
+                                    </div>
+                                    <!-- // input-group-->
+                                    <!-- input-group -->
+                                    <div class="input-group">
+                                        <!-- input-box -->
+                                        <div class="input-box">
+                                            <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 전" value=""/>
+                                            <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                                        </div>
+                                        <!-- // input-box -->
+                                    </div>
+                                    <!-- // input-group-->
+                                </div>
+                                <!-- // form-cont -->
+                            </li>
+                            <!-- //form-item -->
+                            <!-- form-item -->
+                            <li class="form-item">
+                                <!-- form-title -->
+                                <div class="form-title">
+                                    <div class="title-text">폼타이틀</div>
+                                </div>
+                                <!-- // form-title -->
+                                <!-- form-cont -->
+                                <div class="form-cont">
+                                    <!-- input-group -->
+                                    <div class="input-group">
+                                        <!-- input-box -->
+                                        <div class="input-box">
+                                            <input type="number" inputmode="numeric" class="ui-input" title="사업자 번호" placeholder="- 없이 입력해 주세요." value="" />
+                                            <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                                        </div>
+                                        <!-- // input-box -->
+                                    </div>
+                                    <!-- // input-group-->
+                                </div>
+                                <!-- // form-cont -->
+                            </li>
+                            <!-- //form-item -->
+                            <!-- form-item -->
+                            <li class="form-item">
+                                <!-- form-title -->
+                                <div class="form-title">
+                                    <div class="title-text">폼타이틀</div>
+                                </div>
+                                <!-- // form-title -->
+                                <!-- form-cont -->
+                                <div class="form-cont">
+                                    <!-- ui-select -->
+                                    <div class="ui-select">
+                                        <select title=" 선택">
+                                            <option>선택해 주세요.</option>
+                                            <option>선택1</option>
+                                            <option>선택2</option>
+                                        </select>
+                                    </div>
+                                    <!-- // ui-select -->
+                                </div>
+                                <!-- // form-cont -->
+                            </li>
+                            <!-- //form-item -->
+                            <!-- form-item -->
+                            <li class="form-item">
+                                <!-- form-title -->
+                                <div class="form-title">
+                                    <div class="title-text">폼타이틀</div>
+                                </div>
+                                <!-- // form-title -->
+                                <!-- form-cont -->
+                                <div class="form-cont">
+                                    <!-- ui-col-list -->
+                                    <ul class="ui-col-list">
+                                        <li class="item">
+                                            <!-- ui-chk -->
+                                            <span class="ui-chk">
+                                                <input id="chkColDemo01" type="checkbox" checked />
+                                                <label for="chkColDemo01"><span class="text-md">체크박스</span></label>
+                                            </span>
+                                            <!-- // ui-chk -->
+                                        </li>
+                                        <li class="item">
+                                            <!-- ui-chk -->
+                                            <span class="ui-chk">
+                                                <input id="chkColDemo02" type="checkbox" />
+                                                <label for="chkColDemo02"><span class="text-md">체크박스</span></label>
+                                            </span>
+                                            <!-- // ui-chk -->
+                                        </li>
+                                        <li class="item">
+                                            <!-- ui-chk -->
+                                            <span class="ui-chk">
+                                                <input id="chkColDemo03" type="checkbox" />
+                                                <label for="chkColDemo03"><span class="text-md">체크박스</span></label>
+                                            </span>
+                                            <!-- // ui-chk -->
+                                        </li>
+                                        <li class="item">
+                                            <!-- ui-chk -->
+                                            <span class="ui-chk">
+                                                <input id="chkColDemo04" type="checkbox" />
+                                                <label for="chkColDemo04"><span class="text-md">체크박스</span></label>
+                                            </span>
+                                            <!-- // ui-chk -->
+                                        </li>
+                                    </ul>
+                                    <!-- // ui-col-list -->
+                                </div>
+                                <!-- // form-cont -->
+                            </li>
+                            <!-- //form-item -->
+                            <!-- form-item -->
+                            <li class="form-item">
+                                <!-- form-title -->
+                                <div class="form-title">
+                                    <div class="title-text">폼타이틀</div>
+                                </div>
+                                <!-- // form-title -->
+                                <!-- form-cont -->
+                                <div class="form-cont">
+                                    <!-- ui-toggle -->
+                                    <span class="ui-toggle">
+                                        <input id="toggleDemo01" type="checkbox" />
+                                        <label for="toggleDemo01"><span class="text">기본 토글 OFF</span></label>
+                                    </span>
+                                    <!-- // ui-toggle -->
+                                </div>
+                                <!-- // form-cont -->
+                            </li>
+                            <!-- //form-item -->
+                        </ul>
+                        <!-- // form-list -->
+
+                        <pre>
+                            <code class="html">
+                                 &lt;ul class=&quot;form-list&quot;&gt;
+                                    &lt;!-- form-item --&gt;
+                                    &lt;li class=&quot;form-item&quot;&gt;
+                                        &lt;!-- form-title --&gt;
+                                        &lt;div class=&quot;form-title&quot;&gt;
+                                            &lt;div class=&quot;title-text&quot;&gt;폼타이틀 15px&lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // form-title --&gt;
+                                        &lt;!-- form-cont --&gt;
+                                        &lt;div class=&quot;form-cont&quot;&gt;
+                                            form-cont 영역입니다.
+                                        &lt;/div&gt;
+                                        &lt;!-- // form-cont --&gt;
+                                    &lt;/li&gt;
+                                    &lt;!-- //form-item --&gt;
+                                    &lt;!-- form-item --&gt;
+                                        &lt;li class=&quot;form-item&quot;&gt;
+                                            &lt;!-- form-title --&gt;
+                                            &lt;div class=&quot;form-title&quot;&gt;
+                                                &lt;div class=&quot;title-text&quot;&gt;폼타이틀&lt;/div&gt;
+                                                &lt;div class=&quot;right-area&quot;&gt;
+                                                    오른쪽 영역이 있는 경우
+                                                    &lt;a href=&quot;javascript:&quot; class=&quot;link-text-xs&quot;&gt;&lt;span class=&quot;text&quot;&gt;텍스트버튼_12px&lt;/span&gt;&lt;span class=&quot;ico-arrow16&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;!-- // form-title --&gt;
+                                            &lt;!-- form-cont --&gt;
+                                            &lt;div class=&quot;form-cont&quot;&gt;
+                                                form-cont 영역입니다.
+                                            &lt;/div&gt;
+                                            &lt;!-- // form-cont --&gt;
+                                        &lt;/li&gt;
+                                    &lt;!-- //form-item --&gt;
+                                 &lt;/ul&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // container-wrapper -->
+</div>
+</body>
+</html>
