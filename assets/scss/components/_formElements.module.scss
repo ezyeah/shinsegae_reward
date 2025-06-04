@@ -238,7 +238,7 @@
     user-select: none;
     width: 100%;
     height: 44px;
-    padding: 12px 48px 12px 20px;
+    padding: 12px 47px 12px 19px;
     border-radius: 22px;
     border: 1px solid variables.$colorGray40;
     @include mixins.ratio_images('/assets/images/common/comm_ico_arrow_h18',18px, right 20px center);
@@ -594,6 +594,10 @@
         @include mixins.font_size_lg('sb');
         color: variables.$colorGray90;
       }
+    }
+
+    .form-cont {
+      margin: 0 -5px;
     }
 
     ~ .form-item {
