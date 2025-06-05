@@ -2059,10 +2059,9 @@ span.badge-round-sm {
   color: #888;
 }
 
-.input-group + .input-group, .input-group + .ui-select, .ui-select + .input-group, .ui-select + .ui-select, .valid-check + .input-group, .valid-check + .ui-select {
-  margin-top: 6px;
+.input-group, .ui-select, .valid-check {
+  width: 100%;
 }
-
 .input-box,
 .input-search-box {
   overflow: hidden;
@@ -2125,12 +2124,6 @@ span.badge-round-sm {
   color: #888;
 }
 
-.input-box,
-.input-search-box {
-  /*.btn-input-del {
-    margin-top: 12px;
-  }*/
-}
 .input-box .ui-input,
 .input-search-box .ui-input {
   flex: 1;
@@ -2538,9 +2531,10 @@ span.badge-round-sm {
   display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
   -webkit-box-align: center;
   -moz-box-align: center;
   -ms-flex-align: center;
@@ -2554,18 +2548,34 @@ span.badge-round-sm {
   -webkit-flex-direction: row;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 3px;
 }
 .form-item .form-title .title-text {
   color: #000;
 }
-.form-item .form-title .right-area {
-  margin-left: auto;
-}
 .form-item .form-cont {
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.5px;
-  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -moz-box-orient: vertical;
+  -moz-box-direction: reverse;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 -5px;
 }
 
 .form-list .form-item .form-title {
@@ -2578,9 +2588,6 @@ span.badge-round-sm {
   letter-spacing: -0.5px;
   font-weight: 600;
   color: #333;
-}
-.form-list .form-item .form-cont {
-  margin: 0 -5px;
 }
 .form-list .form-item ~ .form-item {
   margin-top: 30px;
