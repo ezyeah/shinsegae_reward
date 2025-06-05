@@ -1,0 +1,197 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/* Badge */
+%badgeCommon {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  border: solid 1px transparent;
+  border-radius: 4px;
+
+  .text {
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+  }
+}
+
+%badgeSm {
+  @extend %badgeCommon;
+  height: 16px;
+  padding: 0 4px 0 3px;
+
+  .text {
+    font-size: 11px;
+    //width: 23px;
+    line-height: 14px;
+    font-weight: variables.$fontWeightBold;
+  }
+}
+
+%badgeMd { //padding 2.5px 8px
+  @extend %badgeCommon;
+  height: 22px;
+  padding: 1.5px 7px;
+
+  .text {
+    font-size: variables.$fontSizeXs;
+    line-height: variables.$fontSizeXsLineHeight;
+    font-weight: variables.$fontWeightRegular;
+  }
+}
+
+%badgeLg { //padding 4px 10px
+  @extend %badgeCommon;
+  height: 26px;
+  padding: 3px 9px;
+
+  .text {
+    font-size: variables.$fontSizeSm;
+    line-height: variables.$fontSizeSmLineHeight;
+    font-weight: variables.$fontWeightRegular;
+  }
+}
+
+span.badge {
+  &-lg, &-md, &-round-lg, &-round-md, &-sm, &-round-sm  {
+    //color
+    &.gray00 {
+      background-color: variables.$colorGray00;
+      .text {
+        color: variables.$colorBlue120;
+      }
+    }
+
+    &.gray20 {
+      background-color: variables.$colorGray20;
+      border-color: variables.$colorGray20;
+
+      .text {
+        color: variables.$colorGray90;
+      }
+    }
+
+    &.blue100 {
+      background-color: variables.$colorBlue100;
+      border-color: variables.$colorBlue100;
+
+      .text {
+        color: variables.$colorGray00;
+      }
+    }
+
+    &.blue120 {
+      background-color: variables.$colorBlue120;
+
+      .text {
+        color: variables.$colorGray00;
+      }
+    }
+
+    &.brown100 {
+      background-color: variables.$colorBrown100;
+      border-color: variables.$colorBrown100;
+
+      .text {
+        color: variables.$colorGray00;
+      }
+    }
+
+    &.gray90 {
+      background-color: variables.$colorGray90;
+      border-color: variables.$colorGray90;
+
+      .text {
+        color: variables.$colorGray00;
+      }
+    }
+
+    &.line-gray40 {
+      background-color: variables.$colorGray00;
+      border-color: variables.$colorGray40;
+
+      .text {
+        color: variables.$colorGray90;
+      }
+    }
+  }
+
+  &-lg, &-round-lg {
+    @extend %badgeLg;
+  }
+
+  &-md, &-round-md {
+    @extend %badgeMd;
+  }
+
+  &-round-md { //padding 2.5px 10px
+    padding: 1.5px 9px;
+  }
+
+  &-round-lg, &-round-md {
+    border-radius: 20px;
+  }
+
+  &-sm, &-round-sm {
+    @extend %badgeSm;
+  }
+
+  &-round-sm {
+    border-radius: 99px;
+  }
+}
+
+/* badge-wrap */
+[class^='badge-wrap']{
+  @include mixins.justify_width(start, start, row);
+  flex-wrap: wrap;
+}
+
+.badge-wrap {
+  margin-bottom: 10px;
+
+  &-lg {
+    gap: 4px;
+  }
+
+  &-md {
+    gap: 2px;
+  }
+}
+
+/* tag */
+%tagCommon {
+  @include mixins.justify_width('center','center','row', true);
+  vertical-align: top;
+  border-radius: 4px;
+  background-color: variables.$colorGray00;
+  border: 1px solid variables.$colorGray40;
+
+  .text {
+    display: inline-block;
+    vertical-align: top;
+    @include mixins.font_size_md;
+    color: variables.$colorGray80;
+  }
+}
+
+.tag {
+  @extend %tagCommon;
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 11px;
+
+  .btn-delete {
+    margin-left: 4px;
+  }
+}
+
+.tag-wrap {
+  @include mixins.justify_width('start','start');
+
+  [class^=tag] {
+    margin: 3px 2px;
+  }
+}
