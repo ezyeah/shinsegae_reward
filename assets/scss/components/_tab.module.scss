@@ -36,13 +36,10 @@
         cursor: pointer;
 
         .tab-text {
+          flex-shrink: 0;
           display: inline-block;
+          text-align: center;
           vertical-align: top;
-        }
-
-        .val {
-          display: inline-block;
-          vertical-align: middle;
         }
       }
     }
@@ -130,7 +127,7 @@
   .tab-line-list {
     .tab-item {
       .tab-link {
-        min-height: 50px;
+        height: 50px;
 
         .tab-text {
           @include mixins.font_size_lg('md');
@@ -155,7 +152,7 @@
         &:before {
           content: '';
           position: absolute;
-          bottom: 1px;
+          bottom: 0;
           display: block;
           width: 100%;
           height: 2px;
@@ -170,7 +167,7 @@
   .tab-pill-list {
     .tab-item {
       .tab-link {
-        min-height: 38px;
+        height: 38px;
         padding: 8px 14px;
         border: 1px solid variables.$colorGray40;
         border-radius: 25px;
@@ -211,7 +208,7 @@
   // type box
   .tab-box-list {
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
 
     &:before {
       content: '';
@@ -221,7 +218,7 @@
       bottom: 0;
       display: block;
       height: 1px;
-      background-color: variables.$colorGray70;
+      background-color: variables.$colorGray40;
       box-shadow: 0 6px 12px rgba(85, 85, 85, 0.12);
     }
 
@@ -231,18 +228,14 @@
       border-radius: 4px 4px 0 0;
 
       .tab-link {
-        min-height: 50px;
-        padding: 14px 5px;
+        height: 50px;
+        padding: 14px 10px;
         background-color: variables.$colorGray20;
 
         .tab-text {
-          @include mixins.font_size_xl;
+          @include mixins.font_size_xl('md');
           color: variables.$colorGray70;
-        }
-
-        .val {
-          @include mixins.font_size_xl;
-          color: variables.$colorGray70;
+          @include mixins.ellipsis;
         }
       }
 
@@ -251,10 +244,7 @@
           background-color: variables.$colorBlue100;
 
           .tab-text {
-            color: variables.$colorGray00;
-          }
-
-          .val {
+            font-weight: variables.$fontWeightBold;
             color: variables.$colorGray00;
           }
         }
