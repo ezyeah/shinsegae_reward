@@ -2238,6 +2238,110 @@ span.badge-round-sm {
   color: #FFF;
 }
 
+.fold-wrap .fold-item {
+  width: 100%;
+}
+.fold-wrap .fold-item .fold-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  background-color: #FFF;
+}
+.fold-wrap .fold-item .fold-header .btn-fold {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.fold-wrap .fold-item .fold-header .btn-fold:after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+  background: url("../images/common/comm_ico_fold_arr_gray.svg") 0 0 no-repeat;
+  background-size: cover;
+  -moz-transform: rotateZ(0);
+  -webkit-transform: rotateZ(0);
+  transform: rotateZ(0);
+  -moz-transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
+  -webkit-transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
+  transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
+}
+.fold-wrap .fold-item .fold-content {
+  display: none;
+}
+.fold-wrap .fold-item.expanded .fold-header .btn-fold:after {
+  -moz-transform: rotateZ(180deg);
+  -webkit-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+}
+.fold-wrap .fold-item.expanded .fold-content {
+  display: block;
+}
+
+.fold-wrap .fold-line-list {
+  /*@include mixins.justify_width(start, start, column);*/
+}
+.fold-wrap .fold-line-list .fold-item {
+  border-top: 1px solid #EAEAEA;
+}
+.fold-wrap .fold-line-list .fold-item .fold-header {
+  padding: 16px 28px 16px 5px;
+}
+.fold-wrap .fold-box-list .fold-item {
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: #FFF;
+}
+.fold-wrap .fold-box-list .fold-item .fold-header {
+  padding: 20px 38px 20px 20px;
+}
+.fold-wrap .fold-box-list .fold-item .fold-content {
+  margin: 0 20px 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #F0F0F0;
+}
+
 .offscreen {
   position: absolute !important;
   display: block;

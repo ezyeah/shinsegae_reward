@@ -318,3 +318,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+// 벤더 프리픽스
+@mixin prefix($property, $value, $prefixes: moz webkit) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}

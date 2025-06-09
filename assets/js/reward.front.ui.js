@@ -147,6 +147,31 @@ rewardPub.front = rewardPub.front || (function () {
     if ($(selector).length === 0) return false;
 
 
+    setFoldData(selector);
+
+    $(selector).find('.btn-fold').off('click').on('click', function (event) {
+      if ($(event.target).is('a') || $(event.currentTarget).closest('.fold-item').is('.no-fold')) return;
+
+      var foldBox = $(this).closest('.fold-item'),
+          isExpanded = foldBox.hasClass('expanded');
+
+      if (isExpanded) {
+        foldOnOff().foldClose(foldBox);
+      } else {
+        foldOnOff().foldOpen(foldBox);
+      }
+
+      var evtData = {
+        index: $(event.currentTarget).closest('.fold-item').index(),
+        isExpanded: $(event.currentTarget).closest('.fold-item').hasClass('expanded'),
+      };
+      var evt = new CustomEvent('headerClick', {'detail': evtData});
+
+      $(event.currentTarget).closest('.fold-item')[0].dispatchEvent(evt);
+    });
+
+    $(window).off('resize observerUpdate orientationchange', setFoldData).on('resize observerUpdate orientationchange', setFoldData);
+
   }
 
   function setFoldData(selector) {
@@ -160,7 +185,6 @@ rewardPub.front = rewardPub.front || (function () {
       tgItem.css('height', 'auto');
       tgItem.css('height', tgItem.outerHeight());
     });
-
   }
 
   /*
@@ -232,6 +256,7 @@ rewardPub.front = rewardPub.front || (function () {
 
   _front.setContainerBottomGap = setContainerBottomGap;
   _front.setTabs = setTabs;
+  _front.setFoldBox = setFoldBox;
   _front.setCommSwiper = setCommSwiper;
 
   $(document).ready(function () {
@@ -241,6 +266,7 @@ rewardPub.front = rewardPub.front || (function () {
 
     setContainerBottomGap();
     setTabs();
+    setFoldBox();
     setCommSwiper();
   });
 
