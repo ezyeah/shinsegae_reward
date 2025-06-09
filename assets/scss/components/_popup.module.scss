@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+body:is(.dialog-open) {
+  width: 100%;
+  overflow: hidden;
+
+  .wrapper {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  .container-wrapper,
+  .floating-wrapper,
+  .footer-wrapper,
+  .content-docker-wrap,
+  .my-pocket-floating {
+    pointer-events: none;
+    touch-action: none;
+  }
+
+  &.ios {
+    touch-action: none;
+  }
+}
+
+.dialog-close {
+  width: 24px;
+  height: 24px;
+  outline: 2px solid red;
+}
+
+
+[data-role='dialog'] {
+  display: none;
+}

@@ -239,7 +239,7 @@
     padding: 12px 47px 12px 19px;
     border-radius: 22px;
     border: 1px solid variables.$colorGray40;
-    @include mixins.ratio_images('/assets/images/common/comm_ico_arrow_h18',18px, right 20px center);
+    @include mixins.ratio_images('/assets/images/form/ico_select_arrow_h18',18px, right 20px center);
     background-color: variables.$colorGray00;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -415,8 +415,8 @@
         width: 12px;
         height: 10px;
         background: variables.$colorGray50;
-        -webkit-mask-image: url('/assets/images/common/comm_ico_chk_h10.svg');
-        mask-image: url('/assets/images/common/comm_ico_chk_h10.svg');
+        -webkit-mask-image: url('/assets/images/form/ico_chk_h10.svg');
+        mask-image: url('/assets/images/form/ico_chk_h10.svg');
         mask-repeat: no-repeat;
         left: 6px;
       }
@@ -434,8 +434,8 @@
         width: 12px;
         height: 10px;
         background: variables.$colorGray00;
-        -webkit-mask-image: url('/assets/images/common/comm_ico_chk_h10.svg');
-        mask-image: url('/assets/images/common/comm_ico_chk_h10.svg');
+        -webkit-mask-image: url('/assets/images/form/ico_chk_h10.svg');
+        mask-image: url('/assets/images/form/ico_chk_h10.svg');
         mask-repeat: no-repeat;
       }
     }

@@ -287,7 +287,6 @@ button.btn, a.btn {
       vertical-align: top;
       color: variables.$colorGray80;
       letter-spacing: variables.$letterSpacing;
-      font-weight: variables.$fontWeightMedium;
 
       ~[class^=ico] {
         vertical-align: top;
@@ -308,75 +307,85 @@ button.btn, a.btn {
 
   &-lg {
     .text {
-      font-size: variables.$fontSizeLg;
-      line-height: variables.$fontSizeLgLineHeight;
+      @include mixins.font_size_lg(md, variables.$fontSizeSmLineHeight);
     }
   }
 
   &-md {
     .text {
-      font-size: variables.$fontSizeMd;
-      line-height: variables.$fontSizeMdLineHeight;
+      @include mixins.font_size_md(md, variables.$fontSizeSmLineHeight);
     }
   }
 
   &-sm {
     .text {
-      font-size: variables.$fontSizeSm;
-      line-height: variables.$fontSizeSmLineHeight;
+      @include mixins.font_size_sm(md, variables.$fontSizeSmLineHeight);
     }
   }
 
   &-xs {
     .text {
       font-size: variables.$fontSizeXs;
-      line-height: variables.$fontSizeXsLineHeight;
+      font-weight: 500;
+      line-height: variables.$fontSizeSmLineHeight;
     }
   }
 }
 
-.btn-box {
+.btn-reward, .btn-money {
   min-height: 44px;
   border-radius: 12px;
-  padding: 11px 35px 11px 15px;
+  padding: 11px 36px 11px 15px;
   width: auto;
   justify-content: flex-start !important;
   position: relative;
 
-  [class^=ico-arrow] {
-    position: absolute;
-    top: 50%;
-    right: 16px;
-    transform: translateY(-50%);
-  }
-
-  [class^=ico-]:not([class^=ico-arrow]){
+  [class^=ico-]{
     margin-right: 6px;
     flex: 0 0 16px;
   }
 
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    @include mixins.mask_images('/assets/images/common/comm_ico_arrow_h18');
+    right: 18px;
+  }
+}
+
+.btn-reward {
+  background-color: variables.$colorGray00;
+  border: 1px solid variables.$colorBrown100;
+
   .text {
-    margin-right: 4px;
-    text-align: left !important;
+    color: variables.$colorBrown120;
   }
 
-  &.line-brown {
-    .ico-arrow18 {
-      background: variables.$colorBrown120;
-    }
+  &::after {
+    background-color: variables.$colorBrown120;
+  }
+}
+
+.btn-money {
+  background-color: variables.$colorGray00;
+  border: 1px solid variables.$colorBlue100;
+
+  .text {
+    color: variables.$colorBlue120;
   }
 
-  &.line-blue {
-    .ico-arrow18 {
-      background: variables.$colorBlue120;
-    }
+  &::after {
+    background-color: variables.$colorBlue120;
   }
 }
 
 
 %btnWrap {
-  display: flex;
-  gap: 6px;
+  @include mixins.justify_width(center, center);
+  column-gap: 6px;
 
   [class^=btn] {
     width: 100%;
@@ -388,7 +397,7 @@ button.btn, a.btn {
 
   &.row {
     flex-direction: column;
-    gap: 10px;
+    row-gap: 10px;
   }
 }
 

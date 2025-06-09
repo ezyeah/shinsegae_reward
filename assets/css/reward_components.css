@@ -2,7 +2,7 @@
 /* Grayscale */
 /* Primary */
 /* Font Vari */
-.ico-wallet16, .ico-reward16, .ico-money16, .ico-close16, .ico-coupon18, .ico-plus18, .ico-arrow18, [class^=ico-] {
+.ico-wallet16, .ico-reward16, .ico-money16, .ico-coupon18, [class^=ico-] {
   display: inline-block;
   position: relative;
   vertical-align: top;
@@ -18,8 +18,8 @@
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
   mask-position: center;
-  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_gray_h16.svg");
-  mask-image: url("/assets/images/common/comm_ico_arrow_gray_h16.svg");
+  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_h16.svg");
+  mask-image: url("/assets/images/common/comm_ico_arrow_h16.svg");
 }
 [class^=ico-][class$=arrow16][class*=gray-] {
   background-color: #666;
@@ -27,34 +27,37 @@
 [class^=ico-][class$=arrow16][class*=blue-] {
   background-color: #536F86;
 }
-
-.ico-arrow18 {
+[class^=ico-][class$=plus18] {
   width: 18px;
   height: 18px;
-  background: #666;
-  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_brown_h18.svg");
-  mask-image: url("/assets/images/common/comm_ico_arrow_brown_h18.svg");
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url("/assets/images/common/comm_ico_plus_h18.svg");
+  mask-image: url("/assets/images/common/comm_ico_plus_h18.svg");
+  background-color: #888;
 }
-
-.ico-plus18 {
-  width: 18px;
-  height: 18px;
-  background: url("/assets/images/common/comm_ico_plus_h18.svg") 0 0 no-repeat;
-  background-size: cover;
+[class^=ico-][class$=close16] {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url("/assets/images/common/comm_ico_close__h16.svg");
+  mask-image: url("/assets/images/common/comm_ico_close__h16.svg");
+  background-color: #666;
 }
 
 .ico-coupon18 {
   width: 18px;
   height: 18px;
   background: url("/assets/images/common/comm_ico_coupon_h18.svg") 0 0 no-repeat;
-  background-size: cover;
-}
-
-.ico-close16 {
-  width: 16px;
-  height: 16px;
-  background: url("/assets/images/common/comm_ico_close_gray_h16.svg") 0 0 no-repeat;
   background-size: cover;
 }
 
@@ -76,13 +79,6 @@
   width: 16px;
   height: 16px;
   background: url("/assets/images/common/comm_ico_wallet_h16.svg") 0 0 no-repeat;
-  background-size: cover;
-}
-
-.ico-close16 {
-  width: 16px;
-  height: 16px;
-  background: url("/assets/images/common/comm_ico_close_h16.svg") 0 0 no-repeat;
   background-size: cover;
 }
 
@@ -982,7 +978,6 @@ button.btn-2xs, a.btn-2xs {
   vertical-align: top;
   color: #666;
   letter-spacing: -0.5px;
-  font-weight: 500;
 }
 .link-text-lg .text ~ [class^=ico], .link-text-md .text ~ [class^=ico], .link-text-sm .text ~ [class^=ico], .link-text-xs .text ~ [class^=ico] {
   vertical-align: top;
@@ -996,52 +991,103 @@ button.btn-2xs, a.btn-2xs {
 .link-text-lg .text {
   font-size: 15px;
   line-height: 21px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  line-height: 18px;
 }
 .link-text-md .text {
   font-size: 14px;
   line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  line-height: 18px;
 }
 .link-text-sm .text {
   font-size: 13px;
   line-height: 18px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  line-height: 18px;
 }
 .link-text-xs .text {
   font-size: 12px;
-  line-height: 17px;
+  font-weight: 500;
+  line-height: 18px;
 }
 
-.btn-box {
+.btn-reward, .btn-money {
   min-height: 44px;
   border-radius: 12px;
-  padding: 11px 35px 11px 15px;
+  padding: 11px 36px 11px 15px;
   width: auto;
   justify-content: flex-start !important;
   position: relative;
 }
-.btn-box [class^=ico-arrow] {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-}
-.btn-box [class^=ico-]:not([class^=ico-arrow]) {
+.btn-reward [class^=ico-], .btn-money [class^=ico-] {
   margin-right: 6px;
   flex: 0 0 16px;
 }
-.btn-box .text {
-  margin-right: 4px;
-  text-align: left !important;
+.btn-reward::after, .btn-money::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_h18.svg");
+  mask-image: url("/assets/images/common/comm_ico_arrow_h18.svg");
+  right: 18px;
 }
-.btn-box.line-brown .ico-arrow18 {
-  background: #907C6B;
+
+.btn-reward {
+  background-color: #FFF;
+  border: 1px solid #B09785;
 }
-.btn-box.line-blue .ico-arrow18 {
-  background: #536F86;
+.btn-reward .text {
+  color: #907C6B;
+}
+.btn-reward::after {
+  background-color: #907C6B;
+}
+
+.btn-money {
+  background-color: #FFF;
+  border: 1px solid #6987A1;
+}
+.btn-money .text {
+  color: #536F86;
+}
+.btn-money::after {
+  background-color: #536F86;
 }
 
 .btn-wrap-lg, .btn-wrap-md, .btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  gap: 6px;
+  display: -webkit-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  column-gap: 6px;
 }
 .btn-wrap-lg [class^=btn], .btn-wrap-md [class^=btn], .btn-wrap [class^=btn] {
   width: 100%;
@@ -1049,7 +1095,7 @@ button.btn-2xs, a.btn-2xs {
 
 .btn-wrap.row {
   flex-direction: column;
-  gap: 10px;
+  row-gap: 10px;
 }
 
 .btn-wrap-md {
@@ -1630,7 +1676,7 @@ span.badge-round-sm {
   padding: 12px 47px 12px 19px;
   border-radius: 22px;
   border: 1px solid #DDD;
-  background: url("/assets/images/common/comm_ico_arrow_h18.svg") right 20px center no-repeat;
+  background: url("/assets/images/form/ico_select_arrow_h18.svg") right 20px center no-repeat;
   background-size: 18px;
   background-color: #FFF;
   -webkit-appearance: none;
@@ -1778,8 +1824,8 @@ span.badge-round-sm {
   width: 12px;
   height: 10px;
   background: #CCC;
-  -webkit-mask-image: url("/assets/images/common/comm_ico_chk_h10.svg");
-  mask-image: url("/assets/images/common/comm_ico_chk_h10.svg");
+  -webkit-mask-image: url("/assets/images/form/ico_chk_h10.svg");
+  mask-image: url("/assets/images/form/ico_chk_h10.svg");
   mask-repeat: no-repeat;
   left: 6px;
 }
@@ -1793,8 +1839,8 @@ span.badge-round-sm {
   width: 12px;
   height: 10px;
   background: #FFF;
-  -webkit-mask-image: url("/assets/images/common/comm_ico_chk_h10.svg");
-  mask-image: url("/assets/images/common/comm_ico_chk_h10.svg");
+  -webkit-mask-image: url("/assets/images/form/ico_chk_h10.svg");
+  mask-image: url("/assets/images/form/ico_chk_h10.svg");
   mask-repeat: no-repeat;
 }
 
@@ -2350,5 +2396,35 @@ span.badge-round-sm {
   width: 1px;
   clip: rect(1px, 1px, 1px, 1px);
   font-size: 14px !important;
+}
+
+body:is(.dialog-open) {
+  width: 100%;
+  overflow: hidden;
+}
+body:is(.dialog-open) .wrapper {
+  overflow: hidden;
+  touch-action: none;
+}
+body:is(.dialog-open) .container-wrapper,
+body:is(.dialog-open) .floating-wrapper,
+body:is(.dialog-open) .footer-wrapper,
+body:is(.dialog-open) .content-docker-wrap,
+body:is(.dialog-open) .my-pocket-floating {
+  pointer-events: none;
+  touch-action: none;
+}
+body:is(.dialog-open).ios {
+  touch-action: none;
+}
+
+.dialog-close {
+  width: 24px;
+  height: 24px;
+  outline: 2px solid red;
+}
+
+[data-role=dialog] {
+  display: none;
 }
 /*# sourceMappingURL=reward_components.css.map */

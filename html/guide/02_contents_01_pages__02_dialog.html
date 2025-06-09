@@ -18,7 +18,7 @@
 
     <meta name="format-detection" content="telephone=no, address=no, email=no">
 
-    <title>신세계백화점 가이드 - Tab</title>
+    <title>신세계백화점 가이드 - Dialog</title>
 
     <!-- Vendors CSS
    ================================================== -->
@@ -202,9 +202,9 @@
                 <div class="cont-box">
                     <div class="cont-inner">
                         <div style="height: 100vh; background: rgba(255, 0, 0, .3);">
-                            <button type="button" class="btn-md blue100" onclick=""><span class="text">버튼명</span></button>
+                            <button type="button" class="btn-md blue100" onclick=""><span class="text">팝업 위 팝업 열기</span></button>
                             <br><br>
-                            <button type="button" class="btn-md line-gray40" onclick=""><span class="text">버튼명</span></button>
+                            <button type="button" class="btn-md line-gray40" onclick=""><span class="text">현재 팝업 닫고 새 팝업 열기</span></button>
                         </div>
                         <!-- btn-wrap -->
                         <div class="btn-wrap">
@@ -222,57 +222,6 @@
     </div>
     <!-- // Layer popup - default -->
 
-    <!-- Layer popup - default - 컨텐츠 버튼 2개인 경우 -->
-    <div id="popDialogDefaultDoubleBtn" data-role="dialog">
-        <div class="dialog-header">
-            <h1 class="dialog-title">팝업 타이틀</h1>
-        </div>
-        <!-- // dialog-header -->
-        <div class="dialog-body">
-            <div class="dialog-inner">
-                <div class="cont-box">
-                    <div class="cont-inner">
-                        <div style="height: 500px; background: rgba(255, 0, 0, .3);"></div>
-                        <!-- btn-wrap -->
-                        <div class="btn-wrap">
-                            <button type="button" class="btn-md blue100" onclick=""><span class="text">버튼명</span></button>
-                            <button type="button" class="btn-md line-gray40" onclick=""><span class="text">버튼명</span></button>
-                        </div>
-                        <!-- // btn-wrap -->
-                    </div>
-                    <!-- // cont-inner-->
-                </div>
-                <!-- // cont-box -->
-            </div>
-            <!-- // dialog-inner -->
-        </div>
-        <!-- // dialog-body -->
-        <button type="button" class="dialog-close" onclick="rewardPub.front.dialogOnOff().popClose('#popDialogDefaultDoubleBtn')"><span class="offscreen">팝업 닫기</span></button>
-    </div>
-    <!-- // Layer popup - default - 컨텐츠 버튼 2개인 경우 -->
-
-    <!-- Layer popup - default - 타이틀 없는 경우 -->
-    <div id="popDialogDefaultNoTitle" data-role="dialog">
-        <div class="dialog-body">
-            <div class="dialog-inner">
-                <div class="cont-box">
-                    <div class="cont-inner">
-                        <div style="height: 500px; background: rgba(255, 0, 0, .3);"></div>
-                        <!-- btn-wrap -->
-                        <div class="btn-wrap">
-                            <button type="button" class="btn-md blue100" onclick=""><span class="text">버튼명</span></button>
-                        </div>
-                        <!-- // btn-wrap -->
-                    </div>
-                    <!-- // cont-inner-->
-                </div>
-                <!-- // cont-box -->
-            </div>
-            <!-- // dialog-inner -->
-        </div>
-        <!-- // dialog-body -->
-    </div>
-    <!-- // Layer popup - default - 타이틀 없는 경우 -->
 </div>
 </body>
 </html>
