@@ -2,14 +2,14 @@
 /* Grayscale */
 /* Primary */
 /* Font Vari */
-.ico-wallet16, .ico-reward16, .ico-money16, .ico-close16, .ico-coupon18, .ico-plus18, .ico-arrow18, .ico-arrow16, .header-wrapper [class^=ico-] {
+.ico-wallet16, .ico-reward16, .ico-money16, .ico-close16, .ico-coupon18, .ico-plus18, .ico-arrow18, [class^=ico-] {
   display: inline-block;
   position: relative;
   vertical-align: top;
   overflow: hidden;
 }
 
-.ico-arrow16 {
+[class^=ico-][class$=arrow16] {
   width: 16px;
   height: 16px;
   -webkit-mask-size: cover;
@@ -20,7 +20,12 @@
   mask-position: center;
   -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_gray_h16.svg");
   mask-image: url("/assets/images/common/comm_ico_arrow_gray_h16.svg");
+}
+[class^=ico-][class$=arrow16][class*=gray-] {
   background-color: #666;
+}
+[class^=ico-][class$=arrow16][class*=blue-] {
+  background-color: #536F86;
 }
 
 .ico-arrow18 {

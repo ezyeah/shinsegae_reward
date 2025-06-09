@@ -9,17 +9,22 @@
   overflow: hidden;
 }
 
-.header-wrapper {
-  [class^=ico-] {
-    @extend %icon;
-  }
-}
-
-.ico-arrow16 {
+[class^=ico-] {
   @extend %icon;
-  width: 16px;
-  height: 16px;
-  @include mixins.mask_images('/assets/images/common/comm_ico_arrow_gray_h16', variables.$colorGray80);
+
+  &[class$="arrow16"] {
+    width: 16px;
+    height: 16px;
+    @include mixins.mask_images('/assets/images/common/comm_ico_arrow_gray_h16');
+
+    &[class*="gray-"] {
+      background-color: variables.$colorGray80;
+    }
+
+    &[class*="blue-"] {
+      background-color: variables.$colorBlue120;
+    }
+  }
 }
 
 .ico-arrow18 {
