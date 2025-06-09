@@ -111,8 +111,8 @@ rewardPub.front = rewardPub.front || (function () {
   */
   function setTabs(selector) {
     selector = selector || '.tab-wrap';
-    if ($(selector).length === 0) return false;
 
+    if ($(selector).length === 0) return false;
     $(selector).each(function () {
       var that = $(this);
 
@@ -132,6 +132,102 @@ rewardPub.front = rewardPub.front || (function () {
         },
       });
     });
+  }
+
+
+  /*
+  * date : 20259999
+  * last : 20259999
+  * name : setFoldBox()
+  * pram : selector - Fold list DOM 셀렉터
+  * desc : set fold box
+  */
+  function setFoldBox(selector) {
+    selector = selector || '.fold-wrap';
+    if ($(selector).length === 0) return false;
+
+
+  }
+
+  function setFoldData(selector) {
+    selector = selector ? selector : '.fold-wrap';
+
+    if ($(selector).length === 0) return false;
+    $(selector).find('.fold-item .fold-header').each(function () {
+      var tgItem = $(this).closest('.fold-item');
+
+      tgItem.data('btn', $(this).find('.btn-fold'));
+      tgItem.css('height', 'auto');
+      tgItem.css('height', tgItem.outerHeight());
+    });
+
+  }
+
+  /*
+  * date : 20259999
+  * last : 20259999
+  * name : foldOnOff()
+  * pram :
+  * desc : fold On/Off
+  */
+  function foldOnOff() {
+    return {
+      /**
+       * fold open
+       * @param selector {string} 타겟 foldbox
+       */
+      foldOpen: function (selector) {
+        selector.addClass('expanded');
+        $('.btn-fold', selector).find('.offscreen').text('컨텐츠 닫기');
+        if (!selector.hasClass('no-fold')) foldTransition(selector); // 폴딩 기능이 필요 없는 item 제외하고 높이 변경
+      },
+
+      /**
+       * fold close
+       * @param selector {string} 타겟 foldbox
+       */
+      foldClose: function (selector) {
+        selector.removeClass('expanded');
+        $('.btn-fold', selector).find('.offscreen').text('컨텐츠 열기');
+        if (!selector.hasClass('no-fold')) foldTransition(selector); // 폴딩 기능이 필요 없는 item 제외하고 높이 변경
+      },
+    }
+  }
+
+  /*
+  * date : 20259999
+  * last : 20259999
+  * name : foldOnOff()
+  * pram : selector - fold list
+  * desc : fold height open/close transition
+  */
+  function foldTransition(selector, isForce) {
+    var curHeight,
+      changeHeight = 0;
+    isForce = isForce || false;
+
+    curHeight = selector.outerHeight();
+    selector.css('height', 'auto');
+    changeHeight = selector.outerHeight();
+    selector.css('height', curHeight).stop().queue('fx', []).animate({height: changeHeight}, (isForce ? 0 : 100), function () {
+      var that = $(this);
+      if (selector.hasClass('expanded') && that.closest('.fold-wrap').data('type') === 'single' && selector.offset().top < _scrollTop) {
+        _noScroll = true;
+        $('html, body').stop().queue('fx', []).animate({scrollTop: that.offset().top - 50}, 250, function () {
+          setTimeout(function () {
+            _noScroll = false;
+          }, 250);
+        });
+      }
+    });
+  }
+
+  function foldHeightChange(selector) {
+    var changeHeight = 0;
+
+    selector.css('height', 'auto');
+    changeHeight = selector.outerHeight();
+    selector.css('height', changeHeight);
   }
 
   _front.setContainerBottomGap = setContainerBottomGap;

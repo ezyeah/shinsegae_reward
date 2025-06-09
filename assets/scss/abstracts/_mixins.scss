@@ -99,6 +99,22 @@
   background-size: $sizes;
 }
 
+@mixin mask_images($file, $color: '', $sizes: cover, $position: center, $repeat: no-repeat) {
+  $urls: $file + '.svg';
+  -webkit-mask-size: $sizes;
+  mask-size: $sizes;
+  -webkit-mask-repeat: $repeat;
+  mask-repeat: $repeat;
+  -webkit-mask-position: $position;
+  mask-position: $position;
+  -webkit-mask-image: url($urls);
+  mask-image: url($urls);
+
+  @if ($color != '') {
+    background-color: $color;
+  }
+}
+
 /* Font Vari */
 // 4xl - font-size: 22px ------------- title: 2xl
 @mixin font_size_4xl($type : 'heading', $lineHeight : 'default') {

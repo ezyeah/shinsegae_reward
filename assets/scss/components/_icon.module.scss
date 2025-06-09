@@ -19,9 +19,7 @@
   @extend %icon;
   width: 16px;
   height: 16px;
-  background: variables.$colorGray80;
-  -webkit-mask-image: url('/assets/images/common/comm_ico_arrow_gray_h16.svg');
-  mask-image: url('/assets/images/common/comm_ico_arrow_gray_h16.svg');
+  @include mixins.mask_images('/assets/images/common/comm_ico_arrow_gray_h16', variables.$colorGray80);
 }
 
 .ico-arrow18 {
