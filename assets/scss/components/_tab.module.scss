@@ -1,0 +1,254 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+%setTabComm {
+  padding:0;
+
+  &:has(.swiper-auto-wrap) {
+    .swiper-auto-wrap {
+      padding: 0 20px;
+    }
+  }
+
+  &:not(:has(.swiper-auto-wrap)) {
+    .tab-line-list,
+    .tab-pill-list {
+      padding: 0 20px;
+    }
+  }
+
+  .tab-line-list,
+  .tab-pill-list,
+  .tab-box-list {
+    position: relative;
+    @include mixins.justify_width;
+
+    .tab-item {
+      margin: 0;
+      padding: 0;
+
+      .tab-link {
+        @include mixins.justify_width(center, center);
+        width: 100%;
+        font-size: 0;
+        vertical-align: top;
+        cursor: pointer;
+
+        .tab-text {
+          flex-shrink: 0;
+          display: inline-block;
+          text-align: center;
+          vertical-align: top;
+        }
+      }
+    }
+
+    &.justify-tab {
+      .tab-item {
+        flex: 1;
+
+        .tab-text {
+          @include mixins.ellipsis;
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    padding: 0;
+  }
+
+  &.link-tab {
+    .tab-line-list {
+      .tab-item {
+        &.ui-tabs-active {
+          &:before {
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    @include mixins.justify_width(stretch, start, column);
+    flex: 1 0 auto;
+
+    .tab-contents {
+      @include mixins.justify_width(stretch, start, column);
+      flex: auto;
+
+      [class*="cont-box"]:last-child {
+        flex: 1 0 auto;
+      }
+    }
+  }
+}
+
+.tab-wrap {
+  @extend %setTabComm;
+
+  &:has(.swiper-auto-wrap) {
+    .swiper-auto-wrap {
+      &:has(.tab-line-list) {
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: block;
+          height: 1px;
+          background-color: variables.$colorGray30;
+        }
+      }
+    }
+  }
+
+  &:not(:has(.swiper-auto-wrap)) {
+    .tab-line-list {
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        height: 1px;
+        background-color: variables.$colorGray30;
+      }
+    }
+  }
+
+  // type line
+  .tab-line-list {
+    .tab-item {
+      .tab-link {
+        height: 50px;
+
+        .tab-text {
+          @include mixins.font_size_lg('md');
+          color: variables.$colorGray60;
+        }
+      }
+
+      ~ .tab-item {
+        margin-left: 20px;
+      }
+
+      &.ui-tabs-active {
+        position: relative;
+
+        .tab-link {
+          .tab-text {
+            font-weight: variables.$fontWeightBold;
+            color: variables.$colorBlue120;
+          }
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          display: block;
+          width: 100%;
+          height: 2px;
+          border-radius: 2px;
+          background-color: variables.$colorBlue120;
+        }
+      }
+    }
+  }
+
+  // type pill
+  .tab-pill-list {
+    .tab-item {
+      .tab-link {
+        height: 38px;
+        padding: 8px 14px;
+        border: 1px solid variables.$colorGray40;
+        border-radius: 25px;
+        background-color: variables.$colorGray00;
+
+        .tab-text {
+          @include mixins.font_size_md;
+          color: variables.$colorGray80;
+        }
+      }
+
+      ~ .tab-item {
+        margin-left: 2px;
+      }
+
+      &.ui-tabs-active {
+        .tab-link {
+          border-color: transparent;
+          background-color: variables.$colorGray90;
+
+          .tab-text {
+            font-weight: variables.$fontWeightSemibold;
+            color: variables.$colorGray00;
+          }
+        }
+      }
+    }
+
+    &.justify-tab {
+      .tab-item {
+        ~ .tab-item {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+
+  // type box
+  .tab-box-list {
+    margin: 0;
+    padding: 0 20px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      height: 1px;
+      background-color: variables.$colorGray40;
+      box-shadow: 0 6px 12px rgba(85, 85, 85, 0.12);
+    }
+
+    .tab-item {
+      flex: 1;
+      overflow: hidden;
+      border-radius: 4px 4px 0 0;
+
+      .tab-link {
+        height: 50px;
+        padding: 14px 10px;
+        background-color: variables.$colorGray20;
+
+        .tab-text {
+          @include mixins.font_size_xl('md');
+          color: variables.$colorGray70;
+          @include mixins.ellipsis;
+        }
+      }
+
+      &.ui-tabs-active {
+        .tab-link {
+          background-color: variables.$colorBlue100;
+
+          .tab-text {
+            font-weight: variables.$fontWeightBold;
+            color: variables.$colorGray00;
+          }
+        }
+      }
+    }
+  }
+}

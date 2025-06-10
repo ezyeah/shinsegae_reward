@@ -1,2 +1,12 @@
-// @import 'components/button.module';
-// @import 'components/tabs.module';
+@forward 'components/icon.module';
+@forward 'components/typography.module';
+@forward 'components/title.module';
+@forward 'components/text.module';
+@forward 'components/buttons.module';
+@forward 'components/badge.module';
+@forward 'components/contBox.module';
+@forward 'components/formElements.module';
+@forward 'components/tab.module';
+@forward 'components/fold.module';
+@forward 'components/common.module';
+@forward 'components/popup.module';

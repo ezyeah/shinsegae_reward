@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+$contTopGap: ('zero': 0, 'xs': 10px, 'sm': 16px, 'md': 20px, 'lg': 30px);
+$contType: ('': variables.$colorGray00, 'g': variables.$colorGray10, 'r': variables.$colorGray20); // default - bg: #fff | g - bg: #f5f5f5 | r - bg: #f0f0f0/border-radius: 16px
+
+
+@each $size, $px in $contTopGap {
+  @each $type, $color in $contType {
+    .#{$type}cont-box-#{$size} {
+      background-color: $color;
+      padding: $px 0;
+
+      .cont-inner {
+        padding: 0 20px;
+      }
+
+      // TODO: 상단 여백 없는 경우 하단 gap 임시 지정
+      @if ($size == 'zero') {
+        padding-bottom: 30px;
+      }
+
+      @if ($type == 'r') {
+        border-radius: 16px 16px 0 0;
+      }
+    }
+  }
+}
