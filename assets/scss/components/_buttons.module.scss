@@ -78,8 +78,7 @@ a, button {
   padding: 0 15px;
 
   .text {
-    font-size: variables.$fontSizeSm;
-    font-weight: variables.$fontWeightSemibold;
+    @include mixins.font_size_sm('sb');
     letter-spacing: variables.$letterSpacing;
 
     ~ [class^=ico] {
@@ -102,9 +101,7 @@ a, button {
   padding: 0 15px;
 
   .text {
-    font-size: variables.$fontSizeMd;
-    font-weight: variables.$fontWeightRegular;
-    letter-spacing: variables.$letterSpacing;
+    @include mixins.font_size_md('rgl');
   }
 }
 
@@ -113,9 +110,7 @@ a, button {
   padding: 0 11px;
 
   .text {
-    font-size: variables.$fontSizeSm;
-    font-weight: variables.$fontWeightMedium;
-    letter-spacing: variables.$letterSpacing;
+    @include mixins.font_size_sm('md');
   }
 }
 /* size */
@@ -123,7 +118,6 @@ a, button {
 
 button.btn, a.btn {
   &-lg, &-md, &-sm, &-xs, &-2xs, &-square-lg, &-square-md, &-square-sm, &-square-xs, &-square-2xs, &-box {
-
     &[disabled], &[aria-disabled=true], &.disabled {
       opacity: 0.4;
     }
@@ -281,12 +275,10 @@ button.btn, a.btn {
       }
     }
 
-
     .text {
       display: inline-block;
       vertical-align: top;
       color: variables.$colorGray80;
-      letter-spacing: variables.$letterSpacing;
 
       ~[class^=ico] {
         vertical-align: top;
@@ -307,27 +299,25 @@ button.btn, a.btn {
 
   &-lg {
     .text {
-      @include mixins.font_size_lg(md, variables.$fontSizeSmLineHeight);
+      @include mixins.font_size_lg('md', variables.$fontSizeSmLineHeight);
     }
   }
 
   &-md {
     .text {
-      @include mixins.font_size_md(md, variables.$fontSizeSmLineHeight);
+      @include mixins.font_size_md('md', variables.$fontSizeSmLineHeight);
     }
   }
 
   &-sm {
     .text {
-      @include mixins.font_size_sm(md, variables.$fontSizeSmLineHeight);
+      @include mixins.font_size_sm('md', variables.$fontSizeSmLineHeight);
     }
   }
 
   &-xs {
     .text {
-      font-size: variables.$fontSizeXs;
-      font-weight: 500;
-      line-height: variables.$fontSizeSmLineHeight;
+      @include mixins.font_size_xs('md', variables.$fontSizeSmLineHeight);
     }
   }
 }
@@ -335,7 +325,7 @@ button.btn, a.btn {
 .btn-reward, .btn-money {
   min-height: 44px;
   border-radius: 12px;
-  padding: 11px 36px 11px 15px;
+  padding: 11px 37px 11px 15px;
   width: auto;
   justify-content: flex-start !important;
   position: relative;
@@ -354,6 +344,10 @@ button.btn, a.btn {
     @include mixins.mask_images('/assets/images/common/comm_ico_arrow_h18');
     right: 18px;
   }
+
+  &[disabled], &[aria-disabled=true], &.disabled {
+    opacity: 0.4;
+  }
 }
 
 .btn-reward {
@@ -367,6 +361,10 @@ button.btn, a.btn {
   &::after {
     background-color: variables.$colorBrown120;
   }
+
+  &:active, &:hover  {
+    background-color: variables.$colorBrown10;
+  }
 }
 
 .btn-money {
@@ -379,6 +377,10 @@ button.btn, a.btn {
 
   &::after {
     background-color: variables.$colorBlue120;
+  }
+
+  &:active, &:hover  {
+    background-color: variables.$colorBlue10;
   }
 }
 

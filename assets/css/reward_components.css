@@ -823,6 +823,8 @@ button.btn-square-sm, a.btn-square-sm, button.btn-sm, a.btn-sm {
 }
 button.btn-square-sm .text, a.btn-square-sm .text, button.btn-sm .text, a.btn-sm .text {
   font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
   font-weight: 600;
   letter-spacing: -0.5px;
 }
@@ -843,8 +845,9 @@ button.btn-square-xs, a.btn-square-xs, button.btn-xs, a.btn-xs {
 }
 button.btn-square-xs .text, a.btn-square-xs .text, button.btn-xs .text, a.btn-xs .text {
   font-size: 14px;
-  font-weight: 400;
+  line-height: 20px;
   letter-spacing: -0.5px;
+  font-weight: 400;
 }
 
 button.btn-square-2xs, a.btn-square-2xs, button.btn-2xs, a.btn-2xs {
@@ -853,8 +856,9 @@ button.btn-square-2xs, a.btn-square-2xs, button.btn-2xs, a.btn-2xs {
 }
 button.btn-square-2xs .text, a.btn-square-2xs .text, button.btn-2xs .text, a.btn-2xs .text {
   font-size: 13px;
-  font-weight: 500;
+  line-height: 18px;
   letter-spacing: -0.5px;
+  font-weight: 500;
 }
 
 /* size */
@@ -977,7 +981,6 @@ button.btn-2xs, a.btn-2xs {
   display: inline-block;
   vertical-align: top;
   color: #666;
-  letter-spacing: -0.5px;
 }
 .link-text-lg .text ~ [class^=ico], .link-text-md .text ~ [class^=ico], .link-text-sm .text ~ [class^=ico], .link-text-xs .text ~ [class^=ico] {
   vertical-align: top;
@@ -1011,6 +1014,8 @@ button.btn-2xs, a.btn-2xs {
 }
 .link-text-xs .text {
   font-size: 12px;
+  line-height: 17px;
+  letter-spacing: -0.5px;
   font-weight: 500;
   line-height: 18px;
 }
@@ -1018,7 +1023,7 @@ button.btn-2xs, a.btn-2xs {
 .btn-reward, .btn-money {
   min-height: 44px;
   border-radius: 12px;
-  padding: 11px 36px 11px 15px;
+  padding: 11px 37px 11px 15px;
   width: auto;
   justify-content: flex-start !important;
   position: relative;
@@ -1043,6 +1048,9 @@ button.btn-2xs, a.btn-2xs {
   mask-image: url("/assets/images/common/comm_ico_arrow_h18.svg");
   right: 18px;
 }
+.btn-reward[disabled], .btn-reward[aria-disabled=true], .btn-reward.disabled, .btn-money[disabled], .btn-money[aria-disabled=true], .btn-money.disabled {
+  opacity: 0.4;
+}
 
 .btn-reward {
   background-color: #FFF;
@@ -1054,6 +1062,9 @@ button.btn-2xs, a.btn-2xs {
 .btn-reward::after {
   background-color: #907C6B;
 }
+.btn-reward:active, .btn-reward:hover {
+  background-color: #EEEBEB;
+}
 
 .btn-money {
   background-color: #FFF;
@@ -1064,6 +1075,9 @@ button.btn-2xs, a.btn-2xs {
 }
 .btn-money::after {
   background-color: #536F86;
+}
+.btn-money:active, .btn-money:hover {
+  background-color: #F0F4F5;
 }
 
 .btn-wrap-lg, .btn-wrap-md, .btn-wrap {
