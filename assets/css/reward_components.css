@@ -27,6 +27,21 @@
 [class^=ico-][class$=arrow16][class*=blue-] {
   background-color: #536F86;
 }
+[class^=ico-][class$=arrow18] {
+  width: 18px;
+  height: 18px;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_h16.svg");
+  mask-image: url("/assets/images/common/comm_ico_arrow_h16.svg");
+}
+[class^=ico-][class$=arrow18][class*=gray-] {
+  background-color: #666;
+}
 [class^=ico-][class$=plus18] {
   width: 18px;
   height: 18px;
@@ -2298,10 +2313,10 @@ span.badge-round-sm {
   color: #FFF;
 }
 
-.fold-wrap .fold-item {
+.fold-overflow-wrap .fold-item, .fold-wrap .fold-item {
   width: 100%;
 }
-.fold-wrap .fold-item .fold-header {
+.fold-overflow-wrap .fold-item .fold-header, .fold-wrap .fold-item .fold-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2324,7 +2339,7 @@ span.badge-round-sm {
   position: relative;
   background-color: #FFF;
 }
-.fold-wrap .fold-item .fold-header .btn-fold {
+.fold-overflow-wrap .fold-item .fold-header .btn-fold, .fold-wrap .fold-item .fold-header .btn-fold {
   position: absolute;
   top: 0;
   left: 0;
@@ -2351,13 +2366,14 @@ span.badge-round-sm {
   -webkit-flex-direction: row;
   flex-direction: row;
 }
-.fold-wrap .fold-item .fold-header .btn-fold:after {
+.fold-overflow-wrap .fold-item .fold-header .btn-fold:after, .fold-wrap .fold-item .fold-header .btn-fold:after {
   content: "";
+  position: absolute;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   vertical-align: top;
-  background: url("../images/common/comm_ico_fold_arr_gray.svg") 0 0 no-repeat;
+  background: url("/assets/images/common/comm_ico_fold_arrow_h18.svg") 0 0 no-repeat;
   background-size: cover;
   -moz-transform: rotateZ(0);
   -webkit-transform: rotateZ(0);
@@ -2366,15 +2382,15 @@ span.badge-round-sm {
   -webkit-transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
   transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
 }
-.fold-wrap .fold-item .fold-content {
+.fold-overflow-wrap .fold-item .fold-content, .fold-wrap .fold-item .fold-content {
   display: none;
 }
-.fold-wrap .fold-item.expanded .fold-header .btn-fold:after {
+.fold-overflow-wrap .fold-item.expanded .fold-header .btn-fold:after, .fold-wrap .fold-item.expanded .fold-header .btn-fold:after {
   -moz-transform: rotateZ(180deg);
   -webkit-transform: rotateZ(180deg);
   transform: rotateZ(180deg);
 }
-.fold-wrap .fold-item.expanded .fold-content {
+.fold-overflow-wrap .fold-item.expanded .fold-content, .fold-wrap .fold-item.expanded .fold-content {
   display: block;
 }
 
@@ -2387,19 +2403,65 @@ span.badge-round-sm {
 .fold-wrap .fold-line-list .fold-item .fold-header {
   padding: 16px 28px 16px 5px;
 }
+.fold-wrap .fold-line-list .fold-item .fold-header .btn-fold:after {
+  right: 5px;
+}
 .fold-wrap .fold-box-list .fold-item {
   overflow: hidden;
   border-radius: 16px;
   background-color: #FFF;
 }
 .fold-wrap .fold-box-list .fold-item .fold-header {
-  padding: 20px 38px 20px 20px;
+  padding: 20px 42px 20px 20px;
+}
+.fold-wrap .fold-box-list .fold-item .fold-header .btn-fold:after {
+  right: 20px;
 }
 .fold-wrap .fold-box-list .fold-item .fold-content {
   margin: 0 20px 20px;
   padding: 20px;
   border-radius: 12px;
   background-color: #F0F0F0;
+}
+
+.fold-overflow-wrap .fold-item .fold-header {
+  padding: 9px;
+  border-radius: 18px;
+  background-color: #F5F5F5;
+}
+.fold-overflow-wrap .fold-item .fold-header .btn-fold {
+  position: static;
+  justify-content: center;
+}
+.fold-overflow-wrap .fold-item .fold-header .btn-fold .text {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+  color: #666;
+  vertical-align: top;
+}
+.fold-overflow-wrap .fold-item .fold-header .btn-fold .ico-gray-arrow18 {
+  margin-left: 4px;
+  transform: rotateZ(90deg);
+}
+.fold-overflow-wrap .fold-item .fold-header .btn-fold:after {
+  content: initial;
+}
+.fold-overflow-wrap .fold-item .fold-content {
+  margin-bottom: 10px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #F5F5F5;
+}
+.fold-overflow-wrap .fold-item.expanded .fold-header .btn-fold .ico-gray-arrow18 {
+  -moz-transform: rotateZ(270deg);
+  -webkit-transform: rotateZ(270deg);
+  transform: rotateZ(270deg);
+  -moz-transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
+  -webkit-transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
+  transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
 }
 
 .offscreen {

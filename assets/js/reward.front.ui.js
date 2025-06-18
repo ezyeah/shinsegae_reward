@@ -143,9 +143,8 @@ rewardPub.front = rewardPub.front || (function () {
   * desc : set fold box
   */
   function setFoldBox(selector) {
-    selector = selector || '.fold-wrap';
+    selector = selector || '.fold-wrap, .fold-overflow-wrap';
     if ($(selector).length === 0) return false;
-
 
     setFoldData(selector);
 
@@ -175,7 +174,7 @@ rewardPub.front = rewardPub.front || (function () {
   }
 
   function setFoldData(selector) {
-    selector = selector ? selector : '.fold-wrap';
+    selector = selector ? selector : '.fold-wrap, .fold-overflow-wrap';
 
     if ($(selector).length === 0) return false;
     $(selector).find('.fold-item .fold-header').each(function () {
@@ -202,8 +201,9 @@ rewardPub.front = rewardPub.front || (function () {
        */
       foldOpen: function (selector) {
         selector.addClass('expanded');
-        $('.btn-fold', selector).find('.offscreen').text('컨텐츠 닫기');
-        if (!selector.hasClass('no-fold')) foldTransition(selector); // 폴딩 기능이 필요 없는 item 제외하고 높이 변경
+        if ($(selector).parent('.fold-overflow-wrap').length === 1) $('.text', $(selector)).text('닫기');
+        else $('.btn-fold', selector).find('.offscreen').text('컨텐츠 닫기');
+        if (!selector.hasClass('no-fold')) foldTransition(selector);
       },
 
       /**
@@ -212,8 +212,9 @@ rewardPub.front = rewardPub.front || (function () {
        */
       foldClose: function (selector) {
         selector.removeClass('expanded');
+        if ($(selector).parent('.fold-overflow-wrap').length === 1) $('.text', $(selector)).text('자세히 보기');
         $('.btn-fold', selector).find('.offscreen').text('컨텐츠 열기');
-        if (!selector.hasClass('no-fold')) foldTransition(selector); // 폴딩 기능이 필요 없는 item 제외하고 높이 변경
+        if (!selector.hasClass('no-fold')) foldTransition(selector);
       },
     }
   }

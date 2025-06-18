@@ -22,11 +22,12 @@
 
         &:after {
           content: '';
+          position: absolute;
           display: inline-block;
-          width: 20px;
-          height: 20px;
+          width: 18px;
+          height: 18px;
           vertical-align: top;
-          @include mixins.ratio_images('../images/common/comm_ico_fold_arr_gray');
+          @include mixins.ratio_images('/assets/images/common/comm_ico_fold_arrow_h18');
           @include mixins.prefix(transform, rotateZ(0));
           @include mixins.prefix(transition, transform 0.15s variables.$transEaseBounceBack);
         }
@@ -63,6 +64,12 @@
 
       .fold-header {
         padding: 16px 28px 16px 5px;
+
+        .btn-fold {
+          &:after {
+            right: 5px;
+          }
+        }
       }
     }
   }
@@ -75,7 +82,13 @@
       background-color: variables.$colorGray00;
 
       .fold-header {
-        padding: 20px 38px 20px 20px;
+        padding: 20px 42px 20px 20px;
+
+        .btn-fold {
+          &:after {
+            right: 20px;
+          }
+        }
       }
 
       .fold-content {
@@ -83,6 +96,57 @@
         padding: 20px;
         border-radius: 12px;
         background-color: variables.$colorGray20;
+      }
+    }
+  }
+}
+
+.fold-overflow-wrap {
+  @extend %setFoldCommon;
+
+  .fold-item {
+    .fold-header {
+      padding: 9px;
+      border-radius: 18px;
+      background-color: variables.$colorGray10;
+
+      .btn-fold {
+        position: static;
+        justify-content: center;
+
+        .text {
+          display: inline-block;
+          @include mixins.font_size_sm('sb');
+          color: variables.$colorGray80;
+          vertical-align: top;
+        }
+
+        .ico-gray-arrow18 {
+          margin-left: 4px;
+          transform: rotateZ(90deg);
+        }
+
+        &:after {
+          content: initial;
+        }
+      }
+    }
+
+    .fold-content {
+      margin-bottom: 10px;
+      padding: 16px;
+      border-radius: 12px;
+      background-color: variables.$colorGray10;
+    }
+
+    &.expanded {
+      .fold-header {
+        .btn-fold {
+          .ico-gray-arrow18 {
+            @include mixins.prefix(transform, rotateZ(270deg));
+            @include mixins.prefix(transition, transform 0.15s variables.$transEaseBounceBack);
+          }
+        }
       }
     }
   }

@@ -26,6 +26,16 @@
     }
   }
 
+  &[class$="arrow18"] {
+    width: 18px;
+    height: 18px;
+    @include mixins.mask_images('/assets/images/common/comm_ico_arrow_h16');
+
+    &[class*="gray-"] {
+      background-color: variables.$colorGray80;
+    }
+  }
+
   &[class$="plus18"] {
     width: 18px;
     height: 18px;
