@@ -1,0 +1,328 @@
+@use 'variables';
+
+// Display Flex를 활용한 영역대비 사이즈 자동 조절
+// $colAlign : align-items, $rowAlign : justify-contents, $direction: fles-direction, $isInline : display
+@mixin justify_width($colAlign: start, $rowAlign: start, $direction: row, $isInline: false) {
+  @if ($isInline) {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+  } @else {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+  }
+
+  @if ($rowAlign == between) {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+  } @else if ($rowAlign == around) {
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+  } @else if ($rowAlign == center) {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+  } @else if ($rowAlign == start) {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  } @else if ($rowAlign == end) {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+
+  @if ($colAlign == center) {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  } @else if ($colAlign == start) {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  } @else if ($colAlign == end) {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+  } @else if ($colAlign == stretch) {
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+
+  @if ($direction == row) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  } @else if ($direction == row-reverse) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  } @else if ($direction == column) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -moz-box-orient: vertical;
+    -moz-box-direction: reverse;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@mixin ratio_images($file, $sizes: cover, $position: 0 0, $color: '', $type: 'svg', $repeat: no-repeat ) {
+  $urls: $file + '.' + $type;
+  @if ($color == '') {
+    background: url($urls) $position $repeat;
+  } @else {
+    background: $color url($urls) $position $repeat;
+  }
+  background-size: $sizes;
+}
+
+@mixin mask_images($file, $color: '', $sizes: cover, $position: center, $repeat: no-repeat) {
+  $urls: $file + '.svg';
+  -webkit-mask-size: $sizes;
+  mask-size: $sizes;
+  -webkit-mask-repeat: $repeat;
+  mask-repeat: $repeat;
+  -webkit-mask-position: $position;
+  mask-position: $position;
+  -webkit-mask-image: url($urls);
+  mask-image: url($urls);
+
+  @if ($color != '') {
+    background-color: $color;
+  }
+}
+
+/* Font Vari */
+// 4xl - font-size: 22px ------------- title: 2xl
+@mixin font_size_4xl($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSize4xl;
+  line-height: variables.$fontSize4xlLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+
+// 3xl - font-size: 20px ------------- title: xl
+@mixin font_size_3xl($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSize3xl;
+  line-height: variables.$fontSize3xlLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+
+// 2xl - font-size:18px ------------- title: lg
+@mixin font_size_2xl($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSize2xl;
+  line-height: variables.$fontSize2xlLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+// xl - font-size: 16px ------------- title: md | body: xl
+@mixin font_size_xl($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSizeXl;
+  line-height: variables.$fontSize2xlLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+// lg - font-size: 15px ------------- title: sm | body: lg
+@mixin font_size_lg($type : 'heading', $lineHeight : 'default') {
+  font-size: variables.$fontSizeLg;
+  line-height: variables.$fontSizeLgLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+
+// md - font-size: 14px ------------- title: xs | body: md
+@mixin font_size_md($type : 'body', $lineHeight : 'default') {
+  font-size: variables.$fontSizeMd;
+  line-height: variables.$fontSizeMdLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  } @else if ($type == 'body') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+
+// sm - font-size: 13px ------------- title: 2xs | body: sm
+@mixin font_size_sm($type : 'body', $lineHeight : 'default') {
+  font-size: variables.$fontSizeSm;
+  line-height: variables.$fontSizeSmLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'heading') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  } @else if ($type == 'body') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+
+// sm - font-size: 13px ------------- body: xs
+@mixin font_size_xs($type : 'body', $lineHeight : 'default') {
+  font-size: variables.$fontSizeXs;
+  line-height: variables.$fontSizeXsLineHeight;
+  letter-spacing: variables.$letterSpacing;
+
+  @if ($type == 'bold') {
+    font-weight: variables.$fontWeightBold;
+  } @else if ($type == 'sb') {
+    font-weight: variables.$fontWeightSemibold;
+  } @else if ($type == 'md') {
+    font-weight: variables.$fontWeightMedium;
+  } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  }
+
+  @if not($lineHeight == 'default') {
+    line-height: $lineHeight;
+  }
+}
+
+// 한줄 말줄임
+@mixin ellipsis($autoWidth: true, $isInline: true) {
+  overflow: hidden;
+
+  @if ($isInline) {
+    display: inline-block;
+    vertical-align: top;
+  } @else {
+    display: block;
+  }
+
+  @if ($autoWidth) {
+    width: 100%;
+  }
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 벤더 프리픽스
+@mixin prefix($property, $value, $prefixes: moz webkit) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}

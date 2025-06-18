@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="robots" content="index,nofollow">
+    <meta name="description" content="신세계백화점">
+
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="../../assets/images/favicon/share.png">-->
+    <meta property="og:site_name" content="신세계백화점">
+    <meta property="og:title" content="신세계백화점">
+    <meta property="og:description" content="신세계백화점 공식몰">
+
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>신세계백화점 가이드 - Content Box</title>
+    <!-- Vendors CSS
+   ================================================== -->
+
+    <!-- Custom styles for this template
+    ================================================== -->
+    <link rel="stylesheet" href="../../assets/css/reward_front.css">
+
+    <!-- Vendors javascript
+    ================================================== -->
+    <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+
+    <!-- UI JavaScript
+    ================================================== -->
+    <script src="../../assets/js/reward.front.ui.js"></script>
+
+    <!-- 가이드 전용 -->
+    <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
+    <link rel="stylesheet" href="/_wsg/ia_resources/monokai-sublime.css">
+    <script src="/_wsg/ia_resources/highlight.pack.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/highlight.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/xml.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/javascript.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/css.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/scss.min.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/standalone.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/plugins/html.js"></script>
+    <script>
+      $(() => {
+        String.prototype.unescapeHtml = function () {
+          return this.replace(/&amp;/g, '&')
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&quot;/g, '"');
+        };
+        String.prototype.escapeHtml = function () {
+          return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\"/g, '&quot;');
+        };
+
+        $('pre code').each((index, item) => {
+          var lines;
+          lines = item.innerHTML.replace('    ', '\t').split('\n');
+
+          if (lines.length > 1) {
+            let removeTabCnt = Number.MAX_SAFE_INTEGER;
+
+            lines.forEach((lineItem, lineIndex) => {
+              if (lineIndex !== 0) {
+                removeTabCnt = lineItem.lastIndexOf('\t') + 1 < removeTabCnt ? lineItem.lastIndexOf('\t') + 1 : removeTabCnt;
+                // console.log(lineItem, removeTabCnt);
+              }
+            });
+            // console.log(removeTabCnt);
+            lines.forEach((lineItem, lineIndex) => {
+              // console.log(lineIndex);
+              if (lineIndex !== 0) {
+                let splitAr;
+                splitAr = lineItem.split('\t');
+
+                for (var i = 0, n = removeTabCnt; i < n; i++) {
+                  splitAr.shift();
+                  // console.log('shift');
+                }
+                // console.log(splitAr);
+                lines[lineIndex] = splitAr.join('\t');
+              }
+            });
+          }
+          item.innerHTML = lines.join('\n');
+
+          (async () => {
+            formatted = await prettier.format(item.innerHTML.unescapeHtml(), {
+              parser: 'html',
+              plugins: prettierPlugins,
+              trailingComma: 'es5',
+              printWidth: 1000,
+              useTabs: true,
+              tabWidth: 1,
+              semi: true,
+              singleQuote: true,
+              arrowParens: 'never',
+              bracketSameLine: true,
+            })
+              .then((value) => {
+                item.innerHTML = value.escapeHtml();
+                hljs.highlightElement(item);
+              });
+          })();
+        });
+      });
+    </script>
+    <!-- // 가이드 전용 -->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
+                <div class="ptitle">Title Guide</div>
+            </div>
+        </div>
+    </div>
+    <!-- // header-wrapper -->
+    <!-- container-wrapper -->
+    <div class="container-wrapper">
+        <div class="cont-box-zero">
+            <div class="cont-inner">
+                <div class="guide-wrap">
+                    <div class="guide-inner">
+                        <div class="guide-ptit"><span># Typography</span></div>
+                        <div class="guide-btit">index</div>
+                        <ol class="guide-desc-list">
+                            <li><a href="#idx1" style="text-decoration: underline">fc-</a> : font color option</li>
+                            <li><a href="#idx2" style="text-decoration: underline">fw-</a> : font weight option</li>
+                            <li><a href="#idx3" style="text-decoration: underline">ta-</a> : text align option</li>
+                            <li><a href="#idx4" style="text-decoration: underline">ellipsis</a> : text ellipsis option</li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx1">font color option</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                font color 따라 class 사용
+                                <ul class="guide-desc-list" style="margin-top: 4px;">
+                                    <li><code>fc-black</code> color: #000</li>
+                                    <li><code>fc-gray90</code> color: #333</li>
+                                    <li><code>fc-gray80</code> color: #666</li>
+                                    <li><code>fc-gray70</code> color: #888</li>
+                                    <li><code>fc-gray60</code> color: #BBB</li>
+                                    <li><code>fc-gray50</code> color: #CCC</li>
+                                    <li><code>fc-gray40</code> color: #DDD</li>
+                                    <li><code>fc-gray30</code> color: #EAEAEA</li>
+                                    <li><code>fc-gray20</code> color: #F0F0F0</li>
+                                    <li><code>fc-gray10</code> color: #F5F5F5</li>
+                                    <li><code>fc-blue</code> color: #6987A1</li>
+                                    <li><code>fc-brown</code> color: #B09785</li>
+                                    <li><code>fc-red</code> color: #EE3030</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p class="stext">fc-black 사용 시<span class="fc-black">#000</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray90 사용 시 <span class="fc-gray90">#333</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray80 사용 시 <span class="fc-gray80">#666</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray70 사용 시 <span class="fc-gray70">#888</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray60 사용 시 <span class="fc-gray60">#BBB</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray50 사용 시 <span class="fc-gray50">#CCC</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray40 사용 시 <span style="background: rgba(0,0,0)"><span class="fc-gray40">#DDD</span></span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray30 사용 시 <span style="background: rgba(0,0,0)"><span class="fc-gray30">#EAEAEA</span></span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray20 사용 시 <span style="background: rgba(0,0,0)"><span class="fc-gray20">#F0F0F0</span></span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-gray10 사용 시 <span style="background: rgba(0,0,0)"><span class="fc-gray10">#F5F5F5</span></span>컬러가 적용됩니다.</p>
+                        <p class="stext">fc-blue 사용 시 <span class="fc-blue"> #6987A1</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-brown 사용 시 <span class="fc-brown"> #B09785</span> 컬러가 적용됩니다.</p>
+                        <p class="stext">fc-red 사용 시 <span class="fc-red"> #EE3030</span> 컬러가 적용됩니다.</p>
+                        <pre>
+                            <code>
+                                &lt;span class=&quot;fc-black&quot;&gt; color: #000&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray90&quot;&gt; color: #333&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray80&quot;&gt; color: #666&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray70&quot;&gt; color: #888&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray60&quot;&gt; color: #BBB&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray50&quot;&gt; color: #CCC&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray40&quot;&gt; color: #DDD&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray30&quot;&gt; color: #EAEAEA&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray20&quot;&gt; color: #F0F0F0&lt;/span&gt;
+                                &lt;span class=&quot;fc-gray10&quot;&gt; color: #F5F5F5&lt;/span&gt;
+                                &lt;span class=&quot;fc-blue&quot;&gt; color: #6987A1&lt;/span&gt;
+                                &lt;span class=&quot;fc-brown&quot;&gt; color: #B09785&lt;/span&gt;
+                                &lt;span class=&quot;fc-red&quot;&gt; color: #EE3030&lt;/span&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">font weight option</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                font weight 따라 class 사용
+                                <ul class="guide-desc-list" style="margin-top: 4px;">
+                                    <li><code>fw-bold</code> font-weight: 700</li>
+                                    <li><code>fw-sb</code> font-weight: 600</li>
+                                    <li><code>fw-md</code> font-weight: 500</li>
+                                    <li><code>fw-rgl</code> font-weight: 400</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p class="stext">fw-bold 사용 시 <span class="fw-bold">700</span> 굵기가 적용됩니다.</p>
+                        <p class="stext">fw-sb 사용 시 <span class="fw-sb">600</span> 굵기가 적용됩니다.</p>
+                        <p class="stext">fw-md 사용 시 <span class="fw-md">500</span> 굵기가 적용됩니다.</p>
+                        <p class="stext">fw-rgl 사용 시 <span class="fw-rgl">400</span> 굵기가 적용됩니다.</p>
+                        <pre><code>
+                            &lt;span class=&quot;fw-bold&quot;&gt;font-weight: 700&lt;/span&gt;
+                            &lt;span class=&quot;fw-sb&quot;&gt;font-weight: 600&lt;/span&gt;
+                            &lt;span class=&quot;fw-md&quot;&gt;font-weight: 500&lt;/span&gt;
+                            &lt;span class=&quot;fw-rgl&quot;&gt;font-weight: 400&lt;/span&gt;
+                        </code></pre>
+                    </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx3">font color option</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                text align 따라 class 사용
+                                <ul class="guide-desc-list" style="margin-top: 4px;">
+                                    <li><code>ta-left</code> text-align: left</li>
+                                    <li><code>ta-center</code> text-align: center</li>
+                                    <li><code>ta-right</code> text-align: right</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div style="padding: 10px; background: #7CC576;">
+                            <p class="ta-left">.ta-left 사용 시 텍스트가 왼쪽 정렬 됩니다.</p>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #7CC576;">
+                            <p class="ta-center">.ta-center 사용 시 텍스트가 가운데 정렬 됩니다.</p>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #7CC576;">
+                            <p class="ta-right">.ta-right 사용 시 텍스트가 오른쪽 정렬 됩니다.</p>
+                        </div>
+                        <pre><code>
+                            &lt;p class=&quot;ta-left&quot;&gt;text-align: left&lt;/p&gt;
+                            &lt;p class=&quot;ta-center&quot;&gt;text-align: center&lt;/p&gt;
+                            &lt;p class=&quot;ta-right&quot;&gt;text-align: right&lt;/p&gt;
+                        </code></pre>
+                    </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx4">text ellipsis option</div>
+                        <ul class="guide-desc-list">
+                            <li><code>ellipsis</code> 텍스트 한 줄 말줄임</li>
+                        </ul>
+                        <p class="ellipsis">ellipsis 사용 시 한 줄 말줄임 됩니다. ellipsis 사용 시 한 줄 말줄임 됩니다. ellipsis 사용 시 한 줄 말줄임 됩니다. ellipsis 사용 시 한 줄 말줄임 됩니다. ellipsis 사용 시 한 줄 말줄임 됩니다.</p>
+                        <pre><code>
+                            &lt;p class=&quot;ellipsis&quot;&gt;ellipsis 사용 시 한 줄 말줄임 됩니다. ellipsis 사용 시 한 줄 말줄임 됩니다.&lt;/p&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // container-wrapper -->
+</div>
+</body>
+</html>

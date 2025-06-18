@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="robots" content="index,nofollow">
+    <meta name="description" content="신세계백화점">
+
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="../../assets/images/favicon/share.png">-->
+    <meta property="og:site_name" content="신세계백화점">
+    <meta property="og:title" content="신세계백화점">
+    <meta property="og:description" content="신세계백화점 공식몰">
+
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>신세계백화점 가이드 - Form</title>
+    <!-- Vendors CSS
+   ================================================== -->
+
+    <!-- Custom styles for this template
+    ================================================== -->
+    <link rel="stylesheet" href="../../assets/css/reward_front.css">
+
+    <!-- Vendors javascript
+    ================================================== -->
+    <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+
+    <!-- UI JavaScript
+    ================================================== -->
+    <script src="../../assets/js/reward.front.ui.js"></script>
+    <!-- 작업 완료 시 삭제예정 -->
+    <script src="../../assets/js/reward.front.ui.ydy.js"></script>
+    <!-- // 작업 완료 시 삭제예정 -->
+
+    <!-- 가이드 전용 -->
+    <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
+    <link rel="stylesheet" href="/_wsg/ia_resources/monokai-sublime.css">
+    <script src="/_wsg/ia_resources/highlight.pack.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/highlight.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/xml.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/javascript.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/css.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/scss.min.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/standalone.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/plugins/html.js"></script>
+    <script>
+        $(() => {
+            String.prototype.unescapeHtml = function () {
+                return this.replace(/&amp;/g, '&')
+                    .replace(/&lt;/g, '<')
+                    .replace(/&gt;/g, '>')
+                    .replace(/&quot;/g, '"');
+            };
+            String.prototype.escapeHtml = function () {
+                return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\"/g, '&quot;');
+            };
+
+            $('pre code').each((index, item) => {
+                var lines;
+                lines = item.innerHTML.replace('    ', '\t').split('\n');
+
+                if (lines.length > 1) {
+                    let removeTabCnt = Number.MAX_SAFE_INTEGER;
+
+                    lines.forEach((lineItem, lineIndex) => {
+                        if (lineIndex !== 0) {
+                            removeTabCnt = lineItem.lastIndexOf('\t') + 1 < removeTabCnt ? lineItem.lastIndexOf('\t') + 1 : removeTabCnt;
+                            // console.log(lineItem, removeTabCnt);
+                        }
+                    });
+                    // console.log(removeTabCnt);
+                    lines.forEach((lineItem, lineIndex) => {
+                        // console.log(lineIndex);
+                        if (lineIndex !== 0) {
+                            let splitAr;
+                            splitAr = lineItem.split('\t');
+
+                            for (var i = 0, n = removeTabCnt; i < n; i++) {
+                                splitAr.shift();
+                                // console.log('shift');
+                            }
+                            // console.log(splitAr);
+                            lines[lineIndex] = splitAr.join('\t');
+                        }
+                    });
+                }
+                item.innerHTML = lines.join('\n');
+
+                (async () => {
+                    formatted = await prettier.format(item.innerHTML.unescapeHtml(), {
+                        parser: 'html',
+                        plugins: prettierPlugins,
+                        trailingComma: 'es5',
+                        printWidth: 1000,
+                        useTabs: true,
+                        tabWidth: 1,
+                        semi: true,
+                        singleQuote: true,
+                        arColParens: 'never',
+                        bracketSameLine: true,
+                    })
+                        .then((value) => {
+                            item.innerHTML = value.escapeHtml();
+                            hljs.highlightElement(item);
+                        });
+                })();
+            });
+        });
+    </script>
+    <!-- // 가이드 전용 -->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
+                <div class="ptitle">Form Guide</div>
+            </div>
+            <div class="header-right">
+                <div style="height: 24px; background: rgba(255, 0, 0, .2)">btn</div>
+            </div>
+        </div>
+    </div>
+    <!-- // header-wrapper -->
+    <!-- container-wrapper -->
+    <div class="container-wrapper">
+        <div class="cont-box-md">
+            <div class="cont-inner">
+                <div class="guide-wrap">
+                    <div class="guide-inner">
+                        <div class="guide-ptit"><span>Form 공통규칙</span></div>
+                        <ul class="guide-desc-list">
+                            <li>입력필드 <span style="font-weight: bold">단독 사용</span> 시, input/select/textarea 영역 <span style="color: red">title 값 필수 속성</span>으로 입력 필요</li>
+                        </ul>
+
+                        <div class="guide-btit">index</div>
+                        <ol class="guide-desc-list">
+                            <li>
+                                <a href="#idx1" style="text-decoration: underline"><code>input</code> : 기본형 및 옵션 타입들</a>
+                                <ul class="guide-desc-list">
+                                    <li><a href="#idx1_1" style="text-decoration: underline">기본형 (.input-box)</a></li>
+                                    <li><a href="#idx1_2" style="text-decoration: underline">숫자 case</a></li>
+                                    <li><a href="#idx1_3" style="text-decoration: underline">휴대폰 번호 case</a></li>
+                                    <li><a href="#idx1_4" style="text-decoration: underline">검색 case</a></li>
+                                    <li><a href="#idx1_5" style="text-decoration: underline">하단 가이드 텍스트</a></li>
+                                    <li><a href="#idx1_6" style="text-decoration: underline">유효성 검사</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#idx2" style="text-decoration: underline"><code>textarea</code> : 기본형</a>
+                            </li>
+                            <li>
+                                <a href="#idx3" style="text-decoration: underline"><code>select</code> : 기본형 및 옵션 타입들</a>
+                            </li>
+                            <li>
+                                <a href="#idx4" style="text-decoration: underline"><code>checkbox, radio</code> : 기본형 및 옵션 타입들</a>
+                            </li>
+                            <li>
+                                <a href="#idx5" style="text-decoration: underline"><code>toggle</code> : 기본형</a>
+                            </li>
+                            <li>
+                                <a href="#idx6" style="text-decoration: underline"><code>datepicker</code> : 기본형</a>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx1">input</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p style="font-weight: bold; margin-bottom:10px;">input은 타입별로 구분하여 사용하며, 공통 class인 .input-box에 해당하는 multi class를 조합하여 사용한다.</p>
+                            </li>
+                            <li>[input 타입별 multi class 지정]
+                                <ul class="guide-desc-list" style="margin-top: 10px;">
+                                    <li><p>검색 : <code>.form-input-search</code></p></li>
+                                    <li>
+                                        <p>유효성 검사 : <code>.valid-check</code> <span style="color: red;">* 유효성 검사 결과 case별 class 제어 필요 (valid-check 영역에 multi class로 추가)</span>
+                                        </p>
+                                        <p style="margin-top: 8px;">┗ class 추가 없음 : 기본(유효성검사 결과 문구 미노출)</p>
+                                        <p style="margin-top: 8px;">┗ fail : 실패</p>
+                                    </li>
+                                    <li>
+                                        <ul class="guide-desc-list">
+                                            <li><p>입력 텍스트 오른쪽 정렬 : <code>.right</code></p></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                        </ul>
+                        <div class="guide-sbtit" id="idx1_1">기본형 (h44)</div>
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 전" value=""/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                        </div>
+                        <!-- // input-group-->
+
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box right">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 전" value=""/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                        </div>
+                        <!-- // input-group-->
+
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 후" value="텍스트 입력 후"/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                        </div>
+                        <!-- // input-group-->
+
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 불가" value="" disabled />
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                        </div>
+                        <!-- // input-group-->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 전&quot; value=&quot;&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box right&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 전&quot; value=&quot;&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 후&quot; value=&quot;텍스트 입력 후&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 불가&quot; value=&quot;&quot; disabled /&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit" id="idx1_2">숫자 case</div>
+                        <ul class="guide-desc-list">
+                            <li><code>type="number"</code>, <code>inputmode="numeric"</code></li>
+                        </ul>
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="number" inputmode="numeric" class="ui-input" title="사업자 번호" placeholder="- 없이 입력해 주세요." value=""/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                        </div>
+                        <!-- // input-group-->
+                        <pre>
+                            <code class="html">
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;number&quot; inputmode=&quot;numeric&quot; class=&quot;ui-input&quot; title=&quot;사업자 번호&quot; placeholder=&quot;- 없이 입력해 주세요.&quot; value=&quot;&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit" id="idx1_3">휴대폰 번호 case</div>
+                        <ul class="guide-desc-list">
+                            <li><code>type="tel"</code></li>
+<!--                            <li><code>.num-maxlength</code> class 추가 및 <code>.data-maxlength</code>속성으로 입력 최대값 지정 필요</li>-->
+<!--                            <li>입력한 자릿수에 맞추어 하이픈(-) 노출됨</li>-->
+                        </ul>
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="tel" inputmode="tel" class="ui-input" title="휴대폰 번호" placeholder="-없이 휴대폰 번호를 입력해 주세요." data-maxlength="15"  value=""/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                        </div>
+                        <!-- // input-group-->
+                        <pre>
+                            <code class="html">
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;tel&quot; inputmode=&quot;tel&quot; class=&quot;ui-input&quot; title=&quot;휴대폰 번호&quot; placeholder=&quot;-없이 휴대폰 번호를 입력해 주세요.&quot; data-maxlength=&quot;15&quot;  value=&quot;&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit" id="idx1_4">검색 case</div>
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="search" inputmode="search" class="ui-input" title="검색" placeholder="검색어를 입력하세요." value=""/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                                <button type="button" class="btn-input-search"><span class="offscreen">검색</span></button>
+                            </div>
+                            <!-- // input-box -->
+                        </div>
+                        <!-- // input-group-->
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="search" inputmode="search" class="ui-input" title="검색" placeholder="검색어를 입력하세요." value="입력 후"/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                                <button type="button" class="btn-input-search"><span class="offscreen">검색</span></button>
+                            </div>
+                            <!-- // input-box -->
+                        </div>
+                        <!-- // input-group-->
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="search" inputmode="search" class="ui-input" title="검색" placeholder="입력 불가" value="" disabled/>
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                                <button type="button" class="btn-input-search"><span class="offscreen">검색</span></button>
+                            </div>
+                            <!-- // input-box -->
+                        </div>
+                        <!-- // input-group-->
+                        <pre>
+                            <code class="html">
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                &lt;!-- input-box --&gt;
+                                &lt;div class=&quot;input-box&quot;&gt;
+                                    &lt;input type=&quot;search&quot; inputmode=&quot;search&quot; class=&quot;ui-input&quot; title=&quot;검색&quot; placeholder=&quot;검색어를 입력하세요.&quot; value=&quot;&quot;/&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;btn-input-search&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;검색&lt;/span&gt;&lt;/button&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;search&quot; inputmode=&quot;search&quot; class=&quot;ui-input&quot; title=&quot;검색&quot; placeholder=&quot;검색어를 입력하세요.&quot; value=&quot;입력 후&quot;/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-search&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;검색&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;search&quot; inputmode=&quot;search&quot; class=&quot;ui-input&quot; title=&quot;검색&quot; placeholder=&quot;입력 불가&quot; value=&quot;&quot; disabled/&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-search&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;검색&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group--&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit" id="idx1_5">하단 가이드 텍스트</div>
+                        <!-- input-group -->
+                        <div class="input-group">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트 입력 전" />
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                            <div class="input-guide">하단 텍스트가 노출됩니다.</div>
+                        </div>
+                        <!-- // input-group -->
+                        <pre>
+                            <code class="html">
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트 입력 전&quot; /&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                    &lt;div class=&quot;input-guide&quot;&gt;하단 텍스트가 노출됩니다.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group --&gt;
+                            </code>
+                        </pre>
+
+
+                        <div class="guide-sbtit" id="idx1_6">유효성 검사</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p style="font-weight: bold; margin-bottom:10px;">유효성 검사 결과에 따라 <code>.valid-check</code> 클래스를 추가한다.</p>
+                            </li>
+                            <li>
+                                <ul class="guide-desc-list">
+                                    <li><p><code>valid-check</code> - 기본형 (하단 문구 노출 안됨)</p></li>
+                                    <li><p><code>.valid-check.fail</code> - 유효성 검사 실패 시</p></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--
+                        DESC : 유효성 검사 결과에 따라 .valid-check 클래스 추가
+                               기본형 : valid-check (하단 문구 노출 안됨)
+			                   유효성 검사 실패 시 : valid-check.fail
+		                 -->
+                        <!-- input-group -->
+                        <div class="input-group valid-check">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트를 입력하세요" value="텍스트 입력 후1" />
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                            <div class="valid-desc">하단 텍스트가 노출됩니다.</div>
+                        </div>
+                        <!-- // input-group -->
+
+                        <!-- input-group -->
+                        <div class="input-group valid-check fail">
+                            <!-- input-box -->
+                            <div class="input-box">
+                                <input type="text" class="ui-input" title="타이틀 입력" placeholder="텍스트를 입력하세요" value="텍스트 입력 후2" />
+                                <button type="button" class="btn-input-del"><span class="offscreen">초기화</span></button>
+                            </div>
+                            <!-- // input-box -->
+                            <div class="valid-desc">하단 텍스트가 노출됩니다.</div>
+                        </div>
+                        <!-- // input-group -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group valid-check&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트를 입력하세요&quot; value=&quot;텍스트 입력 후1&quot; /&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                    &lt;div class=&quot;valid-desc&quot;&gt;하단 텍스트가 노출됩니다.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group --&gt;
+
+                                &lt;!-- input-group --&gt;
+                                &lt;div class=&quot;input-group valid-check fail&quot;&gt;
+                                    &lt;!-- input-box --&gt;
+                                    &lt;div class=&quot;input-box&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;ui-input&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;텍스트를 입력하세요&quot; value=&quot;텍스트 입력 후2&quot; /&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-input-del&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;초기화&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // input-box --&gt;
+                                    &lt;div class=&quot;valid-desc&quot;&gt;하단 텍스트가 노출됩니다.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // input-group --&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">textarea</div>
+                        <!-- textarea-box -->
+                        <div class="textarea-box">
+                            <textarea class="ui-textarea" title="타이틀 입력" placeholder="힌트 메시지"></textarea>
+                            <div class="count-check"><span class="count">0</span><span class="total">100</span></div>
+                        </div>
+                        <!-- // textarea-box -->
+
+                        <!-- textarea-box -->
+                        <div class="textarea-box">
+                            <textarea class="ui-textarea" title="타이틀 입력" placeholder="힌트 메시지" disabled></textarea>
+                            <div class="count-check"><span class="count">0</span><span class="total">100</span></div>
+                        </div>
+                        <!-- // textarea-box -->
+
+                        <!-- valid-check -->
+                        <div class="valid-check fail">
+                            <!-- textarea-box -->
+                            <div class="textarea-box">
+                                <textarea class="ui-textarea" title="타이틀 입력" placeholder="힌트 메시지">텍스트 입력 오류</textarea>
+                                <div class="count-check"><span class="count">0</span><span class="total">100</span></div>
+                            </div>
+                            <!-- // textarea-box -->
+                        </div>
+                        <!-- // valid-check -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- textarea-box --&gt;
+                                 &lt;div class=&quot;textarea-box&quot;&gt;
+                                     &lt;textarea class=&quot;ui-textarea&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;힌트 메시지&quot;&gt;&lt;/textarea&gt;
+                                     &lt;div class=&quot;count-check&quot;&gt;&lt;span class=&quot;count&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;total&quot;&gt;100&lt;/span&gt;&lt;/div&gt;
+                                 &lt;/div&gt;
+                                &lt;!-- // textarea-box --&gt;
+
+                                &lt;!-- textarea-box --&gt;
+                                &lt;div class=&quot;textarea-box&quot;&gt;
+                                    &lt;textarea class=&quot;ui-textarea&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;힌트 메시지&quot; disabled&gt;&lt;/textarea&gt;
+                                    &lt;div class=&quot;count-check&quot;&gt;&lt;span class=&quot;count&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;total&quot;&gt;100&lt;/span&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // textarea-box --&gt;
+
+                                &lt;!-- valid-check --&gt;
+                                &lt;div class=&quot;valid-check fail&quot;&gt;
+                                    &lt;!-- textarea-box --&gt;
+                                    &lt;div class=&quot;textarea-box&quot;&gt;
+                                        &lt;textarea class=&quot;ui-textarea&quot; title=&quot;타이틀 입력&quot; placeholder=&quot;힌트 메시지&quot;&gt;텍스트 입력 오류&lt;/textarea&gt;
+                                        &lt;div class=&quot;count-check&quot;&gt;&lt;span class=&quot;count&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;total&quot;&gt;100&lt;/span&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // textarea-box --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // valid-check --&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx3">select</div>
+                        <div class="guide-xsbtit">default</div>
+                        <!-- ui-select -->
+                        <div class="ui-select">
+                            <select title=" 선택" name="guide">
+                                <option>선택해 주세요.</option>
+                                <option>선택1</option>
+                                <option>선택2</option>
+                            </select>
+                        </div>
+                        <!-- // ui-select -->
+
+                        <!-- ui-select -->
+                        <div class="ui-select">
+                            <select title="타이틀 선택" name="guide" disabled>
+                                <option>선택해 주세요.</option>
+                                <option>선택1</option>
+                                <option>선택2</option>
+                            </select>
+                        </div>
+                        <!-- // ui-select -->
+
+                        <pre>
+                            <code class="html">
+                                 &lt;!-- ui-select --&gt;
+                                &lt;div class=&quot;ui-select&quot;&gt;
+                                    &lt;select title=&quot; 선택&quot;&gt; name=&quot;guide&quot;
+                                        &lt;option&gt;선택해 주세요.&lt;/option&gt;
+                                        &lt;option&gt;선택1&lt;/option&gt;
+                                        &lt;option&gt;선택2&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // ui-select --&gt;
+
+                                &lt;!-- ui-select --&gt;
+                                &lt;div class=&quot;ui-select&quot;&gt;
+                                    &lt;select title=&quot;타이틀 선택&quot; name=&quot;guide&quot; disabled&gt;
+                                        &lt;option&gt;선택해 주세요.&lt;/option&gt;
+                                        &lt;option&gt;선택1&lt;/option&gt;
+                                        &lt;option&gt;선택2&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // ui-select --&gt;
+                            </code>
+                        </pre>
+
+                        <!--<div class="guide-xsbtit">type-sort</div>
+                        <div class="ui-select type-text type-sort">
+                            <select title="정렬 방식 선택" data-type="type-text">
+                                <option>시작일 순</option>
+                                <option>종료일 순</option>
+                                <option>유효기간순</option>
+                            </select>
+                        </div>-->
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx4">checkbox, radio</div>
+                        <div class="guide-sbtit">checkbox</div>
+                        <ul class="guide-desc-list">
+                            <li><code>.ui-chk</code>
+                                <ul class="guide-desc-list" style="margin-top: 8px">
+                                    <li><code>text-md</code>font-size : 14px</li>
+                                    <li><code>text-sm</code>font-size : 13px</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="guide-xsbtit">체크박스 <code>text-md</code> font-size : 14px</div>
+                        <!-- ui-chk -->
+                        <span class="ui-chk">
+	                        <input id="chkDemo01" type="checkbox"/>
+	                        <label for="chkDemo01">
+	                        	<span class="text-md">체크박스(default)</span>
+	                        </label>
+                        </span>
+                        <!-- // ui-chk -->
+
+                        <!-- ui-chk -->
+                        <span class="ui-chk">
+	                        <input id="chkDemo02" type="checkbox" checked/>
+	                        <label for="chkDemo02">
+	                        	<span class="text-md">체크박스(checked)</span>
+	                        </label>
+                        </span>
+                        <!-- // ui-chk -->
+
+                        <!-- ui-chk -->
+                        <span class="ui-chk">
+	                        <input id="chkDemo03" type="checkbox" disabled/>
+	                        <label for="chkDemo03">
+	                        	<span class="text-md">체크박스(disabled)</span>
+	                        </label>
+                        </span>
+                        <!-- // ui-chk -->
+
+                        <!-- ui-chk -->
+                        <span class="ui-chk">
+	                        <input id="chkDemo04" type="checkbox" checked disabled/>
+	                        <label for="chkDemo04">
+	                        	<span class="text-md">체크박스(checked, disabled)</span>
+	                        </label>
+                        </span>
+                        <!-- // ui-chk -->
+                        <pre>
+                            <code class="html">
+                                &lt;span class=&quot;ui-chk&quot;&gt;
+	                                &lt;input id=&quot;chkDemo01&quot; type=&quot;checkbox&quot;/&gt;
+	                                &lt;label for=&quot;chkDemo01&quot;&gt;
+	                                	&lt;span class=&quot;text-md&quot;&gt;체크박스(default)&lt;/span&gt;
+	                                &lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-chk --&gt;
+
+                                &lt;!-- ui-chk --&gt;
+                                &lt;span class=&quot;ui-chk&quot;&gt;
+	                                &lt;input id=&quot;chkDemo02&quot; type=&quot;checkbox&quot; checked/&gt;
+	                                &lt;label for=&quot;chkDemo02&quot;&gt;
+	                                	&lt;span class=&quot;text-md&quot;&gt;체크박스(checked)&lt;/span&gt;
+	                                &lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-chk --&gt;
+
+                                &lt;!-- ui-chk --&gt;
+                                &lt;span class=&quot;ui-chk&quot;&gt;
+	                                &lt;input id=&quot;chkDemo03&quot; type=&quot;checkbox&quot; disabled/&gt;
+	                                &lt;label for=&quot;chkDemo03&quot;&gt;
+	                                	&lt;span class=&quot;text-md&quot;&gt;체크박스(disabled)&lt;/span&gt;
+	                                &lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-chk --&gt;
+
+                                &lt;!-- ui-chk --&gt;
+                                &lt;span class=&quot;ui-chk&quot;&gt;
+                                    &lt;input id=&quot;chkDemo04&quot; type=&quot;checkbox&quot; checked disabled/&gt;
+                                    &lt;label for=&quot;chkDemo04&quot;&gt;
+                                        &lt;span class=&quot;text-md&quot;&gt;체크박스(checked, disabled)&lt;/span&gt;
+                                    &lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-chk --&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">체크박스 <code>text-sm</code> font-size : 13px</div>
+                        <!-- ui-chk -->
+                        <span class="ui-chk">
+	                        <input id="chkDemo05" type="checkbox"/>
+	                        <label for="chkDemo05">
+	                        	<span class="text-sm">체크박스(default) 13px</span>
+	                        </label>
+                        </span>
+                        <!-- // ui-chk -->
+
+                        <!-- ui-chk -->
+                        <span class="ui-chk">
+	                        <input id="chkDemo06" type="checkbox" checked/>
+	                        <label for="chkDemo06">
+	                        	<span class="text-sm">체크박스(checked) 13px</span>
+	                        </label>
+                        </span>
+                        <!-- // ui-chk -->
+
+                        <!-- ui-chk -->
+                        <span class="ui-chk">
+	                        <input id="chkDemo07" type="checkbox" disabled/>
+	                        <label for="chkDemo07">
+	                        	<span class="text-sm">체크박스(disabled) 13px</span>
+	                        </label>
+                        </span>
+                        <!-- // ui-chk -->
+
+                        <!-- ui-chk -->
+                        <span class="ui-chk">
+	                        <input id="chkDemo08" type="checkbox" checked disabled/>
+	                        <label for="chkDemo08">
+	                        	<span class="text-sm">체크박스(checked, disabled) 13px</span>
+	                        </label>
+                        </span>
+                        <!-- // ui-chk -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- ui-chk --&gt;
+                                &lt;span class=&quot;ui-chk&quot;&gt;
+	                                &lt;input id=&quot;chkDemo05&quot; type=&quot;checkbox&quot;/&gt;
+	                                &lt;label for=&quot;chkDemo05&quot;&gt;
+	                                	&lt;span class=&quot;text-sm&quot;&gt;체크박스(default) 13px&lt;/span&gt;
+	                                &lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-chk --&gt;
+
+                                &lt;!-- ui-chk --&gt;
+                                &lt;span class=&quot;ui-chk&quot;&gt;
+	                                &lt;input id=&quot;chkDemo06&quot; type=&quot;checkbox&quot; checked/&gt;
+	                                &lt;label for=&quot;chkDemo06&quot;&gt;
+	                                	&lt;span class=&quot;text-sm&quot;&gt;체크박스(checked) 13px&lt;/span&gt;
+	                                &lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-chk --&gt;
+
+                                &lt;!-- ui-chk --&gt;
+                                &lt;span class=&quot;ui-chk&quot;&gt;
+	                                &lt;input id=&quot;chkDemo07&quot; type=&quot;checkbox&quot; disabled/&gt;
+	                                &lt;label for=&quot;chkDemo07&quot;&gt;
+	                                	&lt;span class=&quot;text-sm&quot;&gt;체크박스(disabled) 13px&lt;/span&gt;
+	                                &lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-chk --&gt;
+
+                                &lt;!-- ui-chk --&gt;
+                                &lt;span class=&quot;ui-chk&quot;&gt;
+	                                &lt;input id=&quot;chkDemo08&quot; type=&quot;checkbox&quot; checked disabled/&gt;
+	                                &lt;label for=&quot;chkDemo08&quot;&gt;
+	                                	&lt;span class=&quot;text-sm&quot;&gt;체크박스(checked, disabled) 13px&lt;/span&gt;
+	                                &lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-chk --&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">radio</div>
+                        <ul class="guide-desc-list">
+                            <li><code>.ui-rdo</code>
+                                <ul class="guide-desc-list" style="margin-top: 8px">
+                                    <li><code>text</code>font-size : 14px</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="guide-xsbtit">라디오버튼</div>
+                        <!-- ui-rdo -->
+                        <span class="ui-rdo">
+                            <input type="radio" id="rdoDemo01">
+                            <label for="rdoDemo01">
+                                <span class="text-md">라디오버튼(default)</span>
+                            </label>
+                        </span>
+                        <!-- // ui-rdo -->
+                        <!-- ui-rdo -->
+                        <span class="ui-rdo">
+                            <input type="radio" id="rdoDemo02" checked>
+                            <label for="rdoDemo02">
+                                <span class="text-md">라디오버튼(checked)</span>
+                            </label>
+                        </span>
+                        <!-- // ui-rdo -->
+                        <!-- ui-rdo -->
+                        <span class="ui-rdo">
+                            <input type="radio" id="rdoDemo03" disabled>
+                            <label for="rdoDemo03">
+                                <span class="text-md">라디오버튼(disabled)</span>
+                            </label>
+                        </span>
+                        <!-- // ui-rdo -->
+                        <!-- ui-rdo -->
+                        <span class="ui-rdo">
+                            <input type="radio" id="rdoDemo04" checked disabled>
+                            <label for="rdoDemo04">
+                                <span class="text-md">라디오버튼(checked, disabled)</span>
+                            </label>
+                        </span>
+                        <!-- // ui-rdo -->
+
+                        <pre>
+                            <code class="html">
+                                &amp;lt;!-- ui-rdo --&amp;gt;
+                                &amp;lt;span class=&amp;quot;ui-rdo&amp;quot;&amp;gt;
+                                    &amp;lt;input type=&amp;quot;radio&amp;quot; id=&amp;quot;rdoDemo01&amp;quot;&amp;gt;
+                                    &amp;lt;label for=&amp;quot;rdoDemo01&amp;quot;&amp;gt;
+                                        &amp;lt;span class=&amp;quot;text-md&amp;quot;&amp;gt;라디오버튼(default)&amp;lt;/span&amp;gt;
+                                    &amp;lt;/label&amp;gt;
+                                &amp;lt;/span&amp;gt;
+                                &amp;lt;!-- // ui-rdo --&amp;gt;
+
+                                &amp;lt;!-- ui-rdo --&amp;gt;
+                                &amp;lt;span class=&amp;quot;ui-rdo&amp;quot;&amp;gt;
+                                    &amp;lt;input type=&amp;quot;radio&amp;quot; id=&amp;quot;rdoDemo02&amp;quot; checked&amp;gt;
+                                    &amp;lt;label for=&amp;quot;rdoDemo02&amp;quot;&amp;gt;
+                                        &amp;lt;span class=&amp;quot;text-md&amp;quot;&amp;gt;라디오버튼(checked)&amp;lt;/span&amp;gt;
+                                    &amp;lt;/label&amp;gt;
+                                &amp;lt;/span&amp;gt;
+                                &amp;lt;!-- // ui-rdo --&amp;gt;
+
+                                &amp;lt;!-- ui-rdo --&amp;gt;
+                                &amp;lt;span class=&amp;quot;ui-rdo&amp;quot;&amp;gt;
+                                    &amp;lt;input type=&amp;quot;radio&amp;quot; id=&amp;quot;rdoDemo03&amp;quot; disabled&amp;gt;
+                                    &amp;lt;label for=&amp;quot;rdoDemo03&amp;quot;&amp;gt;
+                                        &amp;lt;span class=&amp;quot;text-md&amp;quot;&amp;gt;라디오버튼(disabled)&amp;lt;/span&amp;gt;
+                                    &amp;lt;/label&amp;gt;
+                                &amp;lt;/span&amp;gt;
+                                &amp;lt;!-- // ui-rdo --&amp;gt;
+
+                                &amp;lt;!-- ui-rdo --&amp;gt;
+                                &amp;lt;span class=&amp;quot;ui-rdo&amp;quot;&amp;gt;
+                                    &amp;lt;input type=&amp;quot;radio&amp;quot; id=&amp;quot;rdoDemo04&amp;quot; checked disabled&amp;gt;
+                                    &amp;lt;label for=&amp;quot;rdoDemo04&amp;quot;&amp;gt;
+                                        &amp;lt;span class=&amp;quot;text-md&amp;quot;&amp;gt;라디오버튼(checked, disabled)&amp;lt;/span&amp;gt;
+                                    &amp;lt;/label&amp;gt;
+                                &amp;lt;/span&amp;gt;
+                                &amp;lt;!-- // ui-rdo --&amp;gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">checkbox, radio list</div>
+                        <div class="guide-xsbtit"><code>.ui-col-list</code>세로정렬 (item 사이 간격 10px)</div>
+
+                        <!-- ui-col-list -->
+                        <ul class="ui-col-list">
+                            <li class="item">
+                                <!-- ui-chk -->
+                                <span class="ui-chk">
+                                    <input id="chkColDemo01" type="checkbox" checked>
+                                    <label for="chkColDemo01"><span class="text-md">체크박스</span></label>
+                                </span>
+                                <!-- // ui-chk -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-chk -->
+                                <span class="ui-chk">
+                                    <input id="chkColDemo02" type="checkbox">
+                                    <label for="chkColDemo02"><span class="text-md">체크박스</span></label>
+                                </span>
+                                <!-- // ui-chk -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-chk -->
+                                <span class="ui-chk">
+                                    <input id="chkColDemo03" type="checkbox">
+                                    <label for="chkColDemo03"><span class="text-md">체크박스</span></label>
+                                </span>
+                                <!-- // ui-chk -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-chk -->
+                                <span class="ui-chk">
+                                    <input id="chkColDemo04" type="checkbox">
+                                    <label for="chkColDemo04"><span class="text-md">체크박스</span></label>
+                                </span>
+                                <!-- // ui-chk -->
+                            </li>
+                        </ul>
+                        <!-- // ui-col-list -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- ui-col-list --&gt;
+                                &lt;ul class=&quot;ui-col-list&quot;&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-chk --&gt;
+                                        &lt;span class=&quot;ui-chk&quot;&gt;
+                                            &lt;input id=&quot;chkColDemo01&quot; type=&quot;checkbox&quot; checked&gt;
+                                            &lt;label for=&quot;chkColDemo01&quot;&gt;&lt;span class=&quot;text-md&quot;&gt;체크박스&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-chk --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-chk --&gt;
+                                        &lt;span class=&quot;ui-chk&quot;&gt;
+                                            &lt;input id=&quot;chkColDemo02&quot; type=&quot;checkbox&quot;&gt;
+                                            &lt;label for=&quot;chkColDemo02&quot;&gt;&lt;span class=&quot;text-md&quot;&gt;체크박스&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-chk --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-chk --&gt;
+                                        &lt;span class=&quot;ui-chk&quot;&gt;
+                                            &lt;input id=&quot;chkColDemo03&quot; type=&quot;checkbox&quot;&gt;
+                                            &lt;label for=&quot;chkColDemo03&quot;&gt;&lt;span class=&quot;text-md&quot;&gt;체크박스&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-chk --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-chk --&gt;
+                                        &lt;span class=&quot;ui-chk&quot;&gt;
+                                            &lt;input id=&quot;chkColDemo04&quot; type=&quot;checkbox&quot;&gt;
+                                            &lt;label for=&quot;chkColDemo04&quot;&gt;&lt;span class=&quot;text-md&quot;&gt;체크박스&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-chk --&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                                &lt;!-- // ui-col-list --&gt;
+                            </code>
+                        </pre>
+
+                        <!-- ui-col-list -->
+                        <ul class="ui-col-list">
+                            <li class="item">
+                                <!-- ui-rdo -->
+                                <span class="ui-rdo">
+                                    <input id="rdoColDemo01" type="radio" name="rdoColDemo" checked>
+                                    <label for="rdoColDemo01"><span class="text-md">라디오</span></label>
+                                </span>
+                                <!-- // ui-rdo -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-rdo -->
+                                <span class="ui-rdo">
+                                    <input id="rdoColDemo02" type="radio" name="rdoColDemo">
+                                    <label for="rdoColDemo02"><span class="text-md">라디오</span></label>
+                                </span>
+                                <!-- // ui-rdo -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-rdo -->
+                                <span class="ui-rdo">
+                                    <input id="rdoColDemo03" type="radio" name="rdoColDemo">
+                                    <label for="rdoColDemo03"><span class="text-md">라디오</span></label>
+                                </span>
+                                <!-- // ui-rdo -->
+                            </li>
+                            <li class="item">
+                                <!-- ui-rdo -->
+                                <span class="ui-rdo">
+                                    <input id="rdoColDemo04" type="radio" name="rdoColDemo">
+                                    <label for="rdoColDemo04"><span class="text-md">라디오</span></label>
+                                </span>
+                                <!-- // ui-rdo -->
+                            </li>
+                        </ul>
+                        <!-- // ui-col-list -->
+
+                        <pre>
+                            <code class="html">
+                                <!-- ui-col-list -->
+                                &lt;ul class=&quot;ui-col-list&quot;&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-rdo --&gt;
+                                        &lt;span class=&quot;ui-rdo&quot;&gt;
+                                            &lt;input id=&quot;rdoColDemo01&quot; type=&quot;radio&quot; name=&quot;rdoColDemo&quot; checked&gt;
+                                            &lt;label for=&quot;rdoColDemo01&quot;&gt;&lt;span class=&quot;text-md&quot;&gt;라디오&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-rdo --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-rdo --&gt;
+                                        &lt;span class=&quot;ui-rdo&quot;&gt;
+                                            &lt;input id=&quot;rdoColDemo02&quot; type=&quot;radio&quot; name=&quot;rdoColDemo&quot;&gt;
+                                            &lt;label for=&quot;rdoColDemo02&quot;&gt;&lt;span class=&quot;text-md&quot;&gt;라디오&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-rdo --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-rdo --&gt;
+                                        &lt;span class=&quot;ui-rdo&quot;&gt;
+                                            &lt;input id=&quot;rdoColDemo03&quot; type=&quot;radio&quot; name=&quot;rdoColDemo&quot;&gt;
+                                            &lt;label for=&quot;rdoColDemo03&quot;&gt;&lt;span class=&quot;text-md&quot;&gt;라디오&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-rdo --&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;item&quot;&gt;
+                                        &lt;!-- ui-rdo --&gt;
+                                        &lt;span class=&quot;ui-rdo&quot;&gt;
+                                            &lt;input id=&quot;rdoColDemo04&quot; type=&quot;radio&quot; name=&quot;rdoColDemo&quot;&gt;
+                                            &lt;label for=&quot;rdoColDemo04&quot;&gt;&lt;span class=&quot;text-md&quot;&gt;라디오&lt;/span&gt;&lt;/label&gt;
+                                        &lt;/span&gt;
+                                        &lt;!-- // ui-rdo --&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                                <!-- // ui-col-list -->
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx5">toggle</div>
+                        <div class="guide-sbtit">toggle</div>
+                        <ul class="guide-desc-list">
+                            <li><code>.ui-toggle</code>
+                                <ul class="guide-desc-list" style="margin-top: 8px">
+                                    <li><code>text</code>font-size : 14px</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="guide-xsbtit">toggle</div>
+                        <!-- ui-toggle -->
+                        <span class="ui-toggle">
+                            <input id="toggleDemo01" type="checkbox">
+                            <label for="toggleDemo01"><span class="text">기본 토글 OFF</span></label>
+                        </span>
+                        <!-- // ui-toggle -->
+                        <br><br>
+                        <!-- ui-toggle -->
+                        <span class="ui-toggle">
+                            <input id="toggleDemo02" type="checkbox" disabled>
+                            <label for="toggleDemo02"><span class="text">OFF 비활성화</span></label>
+                        </span>
+                        <!-- // ui-toggle -->
+                        <br><br>
+                        <!-- ui-toggle -->
+                        <span class="ui-toggle">
+                            <input id="toggleDemo03" type="checkbox" checked>
+                            <label for="toggleDemo03"><span class="text">기본 토글 ON</span></label>
+                        </span>
+                        <!-- // ui-toggle -->
+                        <br><br>
+                        <!-- ui-toggle -->
+                        <span class="ui-toggle">
+                            <input id="toggleDemo04" type="checkbox" checked disabled>
+                            <label for="toggleDemo04"><span class="text">ON 비활성화</span></label>
+                        </span>
+                        <!-- // ui-toggle -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- ui-toggle --&gt;
+                                &lt;span class=&quot;ui-toggle&quot;&gt;
+                                    &lt;input id=&quot;toggleDemo01&quot; type=&quot;checkbox&quot;&gt;
+                                    &lt;label for=&quot;toggleDemo01&quot;&gt;&lt;span class=&quot;text&quot;&gt;기본 토글 OFF&lt;/span&gt;&lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-toggle --&gt;
+
+                                &lt;!-- ui-toggle --&gt;
+                                &lt;span class=&quot;ui-toggle&quot;&gt;
+                                    &lt;input id=&quot;toggleDemo02&quot; type=&quot;checkbox&quot; disabled&gt;
+                                    &lt;label for=&quot;toggleDemo02&quot;&gt;&lt;span class=&quot;text&quot;&gt;OFF 비활성화&lt;/span&gt;&lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-toggle --&gt;
+
+                                &lt;!-- ui-toggle --&gt;
+                                &lt;span class=&quot;ui-toggle&quot;&gt;
+                                    &lt;input id=&quot;toggleDemo03&quot; type=&quot;checkbox&quot; checked&gt;
+                                    &lt;label for=&quot;toggleDemo03&quot;&gt;&lt;span class=&quot;text&quot;&gt;기본 토글 ON&lt;/span&gt;&lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-toggle --&gt;
+
+                                &lt;!-- ui-toggle --&gt;
+                                &lt;span class=&quot;ui-toggle&quot;&gt;
+                                    &lt;input id=&quot;toggleDemo04&quot; type=&quot;checkbox&quot; checked disabled&gt;
+                                    &lt;label for=&quot;toggleDemo04&quot;&gt;&lt;span class=&quot;text&quot;&gt;ON 비활성화&lt;/span&gt;&lt;/label&gt;
+                                &lt;/span&gt;
+                                &lt;!-- // ui-toggle --&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // container-wrapper -->
+</div>
+</body>
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="robots" content="index,nofollow">
+    <meta name="description" content="신세계백화점">
+
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="../../assets/images/favicon/share.png">-->
+    <meta property="og:site_name" content="신세계백화점">
+    <meta property="og:title" content="신세계백화점">
+    <meta property="og:description" content="신세계백화점 공식몰">
+
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>신세계백화점 가이드 - Button</title>
+    <!-- Vendors CSS
+   ================================================== -->
+
+    <!-- Custom styles for this template
+    ================================================== -->
+    <link rel="stylesheet" href="../../assets/css/reward_front.css">
+
+    <!-- Vendors javascript
+    ================================================== -->
+    <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+
+    <!-- UI JavaScript
+    ================================================== -->
+    <script src="../../assets/js/reward.front.ui.js"></script>
+
+    <!-- 가이드 전용 -->
+    <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
+    <link rel="stylesheet" href="/_wsg/ia_resources/monokai-sublime.css">
+    <script src="/_wsg/ia_resources/highlight.pack.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/highlight.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/xml.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/javascript.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/css.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/scss.min.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/standalone.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/plugins/html.js"></script>
+    <script>
+        $(() => {
+            String.prototype.unescapeHtml = function () {
+                return this.replace(/&amp;/g, '&')
+                    .replace(/&lt;/g, '<')
+                    .replace(/&gt;/g, '>')
+                    .replace(/&quot;/g, '"');
+            };
+            String.prototype.escapeHtml = function () {
+                return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\"/g, '&quot;');
+            };
+
+            $('pre code').each((index, item) => {
+                var lines;
+                lines = item.innerHTML.replace('    ', '\t').split('\n');
+
+                if (lines.length > 1) {
+                    let removeTabCnt = Number.MAX_SAFE_INTEGER;
+
+                    lines.forEach((lineItem, lineIndex) => {
+                        if (lineIndex !== 0) {
+                            removeTabCnt = lineItem.lastIndexOf('\t') + 1 < removeTabCnt ? lineItem.lastIndexOf('\t') + 1 : removeTabCnt;
+                            // console.log(lineItem, removeTabCnt);
+                        }
+                    });
+                    // console.log(removeTabCnt);
+                    lines.forEach((lineItem, lineIndex) => {
+                        // console.log(lineIndex);
+                        if (lineIndex !== 0) {
+                            let splitAr;
+                            splitAr = lineItem.split('\t');
+
+                            for (var i = 0, n = removeTabCnt; i < n; i++) {
+                                splitAr.shift();
+                                // console.log('shift');
+                            }
+                            // console.log(splitAr);
+                            lines[lineIndex] = splitAr.join('\t');
+                        }
+                    });
+                }
+                item.innerHTML = lines.join('\n');
+
+                (async () => {
+                    formatted = await prettier.format(item.innerHTML.unescapeHtml(), {
+                            parser: 'html',
+                            plugins: prettierPlugins,
+                            trailingComma: 'es5',
+                            printWidth: 1000,
+                            useTabs: true,
+                            tabWidth: 1,
+                            semi: true,
+                            singleQuote: true,
+                            arrowParens: 'never',
+                            bracketSameLine: true,
+                        })
+                        .then((value) => {
+                            item.innerHTML = value.escapeHtml();
+                            hljs.highlightElement(item);
+                        });
+                })();
+            });
+        });
+    </script>
+    <!-- // 가이드 전용 -->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
+                <div class="ptitle">Button Guide</div>
+            </div>
+            <div class="header-right">
+                <div style="height: 24px; background: rgba(255, 0, 0, .2)">btn</div>
+            </div>
+        </div>
+    </div>
+    <!-- // header-wrapper -->
+    <!-- container-wrapper -->
+    <div class="container-wrapper">
+        <div class="cont-box-md">
+            <div class="cont-inner">
+                <div class="guide-wrap">
+                    <div class="guide-inner">
+                        <div class="guide-ptit"><span># Button 공통규칙</span></div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p>[태그 구분] 버튼 기능에 따라 사용 필요</p>
+                                <p style="margin-top: 10px; color: red">* 버튼 타입 전체에 해당되는 사항입니다.</p>
+                                <ul class="guide-desc-list">
+                                    <li>
+                                        <p>a 태그 - 링크성 버튼일 경우 사용</p>
+                                        <p style="margin-top: 8px">┗ 비활성화시 : <code>.disabled</code> 클래스 추가</p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li style="color: red;">
+                                버튼 class는 반드시 <span style="background: #ffd4f4; padding:1px; font-size:16px;">버튼 사이즈 클래스 1개 + color 클래스 1개의 조합</span>으로 작업한다.
+                            </li>
+                            <li>
+                                <p>[ size 네이밍 정의 ]</p>
+                                <ul class="guide-desc-list">
+                                    <li><p><code>btn-lg / btn-square-lg</code> : height: 54 / font-size: 15px / font-weight: 600</p></li>
+                                    <li><p><code>btn-md / btn-square-md</code> : height: 44 / font-size: 14px / font-weight: 600</p></li>
+                                    <li><p><code>btn-sm / btn-square-sm</code> : height: 36 /font-size: 13px / font-weight: 600</p></li>
+                                    <li><p><code>btn-xs / btn-square-xs</code> : height: 32 /font-size: 14px / font-weight: 400</p></li>
+                                    <li><p><code>btn-2xs / btn-square-2xs</code> : height: 30 /font-size: 13px / font-weight: 500</p></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>[ color : 클래스 필수 지정 ]</p>
+                                <ul class="guide-desc-list">
+                                    <li><p><code>blue100</code> background, border : $colorBlue100 (#6987A1)</p></li>
+                                    <li><p><code>blue10</code> background, border : $colorBlue10 (#F0F4F5)</p></li>
+                                    <li><p><code>gray90</code> background, border : $colorGray90 (#333) </p></li>
+                                    <li><p><code>gray20</code> background, border : $colorGray20 (#F0F0F0) </p></li>
+                                    <li><p><code>line-blue</code> background : $colorGray00(#FFF) / border : $colorBlue100 (#6987A1)</p></li>
+                                    <li><p><code>line-brown</code> background : $colorGray00(#FFF) / border : $colorBrown100 (#B09785)</p></li>
+                                    <li><p><code>line-gray40</code> background : $colorGray00(#FFF) / border: $colorGray40 (#DDD)</p></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>그 외 text, icon button</p>
+                            </li>
+                            <li>
+                                <p>버튼 정렬 (btn-wrap)</p>
+                                <ul class="guide-desc-list">
+                                    <li><p>btn-wrap : 기본</p></li>
+                                    <li><p>btn-wrap-md : 상단 여백 20px, 버튼 사이 여백 6px</p></li>
+                                    <li><p>btn-wrap-lg : 상단 여백 30px, 버튼 사이 여백 6px</p></li>
+                                    <li><p>btn-wrap.row : 세로 정렬, 버튼 사이 여백 10px</p></li>
+                                </ul>
+                                <p style="margin-top: 10px; font-size: 13px; color: red;">*페이지 최하단에 위치하는 경우 margin-left/right: -5px 가짐</p>
+                            </li>
+                        </ul>
+
+                        <div class="guide-btit">index</div>
+                        <ol class="guide-desc-list">
+                            <li><a href="#idx1" style="text-decoration: underline">버튼 컬러</a></li>
+                            <li><a href="#idx2" style="text-decoration: underline">버튼 사이즈</a></li>
+                            <li><a href="#idx3" style="text-decoration: underline">그 외 text, icon button</a></li>
+                            <li><a href="#idx4" style="text-decoration: underline">버튼 정렬 (.btn-wrap)</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx1">Button Color Guide</div>
+                        <p style="color:red">* 참고용으로 .btn-md(h44) 사용</p>
+                        <div class="guide-xsbtit">default</div>
+                        <button type="button" class="btn-md blue100"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md blue10"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md line-gray40"><span class="text">버튼</span></button>
+                        <br><br>
+                        <a href="javascript:" class="btn-md blue100"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md blue10"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md gray90"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md gray20"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md line-blue"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md line-brown"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md line-gray40"><span class="text">버튼</span></a>
+
+
+                        <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                        </code>
+                    </pre>
+
+                        <div class="guide-xsbtit">disabled</div>
+                        <button type="button" class="btn-md blue100" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md blue10" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md gray90" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md gray20" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md line-blue" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md line-brown" disabled><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md line-gray40" disabled><span class="text">버튼</span></button>
+                        <br><br>
+                        <a href="javascript:" class="btn-md blue100 disabled"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md blue10 disabled"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md gray90 disabled"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md gray20 disabled"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md line-blue disabled"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md line-brown disabled"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md line-gray40 disabled"><span class="text">버튼</span></a>
+
+                        <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md blue100&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md blue10&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md gray90&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md gray20&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md line-blue&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md line-brown&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md line-gray40&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md blue100 disabled&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md blue10 disabled&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md gray90 disabled&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md gray20 disabled&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md line-blue disabled&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md line-brown disabled&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md line-gray40 disabled&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                        </code>
+                    </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">Button Size Guide</div>
+                        <div class="guide-sbtit">btn-lg (h54)</div>
+                        <button type="button" class="btn-lg blue100"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-lg blue10"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-lg gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-lg gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-lg line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-lg line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-lg line-gray40"><span class="text">버튼</span></button>
+                        <br><br>
+                        <a href="javascript:" class="btn-lg blue100"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-lg blue10"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-lg gray90"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-lg gray20"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-lg line-blue"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-lg line-brown"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-lg line-gray40"><span class="text">버튼</span></a>
+                        <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-lg blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-lg blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-lg gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-lg gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-lg line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-lg line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-lg line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-lg blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-lg blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-lg gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-lg gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-lg line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-lg line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-lg line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                        </code>
+                    </pre>
+
+                        <div class="guide-sbtit">btn-md (h44)</div>
+                        <button type="button" class="btn-md blue100"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md blue10"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-md line-gray40"><span class="text">버튼</span></button>
+                        <br><br>
+                        <a href="javascript:" class="btn-md blue100"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md blue10"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md gray90"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md gray20"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md line-blue"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md line-brown"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-md line-gray40"><span class="text">버튼</span></a>
+                        <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-md line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-md line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                        </code>
+                    </pre>
+
+                        <div class="guide-sbtit">btn-sm (h36)</div>
+                        <button type="button" class="btn-sm blue100"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-sm blue10"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-sm gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-sm gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-sm line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-sm line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-sm line-gray40"><span class="text">버튼</span></button>
+                        <br><br>
+                        <a href="javascript:" class="btn-sm blue100"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-sm blue10"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-sm gray90"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-sm gray20"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-sm line-blue"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-sm line-brown"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-sm line-gray40"><span class="text">버튼</span></a>
+                        <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-sm blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-sm blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-sm gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-sm gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-sm line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-sm line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-sm line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-sm blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-sm blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-sm gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-sm gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-sm line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-sm line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-sm line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                        </code>
+                    </pre>
+
+                        <div class="guide-sbtit">btn-xs (h32)</div>
+                        <button type="button" class="btn-xs blue100"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-xs blue10"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-xs gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-xs gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-xs line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-xs line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-xs line-gray40"><span class="text">버튼</span></button>
+                        <br><br>
+                        <a href="javascript:" class="btn-xs blue100"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-xs blue10"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-xs gray90"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-xs gray20"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-xs line-blue"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-xs line-brown"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-xs line-gray40"><span class="text">버튼</span></a>
+                        <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-xs blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-xs blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-xs gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-xs gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-xs line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-xs line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-xs line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-xs blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-xs blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-xs gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-xs gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-xs line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-xs line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-xs line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                        </code>
+                    </pre>
+
+                        <div class="guide-sbtit">btn-2xs (h30)</div>
+                        <button type="button" class="btn-2xs blue100"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-2xs blue10"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-2xs gray90"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-2xs gray20"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-2xs line-blue"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-2xs line-brown"><span class="text">버튼</span></button>
+                        <button type="button" class="btn-2xs line-gray40"><span class="text">버튼</span></button>
+                        <br><br>
+                        <a href="javascript:" class="btn-2xs blue100"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-2xs blue10"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-2xs gray90"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-2xs gray20"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-2xs line-blue"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-2xs line-brown"><span class="text">버튼</span></a>
+                        <a href="javascript:" class="btn-2xs line-gray40"><span class="text">버튼</span></a>
+                        <pre>
+                        <code class="html">
+                            &lt;button type=&quot;button&quot; class=&quot;btn-2xs blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-2xs blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-2xs gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-2xs gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-2xs line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-2xs line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;btn-2xs line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-2xs blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-2xs blue10&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-2xs gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-2xs gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-2xs line-blue&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-2xs line-brown&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                            &lt;a href=&quot;javascript:&quot; class=&quot;btn-2xs line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                        </code>
+                    </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx3">그 외 text, icon button</div>
+                        <div class="guide-sbtit">icon 버튼</div>
+
+                        <button type="button" class="btn-md gray20">
+                            <span class="ico-plus18"></span><span class="text">버튼명</span>
+                        </button>
+                        <button type="button" class="btn-md gray20">
+                            <span class="text">버튼명</span><span class="ico-plus18"></span>
+                        </button>
+                        <br><br>
+                        <a href="javascript:" class="btn-md gray20">
+                            <span class="ico-plus18"></span><span class="text">버튼명</span>
+                        </a>
+                        <a href="javascript:" class="btn-md gray20">
+                            <span class="text">버튼명</span><span class="ico-plus18"></span>
+                        </a>
+
+                        <pre>
+                            <code class="html">
+                                &lt;button type=&quot;button&quot; class=&quot;btn-md gray20&quot;&gt;
+                                    &lt;span class=&quot;ico-plus18&quot;&gt;&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;버튼명&lt;/span&gt;
+                                &lt;/button&gt;
+                                &lt;button type=&quot;button&quot; class=&quot;btn-md gray20&quot;&gt;
+                                    &lt;span class=&quot;text&quot;&gt;버튼명&lt;/span&gt;&lt;span class=&quot;ico-plus18&quot;&gt;&lt;/span&gt;
+                                &lt;/button&gt;
+
+                                &lt;a href=&quot;javascript:&quot; class=&quot;btn-md gray20&quot;&gt;
+                                    &lt;span class=&quot;ico-plus18&quot;&gt;&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;버튼명&lt;/span&gt;
+                                &lt;/a&gt;
+                                &lt;a href=&quot;javascript:&quot; class=&quot;btn-md gray20&quot;&gt;
+                                    &lt;span class=&quot;text&quot;&gt;버튼명&lt;/span&gt;&lt;span class=&quot;ico-plus18&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">텍스트 버튼 (기본 / blue100)</div>
+
+                        <a href="javascript:" class="link-text-xs">
+                            <span class="text">텍스트버튼_12px</span><span class="ico-gray-arrow16"></span>
+                        </a>
+                        <a href="javascript:" class="link-text-sm">
+                            <span class="text">텍스트버튼_13px</span><span class="ico-gray-arrow16"></span>
+                        </a>
+                        <a href="javascript:"class="link-text-md">
+                            <span class="text">텍스트버튼_14px</span><span class="ico-gray-arrow16"></span>
+                        </a>
+                        <a href="javascript:" class="link-text-lg">
+                            <span class="text">텍스트버튼_15px</span><span class="ico-gray-arrow16"></span>
+                        </a>
+                        <br><br>
+                        <a href="javascript:" class="link-text-xs">
+                            <span class="text fc-blue">텍스트버튼_12px</span><span class="ico-blue-arrow16"></span>
+                        </a>
+                        <a href="javascript:" class="link-text-sm">
+                            <span class="text fc-blue">텍스트버튼_13px</span><span class="ico-blue-arrow16"></span>
+                        </a>
+                        <a href="javascript:" class="link-text-md">
+                            <span class="text fc-blue">텍스트버튼_14px</span><span class="ico-blue-arrow16"></span>
+                        </a>
+                        <a href="javascript:" class="link-text-lg">
+                            <span class="text fc-blue">텍스트버튼_15px</span><span class="ico-blue-arrow16"></span>
+                        </a>
+                        <br><br>
+                        <a href="javascript:" class="link-text-xs">
+                            <span class="ico-coupon18"></span><span class="text">텍스트버튼_12px</span><span class="ico-gray-arrow16"></span>
+                        </a>
+                        <a href="javascript:" class="link-text-sm">
+                            <span class="ico-coupon18"></span><span class="text">텍스트버튼_13px</span><span class="ico-gray-arrow16"></span>
+                        </a>
+                        <a href="javascript:" class="link-text-md">
+                            <span class="ico-coupon18"></span><span class="text">텍스트버튼_14px</span><span class="ico-gray-arrow16"></span>
+                        </a>
+                        <a href="javascript:" class="link-text-lg">
+                            <span class="ico-coupon18"></span><span class="text">텍스트버튼_15px</span><span class="ico-gray-arrow16"></span>
+                        </a>
+
+
+                        <pre>
+                            <code class="html">
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-xs&quot;&gt;
+                                    &lt;span class=&quot;text&quot;&gt;텍스트버튼_12px&lt;/span&gt;&lt;span class=&quot;ico-gray-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-sm&quot;&gt;
+                                    &lt;span class=&quot;text&quot;&gt;텍스트버튼_13px&lt;/span&gt;&lt;span class=&quot;ico-gray-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                                &lt;a href=&quot;javascript:&quot;class=&quot;link-text-md&quot;&gt;
+                                    &lt;span class=&quot;text&quot;&gt;텍스트버튼_14px&lt;/span&gt;&lt;span class=&quot;ico-gray-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-lg&quot;&gt;
+                                    &lt;span class=&quot;text&quot;&gt;텍스트버튼_15px&lt;/span&gt;&lt;span class=&quot;ico-gray-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-xs&quot;&gt;
+                                    &lt;span class=&quot;text fc-blue&quot;&gt;텍스트버튼_12px&lt;/span&gt;&lt;span class=&quot;ico-blue-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-sm&quot;&gt;
+                                    &lt;span class=&quot;text fc-blue&quot;&gt;텍스트버튼_13px&lt;/span&gt;&lt;span class=&quot;ico-blue-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-md&quot;&gt;
+                                    &lt;span class=&quot;text fc-blue&quot;&gt;텍스트버튼_14px&lt;/span&gt;&lt;span class=&quot;ico-blue-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-lg&quot;&gt;
+                                    &lt;span class=&quot;text fc-blue&quot;&gt;텍스트버튼_15px&lt;/span&gt;&lt;span class=&quot;ico-blue-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-xs&quot;&gt;
+                                    &lt;span class=&quot;ico-coupon18&quot;&gt;&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;텍스트버튼_12px&lt;/span&gt;&lt;span class=&quot;ico-gray-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-sm&quot;&gt;
+                                    &lt;span class=&quot;ico-coupon18&quot;&gt;&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;텍스트버튼_13px&lt;/span&gt;&lt;span class=&quot;ico-gray-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-md&quot;&gt;
+                                    &lt;span class=&quot;ico-coupon18&quot;&gt;&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;텍스트버튼_14px&lt;/span&gt;&lt;span class=&quot;ico-gray-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                                &lt;a href=&quot;javascript:&quot; class=&quot;link-text-lg&quot;&gt;
+                                    &lt;span class=&quot;ico-coupon18&quot;&gt;&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;텍스트버튼_15px&lt;/span&gt;&lt;span class=&quot;ico-gray-arrow16&quot;&gt;&lt;/span&gt;
+                                &lt;/a&gt;
+                            </code>
+                        </pre>
+                        <div class="guide-sbtit">기타</div>
+                        <div class="guide-xsbtit">신백리워드 버튼</div>
+                        <div class="btn-wrap row">
+                            <button type="button" class="btn-reward">
+                                <span class="ico-reward16"></span>
+                                <span class="text">신백리워드 더 자세히 알아보기</span>
+                            </button>
+                            <button type="button" class="btn-money">
+                                <span class="ico-money16"></span>
+                                <span class="text">신백머니 더 자세히 알아보기</span>
+                            </button>
+                        </div>
+                        <br>
+                        <div class="btn-wrap row">
+                            <a href="javascript:" class="btn-reward">
+                                <span class="ico-reward16"></span>
+                                <span class="text">신백리워드 더 자세히 알아보기</span>
+                            </a>
+                            <a href="javascript:" class="btn-money">
+                                <span class="ico-money16"></span>
+                                <span class="text">신백머니 더 자세히 알아보기</span>
+                            </a>
+                        </div>
+
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;btn-wrap row&quot;&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;btn-box line-brown&quot;&gt;
+                                        &lt;span class=&quot;ico-reward16&quot;&gt;&lt;/span&gt;
+                                        &lt;span class=&quot;text&quot;&gt;신백리워드 더 자세히 알아보기&lt;/span&gt;
+                                        &lt;span class=&quot;ico-arrow18&quot;&gt;&lt;/span&gt;
+                                    &lt;/button&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;btn-box line-blue&quot;&gt;
+                                        &lt;span class=&quot;ico-money16&quot;&gt;&lt;/span&gt;
+                                        &lt;span class=&quot;text&quot;&gt;신백머니 더 자세히 알아보기&lt;/span&gt;
+                                        &lt;span class=&quot;ico-arrow18&quot;&gt;&lt;/span&gt;
+                                    &lt;/button&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;btn-wrap row&quot;&gt;
+                                    &lt;a href=&quot;javascript:&quot; class=&quot;btn-box line-brown&quot;&gt;
+                                        &lt;span class=&quot;ico-reward16&quot;&gt;&lt;/span&gt;
+                                        &lt;span class=&quot;text&quot;&gt;신백리워드 더 자세히 알아보기&lt;/span&gt;
+                                        &lt;span class=&quot;ico-arrow18&quot;&gt;&lt;/span&gt;
+                                    &lt;/a&gt;
+                                    &lt;a href=&quot;javascript:&quot; class=&quot;btn-box line-blue&quot;&gt;
+                                        &lt;span class=&quot;ico-money16&quot;&gt;&lt;/span&gt;
+                                        &lt;span class=&quot;text&quot;&gt;신백머니 더 자세히 알아보기&lt;/span&gt;
+                                        &lt;span class=&quot;ico-arrow18&quot;&gt;&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx4">버튼 정렬</div>
+                        <div class="guide-sbtit">btn-wrap (기본  - 버튼사이 여백 6px, 상단 여백)</div>
+                        <div class="btn-wrap">
+                            <button type="button" class="btn-md line-gray40"><span class="text">버튼</span></button>
+                            <button type="button" class="btn-md blue100"><span class="text">버튼</span></button>
+                        </div>
+                        <br>
+                        <div class="btn-wrap">
+                            <a href="javascript:" class="btn-md line-gray40"><span class="text">버튼</span></a>
+                            <a href="javascript:" class="btn-md blue100"><span class="text">버튼</span></a>
+                        </div>
+
+                        <pre>
+                            <code class="html">
+                                 &lt;div class=&quot;btn-wrap&quot;&gt;
+                                     &lt;button type=&quot;button&quot; class=&quot;btn-md line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                                     &lt;button type=&quot;button&quot; class=&quot;btn-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/button&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;btn-wrap&quot;&gt;
+                                    &lt;a href=&quot;javascript:&quot; class=&quot;btn-md line-gray40&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                                    &lt;a href=&quot;javascript:&quot; class=&quot;btn-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;버튼&lt;/span&gt;&lt;/a&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">btn-wrap-md (상단 여백 20px, 버튼사이 여백 6px)</div>
+                        <div class="btn-wrap-md">
+                            <button type="button" class="btn-md line-gray40"><span class="text">버튼</span></button>
+                            <button type="button" class="btn-md blue100"><span class="text">버튼</span></button>
+                        </div>
+                        <br>
+                        <div class="btn-wrap-md">
+                            <a href="javascript:" class="btn-md line-gray40"><span class="text">버튼</span></a>
+                            <a href="javascript:" class="btn-md blue100"><span class="text">버튼</span></a>
+                        </div>
+
+                        <pre>
+                            <code class="html">
+                                 &amp;lt;div class=&amp;quot;btn-wrap-md&amp;quot;&amp;gt;
+                                     &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn-md line-gray40&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;
+                                     &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn-md blue100&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;
+                                &amp;lt;/div&amp;gt;
+
+                                &amp;lt;div class=&amp;quot;btn-wrap-md&amp;quot;&amp;gt;
+                                    &amp;lt;a href=&amp;quot;javascript:&amp;quot; class=&amp;quot;btn-md line-gray40&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+                                    &amp;lt;a href=&amp;quot;javascript:&amp;quot; class=&amp;quot;btn-md blue100&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+                                &amp;lt;/div&amp;gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">btn-wrap-lg (기본  - 버튼사이 여백 6px, 상단 여백 30px)</div>
+                        <div class="btn-wrap-lg">
+                            <button type="button" class="btn-lg line-gray40"><span class="text">버튼</span></button>
+                            <button type="button" class="btn-lg blue100"><span class="text">버튼</span></button>
+                        </div>
+                        <br>
+                        <div class="btn-wrap-lg">
+                            <a href="javascript:" class="btn-lg line-gray40"><span class="text">버튼</span></a>
+                            <a href="javascript:" class="btn-lg blue100"><span class="text">버튼</span></a>
+                        </div>
+
+                        <pre>
+                            <code class="html">
+                                &amp;lt;div class=&amp;quot;btn-wrap-lg&amp;quot;&amp;gt;
+                                    &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn-md line-gray40&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;
+                                    &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn-md blue100&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;
+                                &amp;lt;/div&amp;gt;
+
+                                &amp;lt;div class=&amp;quot;btn-wrap-lg&amp;quot;&amp;gt;
+                                    &amp;lt;a href=&amp;quot;javascript:&amp;quot; class=&amp;quot;btn-lg line-gray40&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+                                    &amp;lt;a href=&amp;quot;javascript:&amp;quot; class=&amp;quot;btn-lg blue100&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+                                &amp;lt;/div&amp;gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">btn-wrap.row (세로정렬 - 버튼사이 여백 10px)</div>
+                        <div class="btn-wrap row">
+                            <button type="button" class="btn-md line-gray40"><span class="text">버튼</span></button>
+                            <button type="button" class="btn-md blue100"><span class="text">버튼</span></button>
+                        </div>
+                        <br>
+                        <div class="btn-wrap row">
+                            <a href="javascript:" class="btn-md line-gray40"><span class="text">버튼</span></a>
+                            <a href="javascript:" class="btn-md blue100"><span class="text">버튼</span></a>
+                        </div>
+
+                        <pre>
+                            <code class="html">
+                                 &amp;lt;div class=&amp;quot;btn-wrap row&amp;quot;&amp;gt;
+                                     &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn-md line-gray40&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;
+                                     &amp;lt;button type=&amp;quot;button&amp;quot; class=&amp;quot;btn-md blue100&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;
+                                &amp;lt;/div&amp;gt;
+                                &amp;lt;div class=&amp;quot;btn-wrap row&amp;quot;&amp;gt;
+                                    &amp;lt;a href=&amp;quot;javascript:&amp;quot; class=&amp;quot;btn-md line-gray40&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+                                    &amp;lt;a href=&amp;quot;javascript:&amp;quot; class=&amp;quot;btn-md blue100&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;text&amp;quot;&amp;gt;버튼&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+                                &amp;lt;/div&amp;gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // container-wrapper -->
+</div>
+</body>
+</html>

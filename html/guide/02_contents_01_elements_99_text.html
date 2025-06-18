@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="robots" content="index,nofollow">
+    <meta name="description" content="신세계백화점">
+
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="../../assets/images/favicon/share.png">-->
+    <meta property="og:site_name" content="신세계백화점">
+    <meta property="og:title" content="신세계백화점">
+    <meta property="og:description" content="신세계백화점 공식몰">
+
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>신세계백화점 가이드 - Text</title>
+    <!-- Vendors CSS
+   ================================================== -->
+
+    <!-- Custom styles for this template
+    ================================================== -->
+    <link rel="stylesheet" href="../../assets/css/reward_front.css">
+
+    <!-- Vendors javascript
+    ================================================== -->
+    <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+
+    <!-- UI JavaScript
+    ================================================== -->
+    <script src="../../assets/js/reward.front.ui.js"></script>
+
+    <!-- 가이드 전용 -->
+    <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
+    <link rel="stylesheet" href="/_wsg/ia_resources/monokai-sublime.css">
+    <script src="/_wsg/ia_resources/highlight.pack.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/highlight.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/xml.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/javascript.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/css.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/scss.min.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/standalone.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/plugins/html.js"></script>
+    <script>
+        $(() => {
+            String.prototype.unescapeHtml = function () {
+                return this.replace(/&amp;/g, '&')
+                    .replace(/&lt;/g, '<')
+                    .replace(/&gt;/g, '>')
+                    .replace(/&quot;/g, '"');
+            };
+            String.prototype.escapeHtml = function () {
+                return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\"/g, '&quot;');
+            };
+
+            $('pre code').each((index, item) => {
+                var lines;
+                lines = item.innerHTML.replace('    ', '\t').split('\n');
+
+                if (lines.length > 1) {
+                    let removeTabCnt = Number.MAX_SAFE_INTEGER;
+
+                    lines.forEach((lineItem, lineIndex) => {
+                        if (lineIndex !== 0) {
+                            removeTabCnt = lineItem.lastIndexOf('\t') + 1 < removeTabCnt ? lineItem.lastIndexOf('\t') + 1 : removeTabCnt;
+                            // console.log(lineItem, removeTabCnt);
+                        }
+                    });
+                    // console.log(removeTabCnt);
+                    lines.forEach((lineItem, lineIndex) => {
+                        // console.log(lineIndex);
+                        if (lineIndex !== 0) {
+                            let splitAr;
+                            splitAr = lineItem.split('\t');
+
+                            for (var i = 0, n = removeTabCnt; i < n; i++) {
+                                splitAr.shift();
+                                // console.log('shift');
+                            }
+                            // console.log(splitAr);
+                            lines[lineIndex] = splitAr.join('\t');
+                        }
+                    });
+                }
+                item.innerHTML = lines.join('\n');
+
+                (async () => {
+                    formatted = await prettier.format(item.innerHTML.unescapeHtml(), {
+                        parser: 'html',
+                        plugins: prettierPlugins,
+                        trailingComma: 'es5',
+                        printWidth: 1000,
+                        useTabs: true,
+                        tabWidth: 1,
+                        semi: true,
+                        singleQuote: true,
+                        arrowParens: 'never',
+                        bracketSameLine: true,
+                    })
+                        .then((value) => {
+                            item.innerHTML = value.escapeHtml();
+                            hljs.highlightElement(item);
+                        });
+                })();
+            });
+        });
+    </script>
+    <!-- // 가이드 전용 -->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
+                <div class="ptitle">타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀</div>
+            </div>
+            <div class="header-right">
+                <div style="height: 24px; background: rgba(255, 0, 0, .2)">btn</div>
+            </div>
+        </div>
+    </div>
+    <!-- // header-wrapper -->
+    <!-- container-wrapper -->
+    <div class="container-wrapper">
+        <div class="cont-box-md">
+            <div class="cont-inner">
+                <div class="guide-wrap">
+                    <div class="guide-inner">
+                        <div class="guide-ptit"><span>#Text</span></div>
+                        <div class="guide-btit">index</div>
+                        <ol class="guide-desc-list">
+                            <li><a href="#idx1" style="text-decoration: underline">stext</a></li>
+                            <li><a href="#idx2" style="text-decoration: underline">info text / info text list</a></li>
+                            <li><a href="#idx3" style="text-decoration: underline">text group</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx1">stext</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p style="font-weight: bold; margin-bottom:10px;">[ font-size 옵션 ]</p>
+                                <ul class="guide-desc-list">
+                                    <li><p><code>.stext-sm</code> : font-size : 13px / font-weight : 400</p></li>
+                                    <li><p><code>.stext-md</code> : font-size : 14px / font-weight : 400</p></li>
+                                    <li><p><code>color</code> : gray70 / gray80</p></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p class="stext-sm-gray70">.stext-sm-gray70 입니다. font-size: 13px</p>
+                        <p class="stext-sm-gray80">.stext-sm-gray80 입니다. font-size: 13px</p>
+                        <p class="stext-gray70">.stext-gray70 입니다. font-size: 14px</p>
+                        <p class="stext-gray80">.stext-gray80 입니다. font-size: 14px</p>
+                        <pre>
+                            <code class="html">
+                                &lt;p class=&quot;stext-sm-gray70&quot;&gt;.stext-sm-gray70 입니다. font-size: 13px&lt;/p&gt;
+                                &lt;p class=&quot;stext-sm-gray80&quot;&gt;.stext-sm-gray80 입니다. font-size: 13px&lt;/p&gt;
+                                &lt;p class=&quot;stext-gray70&quot;&gt;.stext-gray70 입니다. font-size: 14px&lt;/p&gt;
+                                &lt;p class=&quot;stext-gray80&quot;&gt;.stext-gray80 입니다. font-size: 14px&lt;/p&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx2">info text / info text list</div>
+                        <div class="guide-sbtit">정보성 텍스트</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p>dash-text</p>
+                                <ul class="guide-desc-list">
+                                    <li><code>default</code>font-size : 13px</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>dot-text</p>
+                                <ul class="guide-desc-list">
+                                    <li><code>dot-text</code> font-size : 14px (default) / color : gray70</li>
+                                    <li><code>dot-text-sm</code> font-size : 13px / color : gray70</li>
+                                    <li><code>dot-text-gray80</code> font-size : 14px / color : gray80</li>
+                                    <li><code>dot-text-sm-gray80</code> font-size : 13px / color : gray80</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>정보성 리스트</p>
+                                <ul class="guide-desc-list">
+                                    <li><code>default</code>사이 여백 6px</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="guide-xsbtit">dash-text</div>
+                        <p class="dash-text">유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.</p>
+                        <pre>
+                            <code class="html">
+                                &lt;p class=&quot;dash-text&quot;&gt;유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.&lt;/p&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">dot-text</div>
+                        <p class="dot-text">dot-text 14px 유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.</p>
+                        <p class="dot-text-gray80">dot-text-gray80 14px 유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.</p>
+                        <p class="dot-text-sm">dot-text-sm 13px 유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.</p>
+                        <p class="dot-text-sm-gray80">dot-text-sm-gray80 13px 유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.</p>
+
+                        <pre>
+                            <code class="html">
+                                &lt;p class=&quot;dot-text&quot;&gt;dot-text 14px 유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.&lt;/p&gt;
+                                &lt;p class=&quot;dot-text-gray80&quot;&gt;dot-text-gray80 14px 유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.&lt;/p&gt;
+                                &lt;p class=&quot;dot-text-sm&quot;&gt;dot-text-sm 13px 유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.&lt;/p&gt;
+                                &lt;p class=&quot;dot-text-sm-gray80&quot;&gt;dot-text-sm-gray80 13px 유의사항 텍스트입니다. 유의사항 텍스트입니다. 유의사항 텍스트입니다.&lt;/p&gt;
+                            </code>
+                        </pre>
+
+
+                        <div class="guide-xsbtit">info-text-list > dash-text</div>
+                        <ul class="info-text-list">
+                            <li class="dash-text">유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다.</li>
+                            <li class="dash-text">유의사항 텍스트 입니다.</li>
+                            <li class="dash-text">유의사항 텍스트 입니다.</li>
+                            <li class="dash-text">유의사항 텍스트 입니다.</li>
+                        </ul>
+                        <pre>
+                            <code class="html">
+                               &lt;ul class=&quot;info-text-list&quot;&gt;
+                                    &lt;li class=&quot;dash-text&quot;&gt;유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dash-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dash-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dash-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                               &lt;/ul&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">info-text-list > dot-text</div>
+                        <ul class="info-text-list">
+                            <li class="dot-text">유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다.</li>
+                            <li class="dot-text">유의사항 텍스트 입니다.</li>
+                            <li class="dot-text">유의사항 텍스트 입니다.</li>
+                            <li class="dot-text">유의사항 텍스트 입니다.</li>
+                        </ul>
+                        <pre>
+                            <code class="html">
+                               &lt;ul class=&quot;info-text-list&quot;&gt;
+                                    &lt;li class=&quot;dot-text&quot;&gt;유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다. 유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dot-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dot-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                                    &lt;li class=&quot;dot-text&quot;&gt;유의사항 텍스트 입니다.&lt;/li&gt;
+                               &lt;/ul&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="guide-inner">
+                        <div class="guide-btit" id="idx3">text group</div>
+                        <div class="guide-sbtit">bar-group</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p>텍스트 구분을 위한 요소로 bar로 구분됩니다. <span style="color: red">(* 컬러추가 예정)</span></p>
+                                <p style="margin-top: 10px">└ 기본 컬러 : Gray100</p>
+                            </li>
+                            <li><p>레벨 단계 구조 : <code>bar-group</code> > <code>bar-text</code></p></li>
+                            <li><p>bar size : 1px / height : 10px / bg : Gray_40</p></li>
+                            <li>
+                                <p><code>bar-text-lg</code></p>
+                                <ul class="guide-desc-list">
+                                    <li>font-size : 15px</li>
+                                    <li>font-weight : 400</li>
+                                    <li>color : gray100</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p><code>bar-text-md</code></p>
+                                <ul class="guide-desc-list">
+                                    <li>font-size : 14px</li>
+                                    <li>font-weight : 400</li>
+                                    <li>color : gray100</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p><code>bar-text-sm</code></p>
+                                <ul class="guide-desc-list">
+                                    <li>font-size : 13px</li>
+                                    <li>font-weight : 400</li>
+                                    <li>color : gray100</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="guide-xsbtit">bar-text-lg</div>
+                        <div class="bar-group">
+                            <span class="bar-text-lg">텍스트텍스트</span>
+                            <span class="bar-text-lg">텍스트텍스트</span>
+                            <span class="bar-text-lg">텍스트텍스트</span>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;bar-group&quot;&gt;
+                                    &lt;span class=&quot;bar-text-lg&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-lg&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-lg&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">bar-text-md</div>
+                        <div class="bar-group">
+                            <span class="bar-text-md">텍스트텍스트</span>
+                            <span class="bar-text-md">텍스트텍스트</span>
+                            <span class="bar-text-md">텍스트텍스트</span>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;bar-group&quot;&gt;
+                                    &lt;span class=&quot;bar-text-md&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-md&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-md&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">bar-text-sm</div>
+                        <div class="bar-group">
+                            <span class="bar-text-sm">텍스트텍스트</span>
+                            <span class="bar-text-sm">텍스트텍스트</span>
+                            <span class="bar-text-sm">텍스트텍스트</span>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;bar-group&quot;&gt;
+                                    &lt;span class=&quot;bar-text-sm&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-sm&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                    &lt;span class=&quot;bar-text-sm&quot;&gt;텍스트텍스트&lt;/span&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">dot-group</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <p>텍스트 구분을 위한 요소로 dot으로 구분됩니다.</p>
+                            </li>
+                            <li><p>레벨 단계 구조 : <code>dot-group</code> > <code>dot-text</code></p></li>
+                            <li><p>dot size : 2px / bg : Gray_80</p></li>
+                        </ul>
+
+                        <div class="guide-xsbtit">dot-group > dot-text</div>
+                        <div class="dot-group">
+                            <span class="dot-text-gray80">랑콤</span>
+                            <span class="dot-text-gray80">2025.02.01</span>
+                        </div>
+
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;dot-group&quot;&gt;
+                                    &lt;span class=&quot;dot-text&quot;&gt;랑콤&lt;/span&gt;
+                                    &lt;span class=&quot;dot-text&quot;&gt;2025.02.01&lt;/span&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // container-wrapper -->
+</div>
+</body>
+</html>

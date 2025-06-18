@@ -1,0 +1,84 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/* color */
+[class^="fc-"] {
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.fc-black {
+  color: variables.$colorGray100 !important;
+}
+.fc-gray90 {
+  color: variables.$colorGray90 !important;
+}
+.fc-gray80 {
+  color: variables.$colorGray80 !important;
+}
+.fc-gray70 {
+  color: variables.$colorGray70 !important;
+}
+.fc-gray60 {
+  color: variables.$colorGray60 !important;
+}
+.fc-gray50 {
+  color: variables.$colorGray50 !important;
+}
+.fc-gray40 {
+  color: variables.$colorGray40 !important;
+}
+.fc-gray30 {
+  color: variables.$colorGray30 !important;
+}
+.fc-gray20 {
+  color: variables.$colorGray20 !important;
+}
+.fc-gray10 {
+  color: variables.$colorGray10 !important;
+}
+.fc-blue {
+  color: variables.$colorBlue100 !important;
+}
+.fc-brown {
+  color: variables.$colorBrown100 !important;
+}
+.fc-red {
+  color: variables.$colorRed !important;
+}
+
+/* weight */
+[class^="fw-"] {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+.fw-bold {
+  font-weight: variables.$fontWeightBold !important;
+}
+.fw-sb {
+  font-weight: variables.$fontWeightSemibold !important;
+}
+.fw-md {
+  font-weight: variables.$fontWeightMedium !important;
+}
+.fw-rgl {
+  font-weight: variables.$fontWeightRegular !important;
+}
+
+/* align */
+.ta-left {
+  text-align: left !important;
+}
+.ta-center {
+  text-align: center !important;
+}
+.ta-right {
+  text-align: right !important;
+}
+
+/* ellipsis */
+.ellipsis {
+  @include mixins.ellipsis(false);
+}
