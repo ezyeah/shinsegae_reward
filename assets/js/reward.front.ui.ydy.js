@@ -1,14 +1,24 @@
+/**
+ * ========================================
+ * [reward.front.ui.ydy.js]
+ * 개발자 작업용 임시 모듈
+ * - 통합 시 reward.front.ui.js로 이동 예정
+ * - 네임스페이스: rewardPub.front.*
+ * ========================================
+ */
 
-/*
-* date : 20259999
-* last : 20259999
-* name : setInputStatus()
-* pram :
-* desc : input 상태 변경(jQuery)
-*/
-function setInputStatus() {
-    let selector = '.ui-input';
-    if ($(selector).length === 0) return false;
+(function () {
+    /*
+    * date : 20259999
+    * last : 20259999
+    * name : setInputStatus()
+    * pram :
+    * desc : input 상태 변경(jQuery)
+    */
+    // input 상태 제어 (입력값/삭제버튼 표시)
+    function setInputStatus() {
+        let selector = '.ui-input';
+        if ($(selector).length === 0) return false;
 
     $(selector).each(function () {
         const inputEl = $(this);
@@ -60,15 +70,92 @@ function setInputStatus() {
     });
 }
 
-$(document).ready(function () {
-    setInputStatus();
-});
+    /*
+    * date : 20259999
+    * last : 20259999
+    * name : setUIDialog()
+    * pram : selector {string} 레이어 팝업으로 생성할 컨테이너 셀렉터 (default: .ui-dialog-contents)
+    * desc : jQuery UI dialog 팝업 설정
+    */
+    let _dialogCount = 0;
+    function setUIDialog(selector) {
+        selector = selector || '[data-role=dialog]';
+
+        if($(selector).length > 0) {
+            $(selector).each(function () {
+                if ($(this).parents('.ui-dialog').length > 0) return;
+
+                const containerId = 'body';
+                const dialogClass = $(this).data('class') || '';
+                const dialogId = 'dialogContainer' + _dialogCount++;
+
+                $(containerId).append(`<div id="${dialogId}" class="ui-dialog-container"></div>`);
+
+                $(this).dialog({
+                    appendTo: containerId + ' #' + dialogId, // resize 시, popup 가운데 정렬 css 제어를 위해 container append
+                    autoOpen: false,
+                    minHeight: 'none',
+                    height: 'auto',
+                    modal: true,
+                    resizable: false,
+                    draggable: false,
+                    classes: {
+                        'ui-dialog': dialogClass
+                    },
+                    open: function () {
+                        $('body').addClass('dialog-open');
+
+                        const $dialog = $(this).closest('.ui-dialog');
+                        const $container = $dialog.closest('.ui-dialog-container');
+
+                        // top/left
+                        $dialog.removeAttr('style');
+                        $dialog.find('.ui-dialog-content').removeAttr('style');
+                        $container.addClass('open').css('z-index', 111 + $('.ui-dialog-container:visible').length);
+                    },
+
+                    close: function () {
+                        $('body').removeClass('dialog-open');
+
+                        const $dialog = $(this).closest('.ui-dialog');
+                        const $container = $dialog.closest('.ui-dialog-container');
+
+                        $dialog.removeAttr('style');
+                        $dialog.find('.ui-dialog-content').removeAttr('style');
+                        $container.removeClass('open').removeAttr('style');
+                    },
+                    create: function () {
+                        $(`#${dialogId} .ui-dialog-titlebar`).remove();
+                    }
+                });
+            });
+        }
+    }
+
+    //jQuery UI dialog open/close 제어
+    function dialogOnOff() {
+        return {
+            popOpen: function (tgId, callback, arg) {
+                $(tgId).dialog('open');
+                if (typeof callback === 'function') callback(tgId, arg);
+            },
+            popClose: function (tgId, callback, arg) {
+                $(tgId).dialog('close');
+                if (typeof callback === 'function') callback(tgId, arg);
+            }
+        };
+    }
+
+    window.rewardPub = window.rewardPub || {};
+    rewardPub.front = rewardPub.front || {};
+
+    rewardPub.front.setInputStatus = setInputStatus;
+    rewardPub.front.setUIDialog = setUIDialog;
+    rewardPub.front.dialogOnOff = dialogOnOff;
 
 
-/*
-* date : 20259999
-* last : 20259999
-* name : setTabs()
-* pram : selector - dialog
-* desc : set jQuery UI - dialog
-*/
+    $(function () {
+        rewardPub.front.setInputStatus();
+        rewardPub.front.setUIDialog();
+    });
+})();

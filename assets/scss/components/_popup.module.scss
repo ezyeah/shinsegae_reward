@@ -10,28 +10,100 @@ body:is(.dialog-open) {
     overflow: hidden;
     touch-action: none;
   }
-
-  .container-wrapper,
-  .floating-wrapper,
-  .footer-wrapper,
-  .content-docker-wrap,
-  .my-pocket-floating {
-    pointer-events: none;
-    touch-action: none;
-  }
-
-  &.ios {
-    touch-action: none;
-  }
 }
-
-.dialog-close {
-  width: 24px;
-  height: 24px;
-  outline: 2px solid red;
-}
-
 
 [data-role='dialog'] {
   display: none;
+  //display: block;
 }
+
+.ui-dialog-container {
+  display: none;
+  //display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  //height: var(--reVh, 1vh);
+  height: 100vh;
+  //overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 20px;
+  overflow: hidden auto;
+
+  &.open {
+    @include mixins.justify_width(center, center);
+    flex-wrap: wrap;
+    overflow: hidden auto;
+
+    .ui-dialog {
+      @include mixins.prefix(animation, bottomPopAnimation 0.25s variables.$easeInOutQuad forwards);
+
+      &.dialog-full {
+        @include mixins.prefix(animation, none);
+      }
+    }
+  }
+
+  .ui-dialog {
+    position: relative;
+    width: 100% !important;
+    max-width: 335px;
+    overflow: hidden;
+    border-radius: 12px;
+    padding: 0;
+
+
+    &:not(.dialog-full, .dialog-bottom) {
+      @include mixins.justify_width(start, start, column);
+      max-height: calc(100% - 40px);
+    }
+
+    .ui-dialog-content {
+      overflow: hidden;
+      @include mixins.justify_width(stretch, between, column);
+      background-color: variables.$colorGray00;
+      -webkit-overflow-scrolling: auto;
+      width: 100% !important;
+      padding: 0;
+
+      .dialog-header {
+        padding: 21px 54px 21px 20px;
+
+        .dialog-title {
+          @include mixins.font_size_xl('sb',24px);
+        }
+      }
+
+      .dialog-body {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        -webkit-touch-callout: none;
+        overflow: hidden;
+
+        .dialog-inner {
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+      }
+
+      .dialog-footer {
+        padding: 14px 16px 18px;
+      }
+    }
+  }
+
+
+  .dialog-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background: variables.$colorGray90;
+    -webkit-mask-image: url('/assets/images/common/comm_ico_close_h24.svg');
+    mask-image: url('/assets/images/common/comm_ico_close_h24.svg');
+  }
+}
+
