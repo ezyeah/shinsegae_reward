@@ -14,22 +14,24 @@ body:is(.dialog-open) {
 
 [data-role='dialog'] {
   display: none;
-  //display: block;
 }
 
 .ui-dialog-container {
   display: none;
-  //display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   //height: var(--reVh, 1vh);
   height: 100vh;
-  //overflow-x: auto;
+  outline: 2px solid red;
   -webkit-overflow-scrolling: touch;
   padding: 0 20px;
   overflow: hidden auto;
+
+  &:has(.dialog-full, .dialog-bottom) {
+  padding: 0;
+}
 
   &.open {
     @include mixins.justify_width(center, center);
@@ -37,8 +39,6 @@ body:is(.dialog-open) {
     overflow: hidden auto;
 
     .ui-dialog {
-      @include mixins.prefix(animation, bottomPopAnimation 0.25s variables.$easeInOutQuad forwards);
-
       &.dialog-full {
         @include mixins.prefix(animation, none);
       }
@@ -50,13 +50,12 @@ body:is(.dialog-open) {
     width: 100% !important;
     max-width: 335px;
     overflow: hidden;
-    border-radius: 12px;
     padding: 0;
-
 
     &:not(.dialog-full, .dialog-bottom) {
       @include mixins.justify_width(start, start, column);
       max-height: calc(100% - 40px);
+      border-radius: 12px;
     }
 
     .ui-dialog-content {
@@ -68,7 +67,7 @@ body:is(.dialog-open) {
       padding: 0;
 
       .dialog-header {
-        padding: 21px 54px 21px 20px;
+        padding: 21px 54px 0 20px;
 
         .dialog-title {
           @include mixins.font_size_xl('sb',24px);
@@ -81,15 +80,72 @@ body:is(.dialog-open) {
         flex-direction: column;
         -webkit-touch-callout: none;
         overflow: hidden;
+        background-color: variables.$colorGray00;
+        margin-top: 20px;
 
         .dialog-inner {
           overflow-x: hidden;
           overflow-y: auto;
+          //padding-bottom: calc(30px + env(safe-area-inset-bottom));
         }
       }
 
       .dialog-footer {
         padding: 14px 16px 18px;
+      }
+    }
+
+    &.dialog-full, &.dialog-bottom {
+      .dialog-footer {
+        position: relative;
+        z-index: 1;
+        padding: 0 15px 16px;
+
+        &::after {
+          content: '';
+          width: 100%;
+          height: 40px;
+          position: absolute;
+          left: 0;
+          top: -40px;
+          background: linear-gradient(to top, rgba(255,255,255,1),  rgba(255,255,255,0));
+
+        }
+      }
+    }
+
+    &.dialog-full {
+      max-width: 100%;
+      padding: 0;
+      overflow: hidden;
+      border-radius: 0;
+
+      .ui-dialog-content {
+        max-height: 100vh;
+
+        .dialog-body {
+          .dialog-inner {
+            @include mixins.justify_width(stretch, start, column);
+            min-height: 100%;
+          }
+        }
+      }
+    }
+
+    &.dialog-bottom {
+      max-width: 100%;
+      max-height: calc(100% - 30px);
+      align-self: flex-end;
+      border-radius: 12px 12px 0 0;
+
+      .ui-dialog-content {
+        max-height: calc(100vh - 40px);
+
+        .dialog-body {
+          .dialog-inner {
+            min-height: 100%;
+          }
+        }
       }
     }
   }

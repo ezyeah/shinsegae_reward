@@ -1,7 +1,7 @@
 /**
  * ========================================
  * [reward.front.ui.ydy.js]
- * 개발자 작업용 임시 모듈
+ * 작업용 임시 모듈
  * - 통합 시 reward.front.ui.js로 이동 예정
  * - 네임스페이스: rewardPub.front.*
  * ========================================
@@ -20,55 +20,55 @@
         let selector = '.ui-input';
         if ($(selector).length === 0) return false;
 
-    $(selector).each(function () {
-        const inputEl = $(this);
-        const inputBox = inputEl.closest('.input-box, .input-search-box');
-        const btnDelete = inputBox.find('.btn-input-del');
+        $(selector).each(function () {
+            const inputEl = $(this);
+            const inputBox = inputEl.closest('.input-box, .input-search-box');
+            const btnDelete = inputBox.find('.btn-input-del');
 
-        // 상태 업데이트 함수
-        function updateStatus() {
-            const hasValue = inputEl.val().length > 0;
-            const isFocused = inputEl.is(':focus');
-            const isDisabled = inputEl.is(':disabled') || inputEl.prop('readonly');
+            // 상태 업데이트 함수
+            function updateStatus() {
+                const hasValue = inputEl.val().length > 0;
+                const isFocused = inputEl.is(':focus');
+                const isDisabled = inputEl.is(':disabled') || inputEl.prop('readonly');
 
-            inputBox.toggleClass('has-value', hasValue);
+                inputBox.toggleClass('has-value', hasValue);
 
-            if (hasValue && isFocused && !isDisabled) {
-                btnDelete.show();
-            } else {
-                btnDelete.hide();
-            }
-        }
-
-        // focusin: 포커스 시 상태 업데이트
-        inputEl.on('focusin', function () {
-            updateStatus();
-        });
-
-        // input: 입력 중에도 버튼 보이도록 상태 업데이트
-        inputEl.on('input', function () {
-            updateStatus();
-        });
-
-        // focusout: 다음 루프에서 포커스 없으면 버튼 숨김 (setTimeout)
-        inputEl.on('focusout', function () {
-            setTimeout(() => {
-                if (!inputEl.is(':focus')) {
+                if (hasValue && isFocused && !isDisabled) {
+                    btnDelete.show();
+                } else {
                     btnDelete.hide();
                 }
-            }, 0);
-        });
+            }
 
-        // 삭제 버튼 클릭 시: 값 삭제, input 이벤트 발생, 포커스 유지
-        btnDelete.on('mousedown', function (e) {
-            e.preventDefault();
-            inputEl.val('').trigger('input').focus();
-        });
+            // focusin: 포커스 시 상태 업데이트
+            inputEl.on('focusin', function () {
+                updateStatus();
+            });
 
-        // 초기 상태 설정
-        updateStatus();
-    });
-}
+            // input: 입력 중에도 버튼 보이도록 상태 업데이트
+            inputEl.on('input', function () {
+                updateStatus();
+            });
+
+            // focusout: 다음 루프에서 포커스 없으면 버튼 숨김 (setTimeout)
+            inputEl.on('focusout', function () {
+                setTimeout(() => {
+                    if (!inputEl.is(':focus')) {
+                        btnDelete.hide();
+                    }
+                }, 0);
+            });
+
+            // 삭제 버튼 클릭 시: 값 삭제, input 이벤트 발생, 포커스 유지
+            btnDelete.on('mousedown', function (e) {
+                e.preventDefault();
+                inputEl.val('').trigger('input').focus();
+            });
+
+            // 초기 상태 설정
+            updateStatus();
+        });
+    }
 
     /*
     * date : 20259999
@@ -152,7 +152,6 @@
     rewardPub.front.setInputStatus = setInputStatus;
     rewardPub.front.setUIDialog = setUIDialog;
     rewardPub.front.dialogOnOff = dialogOnOff;
-
 
     $(function () {
         rewardPub.front.setInputStatus();
