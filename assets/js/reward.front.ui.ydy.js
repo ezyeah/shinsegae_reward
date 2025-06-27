@@ -8,6 +8,22 @@
  */
 
 (function () {
+    var _vh, _resizeVh, _resizeVw, _scrollTop;
+    var _isIos, _isMac, _isAndroid;
+
+    function getBodyHeight() {
+        var myHeight = 0;
+        if (typeof (window.innerHeight) == 'number') myHeight = window.innerHeight;
+        else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) myHeight = document.documentElement.clientHeight;
+        else if (document.body && (document.body.clientWidth || document.body.clientHeight)) myHeight = document.body.clientHeight;
+        return myHeight;
+    }
+
+    function setPropertyVh() {
+        document.documentElement.style.setProperty('--vh', _vh + 'px');
+        document.documentElement.style.setProperty('--reVh', _resizeVh + 'px');
+    }
+
     /*
     * date : 20259999
     * last : 20259999
@@ -146,12 +162,102 @@
         };
     }
 
+    /**
+     * date : 20231222
+     * last : 20231222
+     * name : calcScrollWidth()
+     * pram :
+     * desc : 스크롤 width 계산
+     */
+    let _bodyWidth = 0;
+    let saveScrollWidth = 0;
+    function calcScrollWidth() {
+        bodyResizeObserver.unobserve(document.getElementsByTagName('body')[0]);
+        bodyResizeObserver.observe(document.getElementsByTagName('body')[0]);
+        if( saveScrollWidth !== window.innerWidth - _bodyWidth  ) {
+            document.documentElement.style.setProperty('--scrollVWidth', window.innerWidth - _bodyWidth + 'px');
+            saveScrollWidth = window.innerWidth - _bodyWidth;
+        }
+    }
+    let visualViewportWidth;
+    let bodyResizeObserver = new ResizeObserver(function (entries) {
+        visualViewportWidth = window.visualViewport.width;
+
+        if( _bodyWidth !== visualViewportWidth && (_bodyWidth > 0 || window.innerWidth > 0) ) {
+            _bodyWidth = visualViewportWidth;
+            calcScrollWidth();
+        }
+    });
+
     window.rewardPub = window.rewardPub || {};
     rewardPub.front = rewardPub.front || {};
 
     rewardPub.front.setInputStatus = setInputStatus;
     rewardPub.front.setUIDialog = setUIDialog;
     rewardPub.front.dialogOnOff = dialogOnOff;
+    rewardPub.front.getBodyHeight =  getBodyHeight;
+
+    $(document).ready(function () {
+        $_floatingWrapper = $('.floating-wrapper');
+        $_headerWrapper = $('.header-wrapper');
+        $_container = $('.container-wrapper');
+        $_wrapper = $('.wrapper');
+
+        /* 맥 OS 또는 iOS / android 디바이스 체크 */
+        _isIos = /(iPhone|iPod|iPad)/i.test(navigator.platform);
+        _isMac = /(Mac)/i.test(navigator.platform);
+        _isAndroid = /Android/i.test(navigator.userAgent);
+        _scrollTop = $(window).scrollTop();
+
+        _resizeVw = window.innerWidth || $(window).width() || document.body.clientWidth;
+        _bodyWidth = document.getElementsByTagName('body')[0].clientWidth;
+
+        document.documentElement.style.setProperty('--scrollVWidth', window.innerWidth - _bodyWidth + 'px');
+
+        if (_isIos) {
+            _vh = getBodyHeight * 0.01;
+            _resizeVh = getBodyHeight * 0.01;
+            setPropertyVh();
+            $('body').addClass('ios');
+        }
+        if (_isMac) {
+            _vh = getBodyHeight * 0.01;
+            _resizeVh = getBodyHeight * 0.01;
+            setPropertyVh();
+            $('body').addClass('mac');
+        }
+        if (_isAndroid) {
+            _vh = window.outerHeight;
+            _resizeVh = window.outerHeight;
+            setPropertyVh();
+            $('body').addClass('android');
+        } else {
+            _vh = window.innerHeight;
+            _resizeVh = window.innerHeight;
+            setPropertyVh();
+        }
+
+        // 회전변경 이벤트 발생 시 : 100vh 스타일 지정
+        $(window).on('resize orientationchange observerUpdate', function () {
+            _resizeVh = window.outerHeight;
+            _resizeVw = window.innerWidth || $(window).width() || document.body.clientWidth;
+            _scrollTop = $(window).scrollTop();
+
+            if (_isIos && _isMac) {
+                _resizeVh = window.innerHeight * 0.01;
+                setPropertyVh();
+            }
+            if (_isAndroid) {
+                _resizeVh = window.outerHeight;
+                setPropertyVh();
+            } else {
+                _resizeVh = window.innerHeight;
+                setPropertyVh();
+            }
+            if( parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sab')) > 0 ) alert('???');
+        });
+
+    });
 
     $(function () {
         rewardPub.front.setInputStatus();

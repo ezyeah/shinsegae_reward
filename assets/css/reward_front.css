@@ -2838,6 +2838,9 @@ body:is(.dialog-open) .wrapper {
   overflow: hidden;
   touch-action: none;
 }
+body:is(.dialog-open).ios {
+  touch-action: none;
+}
 
 [data-role=dialog] {
   display: none;
@@ -2849,10 +2852,8 @@ body:is(.dialog-open) .wrapper {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  outline: 2px solid red;
+  height: var(--reVh, 1vh);
   -webkit-overflow-scrolling: touch;
-  padding: 0 20px;
   overflow: hidden auto;
 }
 .ui-dialog-container:has(.dialog-full, .dialog-bottom) {
@@ -2880,16 +2881,11 @@ body:is(.dialog-open) .wrapper {
   -webkit-flex-direction: row;
   flex-direction: row;
   flex-wrap: wrap;
-  overflow: hidden auto;
-}
-.ui-dialog-container.open .ui-dialog.dialog-full {
-  -moz-animation: none;
-  -webkit-animation: none;
-  animation: none;
+  overflow: hidden;
 }
 .ui-dialog-container .ui-dialog {
-  position: relative;
   width: 100% !important;
+  position: relative;
   max-width: 335px;
   overflow: hidden;
   padding: 0;
@@ -2914,11 +2910,11 @@ body:is(.dialog-open) .wrapper {
   -ms-flex-direction: column;
   -webkit-flex-direction: column;
   flex-direction: column;
-  max-height: calc(100% - 40px);
-  border-radius: 12px;
+  max-height: calc(var(--reVh) - 40px);
+  padding: 0 20px;
 }
 .ui-dialog-container .ui-dialog .ui-dialog-content {
-  overflow: hidden;
+  width: 100% !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2938,13 +2934,17 @@ body:is(.dialog-open) .wrapper {
   -ms-flex-direction: column;
   -webkit-flex-direction: column;
   flex-direction: column;
+  padding: 0;
+  overflow: hidden;
   background-color: #FFF;
   -webkit-overflow-scrolling: auto;
-  width: 100% !important;
-  padding: 0;
+  border-radius: 12px;
+  margin-bottom: env(safe-area-inset-bottom);
+  max-height: var(--reVh, 1vh);
 }
 .ui-dialog-container .ui-dialog .ui-dialog-content .dialog-header {
-  padding: 21px 54px 0 20px;
+  padding: 20px 54px 20px 20px;
+  overflow: hidden;
 }
 .ui-dialog-container .ui-dialog .ui-dialog-content .dialog-header .dialog-title {
   font-size: 16px;
@@ -2959,8 +2959,6 @@ body:is(.dialog-open) .wrapper {
   flex-direction: column;
   -webkit-touch-callout: none;
   overflow: hidden;
-  background-color: #FFF;
-  margin-top: 20px;
 }
 .ui-dialog-container .ui-dialog .ui-dialog-content .dialog-body .dialog-inner {
   overflow-x: hidden;
@@ -2987,10 +2985,9 @@ body:is(.dialog-open) .wrapper {
   max-width: 100%;
   padding: 0;
   overflow: hidden;
-  border-radius: 0;
 }
 .ui-dialog-container .ui-dialog.dialog-full .ui-dialog-content {
-  max-height: 100vh;
+  border-radius: 0;
 }
 .ui-dialog-container .ui-dialog.dialog-full .ui-dialog-content .dialog-body .dialog-inner {
   display: -webkit-box;
@@ -3015,15 +3012,53 @@ body:is(.dialog-open) .wrapper {
 }
 .ui-dialog-container .ui-dialog.dialog-bottom {
   max-width: 100%;
-  max-height: calc(100% - 30px);
   align-self: flex-end;
-  border-radius: 12px 12px 0 0;
 }
 .ui-dialog-container .ui-dialog.dialog-bottom .ui-dialog-content {
+  border-radius: 12px 12px 0 0;
   max-height: calc(100vh - 40px);
 }
 .ui-dialog-container .ui-dialog.dialog-bottom .ui-dialog-content .dialog-body .dialog-inner {
   min-height: 100%;
+}
+.ui-dialog-container .ui-dialog.dialog-alert {
+  position: relative;
+  max-height: calc(var(--reVh) - 80px);
+  align-self: center;
+  padding: 0 44px;
+}
+.ui-dialog-container .ui-dialog.dialog-alert .ui-dialog-content {
+  max-width: 315px;
+  max-height: calc(var(--reVh) - 80px);
+  padding: 24px 0 20px;
+}
+.ui-dialog-container .ui-dialog.dialog-alert .ui-dialog-content .dialog-header {
+  padding: 0;
+  border: none;
+  text-align: center;
+}
+.ui-dialog-container .ui-dialog.dialog-alert .ui-dialog-content .dialog-header + .dialog-body {
+  margin-top: 10px;
+}
+.ui-dialog-container .ui-dialog.dialog-alert .ui-dialog-content .dialog-body .dialog-inner .cont-box-zero {
+  padding-bottom: 0;
+}
+.ui-dialog-container .ui-dialog.dialog-alert .ui-dialog-content .dialog-body .dialog-inner .cont-inner {
+  padding: 0 16px;
+}
+.ui-dialog-container .ui-dialog.dialog-alert .ui-dialog-content .dialog-body .dialog-inner .cont-inner .alert-desc {
+  color: #000;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  word-break: keep-all;
+  word-wrap: break-word;
+  text-align: center;
+}
+.ui-dialog-container .ui-dialog.dialog-alert .ui-dialog-content .dialog-footer {
+  padding: 0 16px;
+  margin-top: 24px;
 }
 .ui-dialog-container .dialog-close {
   position: absolute;

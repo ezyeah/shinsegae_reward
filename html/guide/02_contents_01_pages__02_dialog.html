@@ -201,7 +201,7 @@
                                 &lt;!-- dialog-body --&gt;
                                 &lt;div class=&quot;dialog-body&quot;&gt;
                                     &lt;div class=&quot;dialog-inner&quot;&gt;
-                                        &lt;div class=&quot;cont-box&quot;&gt;
+                                        &lt;div class=&quot;cont-box-md&quot;&gt;
                                             &lt;div class=&quot;cont-inner&quot;&gt;
                                                 &lt;div style=&quot;height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;&quot;&gt;
                                                     &lt;button type=&quot;button&quot; class=&quot;btn-md blue100&quot; onclick=&quot;&quot;&gt;&lt;span class=&quot;text&quot;&gt;팝업 위 팝업 열기&lt;/span&gt;&lt;/button&gt;
@@ -211,7 +211,7 @@
                                             &lt;/div&gt;
                                             &lt;!-- // cont-inner--&gt;
                                         &lt;/div&gt;
-                                        &lt;!-- // cont-box --&gt;
+                                        &lt;!-- // cont-box-md --&gt;
                                     &lt;/div&gt;
                                 &lt;/div&gt;
                                 &lt;!-- // dialog-body --&gt;
@@ -239,13 +239,13 @@
                                 &lt;!-- dialog-body --&gt;
                                 &lt;div class=&quot;dialog-body&quot;&gt;
                                     &lt;div class=&quot;dialog-inner&quot;&gt;
-                                        &lt;div class=&quot;cont-box&quot;&gt;
+                                        &lt;div class=&quot;cont-box-md&quot;&gt;
                                             &lt;div class=&quot;cont-inner&quot;&gt;
                                                 &lt;div style=&quot;height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;&quot;&gt;&lt;/div&gt;
                                             &lt;/div&gt;
                                             &lt;!-- // cont-inner--&gt;
                                         &lt;/div&gt;
-                                        &lt;!-- // cont-box --&gt;
+                                        &lt;!-- // cont-box-md --&gt;
                                     &lt;/div&gt;
                                 &lt;/div&gt;
                                 &lt;!-- // dialog-body --&gt;
@@ -263,7 +263,9 @@
                             &lt;!-- // Layer popup - default --&gt;
                         </code>
                     </pre>
+                </div>
 
+                <div class="guide-inner">
                     <div class="guide-btit" id="idx2">Full 팝업</div>
                     <button type="button" class="btn-md blue100" onclick="rewardPub.front.dialogOnOff().popOpen('#popDialogFull')"><span class="text">Full 팝업</span></button>
                     <pre>
@@ -278,13 +280,13 @@
                                 &lt;!-- dialog-body --&gt;
                                 &lt;div class=&quot;dialog-body&quot;&gt;
                                     &lt;div class=&quot;dialog-inner&quot;&gt;
-                                        &lt;div class=&quot;cont-box&quot;&gt;
+                                        &lt;div class=&quot;cont-box-md&quot;&gt;
                                             &lt;div class=&quot;cont-inner&quot;&gt;
                                                 &lt;div style=&quot;height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;&quot;&gt;&lt;/div&gt;
                                             &lt;/div&gt;
                                             &lt;!-- // cont-inner--&gt;
                                         &lt;/div&gt;
-                                        &lt;!-- // cont-box --&gt;
+                                        &lt;!-- // cont-box-md --&gt;
                                     &lt;/div&gt;
                                 &lt;/div&gt;
                                 &lt;!-- // dialog-body --&gt;
@@ -300,10 +302,12 @@
                                 &lt;/div&gt;
                                 &lt;!-- // dialog-footer --&gt;
                             &lt;/div&gt;
-                            &lt;!-- Layer popup - Full 팝업 --&gt;
+                            &lt;!-- // Layer popup - Full 팝업 --&gt;
                         </code>
                     </pre>
+                </div>
 
+                <div class="guide-inner">
                     <div class="guide-btit" id="idx3">Bottom 팝업</div>
                     <button type="button" class="btn-md blue100" onclick="rewardPub.front.dialogOnOff().popOpen('#popDialogBottom')"><span class="text">Bottom 팝업</span></button>
                     <pre>
@@ -318,13 +322,13 @@
                                 &lt;!-- dialog-body --&gt;
                                 &lt;div class=&quot;dialog-body&quot;&gt;
                                     &lt;div class=&quot;dialog-inner&quot;&gt;
-                                        &lt;div class=&quot;cont-box&quot;&gt;
+                                        &lt;div class=&quot;cont-box-md&quot;&gt;
                                             &lt;div class=&quot;cont-inner&quot;&gt;
                                                 &lt;div style=&quot;height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;&quot;&gt;&lt;/div&gt;
                                             &lt;/div&gt;
                                             &lt;!-- // cont-inner--&gt;
                                         &lt;/div&gt;
-                                        &lt;!-- // cont-box --&gt;
+                                        &lt;!-- // cont-box-md --&gt;
                                     &lt;/div&gt;
                                 &lt;/div&gt;
                                 &lt;!-- // dialog-body --&gt;
@@ -340,9 +344,88 @@
                                 &lt;/div&gt;
                                 &lt;!-- // dialog-footer --&gt;
                             &lt;/div&gt;
-                            &lt;!-- Layer popup - Bottom 팝업 --&gt;
+                            &lt;!-- // Layer popup - Bottom 팝업 --&gt;
                         </code>
                     </pre>
+                </div>
+
+                <div class="guide-inner">
+                    <div class="guide-btit" id="idx4">Alert 팝업</div>
+                    <button type="button" class="btn-md blue100" onclick="rewardPub.front.dialogOnOff().popOpen('#popDialogAlert')"><span class="text">Alert 팝업</span></button>
+                    <pre>
+                        <code class="html">
+                             &lt;!-- Layer popup - Bottom 팝업 --&gt;
+                            &lt;div id=&quot;popDialogBottom&quot; data-role=&quot;dialog&quot; class=&quot;ui-dialog-content ui-widget-content&quot; data-class=&quot;dialog-bottom&quot;&gt;
+                                &lt;!-- dialog-header --&gt;
+                                &lt;div class=&quot;dialog-header&quot;&gt;
+                                    &lt;h1 class=&quot;dialog-title&quot;&gt;팝업 타이틀&lt;/h1&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // dialog-header --&gt;
+                                &lt;!-- dialog-body --&gt;
+                                &lt;div class=&quot;dialog-body&quot;&gt;
+                                    &lt;div class=&quot;dialog-inner&quot;&gt;
+                                        &lt;div class=&quot;cont-box-zero&quot;&gt;
+                                            &lt;div class=&quot;cont-inner&quot;&gt;
+                                                &lt;div style=&quot;height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;&quot;&gt;&lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;!-- // cont-inner--&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // cont-box-md --&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // dialog-body --&gt;
+                                &lt;button type=&quot;button&quot; class=&quot;dialog-close&quot; onclick=&quot;rewardPub.front.dialogOnOff().popClose(&#39;#popDialogBottom&#39;)&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;팝업 닫기&lt;/span&gt;&lt;/button&gt;
+                                &lt;!-- dialog-footer --&gt;
+                                &lt;div class=&quot;dialog-footer&quot;&gt;
+                                    &lt;!-- btn-wrap --&gt;
+                                    &lt;div class=&quot;btn-wrap&quot;&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-md line-gray40&quot; onclick=&quot;rewardPub.front.dialogOnOff().popClose(&#39;#popDialogBottom&#39;)&quot;&gt;&lt;span class=&quot;text&quot;&gt;닫기&lt;/span&gt;&lt;/button&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-md blue100&quot; onclick=&quot;&quot;&gt;&lt;span class=&quot;text&quot;&gt;확인&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // btn-wrap --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // dialog-footer --&gt;
+                            &lt;/div&gt;
+                            &lt;!-- // Layer popup - Bottom 팝업 --&gt;
+                        </code>
+                    </pre>
+
+                    <button type="button" class="btn-md blue100" onclick="rewardPub.front.dialogOnOff().popOpen('#popDialogAlertNoTitle')"><span class="text">Alert 팝업 (타이틀 없는 경우)</span></button>
+                    <pre>
+                        <code class="html">
+                            &lt;!-- Layer popup - Alert 팝업 (타이틀 없는 경우 팝업) --&gt;
+                            &lt;div id=&quot;popDialogAlertNoTitle&quot; data-role=&quot;dialog&quot; class=&quot;ui-dialog-content ui-widget-content&quot; data-class=&quot;dialog-alert&quot;&gt;
+                                &lt;!-- dialog-body --&gt;
+                                &lt;div class=&quot;dialog-body&quot;&gt;
+                                    &lt;div class=&quot;dialog-inner&quot;&gt;
+                                        &lt;div class=&quot;cont-box-zero&quot;&gt;
+                                            &lt;div class=&quot;cont-inner&quot;&gt;
+                                                &lt;div class=&quot;alert-desc&quot;&gt;
+                                                    알럿 내용이 노출 됩니다. &lt;br&gt;
+                                                    알럿 내용이 노출 됩니다.
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;!-- // cont-inner--&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // cont-box-md --&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // dialog-body --&gt;
+                                &lt;!-- dialog-footer --&gt;
+                                &lt;div class=&quot;dialog-footer&quot;&gt;
+                                    &lt;!-- btn-wrap --&gt;
+                                    &lt;div class=&quot;btn-wrap&quot;&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-md line-gray40&quot; onclick=&quot;rewardPub.front.dialogOnOff().popClose(&#39;#popDialogAlertNoTitle&#39;)&quot;&gt;&lt;span class=&quot;text&quot;&gt;닫기&lt;/span&gt;&lt;/button&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-md blue100&quot; onclick=&quot;&quot;&gt;&lt;span class=&quot;text&quot;&gt;확인&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // btn-wrap --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // dialog-footer --&gt;
+                            &lt;/div&gt;
+                            &lt;!-- // Layer popup - Alert 팝업 (타이틀 없는 경우 팝업) --&gt;
+                        </code>
+                    </pre>
+
                 </div>
             </div>
         </div>
@@ -360,7 +443,7 @@
         <!-- dialog-body -->
         <div class="dialog-body">
             <div class="dialog-inner">
-                <div class="cont-box">
+                <div class="cont-box-md">
                     <div class="cont-inner">
                         <div style="height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;">
                             <button type="button" class="btn-md blue100" onclick="rewardPub.front.mo.dialogOnOff().popOpen('#popDialogFull');"><span class="text">팝업 위 팝업 열기</span></button>
@@ -370,7 +453,7 @@
                     </div>
                     <!-- // cont-inner-->
                 </div>
-                <!-- // cont-box -->
+                <!-- // cont-box-md -->
             </div>
         </div>
         <!-- // dialog-body -->
@@ -393,15 +476,13 @@
         <!-- dialog-body -->
         <div class="dialog-body">
             <div class="dialog-inner">
-                <div class="cont-box">
+                <div class="cont-box-md">
                     <div class="cont-inner">
-                        <div style="height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;">
-
-                        </div>
+                        <div style="height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;"></div>
                     </div>
                     <!-- // cont-inner-->
                 </div>
-                <!-- // cont-box -->
+                <!-- // cont-box-md -->
             </div>
         </div>
         <!-- // dialog-body -->
@@ -428,13 +509,13 @@
         <!-- dialog-body -->
         <div class="dialog-body">
             <div class="dialog-inner">
-                <div class="cont-box">
+                <div class="cont-box-md">
                     <div class="cont-inner">
                         <div style="height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;"></div>
                     </div>
                     <!-- // cont-inner-->
                 </div>
-                <!-- // cont-box -->
+                <!-- // cont-box-md -->
             </div>
         </div>
         <!-- // dialog-body -->
@@ -450,7 +531,7 @@
         </div>
         <!-- // dialog-footer -->
     </div>
-    <!-- Layer popup - Full 팝업 -->
+    <!-- // Layer popup - Full 팝업 -->
 
     <!-- Layer popup - Bottom 팝업 -->
     <div id="popDialogBottom" data-role="dialog" class="ui-dialog-content ui-widget-content" data-class="dialog-bottom">
@@ -462,13 +543,13 @@
         <!-- dialog-body -->
         <div class="dialog-body">
             <div class="dialog-inner">
-                <div class="cont-box">
+                <div class="cont-box-md">
                     <div class="cont-inner">
                         <div style="height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;"></div>
                     </div>
                     <!-- // cont-inner-->
                 </div>
-                <!-- // cont-box -->
+                <!-- // cont-box-md -->
             </div>
         </div>
         <!-- // dialog-body -->
@@ -484,7 +565,74 @@
         </div>
         <!-- // dialog-footer -->
     </div>
-    <!-- Layer popup - Bottom 팝업 -->
+    <!-- // Layer popup - Bottom 팝업 -->
+
+    <!-- Layer popup - Alert 팝업 -->
+    <div id="popDialogAlert" data-role="dialog" class="ui-dialog-content ui-widget-content" data-class="dialog-alert">
+        <!-- dialog-header -->
+        <div class="dialog-header">
+            <h1 class="dialog-title">팝업 타이틀</h1>
+        </div>
+        <!-- // dialog-header -->
+        <!-- dialog-body -->
+        <div class="dialog-body">
+            <div class="dialog-inner">
+                <div class="cont-box-zero">
+                    <div class="cont-inner">
+                       <div class="alert-desc">
+                           알럿 내용이 노출 됩니다. <br>
+                           알럿 내용이 노출 됩니다.
+                       </div>
+                    </div>
+                    <!-- // cont-inner-->
+                </div>
+                <!-- // cont-box-md -->
+            </div>
+        </div>
+        <!-- // dialog-body -->
+        <!-- dialog-footer -->
+        <div class="dialog-footer">
+            <!-- btn-wrap -->
+            <div class="btn-wrap">
+                <button type="button" class="btn-md line-gray40" onclick="rewardPub.front.dialogOnOff().popClose('#popDialogAlert')"><span class="text">닫기</span></button>
+                <button type="button" class="btn-md blue100" onclick=""><span class="text">확인</span></button>
+            </div>
+            <!-- // btn-wrap -->
+        </div>
+        <!-- // dialog-footer -->
+    </div>
+    <!-- // Layer popup - Alert 팝업 -->
+
+    <!-- Layer popup - Alert 팝업 (타이틀 없는 경우 팝업) -->
+    <div id="popDialogAlertNoTitle" data-role="dialog" class="ui-dialog-content ui-widget-content" data-class="dialog-alert">
+        <!-- dialog-body -->
+        <div class="dialog-body">
+            <div class="dialog-inner">
+                <div class="cont-box-zero">
+                    <div class="cont-inner">
+                        <div class="alert-desc">
+                            알럿 내용이 노출 됩니다. <br>
+                            알럿 내용이 노출 됩니다.
+                        </div>
+                    </div>
+                    <!-- // cont-inner-->
+                </div>
+                <!-- // cont-box-md -->
+            </div>
+        </div>
+        <!-- // dialog-body -->
+        <!-- dialog-footer -->
+        <div class="dialog-footer">
+            <!-- btn-wrap -->
+            <div class="btn-wrap">
+                <button type="button" class="btn-md line-gray40" onclick="rewardPub.front.dialogOnOff().popClose('#popDialogAlertNoTitle')"><span class="text">닫기</span></button>
+                <button type="button" class="btn-md blue100" onclick=""><span class="text">확인</span></button>
+            </div>
+            <!-- // btn-wrap -->
+        </div>
+        <!-- // dialog-footer -->
+    </div>
+    <!-- // Layer popup - Alert 팝업 (타이틀 없는 경우 팝업) -->
 
 </div>
 </body>

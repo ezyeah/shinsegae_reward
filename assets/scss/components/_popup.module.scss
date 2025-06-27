@@ -10,6 +10,10 @@ body:is(.dialog-open) {
     overflow: hidden;
     touch-action: none;
   }
+
+  &.ios {
+    touch-action: none;
+  }
 }
 
 [data-role='dialog'] {
@@ -22,11 +26,8 @@ body:is(.dialog-open) {
   top: 0;
   left: 0;
   width: 100%;
-  //height: var(--reVh, 1vh);
-  height: 100vh;
-  outline: 2px solid red;
+  height: var(--reVh, 1vh);
   -webkit-overflow-scrolling: touch;
-  padding: 0 20px;
   overflow: hidden auto;
 
   &:has(.dialog-full, .dialog-bottom) {
@@ -36,38 +37,45 @@ body:is(.dialog-open) {
   &.open {
     @include mixins.justify_width(center, center);
     flex-wrap: wrap;
-    overflow: hidden auto;
+    overflow: hidden;
+
 
     .ui-dialog {
+      //@include mixins.prefix(animation, bottomPopAnimation .25s variables.$easeInOutQuad forwards);
+
       &.dialog-full {
-        @include mixins.prefix(animation, none);
+        //@include mixins.prefix(animation, none);
       }
     }
   }
 
   .ui-dialog {
-    position: relative;
     width: 100% !important;
+    position: relative;
     max-width: 335px;
     overflow: hidden;
     padding: 0;
 
     &:not(.dialog-full, .dialog-bottom) {
       @include mixins.justify_width(start, start, column);
-      max-height: calc(100% - 40px);
-      border-radius: 12px;
+      max-height: calc(var(--reVh) - 40px);
+      padding: 0 20px;
     }
 
     .ui-dialog-content {
-      overflow: hidden;
+      width: 100% !important;
       @include mixins.justify_width(stretch, between, column);
+      padding: 0;
+      overflow: hidden;
       background-color: variables.$colorGray00;
       -webkit-overflow-scrolling: auto;
-      width: 100% !important;
-      padding: 0;
+      border-radius: 12px;
+      margin-bottom: env(safe-area-inset-bottom);
+      max-height: var(--reVh, 1vh);
 
       .dialog-header {
-        padding: 21px 54px 0 20px;
+        padding: 20px 54px 20px 20px;
+        overflow: hidden;
 
         .dialog-title {
           @include mixins.font_size_xl('sb',24px);
@@ -80,13 +88,10 @@ body:is(.dialog-open) {
         flex-direction: column;
         -webkit-touch-callout: none;
         overflow: hidden;
-        background-color: variables.$colorGray00;
-        margin-top: 20px;
 
         .dialog-inner {
           overflow-x: hidden;
           overflow-y: auto;
-          //padding-bottom: calc(30px + env(safe-area-inset-bottom));
         }
       }
 
@@ -108,8 +113,7 @@ body:is(.dialog-open) {
           position: absolute;
           left: 0;
           top: -40px;
-          background: linear-gradient(to top, rgba(255,255,255,1),  rgba(255,255,255,0));
-
+          background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
         }
       }
     }
@@ -118,10 +122,9 @@ body:is(.dialog-open) {
       max-width: 100%;
       padding: 0;
       overflow: hidden;
-      border-radius: 0;
 
       .ui-dialog-content {
-        max-height: 100vh;
+        border-radius: 0;
 
         .dialog-body {
           .dialog-inner {
@@ -134,17 +137,63 @@ body:is(.dialog-open) {
 
     &.dialog-bottom {
       max-width: 100%;
-      max-height: calc(100% - 30px);
       align-self: flex-end;
-      border-radius: 12px 12px 0 0;
 
       .ui-dialog-content {
+        border-radius: 12px 12px 0 0;
         max-height: calc(100vh - 40px);
 
         .dialog-body {
           .dialog-inner {
             min-height: 100%;
           }
+        }
+      }
+    }
+
+    &.dialog-alert {
+      position: relative;
+      max-height: calc(var(--reVh) - 80px);
+      align-self: center;
+      padding: 0 44px;
+
+      .ui-dialog-content {
+        max-width: 315px;
+        max-height: calc(var(--reVh) - 80px);
+        padding: 24px 0 20px;
+
+        .dialog-header {
+          padding: 0;
+          border: none;
+          text-align: center;
+
+          +.dialog-body {
+            margin-top: 10px;
+          }
+        }
+
+        .dialog-body {
+          .dialog-inner {
+            .cont-box-zero {
+              padding-bottom: 0;
+            }
+
+            .cont-inner {
+              padding: 0 16px;
+              .alert-desc {
+                color: variables.$colorGray100;
+                @include mixins.font_size_md;
+                word-break: keep-all;
+                word-wrap: break-word;
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        .dialog-footer {
+          padding: 0 16px;
+          margin-top: 24px;
         }
       }
     }
