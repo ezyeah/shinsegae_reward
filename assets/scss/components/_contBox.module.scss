@@ -18,7 +18,7 @@ $contType: ('': variables.$colorGray00, 'g': variables.$colorGray10, 'r': variab
 
       // TODO: 상단 여백 없는 경우 하단 gap 임시 지정
       @if ($size == 'zero') {
-        padding-bottom: 30px;
+        padding-bottom: calc(30px + env(safe-area-inset-bottom));
       }
 
       @if ($type == 'r') {
