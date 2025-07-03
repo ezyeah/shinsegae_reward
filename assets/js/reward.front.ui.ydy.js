@@ -135,10 +135,10 @@
                         $container.addClass('open').css('z-index', 111 + $('.ui-dialog-container:visible').length);
 
                         // dim 영역 클릭시 팝업 닫기
-                        if ($that.data('class') === 'dim-close') {
+                        if ($that.data('class').includes('dim-close')) {
                                 $('.ui-widget-overlay').on('click', function () {
                                     // 팝업 닫기
-                                    //console.log('클릭클릭')
+                                    // console.log('클릭클릭')
                                     $that.dialog('close');
                             });
                         }
