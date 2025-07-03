@@ -121,26 +121,39 @@
                         'ui-dialog': dialogClass // popup case multi class 추가
                     },
                     open: function () {
-                        //팝업 열었을 때 화면 스크롤 막기
+                        // 팝업 열었을 때 화면 스크롤 막기
                         $('body').addClass('dialog-open');
 
-                        const $dialog = $(this).closest('.ui-dialog');
+                        const $that = $(this);
+                        const $dialog = $that.closest('.ui-dialog');
                         const $container = $dialog.closest('.ui-dialog-container');
 
-                        // top/left
-                        $dialog.removeAttr('style');
+                        // ui-dialog-content 기본 style 제거
                         $dialog.find('.ui-dialog-content').removeAttr('style');
+
+                        // 팝업 2개 이상 노출 시 z-index 지정 (현재 열려있는 팝업 개수만큼 z-index 증가)
                         $container.addClass('open').css('z-index', 111 + $('.ui-dialog-container:visible').length);
+
+                        // dim 영역 클릭시 팝업 닫기
+                        if ($that.data('class') === 'dim-close') {
+                                $('.ui-widget-overlay').on('click', function () {
+                                    // 팝업 닫기
+                                    //console.log('클릭클릭')
+                                    $that.dialog('close');
+                            });
+                        }
                     },
 
                     close: function () {
                         $('body').removeClass('dialog-open');
-
-                        const $dialog = $(this).closest('.ui-dialog');
+                        const $that = $(this);
+                        const $dialog = $that.closest('.ui-dialog');
                         const $container = $dialog.closest('.ui-dialog-container');
 
-                        $dialog.removeAttr('style');
+                        // ui-dialog-content 기본 style 제거
                         $dialog.find('.ui-dialog-content').removeAttr('style');
+
+                        // z-index style 삭제
                         $container.removeClass('open').removeAttr('style');
                     },
                     create: function () {
@@ -151,13 +164,22 @@
         }
     }
 
-    //jQuery UI dialog open/close 제어
+    // jQuery UI dialog open/close 제어
     function dialogOnOff() {
         return {
+            /*
+			 * 레이어팝업 open
+			 * @param tgId {string} 팝업 타겟 id
+			 * @param callback {string} 팝업 open 후 callback 함수
+			 */
             popOpen: function (tgId, callback, arg) {
                 $(tgId).dialog('open');
                 if (typeof callback === 'function') callback(tgId, arg);
             },
+            /*
+			 * 레이어팝업 close
+			 * @param tgId {string} 팝업 타겟 id
+			 */
             popClose: function (tgId, callback, arg) {
                 $(tgId).dialog('close');
                 if (typeof callback === 'function') callback(tgId, arg);
@@ -165,13 +187,13 @@
         };
     }
 
-    /**
-     * date : 20231222
-     * last : 20231222
-     * name : calcScrollWidth()
-     * pram :
-     * desc : 스크롤 width 계산
-     */
+    /*
+    * date : 20259999
+    * last : 20259999
+    * name : calcScrollWidth()
+    * pram :
+    * desc : 스크롤 width 계산
+    */
     let _bodyWidth = 0;
     let saveScrollWidth = 0;
     function calcScrollWidth() {

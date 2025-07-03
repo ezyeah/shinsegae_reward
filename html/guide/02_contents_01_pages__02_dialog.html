@@ -193,7 +193,7 @@
                     <pre>
                         <code class="html">
                              &lt;!-- Layer popup - size md--&gt;
-                            &lt;div id=&quot;popDialogMd&quot; data-role=&quot;dialog&quot; class=&quot;ui-dialog-content ui-widget-content&quot;&gt;
+                            &lt;div id=&quot;popDialogMd&quot; data-role=&quot;dialog &quot;&gt;
                                 &lt;!-- dialog-header --&gt;
                                 &lt;div class=&quot;dialog-header&quot;&gt;
                                     &lt;h1 class=&quot;dialog-title&quot;&gt;팝업 타이틀&lt;/h1&gt;
@@ -236,7 +236,7 @@
                     <pre>
                         <code class="html">
                             &lt;!-- Layer popup - size md(타이틀 없는 경우 팝업) --&gt;
-                            &lt;div id=&quot;popDialogMdNoTitle&quot; data-role=&quot;dialog&quot; class=&quot;ui-dialog-content ui-widget-content&quot;&gt;
+                            &lt;div id=&quot;popDialogMdNoTitle&quot; data-role=&quot;dialog &quot;&gt;
                                 &lt;!-- dialog-body --&gt;
                                 &lt;div class=&quot;dialog-body&quot;&gt;
                                     &lt;div class=&quot;dialog-inner&quot;&gt;
@@ -270,7 +270,7 @@
                     <pre>
                         <code class="html">
                               &lt;!-- Layer popup - sm--&gt;
-                            &lt;div id=&quot;popDialogSm&quot; data-role=&quot;dialog&quot; class=&quot;ui-dialog-content ui-widget-content&quot; data-class=&quot;dialog-sm&quot;&gt;
+                            &lt;div id=&quot;popDialogSm&quot; data-role=&quot;dialog&quot;   data-class=&quot;dialog-sm&quot;&gt;
                                 &lt;!-- dialog-header --&gt;
                                 &lt;div class=&quot;dialog-header&quot;&gt;
                                     &lt;h1 class=&quot;dialog-title&quot;&gt;팝업 타이틀&lt;/h1&gt;
@@ -307,7 +307,7 @@
                     <pre>
                         <code class="html">
                             &lt;!-- Layer popup - sm (타이틀 없는 경우 팝업) --&gt;
-                            &lt;div id=&quot;popDialogSmNoTitle&quot; data-role=&quot;dialog&quot; class=&quot;ui-dialog-content ui-widget-content&quot;&gt;
+                            &lt;div id=&quot;popDialogSmNoTitle&quot; data-role=&quot;dialog &quot;&gt;
                                 &lt;!-- dialog-body --&gt;
                                 &lt;div class=&quot;dialog-body&quot;&gt;
                                     &lt;div class=&quot;dialog-inner&quot;&gt;
@@ -344,7 +344,7 @@
                     <pre>
                         <code class="html">
                              &lt;!-- Layer popup - Full 팝업 --&gt;
-                            &lt;div id=&quot;popDialogFull&quot; data-role=&quot;dialog&quot; class=&quot;ui-dialog-content ui-widget-content&quot; data-class=&quot;dialog-full&quot;&gt;
+                            &lt;div id=&quot;popDialogFull&quot; data-role=&quot;dialog&quot;   data-class=&quot;dialog-full&quot;&gt;
                                 &lt;!-- dialog-header --&gt;
                                 &lt;div class=&quot;dialog-header&quot;&gt;
                                     &lt;h1 class=&quot;dialog-title&quot;&gt;팝업 타이틀&lt;/h1&gt;
@@ -386,7 +386,7 @@
                     <pre>
                         <code class="html">
                              &lt;!-- Layer popup - Bottom 팝업 --&gt;
-                            &lt;div id=&quot;popDialogBottom&quot; data-role=&quot;dialog&quot; class=&quot;ui-dialog-content ui-widget-content&quot; data-class=&quot;dialog-bottom&quot;&gt;
+                            &lt;div id=&quot;popDialogBottom&quot; data-role=&quot;dialog&quot;   data-class=&quot;dialog-bottom&quot;&gt;
                                 &lt;!-- dialog-header --&gt;
                                 &lt;div class=&quot;dialog-header&quot;&gt;
                                     &lt;h1 class=&quot;dialog-title&quot;&gt;팝업 타이틀&lt;/h1&gt;
@@ -428,7 +428,7 @@
                     <pre>
                         <code class="html">
                              &lt;!-- Layer popup - Bottom 팝업 --&gt;
-                            &lt;div id=&quot;popDialogBottom&quot; data-role=&quot;dialog&quot; class=&quot;ui-dialog-content ui-widget-content&quot; data-class=&quot;dialog-bottom&quot;&gt;
+                            &lt;div id=&quot;popDialogBottom&quot; data-role=&quot;dialog&quot;   data-class=&quot;dialog-bottom&quot;&gt;
                                 &lt;!-- dialog-header --&gt;
                                 &lt;div class=&quot;dialog-header&quot;&gt;
                                     &lt;h1 class=&quot;dialog-title&quot;&gt;팝업 타이틀&lt;/h1&gt;
@@ -467,7 +467,7 @@
                     <pre>
                         <code class="html">
                             &lt;!-- Layer popup - Alert 팝업 (타이틀 없는 경우 팝업) --&gt;
-                            &lt;div id=&quot;popDialogAlertNoTitle&quot; data-role=&quot;dialog&quot; class=&quot;ui-dialog-content ui-widget-content&quot; data-class=&quot;dialog-alert&quot;&gt;
+                            &lt;div id=&quot;popDialogAlertNoTitle&quot; data-role=&quot;dialog&quot;   data-class=&quot;dialog-alert&quot;&gt;
                                 &lt;!-- dialog-body --&gt;
                                 &lt;div class=&quot;dialog-body&quot;&gt;
                                     &lt;div class=&quot;dialog-inner&quot;&gt;
@@ -498,7 +498,48 @@
                             &lt;!-- // Layer popup - Alert 팝업 (타이틀 없는 경우 팝업) --&gt;
                         </code>
                     </pre>
+                </div>
 
+                <div class="guide-inner">
+                    <div class="guide-btit" id="idx5">dim close 팝업</div>
+                    <button type="button" class="btn-md blue100" onclick="rewardPub.front.dialogOnOff().popOpen('#popDialogDimClose')"><span class="text">팝업 - dim close</span></button>
+                    <pre>
+                        <code class="html">
+                             &lt;!-- Layer popup - Dim Close (딤 영역 클릭 시 닫기 기능 필요한 경우) --&gt;
+                            &lt;div id=&quot;popDialogDimClose&quot; data-role=&quot;dialog&quot; data-class=&quot;dim-close&quot;&gt;
+                                &lt;!-- dialog-header --&gt;
+                                &lt;div class=&quot;dialog-header&quot;&gt;
+                                    &lt;h1 class=&quot;dialog-title&quot;&gt;팝업 타이틀&lt;/h1&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // dialog-header --&gt;
+                                &lt;!-- dialog-body --&gt;
+                                &lt;div class=&quot;dialog-body&quot;&gt;
+                                    &lt;div class=&quot;dialog-inner&quot;&gt;
+                                        &lt;div class=&quot;cont-box-md&quot;&gt;
+                                            &lt;div class=&quot;cont-inner&quot;&gt;
+                                                &lt;div style=&quot;height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;&quot;&gt;&lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;!-- // cont-inner--&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // cont-box-md --&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // dialog-body --&gt;
+                                &lt;button type=&quot;button&quot; class=&quot;dialog-close&quot; onclick=&quot;rewardPub.front.dialogOnOff().popClose(&#39;#popDialogDimClose&#39;)&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;팝업 닫기&lt;/span&gt;&lt;/button&gt;
+                                &lt;!-- dialog-footer --&gt;
+                                &lt;div class=&quot;dialog-footer&quot;&gt;
+                                    &lt;!-- btn-wrap --&gt;
+                                    &lt;div class=&quot;btn-wrap&quot;&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-md line-gray40&quot; onclick=&quot;rewardPub.front.dialogOnOff().popClose(&#39;#popDialogDimClose&#39;)&quot;&gt;&lt;span class=&quot;text&quot;&gt;닫기&lt;/span&gt;&lt;/button&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-md blue100&quot; onclick=&quot;&quot;&gt;&lt;span class=&quot;text&quot;&gt;확인&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // btn-wrap --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // dialog-footer --&gt;
+                            &lt;/div&gt;
+                            &lt;!-- // Layer popup - Dim Close (딤 영역 클릭 시 닫기 기능 필요한 경우) --&gt;
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>
@@ -507,7 +548,7 @@
 
 
     <!-- Layer popup - md-->
-    <div id="popDialogMd" data-role="dialog" class="ui-dialog-content ui-widget-content">
+    <div id="popDialogMd" data-role="dialog" >
         <!-- dialog-header -->
         <div class="dialog-header">
             <h1 class="dialog-title">팝업 타이틀</h1>
@@ -545,7 +586,7 @@
     <!-- // Layer popup - md-->
 
     <!-- Layer popup - md (타이틀 없는 경우 팝업) -->
-    <div id="popDialogMdNoTitle" data-role="dialog" class="ui-dialog-content ui-widget-content">
+    <div id="popDialogMdNoTitle" data-role="dialog">
         <!-- dialog-body -->
         <div class="dialog-body">
             <div class="dialog-inner">
@@ -573,7 +614,7 @@
     <!-- // Layer popup - md-->
 
     <!-- Layer popup - sm-->
-    <div id="popDialogSm" data-role="dialog" class="ui-dialog-content ui-widget-content" data-class="dialog-sm">
+    <div id="popDialogSm" data-role="dialog" data-class="dialog-sm">
         <!-- dialog-header -->
         <div class="dialog-header">
             <h1 class="dialog-title">팝업 타이틀</h1>
@@ -606,7 +647,7 @@
     <!-- // Layer popup - sm-->
 
     <!-- Layer popup - sm (타이틀 없는 경우 팝업) -->
-    <div id="popDialogSmNoTitle" data-role="dialog" class="ui-dialog-content ui-widget-content">
+    <div id="popDialogSmNoTitle" data-role="dialog" >
         <!-- dialog-body -->
         <div class="dialog-body">
             <div class="dialog-inner">
@@ -634,7 +675,7 @@
     <!-- // Layer popup - sm -->
 
     <!-- Layer popup - Full 팝업 -->
-    <div id="popDialogFull" data-role="dialog" class="ui-dialog-content ui-widget-content" data-class="dialog-full">
+    <div id="popDialogFull" data-role="dialog" data-class="dialog-full">
         <!-- dialog-header -->
         <div class="dialog-header">
             <h1 class="dialog-title">팝업 타이틀</h1>
@@ -668,7 +709,7 @@
     <!-- // Layer popup - Full 팝업 -->
 
     <!-- Layer popup - Bottom 팝업 -->
-    <div id="popDialogBottom" data-role="dialog" class="ui-dialog-content ui-widget-content" data-class="dialog-bottom">
+    <div id="popDialogBottom" data-role="dialog" data-class="dialog-bottom">
         <!-- dialog-header -->
         <div class="dialog-header">
             <h1 class="dialog-title">팝업 타이틀</h1>
@@ -702,7 +743,7 @@
     <!-- // Layer popup - Bottom 팝업 -->
 
     <!-- Layer popup - Alert 팝업 -->
-    <div id="popDialogAlert" data-role="dialog" class="ui-dialog-content ui-widget-content" data-class="dialog-alert">
+    <div id="popDialogAlert" data-role="dialog" data-class="dialog-alert">
         <!-- dialog-header -->
         <div class="dialog-header">
             <h1 class="dialog-title">팝업 타이틀</h1>
@@ -738,7 +779,7 @@
     <!-- // Layer popup - Alert 팝업 -->
 
     <!-- Layer popup - Alert 팝업 (타이틀 없는 경우 팝업) -->
-    <div id="popDialogAlertNoTitle" data-role="dialog" class="ui-dialog-content ui-widget-content" data-class="dialog-alert">
+    <div id="popDialogAlertNoTitle" data-role="dialog" data-class="dialog-alert">
         <!-- dialog-body -->
         <div class="dialog-body">
             <div class="dialog-inner">
@@ -768,6 +809,39 @@
     </div>
     <!-- // Layer popup - Alert 팝업 (타이틀 없는 경우 팝업) -->
 
+    <!-- Layer popup - Dim Close (딤 영역 클릭 시 닫기 기능 필요한 경우) -->
+    <div id="popDialogDimClose" data-role="dialog" data-class="dim-close">
+        <!-- dialog-header -->
+        <div class="dialog-header">
+            <h1 class="dialog-title">팝업 타이틀</h1>
+        </div>
+        <!-- // dialog-header -->
+        <!-- dialog-body -->
+        <div class="dialog-body">
+            <div class="dialog-inner">
+                <div class="cont-box-md">
+                    <div class="cont-inner">
+                        <div style="height: 100vh; background: rgba(255, 0, 0, .3); padding-top: 10px;"></div>
+                    </div>
+                    <!-- // cont-inner-->
+                </div>
+                <!-- // cont-box-md -->
+            </div>
+        </div>
+        <!-- // dialog-body -->
+        <button type="button" class="dialog-close" onclick="rewardPub.front.dialogOnOff().popClose('#popDialogDimClose')"><span class="offscreen">팝업 닫기</span></button>
+        <!-- dialog-footer -->
+        <div class="dialog-footer">
+            <!-- btn-wrap -->
+            <div class="btn-wrap">
+                <button type="button" class="btn-md line-gray40" onclick="rewardPub.front.dialogOnOff().popClose('#popDialogDimClose')"><span class="text">닫기</span></button>
+                <button type="button" class="btn-md blue100" onclick=""><span class="text">확인</span></button>
+            </div>
+            <!-- // btn-wrap -->
+        </div>
+        <!-- // dialog-footer -->
+    </div>
+    <!-- // Layer popup - Dim Close (딤 영역 클릭 시 닫기 기능 필요한 경우) -->
 </div>
 </body>
 </html>

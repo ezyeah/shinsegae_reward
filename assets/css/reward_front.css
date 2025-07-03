@@ -1698,8 +1698,8 @@ span.badge-round-sm {
 
 .cont-box-zero {
   background-color: #FFF;
-  padding: 0 0;
-  padding-bottom: 30px;
+  padding: 0 0 calc(0 + env(safe-area-inset-bottom));
+  padding-bottom: calc(30px + env(safe-area-inset-bottom));
 }
 .cont-box-zero .cont-inner {
   padding: 0 20px;
@@ -1707,8 +1707,8 @@ span.badge-round-sm {
 
 .gcont-box-zero {
   background-color: #F5F5F5;
-  padding: 0 0;
-  padding-bottom: 30px;
+  padding: 0 0 calc(0 + env(safe-area-inset-bottom));
+  padding-bottom: calc(30px + env(safe-area-inset-bottom));
 }
 .gcont-box-zero .cont-inner {
   padding: 0 20px;
@@ -1716,8 +1716,8 @@ span.badge-round-sm {
 
 .rcont-box-zero {
   background-color: #F0F0F0;
-  padding: 0 0;
-  padding-bottom: 30px;
+  padding: 0 0 calc(0 + env(safe-area-inset-bottom));
+  padding-bottom: calc(30px + env(safe-area-inset-bottom));
   border-radius: 16px 16px 0 0;
 }
 .rcont-box-zero .cont-inner {
@@ -1726,7 +1726,7 @@ span.badge-round-sm {
 
 .cont-box-xs {
   background-color: #FFF;
-  padding: 10px 0;
+  padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
 }
 .cont-box-xs .cont-inner {
   padding: 0 20px;
@@ -1734,7 +1734,7 @@ span.badge-round-sm {
 
 .gcont-box-xs {
   background-color: #F5F5F5;
-  padding: 10px 0;
+  padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
 }
 .gcont-box-xs .cont-inner {
   padding: 0 20px;
@@ -1742,7 +1742,7 @@ span.badge-round-sm {
 
 .rcont-box-xs {
   background-color: #F0F0F0;
-  padding: 10px 0;
+  padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
   border-radius: 16px 16px 0 0;
 }
 .rcont-box-xs .cont-inner {
@@ -1751,7 +1751,7 @@ span.badge-round-sm {
 
 .cont-box-sm {
   background-color: #FFF;
-  padding: 16px 0;
+  padding: 16px 0 calc(16px + env(safe-area-inset-bottom));
 }
 .cont-box-sm .cont-inner {
   padding: 0 20px;
@@ -1759,7 +1759,7 @@ span.badge-round-sm {
 
 .gcont-box-sm {
   background-color: #F5F5F5;
-  padding: 16px 0;
+  padding: 16px 0 calc(16px + env(safe-area-inset-bottom));
 }
 .gcont-box-sm .cont-inner {
   padding: 0 20px;
@@ -1767,7 +1767,7 @@ span.badge-round-sm {
 
 .rcont-box-sm {
   background-color: #F0F0F0;
-  padding: 16px 0;
+  padding: 16px 0 calc(16px + env(safe-area-inset-bottom));
   border-radius: 16px 16px 0 0;
 }
 .rcont-box-sm .cont-inner {
@@ -1776,7 +1776,7 @@ span.badge-round-sm {
 
 .cont-box-md {
   background-color: #FFF;
-  padding: 20px 0;
+  padding: 20px 0 calc(20px + env(safe-area-inset-bottom));
 }
 .cont-box-md .cont-inner {
   padding: 0 20px;
@@ -1784,7 +1784,7 @@ span.badge-round-sm {
 
 .gcont-box-md {
   background-color: #F5F5F5;
-  padding: 20px 0;
+  padding: 20px 0 calc(20px + env(safe-area-inset-bottom));
 }
 .gcont-box-md .cont-inner {
   padding: 0 20px;
@@ -1792,7 +1792,7 @@ span.badge-round-sm {
 
 .rcont-box-md {
   background-color: #F0F0F0;
-  padding: 20px 0;
+  padding: 20px 0 calc(20px + env(safe-area-inset-bottom));
   border-radius: 16px 16px 0 0;
 }
 .rcont-box-md .cont-inner {
@@ -1801,7 +1801,7 @@ span.badge-round-sm {
 
 .cont-box-lg {
   background-color: #FFF;
-  padding: 30px 0;
+  padding: 30px 0 calc(30px + env(safe-area-inset-bottom));
 }
 .cont-box-lg .cont-inner {
   padding: 0 20px;
@@ -1809,7 +1809,7 @@ span.badge-round-sm {
 
 .gcont-box-lg {
   background-color: #F5F5F5;
-  padding: 30px 0;
+  padding: 30px 0 calc(30px + env(safe-area-inset-bottom));
 }
 .gcont-box-lg .cont-inner {
   padding: 0 20px;
@@ -1817,7 +1817,7 @@ span.badge-round-sm {
 
 .rcont-box-lg {
   background-color: #F0F0F0;
-  padding: 30px 0;
+  padding: 30px 0 calc(30px + env(safe-area-inset-bottom));
   border-radius: 16px 16px 0 0;
 }
 .rcont-box-lg .cont-inner {
