@@ -6,6 +6,8 @@
   min-height: var(--reVh);
 }
 .container-wrapper {
+  padding-top: 57px;
+
   [class*="cont-box"] {
     &:last-of-type {
       [class*="btn-wrap"] {
