@@ -2899,6 +2899,16 @@ body:is(.dialog-open).ios {
   flex-wrap: wrap;
   overflow: hidden;
 }
+.ui-dialog-container.open .ui-dialog {
+  -moz-animation: bottomPopAnimation 0.25s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+  -webkit-animation: bottomPopAnimation 0.25s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+  animation: bottomPopAnimation 0.25s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+}
+.ui-dialog-container.open .ui-dialog.dialog-full {
+  -moz-animation: none;
+  -webkit-animation: none;
+  animation: none;
+}
 .ui-dialog-container .ui-dialog {
   width: 100% !important;
   position: relative;
@@ -3092,6 +3102,14 @@ body:is(.dialog-open).ios {
   height: var(--reVh);
 }
 
+@keyframes bottomPopAnimation {
+  0% {
+    margin-bottom: -20vh;
+  }
+  100% {
+    margin-bottom: 0;
+  }
+}
 /* header */
 .header-wrapper {
   position: fixed;

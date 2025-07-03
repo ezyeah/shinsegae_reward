@@ -49,10 +49,10 @@ body:is(.dialog-open) {
     overflow: hidden;
 
     .ui-dialog {
-      //@include mixins.prefix(animation, bottomPopAnimation .25s variables.$easeInOutQuad forwards);
+      @include mixins.prefix(animation, bottomPopAnimation .25s variables.$easeInOutQuad forwards);
 
       &.dialog-full {
-        //@include mixins.prefix(animation, none);
+        @include mixins.prefix(animation, none);
       }
     }
   }
@@ -199,6 +199,7 @@ body:is(.dialog-open) {
 
             .cont-inner {
               padding: 0 16px;
+
               .alert-desc {
                 color: variables.$colorGray100;
                 @include mixins.font_size_md;
@@ -223,6 +224,15 @@ body:is(.dialog-open) {
     opacity: 0.3;
     overflow: hidden;
     height: var(--reVh);
+  }
+}
+
+@keyframes bottomPopAnimation {
+  0% {
+    margin-bottom: calc(100vh / 5 * -1);
+  }
+  100% {
+    margin-bottom: 0;
   }
 }
 
