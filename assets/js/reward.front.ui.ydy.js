@@ -112,13 +112,16 @@
                     autoOpen: false,
                     minHeight: 'none',
                     height: 'auto',
+                    closeText: '닫기',
                     modal: true,
                     resizable: false,
                     draggable: false,
+                    position: null,
                     classes: {
-                        'ui-dialog': dialogClass
+                        'ui-dialog': dialogClass // popup case multi class 추가
                     },
                     open: function () {
+                        //팝업 열었을 때 화면 스크롤 막기
                         $('body').addClass('dialog-open');
 
                         const $dialog = $(this).closest('.ui-dialog');

@@ -30,15 +30,23 @@ body:is(.dialog-open) {
   -webkit-overflow-scrolling: touch;
   overflow: hidden auto;
 
+  .dialog-close {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: variables.$colorGray90;
+    -webkit-mask-image: url('/assets/images/common/comm_ico_close_h24.svg');
+    mask-image: url('/assets/images/common/comm_ico_close_h24.svg');
+  }
+
   &:has(.dialog-full, .dialog-bottom) {
-  padding: 0;
-}
+    padding: 0;
+  }
 
   &.open {
     @include mixins.justify_width(center, center);
     flex-wrap: wrap;
     overflow: hidden;
-
 
     .ui-dialog {
       //@include mixins.prefix(animation, bottomPopAnimation .25s variables.$easeInOutQuad forwards);
@@ -63,8 +71,8 @@ body:is(.dialog-open) {
     }
 
     .ui-dialog-content {
-      width: 100% !important;
       @include mixins.justify_width(stretch, between, column);
+      width: 100% !important;
       padding: 0;
       overflow: hidden;
       background-color: variables.$colorGray00;
@@ -75,7 +83,6 @@ body:is(.dialog-open) {
 
       .dialog-header {
         padding: 20px 54px 20px 20px;
-        overflow: hidden;
 
         .dialog-title {
           @include mixins.font_size_xl('sb',24px);
@@ -98,15 +105,23 @@ body:is(.dialog-open) {
       .dialog-footer {
         padding: 14px 16px 18px;
       }
+
+      .dialog-close {
+        top: 20px;
+        right: 20px;
+      }
     }
 
     &.dialog-full, &.dialog-bottom {
+      .dialog-header {
+        padding: 15.5px 45px 15.5px 18px;
+      }
       .dialog-footer {
         position: relative;
         z-index: 1;
         padding: 0 15px 16px;
 
-        &::after {
+        &::before {
           content: '';
           width: 100%;
           height: 40px;
@@ -115,6 +130,11 @@ body:is(.dialog-open) {
           top: -40px;
           background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
         }
+      }
+
+      .dialog-close {
+        top: 16px;
+        right: 18px;
       }
     }
 
@@ -141,7 +161,7 @@ body:is(.dialog-open) {
 
       .ui-dialog-content {
         border-radius: 12px 12px 0 0;
-        max-height: calc(100vh - 40px);
+        max-height: calc(100vh - 40px); //위아래 여백 좌우와 동일하게 (20 + 20)
 
         .dialog-body {
           .dialog-inner {
@@ -151,15 +171,14 @@ body:is(.dialog-open) {
       }
     }
 
-    &.dialog-alert {
+    &.dialog-alert, &.dialog-sm {
       position: relative;
-      max-height: calc(var(--reVh) - 80px);
+      max-height: calc(var(--reVh) - 44px);
       align-self: center;
       padding: 0 44px;
 
       .ui-dialog-content {
         max-width: 315px;
-        max-height: calc(var(--reVh) - 80px);
         padding: 24px 0 20px;
 
         .dialog-header {
@@ -199,16 +218,11 @@ body:is(.dialog-open) {
     }
   }
 
-
-  .dialog-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 24px;
-    height: 24px;
-    background: variables.$colorGray90;
-    -webkit-mask-image: url('/assets/images/common/comm_ico_close_h24.svg');
-    mask-image: url('/assets/images/common/comm_ico_close_h24.svg');
+  .ui-widget-overlay {
+    background: variables.$colorGray100;
+    opacity: 0.3;
+    overflow: hidden;
+    height: var(--reVh);
   }
 }
 
