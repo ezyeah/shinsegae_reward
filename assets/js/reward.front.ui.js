@@ -139,48 +139,43 @@ rewardPub.front = rewardPub.front || (function () {
   * date : 20259999
   * last : 20259999
   * name : setFoldBox()
-  * pram : selector - Fold list DOM 셀렉터
+  * pram : selector - Fold wrap DOM 셀렉터
   * desc : set fold box
   */
   function setFoldBox(selector) {
-    selector = selector || '.fold-wrap, .fold-overflow-wrap';
+    selector = selector || '.fold-wrap';
     if ($(selector).length === 0) return false;
 
     setFoldData(selector);
 
     $(selector).find('.btn-fold').off('click').on('click', function (event) {
-      if ($(event.target).is('a') || $(event.currentTarget).closest('.fold-item').is('.no-fold')) return;
+      if ($(event.target).is('a')) return;
 
-      var foldBox = $(this).closest('.fold-item'),
+      var foldBox = $(this).closest('.fold-item, .fold-overflow-box'),
           isExpanded = foldBox.hasClass('expanded');
 
-      if (isExpanded) {
-        foldOnOff().foldClose(foldBox);
-      } else {
-        foldOnOff().foldOpen(foldBox);
-      }
+      if (isExpanded) foldOnOff().foldClose(foldBox);
+      else foldOnOff().foldOpen(foldBox);
 
       var evtData = {
-        index: $(event.currentTarget).closest('.fold-item').index(),
-        isExpanded: $(event.currentTarget).closest('.fold-item').hasClass('expanded'),
+        index: $(event.currentTarget).closest('.fold-item, .fold-overflow-box').index(),
+        isExpanded: $(event.currentTarget).closest('.fold-item, .fold-overflow-box').hasClass('expanded'),
       };
-      var evt = new CustomEvent('headerClick', {'detail': evtData});
 
-      $(event.currentTarget).closest('.fold-item')[0].dispatchEvent(evt);
+      var evt = new CustomEvent('headerClick', {'detail': evtData});
+      $(event.currentTarget).closest('.fold-item, .fold-overflow-box')[0].dispatchEvent(evt);
     });
 
     $(window).off('resize observerUpdate orientationchange', setFoldData).on('resize observerUpdate orientationchange', setFoldData);
-
   }
 
   function setFoldData(selector) {
-    selector = selector ? selector : '.fold-wrap, .fold-overflow-wrap';
+    selector = selector ? selector : '.fold-wrap';
 
     if ($(selector).length === 0) return false;
-    $(selector).find('.fold-item .fold-header').each(function () {
-      var tgItem = $(this).closest('.fold-item');
+    $(selector).find('.fold-item .fold-header, .fold-overflow-box .fold-header').each(function () {
+      var tgItem = $(this).closest('.fold-item, .fold-overflow-box');
 
-      tgItem.data('btn', $(this).find('.btn-fold'));
       tgItem.css('height', 'auto');
       tgItem.css('height', tgItem.outerHeight());
     });
@@ -190,31 +185,28 @@ rewardPub.front = rewardPub.front || (function () {
   * date : 20259999
   * last : 20259999
   * name : foldOnOff()
-  * pram :
+  * pram : fold-item, fold-overflow-box
   * desc : fold On/Off
   */
   function foldOnOff() {
     return {
-      /**
-       * fold open
-       * @param selector {string} 타겟 foldbox
-       */
       foldOpen: function (selector) {
-        selector.addClass('expanded');
-        if ($(selector).parent('.fold-overflow-wrap').length === 1) $('.text', $(selector)).text('닫기');
-        else $('.btn-fold', selector).find('.offscreen').text('컨텐츠 닫기');
-        if (!selector.hasClass('no-fold')) foldTransition(selector);
-      },
+        if (!selector.hasClass('expanded')) {
+          selector.addClass('expanded');
+          foldTransition(selector);
 
-      /**
-       * fold close
-       * @param selector {string} 타겟 foldbox
-       */
+          if ($(selector).hasClass('fold-overflow-box')) $('.text', selector).text('닫기');
+          else $('.btn-fold', selector).find('.offscreen').text('컨텐츠 닫기');
+        }
+      },
       foldClose: function (selector) {
-        selector.removeClass('expanded');
-        if ($(selector).parent('.fold-overflow-wrap').length === 1) $('.text', $(selector)).text('자세히 보기');
-        $('.btn-fold', selector).find('.offscreen').text('컨텐츠 열기');
-        if (!selector.hasClass('no-fold')) foldTransition(selector);
+        if (selector.hasClass('expanded')) {
+          selector.removeClass('expanded');
+          foldTransition(selector);
+
+          if ($(selector).hasClass('fold-overflow-box')) $('.text', selector).text('자세히 보기');
+          else $('.btn-fold', selector).find('.offscreen').text('컨텐츠 열기');
+        }
       },
     }
   }
@@ -223,7 +215,7 @@ rewardPub.front = rewardPub.front || (function () {
   * date : 20259999
   * last : 20259999
   * name : foldOnOff()
-  * pram : selector - fold list
+  * pram : selector - fold-item, fold-overflow-box
   * desc : fold height open/close transition
   */
   function foldTransition(selector, isForce) {

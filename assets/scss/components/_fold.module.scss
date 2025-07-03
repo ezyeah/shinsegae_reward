@@ -3,7 +3,8 @@
 @use '../abstracts/mixins';
 
 %setFoldCommon {
-  .fold-item {
+  .fold-item,
+  .fold-overflow-box {
     width: 100%;
 
     .fold-header {
@@ -101,16 +102,17 @@
   }
 }
 
-.fold-overflow-wrap {
+.fold-wrap {
   @extend %setFoldCommon;
 
-  .fold-item {
+  .fold-overflow-box {
     .fold-header {
-      padding: 9px;
+      overflow: hidden;
       border-radius: 18px;
       background-color: variables.$colorGray10;
 
       .btn-fold {
+        padding: 9px;
         position: static;
         justify-content: center;
 

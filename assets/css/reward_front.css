@@ -2669,10 +2669,12 @@ span.badge-round-sm {
   color: #FFF;
 }
 
-.fold-overflow-wrap .fold-item, .fold-wrap .fold-item {
+.fold-wrap .fold-item,
+.fold-wrap .fold-overflow-box {
   width: 100%;
 }
-.fold-overflow-wrap .fold-item .fold-header, .fold-wrap .fold-item .fold-header {
+.fold-wrap .fold-item .fold-header,
+.fold-wrap .fold-overflow-box .fold-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2695,7 +2697,8 @@ span.badge-round-sm {
   position: relative;
   background-color: #FFF;
 }
-.fold-overflow-wrap .fold-item .fold-header .btn-fold, .fold-wrap .fold-item .fold-header .btn-fold {
+.fold-wrap .fold-item .fold-header .btn-fold,
+.fold-wrap .fold-overflow-box .fold-header .btn-fold {
   position: absolute;
   top: 0;
   left: 0;
@@ -2722,7 +2725,8 @@ span.badge-round-sm {
   -webkit-flex-direction: row;
   flex-direction: row;
 }
-.fold-overflow-wrap .fold-item .fold-header .btn-fold:after, .fold-wrap .fold-item .fold-header .btn-fold:after {
+.fold-wrap .fold-item .fold-header .btn-fold:after,
+.fold-wrap .fold-overflow-box .fold-header .btn-fold:after {
   content: "";
   position: absolute;
   display: inline-block;
@@ -2738,15 +2742,18 @@ span.badge-round-sm {
   -webkit-transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
   transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
 }
-.fold-overflow-wrap .fold-item .fold-content, .fold-wrap .fold-item .fold-content {
+.fold-wrap .fold-item .fold-content,
+.fold-wrap .fold-overflow-box .fold-content {
   display: none;
 }
-.fold-overflow-wrap .fold-item.expanded .fold-header .btn-fold:after, .fold-wrap .fold-item.expanded .fold-header .btn-fold:after {
+.fold-wrap .fold-item.expanded .fold-header .btn-fold:after,
+.fold-wrap .fold-overflow-box.expanded .fold-header .btn-fold:after {
   -moz-transform: rotateZ(180deg);
   -webkit-transform: rotateZ(180deg);
   transform: rotateZ(180deg);
 }
-.fold-overflow-wrap .fold-item.expanded .fold-content, .fold-wrap .fold-item.expanded .fold-content {
+.fold-wrap .fold-item.expanded .fold-content,
+.fold-wrap .fold-overflow-box.expanded .fold-content {
   display: block;
 }
 
@@ -2780,16 +2787,17 @@ span.badge-round-sm {
   background-color: #F0F0F0;
 }
 
-.fold-overflow-wrap .fold-item .fold-header {
-  padding: 9px;
+.fold-wrap .fold-overflow-box .fold-header {
+  overflow: hidden;
   border-radius: 18px;
   background-color: #F5F5F5;
 }
-.fold-overflow-wrap .fold-item .fold-header .btn-fold {
+.fold-wrap .fold-overflow-box .fold-header .btn-fold {
+  padding: 9px;
   position: static;
   justify-content: center;
 }
-.fold-overflow-wrap .fold-item .fold-header .btn-fold .text {
+.fold-wrap .fold-overflow-box .fold-header .btn-fold .text {
   display: inline-block;
   font-size: 13px;
   line-height: 18px;
@@ -2798,20 +2806,20 @@ span.badge-round-sm {
   color: #666;
   vertical-align: top;
 }
-.fold-overflow-wrap .fold-item .fold-header .btn-fold .ico-gray-arrow18 {
+.fold-wrap .fold-overflow-box .fold-header .btn-fold .ico-gray-arrow18 {
   margin-left: 4px;
   transform: rotateZ(90deg);
 }
-.fold-overflow-wrap .fold-item .fold-header .btn-fold:after {
+.fold-wrap .fold-overflow-box .fold-header .btn-fold:after {
   content: initial;
 }
-.fold-overflow-wrap .fold-item .fold-content {
+.fold-wrap .fold-overflow-box .fold-content {
   margin-bottom: 10px;
   padding: 16px;
   border-radius: 12px;
   background-color: #F5F5F5;
 }
-.fold-overflow-wrap .fold-item.expanded .fold-header .btn-fold .ico-gray-arrow18 {
+.fold-wrap .fold-overflow-box.expanded .fold-header .btn-fold .ico-gray-arrow18 {
   -moz-transform: rotateZ(270deg);
   -webkit-transform: rotateZ(270deg);
   transform: rotateZ(270deg);
