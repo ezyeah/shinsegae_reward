@@ -10,7 +10,7 @@ $contType: ('': variables.$colorGray00, 'g': variables.$colorGray10, 'r': variab
   @each $type, $color in $contType {
     .#{$type}cont-box-#{$size} {
       background-color: $color;
-      padding: $px 0;
+      padding: $px 0 calc($px + env(safe-area-inset-bottom));
 
       .cont-inner {
         padding: 0 20px;
