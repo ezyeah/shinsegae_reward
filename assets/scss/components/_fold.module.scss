@@ -12,6 +12,10 @@
       position: relative;
       background-color: variables.$colorGray00;
 
+      [class^='ctitle-wrap'] {
+        width: 100%;
+      }
+
       .btn-fold {
         position: absolute;
         top: 0;
@@ -94,9 +98,6 @@
 
       .fold-content {
         margin: 0 20px 20px;
-        padding: 20px;
-        border-radius: 12px;
-        background-color: variables.$colorGray20;
       }
     }
   }
@@ -136,9 +137,6 @@
 
     .fold-content {
       margin-bottom: 10px;
-      padding: 16px;
-      border-radius: 12px;
-      background-color: variables.$colorGray10;
     }
 
     &.expanded {

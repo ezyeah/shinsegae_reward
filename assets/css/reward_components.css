@@ -572,6 +572,65 @@
   width: 100%;
 }
 
+.ctitle-wrap-zero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  /*flex-wrap: wrap;*/
+  margin-bottom: 0;
+}
+.ctitle-wrap-zero .left-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -moz-box-orient: vertical;
+  -moz-box-direction: reverse;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.ctitle-wrap-zero .left-area [class*=stitle]:not(:last-child) {
+  margin-bottom: 6px;
+}
+.ctitle-wrap-zero .left-area [class*=stext]:not(:first-child) {
+  margin-top: 6px;
+}
+.ctitle-wrap-zero .right-area {
+  flex-shrink: 0;
+  margin-left: 5px;
+}
+.ctitle-wrap-zero [class*=stext] {
+  width: 100%;
+}
+
 .stext-gray70, .stext-gray80 {
   font-size: 14px;
   line-height: 20px;
@@ -2341,6 +2400,10 @@ span.badge-round-sm {
   position: relative;
   background-color: #FFF;
 }
+.fold-wrap .fold-item .fold-header [class^=ctitle-wrap],
+.fold-wrap .fold-overflow-box .fold-header [class^=ctitle-wrap] {
+  width: 100%;
+}
 .fold-wrap .fold-item .fold-header .btn-fold,
 .fold-wrap .fold-overflow-box .fold-header .btn-fold {
   position: absolute;
@@ -2426,9 +2489,6 @@ span.badge-round-sm {
 }
 .fold-wrap .fold-box-list .fold-item .fold-content {
   margin: 0 20px 20px;
-  padding: 20px;
-  border-radius: 12px;
-  background-color: #F0F0F0;
 }
 
 .fold-wrap .fold-overflow-box .fold-header {
@@ -2459,9 +2519,6 @@ span.badge-round-sm {
 }
 .fold-wrap .fold-overflow-box .fold-content {
   margin-bottom: 10px;
-  padding: 16px;
-  border-radius: 12px;
-  background-color: #F5F5F5;
 }
 .fold-wrap .fold-overflow-box.expanded .fold-header .btn-fold .ico-gray-arrow18 {
   -moz-transform: rotateZ(270deg);

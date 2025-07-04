@@ -134,24 +134,50 @@
                 <div class="guide-wrap">
                     <div class="guide-inner">
                         <div class="guide-ptit"><span>Fold 공통규칙</span></div>
-                        <div class="guide-btit">index</div>
                         <ol class="guide-desc-list">
-                            <li><a href="#idx1" style="text-decoration: underline">fc-</a> : font color option</li>
+                            <li>
+                                <code class="title">fold list 기본 구조</code>
+                                <p style="margin-top: 4px;"><code>.fold-wrap</code> > <code>fold-line-list / fold-box-list</code> > <code>fold-item</code> > <code>fold-header</code> | <code>fold-content</code></p>
+                                <p class="stext-sm-gray80">*주로 리스트 형태로 사용</p>
+                            </li>
+                            <li>
+                                <code class="title">fold overflow box 기본 구조</code>
+                                <p style="margin-top: 4px;"><code>.fold-wrap</code> > <code>fold-overflow-box</code> > <code>fold-content</code> | <code>fold-header</code></p>
+                                <p class="stext-sm-gray80">*주로 단일 형태로 사용</p>
+                            </li>
+                            <li>오픈 시 <code>fold-item / fold-overflow-box</code> 영역에 <code>expanded</code> class 추가</li>
                         </ol>
                     </div>
 
                     <div class="guide-inner">
                         <div class="guide-btit" id="idx1">fold list</div>
+                        <ol class="guide-desc-list">
+                            <li>
+                                <code class="title">list type</code> 구분하여 <code>fold-{$type}-list</code> class 사용 필요
+                                <ul class="guide-desc-list">
+                                    <li style="margin-top: 8px;"><code>fold-line-list</code> item 라인 type</li>
+                                    <li style="margin-top: 4px;"><code>fold-box-list</code> item 박스 type</li>
+                                </ul>
+                            </li>
+                        </ol>
+
                         <div class="guide-sbtit">fold-line-list</div>
                         <!-- fold-wrap -->
                         <div class="fold-wrap">
-                            <!-- fold-list -->
+                            <!-- fold-line-list -->
                             <ul class="fold-line-list">
                                 <!-- fold-item -->
                                 <li class="fold-item">
                                     <!-- fold-header -->
                                     <div class="fold-header">
-                                        <div class="ctitle-sm">타이틀</div>
+                                        <div class="ctitle-wrap-zero">
+                                            <div class="left-area">
+                                                <div class="ctitle-sm">타이틀</div>
+                                            </div>
+                                            <div class="right-area">
+                                                <span class="stext-gray70">right-area</span>
+                                            </div>
+                                        </div>
                                         <button type="button" class="btn-fold"><span class="offscreen">컨텐츠 열기</span></button>
                                     </div>
                                     <!-- // fold-header -->
@@ -166,7 +192,11 @@
                                 <li class="fold-item">
                                     <!-- fold-header -->
                                     <div class="fold-header">
-                                        <div class="ctitle-sm">타이틀</div>
+                                        <div class="ctitle-wrap-zero">
+                                            <div class="left-area">
+                                                <div class="ctitle-sm">타이틀</div>
+                                            </div>
+                                        </div>
                                         <button type="button" class="btn-fold"><span class="offscreen">컨텐츠 열기</span></button>
                                     </div>
                                     <!-- // fold-header -->
@@ -181,7 +211,11 @@
                                 <li class="fold-item">
                                     <!-- fold-header -->
                                     <div class="fold-header">
-                                        <div class="ctitle-sm">타이틀</div>
+                                        <div class="ctitle-wrap-zero">
+                                            <div class="left-area">
+                                                <div class="ctitle-sm">타이틀</div>
+                                            </div>
+                                        </div>
                                         <button type="button" class="btn-fold"><span class="offscreen">컨텐츠 열기</span></button>
                                     </div>
                                     <!-- // fold-header -->
@@ -193,21 +227,97 @@
                                 </li>
                                 <!-- // fold-item -->
                             </ul>
-                            <!-- // fold-list -->
+                            <!-- // fold-line-list -->
                         </div>
                         <!-- // fold-wrap -->
+                        <pre><code><!-- fold-wrap -->
+                        &lt;div class=&quot;fold-wrap&quot;&gt;
+                            &lt;!-- fold-line-list --&gt;
+                            &lt;ul class=&quot;fold-line-list&quot;&gt;
+                                &lt;!-- fold-item --&gt;
+                                &lt;li class=&quot;fold-item&quot;&gt;
+                                    &lt;!-- fold-header --&gt;
+                                    &lt;div class=&quot;fold-header&quot;&gt;
+                                        &lt;div class=&quot;ctitle-wrap-zero&quot;&gt;
+                                            &lt;div class=&quot;left-area&quot;&gt;
+                                                &lt;div class=&quot;ctitle-sm&quot;&gt;타이틀&lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;right-area&quot;&gt;
+                                                &lt;span class=&quot;stext-gray70&quot;&gt;right-area&lt;/span&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-fold&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;컨텐츠 열기&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-header --&gt;
+                                    &lt;!-- fold-content --&gt;
+                                    &lt;div class=&quot;fold-content&quot;&gt;
+                                        &lt;div style=&quot;background-color: rgba(255, 0, 0, .2); height: 200px;&quot;&gt;컨텐츠 영역 확인을 위한 임시 div입니다.&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-content --&gt;
+                                &lt;/li&gt;
+                                &lt;!-- // fold-item --&gt;
+                                &lt;!-- fold-item --&gt;
+                                &lt;li class=&quot;fold-item&quot;&gt;
+                                    &lt;!-- fold-header --&gt;
+                                    &lt;div class=&quot;fold-header&quot;&gt;
+                                        &lt;div class=&quot;ctitle-wrap-zero&quot;&gt;
+                                            &lt;div class=&quot;left-area&quot;&gt;
+                                                &lt;div class=&quot;ctitle-sm&quot;&gt;타이틀&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-fold&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;컨텐츠 열기&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-header --&gt;
+                                    &lt;!-- fold-content --&gt;
+                                    &lt;div class=&quot;fold-content&quot;&gt;
+                                        &lt;div style=&quot;background-color: rgba(255, 0, 0, .2); height: 200px;&quot;&gt;컨텐츠 영역 확인을 위한 임시 div입니다.&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-content --&gt;
+                                &lt;/li&gt;
+                                &lt;!-- // fold-item --&gt;
+                                &lt;!-- fold-item --&gt;
+                                &lt;li class=&quot;fold-item&quot;&gt;
+                                    &lt;!-- fold-header --&gt;
+                                    &lt;div class=&quot;fold-header&quot;&gt;
+                                        &lt;div class=&quot;ctitle-wrap-zero&quot;&gt;
+                                            &lt;div class=&quot;left-area&quot;&gt;
+                                                &lt;div class=&quot;ctitle-sm&quot;&gt;타이틀&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-fold&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;컨텐츠 열기&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-header --&gt;
+                                    &lt;!-- fold-content --&gt;
+                                    &lt;div class=&quot;fold-content&quot;&gt;
+                                        &lt;div style=&quot;background-color: rgba(255, 0, 0, .2); height: 200px;&quot;&gt;컨텐츠 영역 확인을 위한 임시 div입니다.&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-content --&gt;
+                                &lt;/li&gt;
+                                &lt;!-- // fold-item --&gt;
+                            &lt;/ul&gt;
+                            &lt;!-- // fold-line-list --&gt;
+                        &lt;/div&gt;
+                        &lt;!-- // fold-wrap --&gt;
+                        </code></pre>
 
                         <div class="guide-sbtit">fold-box-list</div>
                         <div style="background-color: gray; padding: 20px;">
                             <!-- fold-wrap -->
                             <div class="fold-wrap">
-                                <!-- fold-list -->
+                                <!-- fold-box-list -->
                                 <ul class="fold-box-list">
                                     <!-- fold-item -->
                                     <li class="fold-item">
                                         <!-- fold-header -->
                                         <div class="fold-header">
-                                            <div class="ctitle-lg">타이틀</div>
+                                            <div class="ctitle-wrap-zero">
+                                                <div class="left-area">
+                                                    <div class="ctitle-lg">타이틀</div>
+                                                </div>
+                                                <div class="right-area">
+                                                    <span class="stext-gray70">right-area</span>
+                                                </div>
+                                            </div>
                                             <button type="button" class="btn-fold"><span class="offscreen">컨텐츠 열기</span></button>
                                         </div>
                                         <!-- // fold-header -->
@@ -222,7 +332,11 @@
                                     <li class="fold-item">
                                         <!-- fold-header -->
                                         <div class="fold-header">
-                                            <div class="ctitle-lg">타이틀</div>
+                                            <div class="ctitle-wrap-zero">
+                                                <div class="left-area">
+                                                    <div class="ctitle-lg">타이틀</div>
+                                                </div>
+                                            </div>
                                             <button type="button" class="btn-fold"><span class="offscreen">컨텐츠 열기</span></button>
                                         </div>
                                         <!-- // fold-header -->
@@ -237,7 +351,11 @@
                                     <li class="fold-item">
                                         <!-- fold-header -->
                                         <div class="fold-header">
-                                            <div class="ctitle-lg">타이틀</div>
+                                            <div class="ctitle-wrap-zero">
+                                                <div class="left-area">
+                                                    <div class="ctitle-lg">타이틀</div>
+                                                </div>
+                                            </div>
                                             <button type="button" class="btn-fold"><span class="offscreen">컨텐츠 열기</span></button>
                                         </div>
                                         <!-- // fold-header -->
@@ -249,17 +367,90 @@
                                     </li>
                                     <!-- // fold-item -->
                                 </ul>
-                                <!-- // fold-list -->
+                                <!-- // fold-box-list -->
                             </div>
                             <!-- // fold-wrap -->
                         </div>
+                        <pre><code>
+                        &lt;!-- fold-wrap --&gt;
+                        &lt;div class=&quot;fold-wrap&quot;&gt;
+                            &lt;!-- fold-box-list --&gt;
+                            &lt;ul class=&quot;fold-box-list&quot;&gt;
+                                &lt;!-- fold-item --&gt;
+                                &lt;li class=&quot;fold-item&quot;&gt;
+                                    &lt;!-- fold-header --&gt;
+                                    &lt;div class=&quot;fold-header&quot;&gt;
+                                        &lt;div class=&quot;ctitle-wrap-zero&quot;&gt;
+                                            &lt;div class=&quot;left-area&quot;&gt;
+                                                &lt;div class=&quot;ctitle-lg&quot;&gt;타이틀&lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;right-area&quot;&gt;
+                                                &lt;span class=&quot;stext-gray70&quot;&gt;right-area&lt;/span&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-fold&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;컨텐츠 열기&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-header --&gt;
+                                    &lt;!-- fold-content --&gt;
+                                    &lt;div class=&quot;fold-content&quot;&gt;
+                                        &lt;div style=&quot;background-color: rgba(255, 0, 0, .2); height: 200px;&quot;&gt;컨텐츠 영역 확인을 위한 임시 div입니다.&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-content --&gt;
+                                &lt;/li&gt;
+                                &lt;!-- // fold-item --&gt;
+                                &lt;!-- fold-item --&gt;
+                                &lt;li class=&quot;fold-item&quot;&gt;
+                                    &lt;!-- fold-header --&gt;
+                                    &lt;div class=&quot;fold-header&quot;&gt;
+                                        &lt;div class=&quot;ctitle-wrap-zero&quot;&gt;
+                                            &lt;div class=&quot;left-area&quot;&gt;
+                                                &lt;div class=&quot;ctitle-lg&quot;&gt;타이틀&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-fold&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;컨텐츠 열기&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-header --&gt;
+                                    &lt;!-- fold-content --&gt;
+                                    &lt;div class=&quot;fold-content&quot;&gt;
+                                        &lt;div style=&quot;background-color: rgba(255, 0, 0, .2); height: 200px;&quot;&gt;컨텐츠 영역 확인을 위한 임시 div입니다.&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-content --&gt;
+                                &lt;/li&gt;
+                                &lt;!-- // fold-item --&gt;
+                                &lt;!-- fold-item --&gt;
+                                &lt;li class=&quot;fold-item&quot;&gt;
+                                    &lt;!-- fold-header --&gt;
+                                    &lt;div class=&quot;fold-header&quot;&gt;
+                                        &lt;div class=&quot;ctitle-wrap-zero&quot;&gt;
+                                            &lt;div class=&quot;left-area&quot;&gt;
+                                                &lt;div class=&quot;ctitle-lg&quot;&gt;타이틀&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;button type=&quot;button&quot; class=&quot;btn-fold&quot;&gt;&lt;span class=&quot;offscreen&quot;&gt;컨텐츠 열기&lt;/span&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-header --&gt;
+                                    &lt;!-- fold-content --&gt;
+                                    &lt;div class=&quot;fold-content&quot;&gt;
+                                        &lt;div style=&quot;background-color: rgba(255, 0, 0, .2); height: 200px;&quot;&gt;컨텐츠 영역 확인을 위한 임시 div입니다.&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- // fold-content --&gt;
+                                &lt;/li&gt;
+                                &lt;!-- // fold-item --&gt;
+                            &lt;/ul&gt;
+                            &lt;!-- // fold-box-list --&gt;
+                        &lt;/div&gt;
+                        &lt;!-- // fold-wrap --&gt;
+                        </code></pre>
                     </div>
 
                     <div class="guide-inner">
                         <div class="guide-btit" id="idx3">fold overflow box</div>
+                        <ol class="guide-desc-list">
+                            <li>주로 단일 컨텐츠 노출/미노출로 사용</li>
+                        </ol>
                         <!-- fold-wrap -->
                         <div class="fold-wrap">
-                            <!-- fold-list -->
+                            <!-- fold-overflow-box -->
                             <div class="fold-overflow-box">
                                 <!-- fold-content -->
                                 <div class="fold-content">
@@ -275,9 +466,32 @@
                                 </div>
                                 <!-- // fold-header -->
                             </div>
-                            <!-- // fold-list -->
+                            <!-- // fold-overflow-box -->
                         </div>
                         <!-- // fold-wrap -->
+                        <pre><code>
+                        &lt;!-- fold-wrap --&gt;
+                        &lt;div class=&quot;fold-wrap&quot;&gt;
+                            &lt;!-- fold-overflow-box --&gt;
+                            &lt;div class=&quot;fold-overflow-box&quot;&gt;
+                                &lt;!-- fold-content --&gt;
+                                &lt;div class=&quot;fold-content&quot;&gt;
+                                    &lt;div style=&quot;background-color: rgba(255, 0, 0, .2); height: 200px;&quot;&gt;컨텐츠 영역 확인을 위한 임시 div입니다.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // fold-content --&gt;
+                                &lt;!-- fold-header --&gt;
+                                &lt;div class=&quot;fold-header&quot;&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;btn-fold&quot;&gt;
+                                        &lt;span class=&quot;text&quot;&gt;자세히 보기&lt;/span&gt;
+                                        &lt;span class=&quot;ico-gray-arrow18&quot;&gt;&lt;/span&gt;
+                                    &lt;/button&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // fold-header --&gt;
+                            &lt;/div&gt;
+                            &lt;!-- // fold-overflow-box --&gt;
+                        &lt;/div&gt;
+                        &lt;!-- // fold-wrap --&gt;
+                        </code></pre>
                     </div>
                 </div>
             </div>

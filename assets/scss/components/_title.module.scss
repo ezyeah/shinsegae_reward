@@ -82,6 +82,8 @@
     margin-bottom: 10px;
   } @else if ($gap == 'xs') {
     margin-bottom: 6px;
+  } @else if ($gap == 'zero') {
+    margin-bottom: 0;
   }
 }
 
@@ -99,4 +101,7 @@
 }
 .ctitle-wrap-xs {
   @include ctitleWrap('xs');
+}
+.ctitle-wrap-zero {
+  @include ctitleWrap('zero');
 }
