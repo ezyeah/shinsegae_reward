@@ -2529,6 +2529,36 @@ span.badge-round-sm {
   transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.29, 1.32);
 }
 
+.swiper-auto-wrap,
+.swiper-dot-wrap,
+.swiper-fraction-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swiper-auto-wrap .swiper-list,
+.swiper-dot-wrap .swiper-list,
+.swiper-fraction-wrap .swiper-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
 .offscreen {
   position: absolute !important;
   display: block;

@@ -44,7 +44,7 @@ rewardPub.front = rewardPub.front || (function () {
   * desc : set common swiper
   */
   function setCommSwiper(selector, customOpt) {
-    selector = selector || '.swiper-auto-wrap';
+    selector = selector || '.swiper-auto-wrap, .swiper-dot-wrap, .swiper-fraction-wrap';
     customOpt = customOpt !== undefined ? customOpt : {};
     let commSwiper = [];
 
@@ -58,6 +58,13 @@ rewardPub.front = rewardPub.front || (function () {
       touchStartForcePreventDefault: true,
       wrapperClass: 'swiper-list',
       slideClass: 'swiper-item',
+      a11y: {
+        enabled: true,
+        prevSlideMessage: '이전 슬라이드',
+        nextSlideMessage: '다음 슬라이드',
+        slideLabelMessage: '총 {{slidesLength}}개 중 {{index}}번째 슬라이드',
+      },
+      freeMode: false,
     };
 
     // auto type ( default )
@@ -71,7 +78,19 @@ rewardPub.front = rewardPub.front || (function () {
       }
     };
 
+    // dot type
+    const dotOpt = {
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    };
+
+    // loop option
+    if ($(selector).hasClass('is-loop')) commOpt.loop = true;
+
     Object.assign(autoOpt, commOpt);
+    Object.assign(dotOpt, commOpt);
 
     if (document.querySelectorAll(selector).length === 0) return false;
 
@@ -83,11 +102,14 @@ rewardPub.front = rewardPub.front || (function () {
         return false;
       }
       else {
-        let commInitOpt, autoInitOpt;
+        let commInitOpt, autoInitOpt, dotInitOpt, fractionInitOpt;
         commInitOpt = {};
         autoInitOpt = {};
+        dotInitOpt = {};
+
         Object.assign(commInitOpt, commOpt, customOpt);
         Object.assign(autoInitOpt, autoOpt, customOpt);
+        Object.assign(dotInitOpt, dotOpt, customOpt);
 
         if ( element.swiper === undefined ) {
           var className = element.classList.value;
@@ -95,6 +117,20 @@ rewardPub.front = rewardPub.front || (function () {
           if (className.indexOf('swiper-auto-wrap') !== -1) {
             commSwiper[i] = new Swiper(element, autoInitOpt);
             commSwiper[i].init();
+          }
+          else if(className.indexOf('swiper-dot-wrap') !== -1) {
+            commSwiper[i] = new Swiper(element, dotInitOpt);
+            commSwiper[i].init();
+
+            if ($(selector).hasClass('is-num-bullet')) {
+              dotOpt.pagination = {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                  return '<span class="' + className + '">' + (index + 1) + '</span>';
+                },
+              }
+            }
           }
         }
       }

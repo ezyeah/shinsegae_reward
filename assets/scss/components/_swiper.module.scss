@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+%setSwiperComm {
+  overflow: hidden;
+  position: relative;
+
+  .swiper-list {
+    @include mixins.justify_width;
+  }
+}
+
+.swiper-auto-wrap,
+.swiper-dot-wrap,
+.swiper-fraction-wrap {
+  @extend %setSwiperComm;
+}
