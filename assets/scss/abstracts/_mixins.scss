@@ -279,7 +279,7 @@
   }
 }
 
-// sm - font-size: 13px ------------- body: xs
+// sm - font-size: 12px ------------- body: xs
 @mixin font_size_xs($type : 'body', $lineHeight : 'default') {
   font-size: variables.$fontSizeXs;
   line-height: variables.$fontSizeXsLineHeight;
@@ -292,6 +292,8 @@
   } @else if ($type == 'md') {
     font-weight: variables.$fontWeightMedium;
   } @else if ($type == 'rgl') {
+    font-weight: variables.$fontWeightRegular;
+  } @else if ($type == 'body') {
     font-weight: variables.$fontWeightRegular;
   }
 

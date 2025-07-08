@@ -2,17 +2,98 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-%setSwiperComm {
-  overflow: hidden;
-  position: relative;
+$swiperType: ('auto', 'dot', 'fraction');
 
-  .swiper-list {
-    @include mixins.justify_width;
+@each $type in $swiperType {
+  .swiper-#{$type}-wrap {
+    overflow: hidden;
+    position: relative;
+
+    .swiper-list {
+      position: relative;
+      @include mixins.justify_width;
+      width: 100%;
+    }
+
+    @if ($type == 'dot') {
+      .swiper-pagination {
+        @include mixins.justify_width;
+        column-gap: 4px;
+        margin-top: 10px;
+
+        .swiper-pagination-bullet {
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgba(variables.$colorGray00, 0.3);
+          vertical-align: top;
+
+          &.swiper-pagination-bullet-active {
+            background-color: variables.$colorGray00;
+          }
+        }
+
+        &.type-num {
+          .swiper-pagination-bullet {
+            @include mixins.justify_width(center, center);
+            width: 20px;
+            height: 20px;
+            background-color: rgba(variables.$colorGray00, 0.1);
+            opacity: 0.7;
+
+            .num {
+              display: inline-block;
+              @include mixins.font_size_sm;
+              color: variables.$colorGray00;
+              vertical-align: top;
+            }
+
+            &.swiper-pagination-bullet-active {
+              background-color: variables.$colorGray00;
+              opacity: 1;
+
+              .num {
+                font-weight: variables.$fontWeightBold;
+                color: variables.$colorGray100;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @else if ($type == 'fraction') {
+      .swiper-list {
+        .swiper-item {
+          flex-shrink: 0;
+          width: 100%;
+        }
+      }
+
+      .swiper-pagination {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        padding: 3px 12px;
+        border-radius: 13px;
+        background-color: rgba(variables.$colorGray100, 0.6);
+        @include mixins.font_size_xs();
+        color: variables.$colorGray00;
+
+        .swiper-pagination-current,
+        .swiper-pagination-total {
+          font-weight: inherit;
+          font-size: inherit;
+          line-height: inherit;
+          letter-spacing: inherit;
+          color: inherit;
+        }
+
+        .swiper-pagination-total {
+          color: variables.$colorGray60;
+        }
+      }
+    }
   }
-}
-
-.swiper-auto-wrap,
-.swiper-dot-wrap,
-.swiper-fraction-wrap {
-  @extend %setSwiperComm;
 }

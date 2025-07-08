@@ -62,12 +62,15 @@ rewardPub.front = rewardPub.front || (function () {
         enabled: true,
         prevSlideMessage: '이전 슬라이드',
         nextSlideMessage: '다음 슬라이드',
-        slideLabelMessage: '총 {{slidesLength}}개 중 {{index}}번째 슬라이드',
+        slideLabelMessage: '{{slidesLength}} / {{index}}',
       },
       freeMode: false,
     };
 
-    // auto type ( default )
+    // option - loop
+    if ($(selector).hasClass('is-loop')) commOpt.loop = true;
+
+    // auto type
     const autoOpt = {
       init: false,
       speed: 150,
@@ -84,13 +87,45 @@ rewardPub.front = rewardPub.front || (function () {
       pagination: {
         el: '.swiper-pagination',
       },
-    };
 
-    // loop option
-    if ($(selector).hasClass('is-loop')) commOpt.loop = true;
+      setNumBullet: function()  {
+        console.log(this);
+      },
+    };
+    dotOpt.setNumBullet();
+
+    /*if ($(selector).hasClass('type-num')) {
+      console.log('3');
+      $(this).pagination = {
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+      }
+    }*/
+
+    // fraction type
+    const fractionOpt = {
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+        renderFraction: function (currentClass, totalClass) {
+          return '<span class="' + currentClass + '"></span>' + ' / ' +
+              '<span class="' + totalClass + '"></span>';
+        },
+        formatFractionCurrent: function (number) {
+          return number < 10 ? '0' + number : number;
+        },
+        formatFractionTotal: function (number) {
+          return number < 10 ? '0' + number : number;
+        },
+      },
+    };
 
     Object.assign(autoOpt, commOpt);
     Object.assign(dotOpt, commOpt);
+    Object.assign(fractionOpt, commOpt);
 
     if (document.querySelectorAll(selector).length === 0) return false;
 
@@ -106,10 +141,12 @@ rewardPub.front = rewardPub.front || (function () {
         commInitOpt = {};
         autoInitOpt = {};
         dotInitOpt = {};
+        fractionInitOpt = {};
 
         Object.assign(commInitOpt, commOpt, customOpt);
         Object.assign(autoInitOpt, autoOpt, customOpt);
         Object.assign(dotInitOpt, dotOpt, customOpt);
+        Object.assign(fractionInitOpt, fractionOpt, customOpt);
 
         if ( element.swiper === undefined ) {
           var className = element.classList.value;
@@ -122,15 +159,22 @@ rewardPub.front = rewardPub.front || (function () {
             commSwiper[i] = new Swiper(element, dotInitOpt);
             commSwiper[i].init();
 
-            if ($(selector).hasClass('is-num-bullet')) {
-              dotOpt.pagination = {
-                el: '.swiper-pagination',
+            console.log(className, '1')
+
+            if (element.querySelector('.swiper-pagination').classList.contains('type-num')) {
+              console.log(className, $(this), '2');
+
+              dotInitOpt.pagination = {
                 clickable: true,
                 renderBullet: function (index, className) {
                   return '<span class="' + className + '">' + (index + 1) + '</span>';
                 },
               }
             }
+          }
+          else if(className.indexOf('swiper-fraction-wrap') !== -1) {
+            commSwiper[i] = new Swiper(element, fractionInitOpt);
+            commSwiper[i].init();
           }
         }
       }
