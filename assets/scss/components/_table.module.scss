@@ -1,0 +1,77 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+
+.tbl-wrap {
+  .tbl-row {
+    border: 1px solid variables.$colorGray20;
+
+    tr {
+      th, td {
+        text-align: left;
+        padding: 8px 10px 10px;
+        @include mixins.font_size_sm('md');
+        color: variables.$colorGray70;
+        border-top: 1px solid variables.$colorGray20;
+      }
+
+      th {
+        border-right: 1px solid variables.$colorGray20;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+
+      &:first-child {
+        th, td {
+          padding-top: 9px;
+          border-top: none;
+        }
+      }
+
+      &:last-child {
+        th, td {
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+.tbl-info-wrap {
+  .tbl-info {
+    th {
+      text-align: left;
+    }
+
+    tr {
+      th, td {
+        @include mixins.font_size_md;
+        height: 0;
+      }
+
+      th {
+        color: variables.$colorGray90;
+        padding-right: 10px;
+        vertical-align: top;
+      }
+
+      td {
+        font-weight: variables.$fontWeightMedium;
+        color: variables.$colorGray100;
+      }
+
+      + tr {
+        th, td {
+          padding-top: 10px;
+        }
+      }
+    }
+
+    &.info-right {
+      td {
+        text-align: right;
+      }
+    }
+  }
+}

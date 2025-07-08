@@ -135,7 +135,6 @@
                         $container.addClass('open').css('z-index', 111 + $('.ui-dialog-container:visible').length);
 
                         // dim 영역 클릭시 팝업 닫기
-
                         if ($that.data('class') && $that.data('class').includes('dim-close')) {
                                 $('.ui-widget-overlay').on('click', function () {
                                     // 팝업 닫기

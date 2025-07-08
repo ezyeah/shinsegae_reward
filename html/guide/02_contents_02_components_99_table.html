@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="robots" content="index,nofollow">
+    <meta name="description" content="신세계백화점">
+
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="../../assets/images/favicon/share.png">-->
+    <meta property="og:site_name" content="신세계백화점">
+    <meta property="og:title" content="신세계백화점">
+    <meta property="og:description" content="신세계백화점 공식몰">
+
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>신세계백화점 가이드 - Table</title>
+
+    <!-- Vendors CSS
+   ================================================== -->
+    <link rel="stylesheet" href="../../assets/vendors/jquery-ui-1.14.1/jquery-ui.css">
+
+    <!-- Custom styles for this template
+    ================================================== -->
+    <link rel="stylesheet" href="../../assets/css/reward_front.css">
+
+    <!-- Vendors javascript
+    ================================================== -->
+    <script src="../../assets/vendors/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/vendors/jquery-ui-1.14.1/jquery-ui.min.js"></script>
+    <script src="../../assets/vendors/swiper@11.2.8/swiper-bundle.min.js"></script>
+
+    <!-- UI JavaScript
+    ================================================== -->
+    <script src="../../assets/js/reward.front.ui.js"></script>
+    <!-- 작업 완료 시 삭제예정 -->
+    <script src="../../assets/js/reward.front.ui.ydy.js"></script>
+    <!-- // 작업 완료 시 삭제예정 -->
+
+    <!-- 가이드 전용 -->
+    <link rel="stylesheet" href="/_wsg/ia_resources/guide.css">
+    <link rel="stylesheet" href="/_wsg/ia_resources/monokai-sublime.css">
+    <script src="/_wsg/ia_resources/highlight.pack.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/highlight.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/xml.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/javascript.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/css.min.js"></script>
+    <script src="/_wsg/ia_resources/highlight-11.9.0/languages/scss.min.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/standalone.js"></script>
+    <script src="/_wsg/ia_resources/prettier-3.3.0/plugins/html.js"></script>
+    <script>
+        $(() => {
+            String.prototype.unescapeHtml = function () {
+                return this.replace(/&amp;/g, '&')
+                    .replace(/&lt;/g, '<')
+                    .replace(/&gt;/g, '>')
+                    .replace(/&quot;/g, '"');
+            };
+            String.prototype.escapeHtml = function () {
+                return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\"/g, '&quot;');
+            };
+
+            $('pre code').each((index, item) => {
+                var lines;
+                lines = item.innerHTML.replace('    ', '\t').split('\n');
+
+                if (lines.length > 1) {
+                    let removeTabCnt = Number.MAX_SAFE_INTEGER;
+
+                    lines.forEach((lineItem, lineIndex) => {
+                        if (lineIndex !== 0) {
+                            removeTabCnt = lineItem.lastIndexOf('\t') + 1 < removeTabCnt ? lineItem.lastIndexOf('\t') + 1 : removeTabCnt;
+                            // console.log(lineItem, removeTabCnt);
+                        }
+                    });
+                    // console.log(removeTabCnt);
+                    lines.forEach((lineItem, lineIndex) => {
+                        // console.log(lineIndex);
+                        if (lineIndex !== 0) {
+                            let splitAr;
+                            splitAr = lineItem.split('\t');
+
+                            for (var i = 0, n = removeTabCnt; i < n; i++) {
+                                splitAr.shift();
+                                // console.log('shift');
+                            }
+                            // console.log(splitAr);
+                            lines[lineIndex] = splitAr.join('\t');
+                        }
+                    });
+                }
+                item.innerHTML = lines.join('\n');
+
+                (async () => {
+                    formatted = await prettier.format(item.innerHTML.unescapeHtml(), {
+                        parser: 'html',
+                        plugins: prettierPlugins,
+                        trailingComma: 'es5',
+                        printWidth: 1000,
+                        useTabs: true,
+                        tabWidth: 1,
+                        semi: true,
+                        singleQuote: true,
+                        arrowParens: 'never',
+                        bracketSameLine: true,
+                    })
+                        .then((value) => {
+                            item.innerHTML = value.escapeHtml();
+                            hljs.highlightElement(item);
+                        });
+                })();
+            });
+        });
+    </script>
+    <!-- // 가이드 전용 -->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header-wrapper -->
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
+                <div class="ptitle">Table Guide</div>
+            </div>
+        </div>
+    </div>
+    <!-- // header-wrapper -->
+    <!-- container-wrapper -->
+    <div class="container-wrapper">
+        <div class="cont-box-zero">
+            <div class="cont-inner">
+                <div class="guide-wrap">
+                    <div class="guide-inner">
+                        <div class="guide-ptit"><span>Table 공통 규칙</span></div>
+                        <ul class="guide-desc-list">
+                            <li><code>table</code> 태그를 사용하는 테이블의 경우, <code>caption</code> 제목 입력 필요(나머지 caption th 내용 수집하여 스크립트로 처리)</li>
+                            <li>
+                                [테이블 공통 적용 클래스]
+                                <ul class="guide-desc-list">
+                                    <li><code>.tbl-info.info-right</code> : 텍스트 우측 정렬</li>
+                                    <li><code>추가 예정</code> : -</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="guide-inner">
+                        <div class="guide-xsbtit">tbl-wrap</div>
+                        <ol class="guide-desc-list">
+                            <li>
+                                <div>
+                                    <code class="title">tbl-wrap</code>
+                                </div>
+                            </li>
+                            <li>
+                                <ul class="guide-desc-list">
+                                    <li><code>tr</code>: 간격 10px</li>
+                                    <li><code>th</code>: font-size: 13px / font-weight : 500 / color : Gray_70</li>
+                                    <li><code>td</code>: font-size: 13px / font-weight : 500 / color : Gray_70</li>
+                                    <li>폰트컬러 변경이 필요할 경우<code>#Typography</code>참고하여 적용한다.</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <!-- tbl-wrap -->
+                        <div class="tbl-wrap">
+                            <table class="tbl-row">
+                                <caption>개인정보 동의 테이블</caption>
+                                <colgroup>
+                                    <col style="width: 30%;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">제공받는 자</th>
+                                    <td>(주)에스에스지닷컴</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">제공 목적</th>
+                                    <td>신백머니 & 페이 서비스 제공</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">제공 정보</th>
+                                    <td>개인식별정보(CI)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="fc-gray90">제공 받는 자의 이용 및 보유 기간</th>
+                                    <td class="fc-gray90">이미 보유하고 있는 회원 정보와 비교하여 유효성 확인 후, 관계 법령에 따른 기간 동안 이력 보관</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- // tbl-wrap -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- tbl-wrap --&gt;
+                                &lt;div class=&quot;tbl-wrap&quot;&gt;
+                                    &lt;table class=&quot;tbl-row&quot;&gt;
+                                        &lt;caption&gt;개인정보 동의 테이블&lt;/caption&gt;
+                                        &lt;colgroup&gt;
+                                            &lt;col style=&quot;width: 30%;&quot;&gt;
+                                            &lt;col style=&quot;width: auto;&quot;&gt;
+                                        &lt;/colgroup&gt;
+                                        &lt;tbody&gt;
+                                        &lt;tr&gt;
+                                            &lt;th scope=&quot;row&quot;&gt;제공받는 자&lt;/th&gt;
+                                            &lt;td&gt;(주)에스에스지닷컴&lt;/td&gt;
+                                        &lt;/tr&gt;
+                                        &lt;tr&gt;
+                                            &lt;th scope=&quot;row&quot;&gt;제공 목적&lt;/th&gt;
+                                            &lt;td&gt;신백머니 &amp; 페이 서비스 제공&lt;/td&gt;
+                                        &lt;/tr&gt;
+                                        &lt;tr&gt;
+                                            &lt;th scope=&quot;row&quot;&gt;제공 정보&lt;/th&gt;
+                                            &lt;td&gt;개인식별정보(CI)&lt;/td&gt;
+                                        &lt;/tr&gt;
+                                        &lt;tr&gt;
+                                            &lt;th scope=&quot;row&quot; class=&quot;fc-gray90&quot;&gt;제공 받는 자의 이용 및 보유 기간&lt;/th&gt;
+                                            &lt;td class=&quot;fc-gray90&quot;&gt;이미 보유하고 있는 회원 정보와 비교하여 유효성 확인 후, 관계 법령에 따른 기간 동안 이력 보관&lt;/td&gt;
+                                        &lt;/tr&gt;
+                                        &lt;/tbody&gt;
+                                    &lt;/table&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // tbl-wrap --&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-xsbtit">tbl-info-wrap</div>
+                        <ol class="guide-desc-list">
+                            <li>
+                                <div>
+                                    <code class="title">tbl-info-wrap</code>
+                                </div>
+                            </li>
+                            <li>
+                                <ul class="guide-desc-list">
+                                    <li><code>tr</code>: 간격 6px</li>
+                                    <li><code>th</code>: font-size: 14px / font-weight : 400 / color : Gray_80</li>
+                                    <li><code>td</code>: font-size: 14px / font-weight : 400 / color : Gray_90</li>
+                                    <li>폰트컬러 변경이 필요할 경우<code>#Typography</code>참고하여 적용한다.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <code class="title">option : info-right</code> : td 우측 정렬이 필요한 경우
+                                </div>
+                            </li>
+                        </ol>
+                        <!-- tbl-info-wrap -->
+                        <div class="tbl-info-wrap">
+                            <table class="tbl-info">
+                                <caption>정보성 테이블 이름</caption>
+                                <colgroup>
+                                    <col style="width: 77px;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">행사기간</th>
+                                        <td>2024.12.01 ~ 2025.01.10</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">증정기간</th>
+                                        <td>2025.01.01 ~ 2025.01.10</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">참여여부</th>
+                                        <td>미참여</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- // tbl-info-wrap -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- tbl-info-wrap --&gt;
+                                &lt;div class=&quot;tbl-info-wrap&quot;&gt;
+                                    &lt;table class=&quot;tbl-info&quot;&gt;
+                                        &lt;caption&gt;정보성 테이블 이름&lt;/caption&gt;
+                                        &lt;colgroup&gt;
+                                            &lt;col style=&quot;width: 77px;&quot;&gt;
+                                            &lt;col style=&quot;width: auto;&quot;&gt;
+                                        &lt;/colgroup&gt;
+                                        &lt;tbody&gt;
+                                            &lt;tr&gt;
+                                                &lt;th scope=&quot;row&quot;&gt;행사기간&lt;/th&gt;
+                                                &lt;td&gt;2024.12.01 ~ 2025.01.10&lt;/td&gt;
+                                            &lt;/tr&gt;
+                                            &lt;tr&gt;
+                                                &lt;th scope=&quot;row&quot;&gt;증정기간&lt;/th&gt;
+                                                &lt;td&gt;2025.01.01 ~ 2025.01.10&lt;/td&gt;
+                                            &lt;/tr&gt;
+                                            &lt;tr&gt;
+                                                &lt;th scope=&quot;row&quot;&gt;참여여부&lt;/th&gt;
+                                                &lt;td&gt;미참여&lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/tbody&gt;
+                                    &lt;/table&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // tbl-info-wrap --&gt;
+                            </code>
+                        </pre>
+
+                        <!-- tbl-info-wrap -->
+                        <div class="tbl-info-wrap">
+                            <table class="tbl-info info-right">
+                                <caption>정보성 테이블 이름</caption>
+                                <colgroup>
+                                    <col style="width: 77px;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">행사기간</th>
+                                    <td>2024.12.01 ~ 2025.01.10</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">증정기간</th>
+                                    <td>2025.01.01 ~ 2025.01.10</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">참여여부</th>
+                                    <td class="fc-blue">참여중</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- // tbl-info-wrap -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- tbl-info-wrap --&gt;
+                                &lt;div class=&quot;tbl-info-wrap&quot;&gt;
+                                    &lt;table class=&quot;tbl-info info-right&quot;&gt;
+                                        &lt;caption&gt;정보성 테이블 이름&lt;/caption&gt;
+                                        &lt;colgroup&gt;
+                                            &lt;col style=&quot;width: 77px;&quot;&gt;
+                                            &lt;col style=&quot;width: auto;&quot;&gt;
+                                        &lt;/colgroup&gt;
+                                        &lt;tbody&gt;
+                                        &lt;tr&gt;
+                                            &lt;th scope=&quot;row&quot;&gt;행사기간&lt;/th&gt;
+                                            &lt;td&gt;2024.12.01 ~ 2025.01.10&lt;/td&gt;
+                                        &lt;/tr&gt;
+                                        &lt;tr&gt;
+                                            &lt;th scope=&quot;row&quot;&gt;증정기간&lt;/th&gt;
+                                            &lt;td&gt;2025.01.01 ~ 2025.01.10&lt;/td&gt;
+                                        &lt;/tr&gt;
+                                        &lt;tr&gt;
+                                            &lt;th scope=&quot;row&quot;&gt;참여여부&lt;/th&gt;
+                                            &lt;td class=&quot;fc-blue&quot;&gt;참여중&lt;/td&gt;
+                                        &lt;/tr&gt;
+                                        &lt;/tbody&gt;
+                                    &lt;/table&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // tbl-info-wrap --&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // container-wrapper -->
+</div>
+</body>
+</html>
