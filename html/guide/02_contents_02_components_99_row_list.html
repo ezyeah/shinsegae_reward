@@ -18,7 +18,7 @@
 
     <meta name="format-detection" content="telephone=no, address=no, email=no">
 
-    <title>신세계백화점 가이드 - Table</title>
+    <title>신세계백화점 가이드 - Row List</title>
 
     <!-- Vendors CSS
    ================================================== -->
@@ -126,7 +126,7 @@
         <div class="header-inner">
             <div class="header-left">
                 <a href="javascript:" class="btn-header-back"><span class="offscreen">뒤로</span></a>
-                <div class="ptitle">Table Guide</div>
+                <div class="ptitle">Row List Guide</div>
             </div>
         </div>
     </div>
@@ -137,105 +137,50 @@
             <div class="cont-inner">
                 <div class="guide-wrap">
                     <div class="guide-inner">
-                        <div class="guide-ptit"><span>Table 공통 규칙</span></div>
+                        <div class="guide-ptit"><span>Row List 공통 규칙</span></div>
                         <ul class="guide-desc-list">
-                            <li><code>table</code> 태그를 사용하는 테이블의 경우, <code>caption</code> 제목 입력 필요(나머지 caption th 내용 수집하여 스크립트로 처리)</li>
                             <li>
-                                [테이블 공통 적용 클래스]
+                                <code>ul.row-list</code> > { <code>li.row-item</code> > <code>div.item-title</code> + <code>div.item-cont</code> } * n 의 구조를 가진다.
+                            </li>
+                            <li>
                                 <ul class="guide-desc-list">
-                                    <li><code>.tbl-info.info-right</code> : 텍스트 우측 정렬</li>
-                                    <li><code>추가 예정</code> : -</li>
+                                    <li>
+                                        <code>div.item-title</code> : font-size: 14px / font-weight : 600 / color : #333
+                                    </li>
+                                    <li>
+                                        <code>div.item-cont</code> : font-size: 14px / font-weight : 400 / color : #666
+                                    </li>
                                 </ul>
+                            </li>
+                            <li>
+                                <code>div.row-item</code> + <code>div.row-item</code> 사이 간격: 16px
+                            </li>
+                            <li>
+                                <code>div.item-title</code> + <code>div.item-cont</code> 사이 간격: 4px
                             </li>
                         </ul>
                     </div>
 
 
                     <div class="guide-inner">
-                        <div class="guide-xsbtit">tbl-wrap</div>
-                        <ol class="guide-desc-list">
-                            <li>
-                                <div>
-                                    <code class="title">tbl-wrap</code>
-                                </div>
-                            </li>
-                            <li>
-                                <ul class="guide-desc-list">
-                                    <li><code>tr</code>: 간격 10px</li>
-                                    <li><code>th</code>: font-size: 13px / font-weight : 500 / color : #888</li>
-                                    <li><code>td</code>: font-size: 13px / font-weight : 500 / color : #888</li>
-                                    <li>폰트컬러 변경이 필요할 경우<code><a href="02_contents_01_elements_01_typography.html" target="_blank" style="text-decoration: underline;'">#Typography</a></code>참고하여 적용한다.</li>
-                                </ul>
-                            </li>
-                        </ol>
+                        <div class="guide-btit">row-list</div>
 
-                        <!-- tbl-wrap -->
-                        <div class="tbl-wrap">
-                            <table class="tbl-row">
-                                <caption>개인정보 동의 테이블</caption>
-                                <colgroup>
-                                    <col style="width: 30%;">
-                                    <col style="width: auto;">
-                                </colgroup>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">제공받는 자</th>
-                                    <td>(주)에스에스지닷컴</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">제공 목적</th>
-                                    <td>신백머니 & 페이 서비스 제공</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">제공 정보</th>
-                                    <td>개인식별정보(CI)</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="fc-gray90">제공 받는 자의 이용 및 보유 기간</th>
-                                    <td class="fc-gray90">이미 보유하고 있는 회원 정보와 비교하여 유효성 확인 후, 관계 법령에 따른 기간 동안 이력 보관</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- // tbl-wrap -->
+                        <ul class="row-list">
+                            <li class="row-item">
+                                <div class="item-title">대상 점포</div>
+                                <div class="item-cont">전점</div>
+                            </li>
+                            <li class="row-item">
+                                <div class="item-title">사용기간</div>
+                                <div class="item-cont">25.04.01(화)-25.04.30(수)</div>
+                            </li>
+                            <li class="row-item">
+                                <div class="item-title">사용장소</div>
+                                <div class="item-cont">각 지점별 장소 확인해주세요.</div>
+                            </li>
+                        </ul>
 
-                        <pre>
-                            <code class="html">
-                                &lt;!-- tbl-wrap --&gt;
-                                &lt;div class=&quot;tbl-wrap&quot;&gt;
-                                    &lt;table class=&quot;tbl-row&quot;&gt;
-                                        &lt;caption&gt;개인정보 동의 테이블&lt;/caption&gt;
-                                        &lt;colgroup&gt;
-                                            &lt;col style=&quot;width: 30%;&quot;&gt;
-                                            &lt;col style=&quot;width: auto;&quot;&gt;
-                                        &lt;/colgroup&gt;
-                                        &lt;tbody&gt;
-                                        &lt;tr&gt;
-                                            &lt;th scope=&quot;row&quot;&gt;제공받는 자&lt;/th&gt;
-                                            &lt;td&gt;(주)에스에스지닷컴&lt;/td&gt;
-                                        &lt;/tr&gt;
-                                        &lt;tr&gt;
-                                            &lt;th scope=&quot;row&quot;&gt;제공 목적&lt;/th&gt;
-                                            &lt;td&gt;신백머니 &amp; 페이 서비스 제공&lt;/td&gt;
-                                        &lt;/tr&gt;
-                                        &lt;tr&gt;
-                                            &lt;th scope=&quot;row&quot;&gt;제공 정보&lt;/th&gt;
-                                            &lt;td&gt;개인식별정보(CI)&lt;/td&gt;
-                                        &lt;/tr&gt;
-                                        &lt;tr&gt;
-                                            &lt;th scope=&quot;row&quot; class=&quot;fc-gray90&quot;&gt;제공 받는 자의 이용 및 보유 기간&lt;/th&gt;
-                                            &lt;td class=&quot;fc-gray90&quot;&gt;이미 보유하고 있는 회원 정보와 비교하여 유효성 확인 후, 관계 법령에 따른 기간 동안 이력 보관&lt;/td&gt;
-                                        &lt;/tr&gt;
-                                        &lt;/tbody&gt;
-                                    &lt;/table&gt;
-                                &lt;/div&gt;
-                                &lt;!-- // tbl-wrap --&gt;
-                            </code>
-                        </pre>
                     </div>
-
-
-                </div>
             </div>
         </div>
     </div>

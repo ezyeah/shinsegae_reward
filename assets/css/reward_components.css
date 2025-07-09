@@ -3051,4 +3051,23 @@ body:is(.dialog-open).ios {
 .tbl-info-wrap .tbl-info.info-right td {
   text-align: right;
 }
+
+.row-list .row-item .item-title {
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+  color: #333;
+}
+.row-list .row-item .item-cont {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  color: #666;
+}
+.row-list .row-item ~ .row-item {
+  margin-top: 16px;
+}
 /*# sourceMappingURL=reward_components.css.map */

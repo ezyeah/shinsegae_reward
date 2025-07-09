@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.row-list {
+  .row-item {
+    .item-title {
+      margin-bottom: 4px;
+      @include mixins.font_size_md('sb');
+      color: variables.$colorGray90;
+    }
+    .item-cont {
+      @include mixins.font_size_md;
+      color: variables.$colorGray80;
+    }
+
+    ~ .row-item {
+      margin-top: 16px;
+    }
+  }
+}
