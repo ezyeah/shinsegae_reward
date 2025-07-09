@@ -3408,23 +3408,17 @@ body:is(.dialog-open).ios {
   text-align: right;
 }
 
-.row-list .row-item .item-title {
-  margin-bottom: 4px;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.5px;
-  font-weight: 600;
-  color: #333;
+.row-list-lg .row-item ~ .row-item {
+  margin-top: 30px;
 }
-.row-list .row-item .item-cont {
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.5px;
-  font-weight: 400;
-  color: #666;
+.row-list-md .row-item ~ .row-item {
+  margin-top: 20px;
 }
-.row-list .row-item ~ .row-item {
+.row-list-sm .row-item ~ .row-item {
   margin-top: 16px;
+}
+.row-list-xs .row-item ~ .row-item {
+  margin-top: 12px;
 }
 
 /* header */

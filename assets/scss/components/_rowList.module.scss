@@ -3,19 +3,35 @@
 @use '../abstracts/mixins';
 
 .row-list {
-  .row-item {
-    .item-title {
-      margin-bottom: 4px;
-      @include mixins.font_size_md('sb');
-      color: variables.$colorGray90;
+  &-lg {
+    .row-item {
+      ~.row-item {
+        margin-top: 30px;
+      }
     }
-    .item-cont {
-      @include mixins.font_size_md;
-      color: variables.$colorGray80;
-    }
+  }
 
-    ~ .row-item {
-      margin-top: 16px;
+  &-md {
+    .row-item {
+      ~.row-item {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &-sm {
+    .row-item {
+      ~.row-item {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  &-xs {
+    .row-item {
+      ~.row-item {
+        margin-top: 12px;
+      }
     }
   }
 }
