@@ -76,3 +76,10 @@
   height: 16px;
   @include mixins.ratio_images('/assets/images/common/comm_ico_wallet_h16');
 }
+
+.ico-receipt40 {
+  @extend %icon;
+  width: 40px;
+  height: 40px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_receipt_h40');
+}

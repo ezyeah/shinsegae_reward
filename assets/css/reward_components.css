@@ -2,7 +2,7 @@
 /* Grayscale */
 /* Primary */
 /* Font Vari */
-.ico-wallet16, .ico-reward16, .ico-money16, .ico-coupon18, [class^=ico-] {
+.ico-receipt40, .ico-wallet16, .ico-reward16, .ico-money16, .ico-coupon18, [class^=ico-] {
   display: inline-block;
   position: relative;
   vertical-align: top;
@@ -94,6 +94,13 @@
   width: 16px;
   height: 16px;
   background: url("/assets/images/common/comm_ico_wallet_h16.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.ico-receipt40 {
+  width: 40px;
+  height: 40px;
+  background: url("/assets/images/common/comm_ico_receipt_h40.svg") 0 0 no-repeat;
   background-size: cover;
 }
 
@@ -3063,5 +3070,21 @@ body:is(.dialog-open).ios {
 }
 .row-list-xs .row-item ~ .row-item {
   margin-top: 12px;
+}
+
+.no-data-wrap {
+  text-align: center;
+  padding-top: 150px;
+}
+.no-data-wrap [class^=ico] ~ .no-data-desc {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  color: #888;
+}
+.no-data-wrap [class^=ico] ~ .no-data-desc ~ .btn-wrap {
+  margin-top: 16px;
 }
 /*# sourceMappingURL=reward_components.css.map */
