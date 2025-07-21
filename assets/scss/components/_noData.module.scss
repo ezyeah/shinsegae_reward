@@ -2,9 +2,8 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-.no-data-wrap {
+%noDataWarpCommon {
   text-align: center;
-  padding-top: 150px;
 
   [class^=ico] {
     ~ .no-data-desc {
@@ -16,5 +15,23 @@
         margin-top: 16px;
       }
     }
+  }
+
+}
+
+.no-data-wrap {
+  &-lg {
+    @extend %noDataWarpCommon;
+    padding: 150px 0;
+  }
+
+  &-md {
+    @extend %noDataWarpCommon;
+    padding: 100px 0;
+  }
+
+  &-sm {
+    @extend %noDataWarpCommon;
+    padding: 60px 0;
   }
 }

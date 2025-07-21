@@ -3428,11 +3428,10 @@ body:is(.dialog-open).ios {
   margin-top: 12px;
 }
 
-.no-data-wrap {
+.no-data-wrap-sm, .no-data-wrap-md, .no-data-wrap-lg {
   text-align: center;
-  padding-top: 150px;
 }
-.no-data-wrap [class^=ico] ~ .no-data-desc {
+.no-data-wrap-sm [class^=ico] ~ .no-data-desc, .no-data-wrap-md [class^=ico] ~ .no-data-desc, .no-data-wrap-lg [class^=ico] ~ .no-data-desc {
   margin-top: 10px;
   font-size: 14px;
   line-height: 20px;
@@ -3440,8 +3439,18 @@ body:is(.dialog-open).ios {
   font-weight: 400;
   color: #888;
 }
-.no-data-wrap [class^=ico] ~ .no-data-desc ~ .btn-wrap {
+.no-data-wrap-sm [class^=ico] ~ .no-data-desc ~ .btn-wrap, .no-data-wrap-md [class^=ico] ~ .no-data-desc ~ .btn-wrap, .no-data-wrap-lg [class^=ico] ~ .no-data-desc ~ .btn-wrap {
   margin-top: 16px;
+}
+
+.no-data-wrap-lg {
+  padding: 150px 0;
+}
+.no-data-wrap-md {
+  padding: 100px 0;
+}
+.no-data-wrap-sm {
+  padding: 60px 0;
 }
 
 /* header */
