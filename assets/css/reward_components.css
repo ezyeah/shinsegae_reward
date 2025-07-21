@@ -1077,28 +1077,28 @@ button.btn-2xs, a.btn-2xs {
   line-height: 21px;
   letter-spacing: -0.5px;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 16px;
 }
 .link-text-md .text {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.5px;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 16px;
 }
 .link-text-sm .text {
   font-size: 13px;
   line-height: 18px;
   letter-spacing: -0.5px;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 16px;
 }
 .link-text-xs .text {
   font-size: 12px;
   line-height: 17px;
   letter-spacing: -0.5px;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 16px;
 }
 
 .btn-reward, .btn-money {

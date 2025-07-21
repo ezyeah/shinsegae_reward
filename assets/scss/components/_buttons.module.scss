@@ -298,25 +298,25 @@ button.btn, a.btn {
 
   &-lg {
     .text {
-      @include mixins.font_size_lg('md', variables.$fontSizeSmLineHeight);
+      @include mixins.font_size_lg('md', 16px);
     }
   }
 
   &-md {
     .text {
-      @include mixins.font_size_md('md', variables.$fontSizeSmLineHeight);
+      @include mixins.font_size_md('md', 16px);
     }
   }
 
   &-sm {
     .text {
-      @include mixins.font_size_sm('md', variables.$fontSizeSmLineHeight);
+      @include mixins.font_size_sm('md', 16px);
     }
   }
 
   &-xs {
     .text {
-      @include mixins.font_size_xs('md', variables.$fontSizeSmLineHeight);
+      @include mixins.font_size_xs('md', 16px);
     }
   }
 }
