@@ -3453,6 +3453,55 @@ body:is(.dialog-open).ios {
   padding: 60px 0;
 }
 
+.white-box-lg, .white-box-md, .white-box-sm {
+  background-color: #FFF;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.gray-box-lg, .gray-box-md, .gray-box-sm {
+  background-color: #F5F5F5;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.gray-line-box-lg, .gray-line-box-md, .gray-line-box-sm {
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.white-box-lg {
+  padding: 20px;
+}
+.white-box-md {
+  padding: 16px;
+}
+.white-box-sm {
+  padding: 12px;
+}
+
+.gray-box-lg {
+  padding: 20px;
+}
+.gray-box-md {
+  padding: 16px;
+}
+.gray-box-sm {
+  padding: 12px;
+}
+
+.gray-line-box-lg {
+  padding: 20px;
+}
+.gray-line-box-md {
+  padding: 16px;
+}
+.gray-line-box-sm {
+  padding: 12px;
+}
+
 /* header */
 .header-wrapper {
   position: fixed;
