@@ -44,7 +44,7 @@ $swiperType: ('auto', 'dot', 'fraction');
 
             .num {
               display: inline-block;
-              @include mixins.font_size_sm;
+              @include mixins.font_size_sm('body', 1);
               color: variables.$colorGray00;
               vertical-align: top;
             }
@@ -59,6 +59,10 @@ $swiperType: ('auto', 'dot', 'fraction');
               }
             }
           }
+        }
+
+        &.pos-center {
+          justify-content: center;
         }
       }
     }

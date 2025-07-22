@@ -65,10 +65,8 @@ rewardPub.front = rewardPub.front || (function () {
         slideLabelMessage: '{{slidesLength}} / {{index}}',
       },
       freeMode: false,
+      speed: 300,
     };
-
-    // option - loop
-    if ($(selector).hasClass('is-loop')) commOpt.loop = true;
 
     // auto type
     const autoOpt = {
@@ -87,22 +85,7 @@ rewardPub.front = rewardPub.front || (function () {
       pagination: {
         el: '.swiper-pagination',
       },
-
-      setNumBullet: function()  {
-        console.log(this);
-      },
     };
-    dotOpt.setNumBullet();
-
-    /*if ($(selector).hasClass('type-num')) {
-      console.log('3');
-      $(this).pagination = {
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
-        },
-      }
-    }*/
 
     // fraction type
     const fractionOpt = {
@@ -123,6 +106,9 @@ rewardPub.front = rewardPub.front || (function () {
       },
     };
 
+    // option - loop
+    if ($(selector).hasClass('is-loop')) commOpt.loop = true;
+
     Object.assign(autoOpt, commOpt);
     Object.assign(dotOpt, commOpt);
     Object.assign(fractionOpt, commOpt);
@@ -130,6 +116,8 @@ rewardPub.front = rewardPub.front || (function () {
     if (document.querySelectorAll(selector).length === 0) return false;
 
     document.querySelectorAll(selector).forEach(function (element, i) {
+      const isBulletTypeNum = element.querySelector('.swiper-pagination')?.classList.contains('type-num');
+
       if( $(element)[0].swiper !== undefined ) return;
 
       if (element.dataset.init === 'false') {
@@ -156,20 +144,22 @@ rewardPub.front = rewardPub.front || (function () {
             commSwiper[i].init();
           }
           else if(className.indexOf('swiper-dot-wrap') !== -1) {
-            commSwiper[i] = new Swiper(element, dotInitOpt);
-            commSwiper[i].init();
-
-            console.log(className, '1')
-
             if (element.querySelector('.swiper-pagination').classList.contains('type-num')) {
-              console.log(className, $(this), '2');
-
-              dotInitOpt.pagination = {
-                clickable: true,
-                renderBullet: function (index, className) {
-                  return '<span class="' + className + '">' + (index + 1) + '</span>';
-                },
+              if (isBulletTypeNum) { // type bullet - number case
+                dotInitOpt.pagination = {
+                  el: '.swiper-pagination',
+                  clickable: true,
+                  renderBullet: function (index, className) {
+                    return '<span class="' + className + '"><span class="num">' + (index + 1) + '</span></span>';
+                  },
+                }
+                commSwiper[i] = new Swiper(element, dotInitOpt);
+                commSwiper[i].init();
               }
+            }
+            else {
+              commSwiper[i] = new Swiper(element, dotInitOpt);
+              commSwiper[i].init();
             }
           }
           else if(className.indexOf('swiper-fraction-wrap') !== -1) {

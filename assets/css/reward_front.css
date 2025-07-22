@@ -3013,6 +3013,7 @@ span.badge-round-sm {
   line-height: 18px;
   letter-spacing: -0.5px;
   font-weight: 400;
+  line-height: 1;
   color: #FFF;
   vertical-align: top;
 }
@@ -3023,6 +3024,9 @@ span.badge-round-sm {
 .swiper-dot-wrap .swiper-pagination.type-num .swiper-pagination-bullet.swiper-pagination-bullet-active .num {
   font-weight: 700;
   color: #000;
+}
+.swiper-dot-wrap .swiper-pagination.pos-center {
+  justify-content: center;
 }
 
 .swiper-fraction-wrap {
