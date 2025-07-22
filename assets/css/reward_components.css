@@ -3100,20 +3100,17 @@ body:is(.dialog-open).ios {
 .white-box-lg, .white-box-md, .white-box-sm {
   background-color: #FFF;
   border-radius: 12px;
-  margin-bottom: 12px;
 }
 
 .gray-box-lg, .gray-box-md, .gray-box-sm {
   background-color: #F5F5F5;
   border-radius: 12px;
-  margin-bottom: 12px;
 }
 
 .gray-line-box-lg, .gray-line-box-md, .gray-line-box-sm {
   background-color: #FFF;
   border: 1px solid #DDD;
   border-radius: 12px;
-  margin-bottom: 12px;
 }
 
 .white-box-lg {
