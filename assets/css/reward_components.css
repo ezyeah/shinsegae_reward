@@ -2,7 +2,7 @@
 /* Grayscale */
 /* Primary */
 /* Font Vari */
-.ico-receipt40, .ico-wallet16, .ico-reward16, .ico-money16, .ico-coupon18, [class^=ico-] {
+.ico-tooltip, .ico-receipt40, .ico-wallet16, .ico-reward16, .ico-money16, .ico-coupon18, [class^=ico-] {
   display: inline-block;
   position: relative;
   vertical-align: top;
@@ -64,8 +64,8 @@
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
   mask-position: center;
-  -webkit-mask-image: url("/assets/images/common/comm_ico_close__h16.svg");
-  mask-image: url("/assets/images/common/comm_ico_close__h16.svg");
+  -webkit-mask-image: url("/assets/images/common/comm_ico_close_h16.svg");
+  mask-image: url("/assets/images/common/comm_ico_close_h16.svg");
   background-color: #666;
 }
 
@@ -102,6 +102,15 @@
   height: 40px;
   background: url("/assets/images/common/comm_ico_receipt_h40.svg") 0 0 no-repeat;
   background-size: cover;
+}
+
+.ico-tooltip {
+  width: 20px;
+  height: 20px;
+  background: url("/assets/images/common/comm_ico_tooltip_h18.svg") 0 0 no-repeat;
+  background-size: #888;
+  border: 1px solid #DDD;
+  border-radius: 36px;
 }
 
 /* color */
@@ -3145,5 +3154,60 @@ body:is(.dialog-open).ios {
 }
 .gray-line-box-sm {
   padding: 12px;
+}
+
+/* 툴팁 공통 */
+.tooltip-wrap {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+.tooltip-wrap.active .btn-tooltip .ico-tooltip {
+  background-image: url("/assets/images/common/comm_ico_tooltip_active_h18.svg");
+  background-color: #333;
+  border-color: #333;
+}
+.tooltip-wrap.active .tooltip-box {
+  visibility: visible;
+  opacity: 1;
+  -moz-transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+.tooltip-wrap .tooltip-box {
+  display: block;
+  padding: 12px;
+  width: calc(100vw - 40px);
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  position: absolute;
+  top: 24px;
+  left: 0;
+  z-index: 10;
+  text-align: left;
+  overflow: hidden;
+  -moz-transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -moz-transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  visibility: hidden;
+  opacity: 0;
+}
+.tooltip-wrap.hide .tooltip-box {
+  -moz-transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -moz-transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+.tooltip-wrap.tooltip-left .tooltip-box {
+  left: initial;
+  right: 0;
 }
 /*# sourceMappingURL=reward_components.css.map */

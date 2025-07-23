@@ -1,0 +1,61 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/* 툴팁 공통 */
+.tooltip-wrap {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  vertical-align: top;
+  box-sizing: border-box;
+
+  &.active {
+    .btn-tooltip {
+      .ico-tooltip {
+        background-image: url("/assets/images/common/comm_ico_tooltip_active_h18.svg");
+        background-color: variables.$colorGray90;
+        border-color: variables.$colorGray90;
+      }
+    }
+
+    .tooltip-box {
+      visibility: visible;
+      opacity: 1;
+      @include mixins.prefix(transform, scaleY(1));
+    }
+  }
+
+  .tooltip-box {
+    display: block;
+    padding: 12px;
+    width: calc(100vw - 40px);
+    background-color: variables.$colorGray00;
+    border: 1px solid variables.$colorGray40;
+    border-radius: 4px;
+    position: absolute;
+    top: 24px;
+    left: 0;
+    z-index: 10;
+    text-align: left;
+    overflow: hidden;
+    @include mixins.prefix(transform, scaleY(0));
+    @include mixins.prefix(transition, opacity 0.3s ease-out);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.hide {
+    .tooltip-box {
+      @include mixins.prefix(transform, scaleY(0));
+      @include mixins.prefix(transition, opacity 0.3s ease-out);
+    }
+  }
+
+  &.tooltip-left {
+    .tooltip-box {
+      left: initial;
+      right: 0;
+    }
+  }
+}

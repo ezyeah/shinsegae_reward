@@ -186,6 +186,22 @@
         };
     }
 
+
+    /*
+    * date : 20259999
+    * last : 20259999
+    * name : setTooltipOnOff()
+    * pram :
+    * desc :
+    */
+    function setTooltipOnOff(selector) {
+        selector = selector || '.tooltip-wrap';
+
+        if($(selector).length > 0) {
+
+        }
+    }
+
     /*
     * date : 20259999
     * last : 20259999
@@ -220,6 +236,7 @@
     rewardPub.front.setUIDialog = setUIDialog;
     rewardPub.front.dialogOnOff = dialogOnOff;
     rewardPub.front.getBodyHeight =  getBodyHeight;
+    rewardPub.front.setTooltipOnOff =  setTooltipOnOff;
 
     $(document).ready(function () {
         $_floatingWrapper = $('.floating-wrapper');
@@ -286,5 +303,6 @@
     $(function () {
         rewardPub.front.setInputStatus();
         rewardPub.front.setUIDialog();
+        rewardPub.front.setTooltipOnOff();
     });
 })();
