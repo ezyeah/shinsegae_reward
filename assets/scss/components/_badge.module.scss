@@ -17,7 +17,7 @@
   }
 }
 
-%badgeSm {
+%badgeXs {
   @extend %badgeCommon;
   height: 16px;
   padding: 0 4px 0 3px;
@@ -29,6 +29,20 @@
     font-weight: variables.$fontWeightBold;
   }
 }
+
+
+%badgeSm {
+  @extend %badgeCommon;
+  height: 20px;
+  padding: 1px 5px;
+
+  .text {
+    font-size: variables.$fontSizeXs;
+    line-height: variables.$fontSizeXsLineHeight;
+    font-weight: variables.$fontWeightRegular;
+  }
+}
+
 
 %badgeMd { //padding 2.5px 8px
   @extend %badgeCommon;
@@ -55,7 +69,7 @@
 }
 
 span.badge {
-  &-lg, &-md, &-round-lg, &-round-md, &-sm, &-round-sm  {
+  &-lg, &-md, &-round-lg, &-round-md, &-sm, &-round-sm, &-xs, &-round-xs  {
     //color
     &.gray00 {
       background-color: variables.$colorGray00;
@@ -141,6 +155,14 @@ span.badge {
   &-round-sm {
     border-radius: 99px;
   }
+
+  &-xs, &-round-xs {
+    @extend %badgeXs;
+  }
+
+  &-round-xs {
+    border-radius: 99px;
+  }
 }
 
 /* badge-wrap */
@@ -150,14 +172,20 @@ span.badge {
 }
 
 .badge-wrap {
-  margin-bottom: 10px;
 
   &-lg {
     gap: 4px;
+    margin-bottom: 12px;
   }
 
   &-md {
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  &-sm {
     gap: 2px;
+    margin-bottom: 10px;
   }
 }
 

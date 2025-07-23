@@ -647,7 +647,7 @@
   width: 100%;
 }
 
-.stext-gray70, .stext-gray80 {
+.stext-md-gray70, .stext-md-gray80 {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.5px;
@@ -659,10 +659,10 @@
   letter-spacing: -0.5px;
   font-weight: 400;
 }
-.stext-gray70, .stext-sm-gray70 {
+.stext-md-gray70, .stext-sm-gray70 {
   color: #888;
 }
-.stext-gray80, .stext-sm-gray80 {
+.stext-md-gray80, .stext-sm-gray80 {
   color: #666;
 }
 
@@ -1211,27 +1211,37 @@ button.btn-2xs, a.btn-2xs {
 }
 
 /* Badge */
-span.badge-lg, span.badge-round-lg, span.badge-md, span.badge-round-md, span.badge-sm, span.badge-round-sm {
+span.badge-lg, span.badge-round-lg, span.badge-md, span.badge-round-md, span.badge-sm, span.badge-round-sm, span.badge-xs, span.badge-round-xs {
   display: inline-block;
   text-align: center;
   vertical-align: top;
   border: solid 1px transparent;
   border-radius: 4px;
 }
-span.badge-lg .text, span.badge-round-lg .text, span.badge-md .text, span.badge-round-md .text, span.badge-sm .text, span.badge-round-sm .text {
+span.badge-lg .text, span.badge-round-lg .text, span.badge-md .text, span.badge-round-md .text, span.badge-sm .text, span.badge-round-sm .text, span.badge-xs .text, span.badge-round-xs .text {
   vertical-align: top;
   display: inline-block;
   position: relative;
 }
 
-span.badge-sm, span.badge-round-sm {
+span.badge-xs, span.badge-round-xs {
   height: 16px;
   padding: 0 4px 0 3px;
 }
-span.badge-sm .text, span.badge-round-sm .text {
+span.badge-xs .text, span.badge-round-xs .text {
   font-size: 11px;
   line-height: 14px;
   font-weight: 700;
+}
+
+span.badge-sm, span.badge-round-sm {
+  height: 20px;
+  padding: 1px 5px;
+}
+span.badge-sm .text, span.badge-round-sm .text {
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 400;
 }
 
 span.badge-md, span.badge-round-md {
@@ -1254,51 +1264,51 @@ span.badge-lg .text, span.badge-round-lg .text {
   font-weight: 400;
 }
 
-span.badge-lg.gray00, span.badge-md.gray00, span.badge-round-lg.gray00, span.badge-round-md.gray00, span.badge-sm.gray00, span.badge-round-sm.gray00 {
+span.badge-lg.gray00, span.badge-md.gray00, span.badge-round-lg.gray00, span.badge-round-md.gray00, span.badge-sm.gray00, span.badge-round-sm.gray00, span.badge-xs.gray00, span.badge-round-xs.gray00 {
   background-color: #FFF;
 }
-span.badge-lg.gray00 .text, span.badge-md.gray00 .text, span.badge-round-lg.gray00 .text, span.badge-round-md.gray00 .text, span.badge-sm.gray00 .text, span.badge-round-sm.gray00 .text {
+span.badge-lg.gray00 .text, span.badge-md.gray00 .text, span.badge-round-lg.gray00 .text, span.badge-round-md.gray00 .text, span.badge-sm.gray00 .text, span.badge-round-sm.gray00 .text, span.badge-xs.gray00 .text, span.badge-round-xs.gray00 .text {
   color: #536F86;
 }
-span.badge-lg.gray20, span.badge-md.gray20, span.badge-round-lg.gray20, span.badge-round-md.gray20, span.badge-sm.gray20, span.badge-round-sm.gray20 {
+span.badge-lg.gray20, span.badge-md.gray20, span.badge-round-lg.gray20, span.badge-round-md.gray20, span.badge-sm.gray20, span.badge-round-sm.gray20, span.badge-xs.gray20, span.badge-round-xs.gray20 {
   background-color: #F0F0F0;
   border-color: #F0F0F0;
 }
-span.badge-lg.gray20 .text, span.badge-md.gray20 .text, span.badge-round-lg.gray20 .text, span.badge-round-md.gray20 .text, span.badge-sm.gray20 .text, span.badge-round-sm.gray20 .text {
+span.badge-lg.gray20 .text, span.badge-md.gray20 .text, span.badge-round-lg.gray20 .text, span.badge-round-md.gray20 .text, span.badge-sm.gray20 .text, span.badge-round-sm.gray20 .text, span.badge-xs.gray20 .text, span.badge-round-xs.gray20 .text {
   color: #333;
 }
-span.badge-lg.blue100, span.badge-md.blue100, span.badge-round-lg.blue100, span.badge-round-md.blue100, span.badge-sm.blue100, span.badge-round-sm.blue100 {
+span.badge-lg.blue100, span.badge-md.blue100, span.badge-round-lg.blue100, span.badge-round-md.blue100, span.badge-sm.blue100, span.badge-round-sm.blue100, span.badge-xs.blue100, span.badge-round-xs.blue100 {
   background-color: #6987A1;
   border-color: #6987A1;
 }
-span.badge-lg.blue100 .text, span.badge-md.blue100 .text, span.badge-round-lg.blue100 .text, span.badge-round-md.blue100 .text, span.badge-sm.blue100 .text, span.badge-round-sm.blue100 .text {
+span.badge-lg.blue100 .text, span.badge-md.blue100 .text, span.badge-round-lg.blue100 .text, span.badge-round-md.blue100 .text, span.badge-sm.blue100 .text, span.badge-round-sm.blue100 .text, span.badge-xs.blue100 .text, span.badge-round-xs.blue100 .text {
   color: #FFF;
 }
-span.badge-lg.blue120, span.badge-md.blue120, span.badge-round-lg.blue120, span.badge-round-md.blue120, span.badge-sm.blue120, span.badge-round-sm.blue120 {
+span.badge-lg.blue120, span.badge-md.blue120, span.badge-round-lg.blue120, span.badge-round-md.blue120, span.badge-sm.blue120, span.badge-round-sm.blue120, span.badge-xs.blue120, span.badge-round-xs.blue120 {
   background-color: #536F86;
 }
-span.badge-lg.blue120 .text, span.badge-md.blue120 .text, span.badge-round-lg.blue120 .text, span.badge-round-md.blue120 .text, span.badge-sm.blue120 .text, span.badge-round-sm.blue120 .text {
+span.badge-lg.blue120 .text, span.badge-md.blue120 .text, span.badge-round-lg.blue120 .text, span.badge-round-md.blue120 .text, span.badge-sm.blue120 .text, span.badge-round-sm.blue120 .text, span.badge-xs.blue120 .text, span.badge-round-xs.blue120 .text {
   color: #FFF;
 }
-span.badge-lg.brown100, span.badge-md.brown100, span.badge-round-lg.brown100, span.badge-round-md.brown100, span.badge-sm.brown100, span.badge-round-sm.brown100 {
+span.badge-lg.brown100, span.badge-md.brown100, span.badge-round-lg.brown100, span.badge-round-md.brown100, span.badge-sm.brown100, span.badge-round-sm.brown100, span.badge-xs.brown100, span.badge-round-xs.brown100 {
   background-color: #B09785;
   border-color: #B09785;
 }
-span.badge-lg.brown100 .text, span.badge-md.brown100 .text, span.badge-round-lg.brown100 .text, span.badge-round-md.brown100 .text, span.badge-sm.brown100 .text, span.badge-round-sm.brown100 .text {
+span.badge-lg.brown100 .text, span.badge-md.brown100 .text, span.badge-round-lg.brown100 .text, span.badge-round-md.brown100 .text, span.badge-sm.brown100 .text, span.badge-round-sm.brown100 .text, span.badge-xs.brown100 .text, span.badge-round-xs.brown100 .text {
   color: #FFF;
 }
-span.badge-lg.gray90, span.badge-md.gray90, span.badge-round-lg.gray90, span.badge-round-md.gray90, span.badge-sm.gray90, span.badge-round-sm.gray90 {
+span.badge-lg.gray90, span.badge-md.gray90, span.badge-round-lg.gray90, span.badge-round-md.gray90, span.badge-sm.gray90, span.badge-round-sm.gray90, span.badge-xs.gray90, span.badge-round-xs.gray90 {
   background-color: #333;
   border-color: #333;
 }
-span.badge-lg.gray90 .text, span.badge-md.gray90 .text, span.badge-round-lg.gray90 .text, span.badge-round-md.gray90 .text, span.badge-sm.gray90 .text, span.badge-round-sm.gray90 .text {
+span.badge-lg.gray90 .text, span.badge-md.gray90 .text, span.badge-round-lg.gray90 .text, span.badge-round-md.gray90 .text, span.badge-sm.gray90 .text, span.badge-round-sm.gray90 .text, span.badge-xs.gray90 .text, span.badge-round-xs.gray90 .text {
   color: #FFF;
 }
-span.badge-lg.line-gray40, span.badge-md.line-gray40, span.badge-round-lg.line-gray40, span.badge-round-md.line-gray40, span.badge-sm.line-gray40, span.badge-round-sm.line-gray40 {
+span.badge-lg.line-gray40, span.badge-md.line-gray40, span.badge-round-lg.line-gray40, span.badge-round-md.line-gray40, span.badge-sm.line-gray40, span.badge-round-sm.line-gray40, span.badge-xs.line-gray40, span.badge-round-xs.line-gray40 {
   background-color: #FFF;
   border-color: #DDD;
 }
-span.badge-lg.line-gray40 .text, span.badge-md.line-gray40 .text, span.badge-round-lg.line-gray40 .text, span.badge-round-md.line-gray40 .text, span.badge-sm.line-gray40 .text, span.badge-round-sm.line-gray40 .text {
+span.badge-lg.line-gray40 .text, span.badge-md.line-gray40 .text, span.badge-round-lg.line-gray40 .text, span.badge-round-md.line-gray40 .text, span.badge-sm.line-gray40 .text, span.badge-round-sm.line-gray40 .text, span.badge-xs.line-gray40 .text, span.badge-round-xs.line-gray40 .text {
   color: #333;
 }
 span.badge-round-md {
@@ -1308,6 +1318,9 @@ span.badge-round-lg, span.badge-round-md {
   border-radius: 20px;
 }
 span.badge-round-sm {
+  border-radius: 99px;
+}
+span.badge-round-xs {
   border-radius: 99px;
 }
 
@@ -1335,14 +1348,17 @@ span.badge-round-sm {
   flex-wrap: wrap;
 }
 
-.badge-wrap {
-  margin-bottom: 10px;
-}
 .badge-wrap-lg {
   gap: 4px;
+  margin-bottom: 12px;
 }
 .badge-wrap-md {
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.badge-wrap-sm {
   gap: 2px;
+  margin-bottom: 10px;
 }
 
 /* tag */
