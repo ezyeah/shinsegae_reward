@@ -3176,10 +3176,15 @@ body:is(.dialog-open).ios {
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
 }
+.tooltip-wrap.right .tooltip-box {
+  left: initial;
+  right: 0;
+}
 .tooltip-wrap .tooltip-box {
   display: block;
   padding: 12px;
   width: calc(100vw - 40px);
+  max-width: 270px;
   background-color: #FFF;
   border: 1px solid #DDD;
   border-radius: 4px;
@@ -3205,9 +3210,5 @@ body:is(.dialog-open).ios {
   -moz-transition: opacity 0.3s ease-out;
   -webkit-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
-}
-.tooltip-wrap.tooltip-left .tooltip-box {
-  left: initial;
-  right: 0;
 }
 /*# sourceMappingURL=reward_components.css.map */

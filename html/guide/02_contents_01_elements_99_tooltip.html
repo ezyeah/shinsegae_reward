@@ -166,8 +166,9 @@
                     <div class="guide-inner">
                         <div class="guide-btit">default</div>
                         <div class="guide-sbtit">툴팁 기본</div>
+                        <div class="guide-xsbtit">툴팁 기본 - 왼쪽 노출</div>
 
-                        <span class="tooltip-wrap">
+                        <div class="tooltip-wrap">
                             <button type="button" class="btn-tooltip">
                                 <span class="ico-tooltip"></span><span class="offscreen">툴팁 열기</span>
                             </button>
@@ -177,7 +178,55 @@
                                     <span style="display: block; background-color: rgba(124,88,88,.2); height: 300px; padding: 10px;">툴팁 컨텐츠 영역 확인을 위한 임시 span 입니다.</span>
                                 </span>
                             </span>
-                        </span>
+                        </div>
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;tooltip-wrap&quot;&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;btn-tooltip&quot;&gt;
+                                        &lt;span class=&quot;ico-tooltip&quot;&gt;&lt;/span&gt;&lt;span class=&quot;offscreen&quot;&gt;툴팁 열기&lt;/span&gt;
+                                    &lt;/button&gt;
+
+                                    &lt;span class=&quot;tooltip-box&quot;&gt;
+                                        &lt;span class=&quot;tooltip-contents&quot;&gt;
+                                            &lt;span style=&quot;display: block; background-color: rgba(124,88,88,.2); height: 300px; padding: 10px;&quot;&gt;툴팁 컨텐츠 영역 확인을 위한 임시 span 입니다.&lt;/span&gt;
+                                        &lt;/span&gt;
+                                    &lt;/span&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-sbtit">툴팁 오른쪽 노출</div>
+                        <div class="guide-xsbtit">툴팁 오른쪽 노출 - tooltip-wrap.right</div>
+                        <div style="text-align: right">
+                            <div class="tooltip-wrap right">
+                                <button type="button" class="btn-tooltip">
+                                    <span class="ico-tooltip"></span><span class="offscreen">툴팁 열기</span>
+                                </button>
+
+                                <span class="tooltip-box">
+                                    <span class="tooltip-contents">
+                                        <span style="display: block; background-color: rgba(124,88,88,.2); height: 300px; padding: 10px;">툴팁 컨텐츠 영역 확인을 위한 임시 span 입니다.</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <pre>
+                            <code class="html">
+                                &lt;div class=&quot;tooltip-wrap right&quot;&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;btn-tooltip&quot;&gt;
+                                        &lt;span class=&quot;ico-tooltip&quot;&gt;&lt;/span&gt;&lt;span class=&quot;offscreen&quot;&gt;툴팁 열기&lt;/span&gt;
+                                    &lt;/button&gt;
+
+                                    &lt;span class=&quot;tooltip-box&quot;&gt;
+                                        &lt;span class=&quot;tooltip-contents&quot;&gt;
+                                            &lt;span style=&quot;display: block; background-color: rgba(124,88,88,.2); height: 300px; padding: 10px;&quot;&gt;툴팁 컨텐츠 영역 확인을 위한 임시 span 입니다.&lt;/span&gt;
+                                        &lt;/span&gt;
+                                    &lt;/span&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+
                     </div>
                 </div>
             </div>
