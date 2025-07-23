@@ -186,7 +186,6 @@
         };
     }
 
-
     /*
     * date : 20259999
     * last : 20259999
@@ -206,13 +205,22 @@
                     const isActive = that.hasClass('active');
 
                     if(isActive){
+                        //active 상태일 때 닫기
                         $('.tooltip-wrap.active').removeClass('active').addClass('hide').find('.offscreen').text('툴팁 열기');
                     }else{
+                        //다들 tooltip 모두 닫기
+                        $('.tooltip-wrap.active').removeClass('active').addClass('hide').find('.offscreen').text('툴팁 열기');
+
+                        //선택한 tooltip 만 열기
                         that.removeClass('hide').addClass('active');
                         that.find('.offscreen').text('툴팁 닫기');
                     }
                 });
             });
+
+            $(window).on('resize, scroll', function () {
+                $('.tooltip-wrap.active').removeClass('active');
+            })
         }
     }
 
