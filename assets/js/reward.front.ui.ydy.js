@@ -197,8 +197,22 @@
     function setTooltipOnOff(selector) {
         selector = selector || '.tooltip-wrap';
 
-        if($(selector).length > 0) {
 
+        if ($(selector).length > 0) {
+            $(selector).each(function () {
+                const that = $(this);
+
+                that.find('.btn-tooltip').on('click', function () {
+                    const isActive = that.hasClass('active');
+
+                    if(isActive){
+                        $('.tooltip-wrap.active').removeClass('active').addClass('hide').find('.offscreen').text('툴팁 열기');
+                    }else{
+                        that.removeClass('hide').addClass('active');
+                        that.find('.offscreen').text('툴팁 닫기');
+                    }
+                });
+            });
         }
     }
 
