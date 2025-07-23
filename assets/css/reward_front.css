@@ -3093,6 +3093,12 @@ span.badge-round-sm {
 .swiper-fraction-wrap .swiper-pagination .swiper-pagination-total {
   color: #BBB;
 }
+.swiper-fraction-wrap .swiper-pagination.pos-center {
+  right: 50%;
+  -moz-transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
 
 .offscreen {
   position: absolute !important;
