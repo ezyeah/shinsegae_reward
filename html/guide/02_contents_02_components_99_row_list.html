@@ -142,15 +142,19 @@
                             <li>
                                 <div>간격별 네이밍 정의</div>
                                 <ul class="guide-desc-list" style="margin-top: 10px">
-                                    <li><code>ul.row-list-lg</code> : <code>row-item</code> + <code>row-item</code> 사이의 간격 : 30px</li>
-                                    <li><code>ul.row-list-md</code> : <code>row-item</code> + <code>row-item</code> 사이의 간격 : 20px</li>
-                                    <li><code>ul.row-list-sm</code> : <code>row-item</code> + <code>row-item</code> 사이의 간격 : 16px</li>
-                                    <li><code>ul.row-list-xs</code> : <code>row-item</code> + <code>row-item</code> 사이의 간격 : 12px</li>
+                                    <li><code>ul.row-list-lg</code> : <code>row-item</code> + <code>row-item</code> 사이의 간격 30px</li>
+                                    <li><code>ul.row-list-md</code> : <code>row-item</code> + <code>row-item</code> 사이의 간격 20px</li>
+                                    <li><code>ul.row-list-sm</code> : <code>row-item</code> + <code>row-item</code> 사이의 간격 16px</li>
+                                    <li><code>ul.row-list-xs</code> : <code>row-item</code> + <code>row-item</code> 사이의 간격 12px</li>
                                 </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <code>.has-line</code> : <code>row-item</code>사이에 라인이 있는 경우 <code>ul.row-list-[size]</code>에 멀티 클래스로 추가한다.
+                                </div>
                             </li>
                         </ul>
                     </div>
-
 
                     <div class="guide-inner">
                         <div class="guide-btit">row-list-lg</div>
@@ -164,11 +168,11 @@
 
                         <pre>
                             <code class="html">
-                                   &lt;ul class=&quot;row-list-lg&quot;&gt;
-                                        &lt;li class=&quot;row-item&quot; style=&quot;background-color: #6987A1; opacity: .4; height: 100px;&quot;&gt;&lt;/li&gt;
-                                        &lt;li class=&quot;row-item&quot;  style=&quot;background-color: #6987A1; opacity: .4; height: 100px;&quot;&gt;&lt;/li&gt;
-                                        &lt;li class=&quot;row-item&quot;  style=&quot;background-color: #6987A1; opacity: .4; height: 100px;&quot;&gt;&lt;/li&gt;
-                                    &lt;/ul&gt;
+                               &lt;ul class=&quot;row-list-lg&quot;&gt;
+                                    &lt;li class=&quot;row-item&quot; style=&quot;background-color: #6987A1; opacity: .4; height: 100px;&quot;&gt;&lt;/li&gt;
+                                    &lt;li class=&quot;row-item&quot;  style=&quot;background-color: #6987A1; opacity: .4; height: 100px;&quot;&gt;&lt;/li&gt;
+                                    &lt;li class=&quot;row-item&quot;  style=&quot;background-color: #6987A1; opacity: .4; height: 100px;&quot;&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
                             </code>
                         </pre>
                     </div>
@@ -235,10 +239,62 @@
                             </code>
                         </pre>
                     </div>
+
+                    <div class="guide-inner">
+                        <div class="guide-btit">row-list-[size] .has-line</div>
+                        <ol class="guide-desc-list">
+                            <li>
+                                <div>
+                                    <code>row-list-md.has-line</code>
+                                    <p style="margin-top: 8px">┗  <code>row-item</code> + <code>row-item</code> 사이의 간격 - margin/padding-top : 20px</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <code>row-list-sm.has-line</code>
+                                    <p style="margin-top: 8px">┗  <code>row-item</code> + <code>row-item</code> 사이의 간격 - margin/padding-top : 16px</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <div class="guide-xsbtit">row-list-md.has-line : 간격 20px</div>
+                        <ul class="row-list-md has-line">
+                            <li class="row-item" style="height: 100px;">컨텐츠1</li>
+                            <li class="row-item" style="height: 100px;">컨텐츠2</li>
+                            <li class="row-item" style="height: 100px;">컨텐츠3</li>
+                        </ul>
+                        <pre>
+                            <code class="html">
+                                &lt;ul class=&quot;row-list-md has-line&quot;&gt;
+                                    &lt;li class=&quot;row-item&quot; style=&quot;height: 100px;&quot;&gt;컨텐츠1&lt;/li&gt;
+                                    &lt;li class=&quot;row-item&quot; style=&quot;height: 100px;&quot;&gt;컨텐츠2&lt;/li&gt;
+                                    &lt;li class=&quot;row-item&quot; style=&quot;height: 100px;&quot;&gt;컨텐츠3&lt;/li&gt;
+                                &lt;/ul&gt;
+                            </code>
+                        </pre>
+
+                        <div class="guide-xsbtit">row-list-sm.has-line : 간격 16px</div>
+                        <ul class="row-list-sm has-line">
+                            <li class="row-item" style="height: 100px;">컨텐츠1</li>
+                            <li class="row-item" style="height: 100px;">컨텐츠2</li>
+                            <li class="row-item" style="height: 100px;">컨텐츠3</li>
+                        </ul>
+                        <pre>
+                            <code class="html">
+                                 &lt;ul class=&quot;row-list-sm has-line&quot;&gt;
+                                    &lt;li class=&quot;row-item&quot; style=&quot;height: 100px;&quot;&gt;컨텐츠1&lt;/li&gt;
+                                    &lt;li class=&quot;row-item&quot; style=&quot;height: 100px;&quot;&gt;컨텐츠2&lt;/li&gt;
+                                    &lt;li class=&quot;row-item&quot; style=&quot;height: 100px;&quot;&gt;컨텐츠3&lt;/li&gt;
+                                &lt;/ul&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- // container-wrapper -->
+    <!-- // container-wrapper-->
 </div>
+<!-- // wrapper -->
 </body>
 </html>

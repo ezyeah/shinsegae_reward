@@ -3084,8 +3084,18 @@ body:is(.dialog-open).ios {
 .row-list-md .row-item ~ .row-item {
   margin-top: 20px;
 }
+.row-list-md.has-line .row-item ~ .row-item {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #EAEAEA;
+}
 .row-list-sm .row-item ~ .row-item {
   margin-top: 16px;
+}
+.row-list-sm.has-line .row-item ~ .row-item {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #EAEAEA;
 }
 .row-list-xs .row-item ~ .row-item {
   margin-top: 12px;
