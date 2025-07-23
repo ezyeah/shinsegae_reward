@@ -464,7 +464,7 @@ button {
   width: 20px;
   height: 20px;
   background: url("/assets/images/common/comm_ico_tooltip_h18.svg") 0 0 no-repeat;
-  background-size: #888;
+  background-size: cover;
   border: 1px solid #DDD;
   border-radius: 36px;
 }

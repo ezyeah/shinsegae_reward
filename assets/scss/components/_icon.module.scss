@@ -88,7 +88,7 @@
   @extend %icon;
   width: 20px;
   height: 20px;
-  @include mixins.ratio_images('/assets/images/common/comm_ico_tooltip_h18', variables.$colorGray70);
+  @include mixins.ratio_images('/assets/images/common/comm_ico_tooltip_h18');
   border: 1px solid variables.$colorGray40;
   border-radius: 36px;
 }
