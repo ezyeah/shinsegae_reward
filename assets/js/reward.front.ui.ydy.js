@@ -186,7 +186,6 @@
         };
     }
 
-
     /*
     * date : 20259999
     * last : 20259999
@@ -218,6 +217,10 @@
                     }
                 });
             });
+
+            $(window).on('resize, scroll', function () {
+                $('.tooltip-wrap.active').removeClass('active');
+            })
         }
     }
 
