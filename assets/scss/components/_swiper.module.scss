@@ -82,7 +82,7 @@ $swiperType: ('auto', 'dot', 'fraction');
         padding: 3px 12px;
         border-radius: 13px;
         background-color: rgba(variables.$colorGray100, 0.6);
-        @include mixins.font_size_xs();
+        @include mixins.font_size_xs;
         color: variables.$colorGray00;
 
         .swiper-pagination-current,
@@ -96,6 +96,11 @@ $swiperType: ('auto', 'dot', 'fraction');
 
         .swiper-pagination-total {
           color: variables.$colorGray60;
+        }
+
+        &.pos-center {
+          right: 50%;
+          @include mixins.prefix(transform, translateX(50%));
         }
       }
     }
