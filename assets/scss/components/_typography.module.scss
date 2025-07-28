@@ -47,6 +47,12 @@
 .fc-red {
   color: variables.$colorRed !important;
 }
+.fc-deep-red {
+  color: variables.$colorDeepRed !important;
+}
+.fc-green {
+  color: variables.$colorGreen !important;
+}
 
 /* weight */
 [class^="fw-"] {

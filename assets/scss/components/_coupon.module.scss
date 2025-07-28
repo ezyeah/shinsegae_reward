@@ -1,3 +1,79 @@
 @use 'sass:map';
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
+
+.coupon-box {
+  overflow: hidden;
+  @include mixins.justify_width(stretch, between);
+
+   .coupon-info-area {
+     padding: 17px 11.5px 17px 17.75px;
+     flex: 1;
+     position: relative;
+     border: 1px solid #d3d3d3;
+     border-right: none;
+
+     .coupon-info-top {
+       @include mixins.justify_width(center, between);
+       margin-bottom: 10px;
+
+       [class^='badge-wrap'] {
+         margin-bottom: 0;
+       }
+     }
+
+     .coupon-info-middle {
+       @include mixins.justify_width;
+       column-gap: 10px;
+
+       [class^='ico-']{
+         flex: 0 0 48px;
+       }
+
+
+     }
+
+     .bar-group {
+       margin-top: 14px;
+
+       .bar-text-sm {
+         color: variables.$colorGray80;
+         font-size: 12px;
+         line-height: 16px;
+         font-weight: variables.$fontWeightRegular;
+       }
+     }
+   }
+
+  .coupon-btn {
+    position: relative;
+    padding: 0 14px;
+    background-color: #fff;
+    background-size: 1px 12px;
+    background-repeat: repeat-y;
+    border: 1px solid #d3d3d3;
+    border-left: 1px dashed #d3d3d3;
+    @include mixins.justify_width(center, center);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: -12%;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      z-index: 1;
+      border: 1px solid #d3d3d3;
+    }
+
+    &::before {
+      top: -6px;
+      border-radius: 50%;
+    }
+    &::after {
+      bottom: -6px;
+      border-radius: 50%;
+    }
+  }
+}

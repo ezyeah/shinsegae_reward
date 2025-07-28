@@ -398,6 +398,19 @@ button {
 [class^=ico-][class$=arrow18][class*=gray-] {
   background-color: #666;
 }
+[class^=ico-][class$=arrow25] {
+  width: 25px;
+  height: 25px;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url("/assets/images/common/comm_ico_arrow_h25.svg");
+  mask-image: url("/assets/images/common/comm_ico_arrow_h25.svg");
+  background-color: #222;
+}
 [class^=ico-][class$=plus18] {
   width: 18px;
   height: 18px;
@@ -469,6 +482,38 @@ button {
   border-radius: 36px;
 }
 
+.ico-discount-h48 {
+  width: 48px;
+  height: 48px;
+  background: url("/assets/images/coupon/ico_discount_h48.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.ico-reward-h48 {
+  width: 48px;
+  height: 48px;
+  background: url("/assets/images/coupon/ico_reward_h48.svg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+.ico-push-pin {
+  width: 25px;
+  height: 25px;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url("/assets/images/common/comm_ico_push_pin_h25.svg");
+  mask-image: url("/assets/images/common/comm_ico_push_pin_h25.svg");
+  background-color: #CCC;
+}
+
+.is-active .ico-push-pin {
+  background-color: #222;
+}
+
 /* color */
 [class^=fc-] {
   font-weight: inherit;
@@ -526,6 +571,14 @@ button {
 
 .fc-red {
   color: #EE3030 !important;
+}
+
+.fc-deep-red {
+  color: #D4291E !important;
+}
+
+.fc-green {
+  color: #0BAB0B !important;
 }
 
 /* weight */
@@ -3691,6 +3744,143 @@ body:is(.dialog-open).ios {
 }
 .flex-end-group .right-area {
   margin-left: 5px;
+}
+
+.coupon-box {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.coupon-box .coupon-info-area {
+  padding: 17px 11.5px 17px 17.75px;
+  flex: 1;
+  position: relative;
+  border: 1px solid #d3d3d3;
+  border-right: none;
+}
+.coupon-box .coupon-info-area .coupon-info-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.coupon-box .coupon-info-area .coupon-info-top [class^=badge-wrap] {
+  margin-bottom: 0;
+}
+.coupon-box .coupon-info-area .coupon-info-middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  column-gap: 10px;
+}
+.coupon-box .coupon-info-area .coupon-info-middle [class^=ico-] {
+  flex: 0 0 48px;
+}
+.coupon-box .coupon-info-area .bar-group {
+  margin-top: 14px;
+}
+.coupon-box .coupon-info-area .bar-group .bar-text-sm {
+  color: #666;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+.coupon-box .coupon-btn {
+  position: relative;
+  padding: 0 14px;
+  background-color: #fff;
+  background-size: 1px 12px;
+  background-repeat: repeat-y;
+  border: 1px solid #d3d3d3;
+  border-left: 1px dashed #d3d3d3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.coupon-box .coupon-btn::before, .coupon-box .coupon-btn::after {
+  content: "";
+  position: absolute;
+  left: -12%;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  z-index: 1;
+  border: 1px solid #d3d3d3;
+}
+.coupon-box .coupon-btn::before {
+  top: -6px;
+  border-radius: 50%;
+}
+.coupon-box .coupon-btn::after {
+  bottom: -6px;
+  border-radius: 50%;
 }
 
 /* header */

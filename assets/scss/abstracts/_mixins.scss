@@ -1,7 +1,7 @@
 @use 'variables';
 
 // Display Flex를 활용한 영역대비 사이즈 자동 조절
-// $colAlign : align-items, $rowAlign : justify-contents, $direction: fles-direction, $isInline : display
+// $colAlign : align-items, $rowAlign : justify-contents, $direction: flex-direction, $isInline : display
 @mixin justify_width($colAlign: start, $rowAlign: start, $direction: row, $isInline: false) {
   @if ($isInline) {
     display: -ms-inline-flexbox;

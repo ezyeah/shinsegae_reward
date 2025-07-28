@@ -18,7 +18,7 @@
 
     <meta name="format-detection" content="telephone=no, address=no, email=no">
 
-    <title>신세계백화점 가이드 - Row List</title>
+    <title>신세계백화점 가이드 - Coupon</title>
 
     <!-- Vendors CSS
    ================================================== -->
@@ -139,7 +139,7 @@
                             <li>
                                 <div>쿠폰 네이밍 정의</div>
                                 <ul class="guide-desc-list" style="margin-top: 10px">
-                                    <li><code>coupon-box</code> : default</li>
+                                    <li><code>coupon-item</code> : default</li>
                                     <li><code>event-coupon-box</code></li>
                                 </ul>
                             </li>
@@ -148,16 +148,30 @@
                     <div class="guide-inner">
                         <div class="coupon-box">
                             <div class="coupon-info-area">
-                                <div class="badge-wrap-lg">
-                                    <span class="badge-sm gray90"><span class="text">할인권</span></span>
-                                    <span class="badge-sm gray20"><span class="text">해당 점</span></span>
+                                <div class="coupon-info-top">
+                                    <div class="badge-wrap-lg">
+                                        <span class="badge-sm gray90"><span class="text">할인권</span></span>
+                                        <span class="badge-sm gray20"><span class="text">해당 점</span></span>
+                                    </div>
+                                    <button class="btn-pin">
+                                        <span class="ico-push-pin"></span><span class="offscreen">고정하기</span>
+                                    </button>
                                 </div>
-                                <div class="coupon-text">
-                                    <div class="ctitle-md">식당가 전 매장 20% 할인</div>
-                                    <div class="stext-md-gray70">사우스시티, 강남점 제외</div>
+                                <div class="coupon-info-middle">
+                                    <span class="ico-discount-h48"></span>
+                                    <div class="coupon-text">
+                                        <div class="ctitle-md">식당가 전 매장 20% 할인</div>
+                                        <div class="stext-md-gray70">사우스시티, 강남점 제외</div>
+                                    </div>
+                                </div>
+                                <div class="bar-group">
+                                    <span class="bar-text-sm">24.11.11(월)-24.11.30(토)</span>
+                                    <span class="bar-text-sm fc-green fw-sb">오픈 예정</span>
                                 </div>
                             </div>
-                            <div class="coupon-btn-area"></div>
+                            <a href="javascript:" class="coupon-btn">
+                                <span class="ico-arrow25"></span><span class="offscreen">쿠폰 사용하러 가기</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -165,5 +179,7 @@
         </div>
         <!-- // container-wrapper -->
     </div>
+</div>
+<!-- // wrapper -->
 </body>
 </html>
