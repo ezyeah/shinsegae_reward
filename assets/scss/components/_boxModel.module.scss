@@ -18,6 +18,11 @@
   border-radius: 12px;
 }
 
+%BlueBox {
+  background-color: variables.$colorBlue10;
+  border-radius: 12px;
+}
+
 .white-box {
   &-lg, &-md, &-sm {
     @extend %whiteBox;
@@ -54,7 +59,6 @@
   }
 }
 
-
 .gray-line-box {
   &-lg, &-md, &-sm {
     @extend %grayLineBox;
@@ -70,5 +74,14 @@
 
   &-sm {
     padding: 12px;
+  }
+}
+
+.blue-box {
+  &-md {
+    @extend %BlueBox;
+  }
+  &-md {
+    padding: 16px;
   }
 }

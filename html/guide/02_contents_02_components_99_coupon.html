@@ -139,17 +139,31 @@
                             <li>
                                 <div>쿠폰 네이밍 정의</div>
                                 <ul class="guide-desc-list" style="margin-top: 10px">
-                                    <li><code>coupon-item</code> : default</li>
-                                    <li><code>event-coupon-box</code></li>
+                                    <li>
+                                        <code>coupon-box</code>
+                                        <p style="margin-top: 8px">┗ <code>.type-col</code> : 가로형 (default)</p>
+                                        <p style="margin-top: 8px">┗ <code>.type-row</code> : 세로형</p>
+                                    </li>
+                                    <li><code>event-coupon-box</code> : 이벤트 쿠폰</li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                     <div class="guide-inner">
-                        <!-- coupon-box -->
-                        <div class="coupon-box">
-                            <!-- coupon-info-area -->
-                            <div class="coupon-info-area">
+                        <div class="guide-btit">coupon-box .type-col</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <code class="title">구조</code>
+                                <p style="margin-top: 4px;"><code>coupon-box.type-row</code>
+                                    <br/> > <code>.coupon-info-wrap</code> > <code>coupon-info-top</code>,<code>coupon-info-middle</code>,<code>bar-group</code>
+                                    <br/> > <code>coupon-btn</code>
+                                </p>
+                            </li>
+                        </ul>
+                        <!-- coupon-box type-row -->
+                        <div class="coupon-box type-row">
+                            <!-- coupon-info-wrap -->
+                            <div class="coupon-info-wrap">
                                 <!-- coupon-info-top -->
                                 <div class="coupon-info-top">
                                     <div class="badge-wrap-lg">
@@ -177,19 +191,19 @@
                                 </div>
                                 <!-- // bar-group -->
                             </div>
-                            <!-- coupon-info-area -->
+                            <!-- coupon-info-wrap -->
                             <!-- coupon-btn -->
                             <a href="javascript:" class="coupon-btn">
                                 <span class="ico-arrow25"></span><span class="offscreen">쿠폰 사용하러 가기</span>
                             </a>
                             <!-- coupon-btn -->
                         </div>
-                        <!-- // coupon-box -->
+                        <!-- // coupon-box type-row -->
 
-                        <!-- coupon-box -->
-                        <div class="coupon-box disabled">
-                            <!-- coupon-info-area -->
-                            <div class="coupon-info-area">
+                        <!-- coupon-box type-row -->
+                        <div class="coupon-box type-row disabled">
+                            <!-- coupon-info-wrap -->
+                            <div class="coupon-info-wrap">
                                 <!-- coupon-info-top -->
                                 <div class="coupon-info-top">
                                     <div class="badge-wrap-lg">
@@ -217,27 +231,460 @@
                                 </div>
                                 <!-- // bar-group -->
                             </div>
-                            <!-- coupon-info-area -->
+                            <!-- coupon-info-wrap -->
                             <!-- coupon-btn -->
                             <a href="javascript:" class="coupon-btn">
                                 <span class="ico-arrow25"></span><span class="offscreen">쿠폰 사용하러 가기</span>
                             </a>
                             <!-- coupon-btn -->
                         </div>
-                        <!-- // coupon-box -->
+                        <!-- // coupon-box type-row -->
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- coupon-box type-row --&gt;
+                                &lt;div class=&quot;coupon-box type-row&quot;&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-info-wrap&quot;&gt;
+                                        &lt;!-- coupon-info-top --&gt;
+                                        &lt;div class=&quot;coupon-info-top&quot;&gt;
+                                            &lt;div class=&quot;badge-wrap-lg&quot;&gt;
+                                                &lt;span class=&quot;badge-sm gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;할인권&lt;/span&gt;&lt;/span&gt;
+                                                &lt;span class=&quot;badge-sm gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;해당 점&lt;/span&gt;&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;button class=&quot;btn-pin&quot;&gt;
+                                                &lt;span class=&quot;ico-push-pin&quot;&gt;&lt;/span&gt;&lt;span class=&quot;offscreen&quot;&gt;고정하기&lt;/span&gt;
+                                            &lt;/button&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // coupon-info-top --&gt;
+                                        &lt;!-- coupon-info-middle --&gt;
+                                        &lt;div class=&quot;coupon-info-middle&quot;&gt;
+                                            &lt;span class=&quot;ico-reward48&quot;&gt;&lt;/span&gt;
+                                            &lt;div class=&quot;coupon-text-box&quot;&gt;
+                                                &lt;div class=&quot;coupon-name&quot;&gt;식당가 전 매장 20% 할인&lt;/div&gt;
+                                                &lt;div class=&quot;coupon-desc&quot;&gt;사우스시티, 강남점 제외&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // coupon-info-middle --&gt;
+                                        &lt;!-- bar-group --&gt;
+                                        &lt;div class=&quot;bar-group&quot;&gt;
+                                            &lt;span class=&quot;bar-text-sm&quot;&gt;24.11.11(월)-24.11.30(토)&lt;/span&gt;
+                                            &lt;span class=&quot;bar-text-sm fc-deep-red fw-sb&quot;&gt;D-5&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // bar-group --&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;!-- coupon-btn --&gt;
+                                    &lt;a href=&quot;javascript:&quot; class=&quot;coupon-btn&quot;&gt;
+                                        &lt;span class=&quot;ico-arrow25&quot;&gt;&lt;/span&gt;&lt;span class=&quot;offscreen&quot;&gt;쿠폰 사용하러 가기&lt;/span&gt;
+                                    &lt;/a&gt;
+                                    &lt;!-- coupon-btn --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // coupon-box type-row --&gt;
+
+                                &lt;!-- coupon-box type-row --&gt;
+                                &lt;div class=&quot;coupon-box type-row disabled&quot;&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-info-wrap&quot;&gt;
+                                        &lt;!-- coupon-info-top --&gt;
+                                        &lt;div class=&quot;coupon-info-top&quot;&gt;
+                                            &lt;div class=&quot;badge-wrap-lg&quot;&gt;
+                                                &lt;span class=&quot;badge-sm gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;할인권&lt;/span&gt;&lt;/span&gt;
+                                                &lt;span class=&quot;badge-sm gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;해당 점&lt;/span&gt;&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;button class=&quot;btn-pin&quot;&gt;
+                                                &lt;span class=&quot;ico-push-pin&quot;&gt;&lt;/span&gt;&lt;span class=&quot;offscreen&quot;&gt;고정하기&lt;/span&gt;
+                                            &lt;/button&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // coupon-info-top --&gt;
+                                        &lt;!-- coupon-info-middle --&gt;
+                                        &lt;div class=&quot;coupon-info-middle&quot;&gt;
+                                            &lt;span class=&quot;ico-reward48&quot;&gt;&lt;/span&gt;
+                                            &lt;div class=&quot;coupon-text-box&quot;&gt;
+                                                &lt;div class=&quot;coupon-name&quot;&gt;홍인혜의 &lsquo;나를 살게 한 문장들 북토크 참여권&lt;/div&gt;
+                                                &lt;div class=&quot;coupon-desc&quot;&gt;경기점 제외&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // coupon-info-middle --&gt;
+                                        &lt;!-- bar-group --&gt;
+                                        &lt;div class=&quot;bar-group&quot;&gt;
+                                            &lt;span class=&quot;bar-text-sm&quot;&gt;24.11.11(월)-24.11.30(토)&lt;/span&gt;
+                                            &lt;span class=&quot;bar-text-sm fc-green fw-sb&quot;&gt;오픈 예정&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // bar-group --&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;!-- coupon-btn --&gt;
+                                    &lt;a href=&quot;javascript:&quot; class=&quot;coupon-btn&quot;&gt;
+                                        &lt;span class=&quot;ico-arrow25&quot;&gt;&lt;/span&gt;&lt;span class=&quot;offscreen&quot;&gt;쿠폰 사용하러 가기&lt;/span&gt;
+                                    &lt;/a&gt;
+                                    &lt;!-- coupon-btn --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // coupon-box type-row --&gt;
+                            </code>
+                        </pre>
                     </div>
 
                     <div class="guide-inner">
+                        <div class="guide-btit">coupon-box .type-col</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <code class="title">구조</code>
+                                <p style="margin-top: 4px;"><code>coupon-box.type-col</code>
+                                    <br/> > <code>.coupon-info-wrap</code> > <code>coupon-info-top</code>,<code>coupon-info-middle</code>
+                                    <br/> > <code>coupon-bottom-area</code>
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="gray-box-lg">
+                            <!-- coupon-box type-col -->
+                            <div class="coupon-box type-col">
+                                <!-- coupon-info-wrap -->
+                                <div class="coupon-info-wrap">
+                                    <div class="coupon-info-middle">
+                                        <div class="coupon-text-box">
+                                            <div class="coupon-name">리워드마켓/타임딜 코스메틱 5만원 할인권</div>
+
+                                            <div class="coupon-desc">
+                                                <span class="value-area"><span class="value">3,000</span><span
+                                                        class="unit">R</span></span>
+                                                <span class="sub-value-area"><span class="value">50,000</span><span
+                                                        class="unit">원</span> 상당</span>
+                                            </div>
+                                        </div>
+                                        <div class="coupon-icon-box">
+                                            <span class="ico-rewardmarket-reward"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- coupon-info-wrap -->
+                                <div class="coupon-bottom-area">
+                                    <ul class="info-text-list">
+                                        <li class="dot-text-sm">잔여수량 100개</li>
+                                        <li class="dot-text-sm">50만원 이상 사용 시 이용가능</li>
+                                    </ul>
+                                    <div class="blue-box-md">
+                                        <p class="ctitle-2xs fc-blue fw-md">7월 7일부터 매일 10시 선착순 100명</p>
+                                    </div>
+                                    <!-- btn-wrap -->
+                                    <div class="btn-wrap">
+                                        <button type="button" class="btn-sm gray20"><span class="text">상세 보기</span>
+                                        </button>
+                                        <button type="button" class="btn-sm gray90"><span class="text">교환하기</span>
+                                        </button>
+                                    </div>
+                                    <!-- // btn-wrap -->
+                                </div>
+                            </div>
+                            <!-- // coupon-box type-col -->
+                        </div>
+
+                        <div class="gray-box-lg">
+                            <!-- coupon-box type-col -->
+                            <div class="coupon-box type-col">
+                                <!-- coupon-info-wrap -->
+                                <div class="coupon-info-wrap">
+                                    <div class="coupon-info-top">
+                                        <div class="badge-wrap-md">
+                                            <span class="badge-md blue100"><span class="text">한정수량</span></span>
+                                            <span class="badge-md brown100"><span class="text">횟수제한</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-info-middle">
+                                        <div class="coupon-text-box">
+                                            <div class="coupon-name">리워드마켓 3시간 무료 주차권</div>
+
+                                            <div class="coupon-desc">
+                                                <span class="value-area"><span class="value">3,000</span><span
+                                                        class="unit">R</span></span>
+                                            </div>
+                                        </div>
+                                        <div class="coupon-icon-box">
+                                            <span class="ico-rewardmarket-parking"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- coupon-info-wrap -->
+                                <div class="coupon-bottom-area">
+                                    <!-- btn-wrap -->
+                                    <div class="btn-wrap">
+                                        <button type="button" class="btn-sm gray20"><span class="text">상세 보기</span>
+                                        </button>
+                                        <button type="button" class="btn-sm gray90"><span class="text">교환하기</span>
+                                        </button>
+                                    </div>
+                                    <!-- // btn-wrap -->
+                                </div>
+                            </div>
+                            <!-- // coupon-box type-col -->
+                        </div>
+
+                        <div class="gray-box-lg">
+                            <!-- coupon-box type-col -->
+                            <div class="coupon-box type-col">
+                                <!-- coupon-info-wrap -->
+                                <div class="coupon-info-wrap">
+                                    <div class="coupon-info-top">
+                                        <div class="badge-wrap-md">
+                                            <span class="badge-md blue100"><span class="text">한정수량</span></span>
+                                            <span class="badge-md brown100"><span class="text">횟수제한</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-info-middle">
+                                        <div class="coupon-text-box">
+                                            <div class="coupon-name">멤버스바 커피 음료 교환권 1매</div>
+
+
+                                            <div class="coupon-desc">
+                                                <span class="value-area"><span class="value">3,000</span><span
+                                                        class="unit">R</span></span>
+                                                <span class="sub-value-area"><span class="value">50,000</span><span
+                                                        class="unit">원</span> 상당</span>
+                                            </div>
+                                        </div>
+                                        <div class="coupon-icon-box">
+                                            <span class="ico-rewardmarket-beverage"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- coupon-info-wrap -->
+                                <div class="coupon-bottom-area">
+                                    <!-- btn-wrap -->
+                                    <div class="btn-wrap">
+                                        <button type="button" class="btn-sm gray20"><span class="text">상세 보기</span>
+                                        </button>
+                                        <button disabled type="button" class="btn-sm gray90"><span class="text">7월 7일 10:00 오픈예정</span>
+                                        </button>
+                                    </div>
+                                    <!-- // btn-wrap -->
+                                </div>
+                            </div>
+                            <!-- // coupon-box type-col -->
+                        </div>
+
+                        <div class="gray-box-lg">
+                            <!-- coupon-box type-col -->
+                            <div class="coupon-box type-col disabled">
+                                <!-- coupon-info-wrap -->
+                                <div class="coupon-info-wrap">
+                                    <div class="coupon-info-top">
+                                        <div class="badge-wrap-md">
+                                            <span class="badge-md blue100"><span class="text">한정수량</span></span>
+                                            <span class="badge-md brown100"><span class="text">횟수제한</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-info-middle">
+                                        <div class="coupon-text-box">
+                                            <div class="coupon-name">리워드마켓 3시간 무료 주차권</div>
+                                            <div class="coupon-desc">
+                                                <span class="value-area"><span class="value">3,000</span><span
+                                                        class="unit">R</span></span>
+                                            </div>
+                                        </div>
+                                        <div class="coupon-icon-box">
+                                            <span class="ico-rewardmarket-parking"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- coupon-info-wrap -->
+                                <!-- coupon-bottom-area -->
+                                <div class="coupon-bottom-area">
+                                    <!-- btn-wrap -->
+                                    <div class="btn-wrap">
+                                        <button type="button" class="btn-sm gray90" disabled><span class="text">교환이 마감되었습니다.</span></button>
+                                    </div>
+                                    <!-- // btn-wrap -->
+                                </div>
+                                <!-- coupon-bottom-area -->
+                            </div>
+                            <!-- // coupon-box type-col -->
+                        </div>
+
+                        <pre>
+                            <code class="html">
+                                &lt;!-- coupon-box type-col --&gt;
+                                &lt;div class=&quot;coupon-box type-col&quot;&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-info-wrap&quot;&gt;
+                                        &lt;div class=&quot;coupon-info-middle&quot;&gt;
+                                            &lt;div class=&quot;coupon-text-box&quot;&gt;
+                                                &lt;div class=&quot;coupon-name&quot;&gt;리워드마켓/타임딜 코스메틱 5만원 할인권&lt;/div&gt;
+
+                                                &lt;div class=&quot;coupon-desc&quot;&gt;
+                                                    &lt;span class=&quot;value-area&quot;&gt;&lt;span class=&quot;value&quot;&gt;3,000&lt;/span&gt;&lt;span
+                                                            class=&quot;unit&quot;&gt;R&lt;/span&gt;&lt;/span&gt;
+                                                    &lt;span class=&quot;sub-value-area&quot;&gt;&lt;span class=&quot;value&quot;&gt;50,000&lt;/span&gt;&lt;span
+                                                            class=&quot;unit&quot;&gt;원&lt;/span&gt; 상당&lt;/span&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;coupon-icon-box&quot;&gt;
+                                                &lt;span class=&quot;ico-rewardmarket-reward&quot;&gt;&lt;/span&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-bottom-area&quot;&gt;
+                                        &lt;ul class=&quot;info-text-list&quot;&gt;
+                                            &lt;li class=&quot;dot-text-sm&quot;&gt;잔여수량 100개&lt;/li&gt;
+                                            &lt;li class=&quot;dot-text-sm&quot;&gt;50만원 이상 사용 시 이용가능&lt;/li&gt;
+                                        &lt;/ul&gt;
+                                        &lt;div class=&quot;blue-box-md&quot;&gt;
+                                            &lt;p class=&quot;ctitle-2xs fc-blue fw-md&quot;&gt;7월 7일부터 매일 10시 선착순 100명&lt;/p&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- btn-wrap --&gt;
+                                        &lt;div class=&quot;btn-wrap&quot;&gt;
+                                            &lt;button type=&quot;button&quot; class=&quot;btn-sm gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;상세 보기&lt;/span&gt;
+                                            &lt;/button&gt;
+                                            &lt;button type=&quot;button&quot; class=&quot;btn-sm gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;교환하기&lt;/span&gt;
+                                            &lt;/button&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // btn-wrap --&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // coupon-box type-col --&gt;
+
+                                &lt;!-- coupon-box type-col --&gt;
+                                &lt;div class=&quot;coupon-box type-col&quot;&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-info-wrap&quot;&gt;
+                                        &lt;div class=&quot;coupon-info-top&quot;&gt;
+                                            &lt;div class=&quot;badge-wrap-md&quot;&gt;
+                                                &lt;span class=&quot;badge-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;한정수량&lt;/span&gt;&lt;/span&gt;
+                                                &lt;span class=&quot;badge-md brown100&quot;&gt;&lt;span class=&quot;text&quot;&gt;횟수제한&lt;/span&gt;&lt;/span&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;coupon-info-middle&quot;&gt;
+                                            &lt;div class=&quot;coupon-text-box&quot;&gt;
+                                                &lt;div class=&quot;coupon-name&quot;&gt;리워드마켓 3시간 무료 주차권&lt;/div&gt;
+
+                                                &lt;div class=&quot;coupon-desc&quot;&gt;
+                                                    &lt;span class=&quot;value-area&quot;&gt;&lt;span class=&quot;value&quot;&gt;3,000&lt;/span&gt;&lt;span
+                                                            class=&quot;unit&quot;&gt;R&lt;/span&gt;&lt;/span&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;coupon-icon-box&quot;&gt;
+                                                &lt;span class=&quot;ico-rewardmarket-parking&quot;&gt;&lt;/span&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-bottom-area&quot;&gt;
+                                        &lt;!-- btn-wrap --&gt;
+                                        &lt;div class=&quot;btn-wrap&quot;&gt;
+                                            &lt;button type=&quot;button&quot; class=&quot;btn-sm gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;상세 보기&lt;/span&gt;
+                                            &lt;/button&gt;
+                                            &lt;button type=&quot;button&quot; class=&quot;btn-sm gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;교환하기&lt;/span&gt;
+                                            &lt;/button&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // btn-wrap --&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // coupon-box type-col --&gt;
+
+
+                                &lt;!-- coupon-box type-col --&gt;
+                                &lt;div class=&quot;coupon-box type-col&quot;&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-info-wrap&quot;&gt;
+                                        &lt;div class=&quot;coupon-info-top&quot;&gt;
+                                            &lt;div class=&quot;badge-wrap-md&quot;&gt;
+                                                &lt;span class=&quot;badge-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;한정수량&lt;/span&gt;&lt;/span&gt;
+                                                &lt;span class=&quot;badge-md brown100&quot;&gt;&lt;span class=&quot;text&quot;&gt;횟수제한&lt;/span&gt;&lt;/span&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;coupon-info-middle&quot;&gt;
+                                            &lt;div class=&quot;coupon-text-box&quot;&gt;
+                                                &lt;div class=&quot;coupon-name&quot;&gt;멤버스바 커피 음료 교환권 1매&lt;/div&gt;
+
+
+                                                &lt;div class=&quot;coupon-desc&quot;&gt;
+                                                    &lt;span class=&quot;value-area&quot;&gt;&lt;span class=&quot;value&quot;&gt;3,000&lt;/span&gt;&lt;span
+                                                            class=&quot;unit&quot;&gt;R&lt;/span&gt;&lt;/span&gt;
+                                                    &lt;span class=&quot;sub-value-area&quot;&gt;&lt;span class=&quot;value&quot;&gt;50,000&lt;/span&gt;&lt;span
+                                                            class=&quot;unit&quot;&gt;원&lt;/span&gt; 상당&lt;/span&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;coupon-icon-box&quot;&gt;
+                                                &lt;span class=&quot;ico-rewardmarket-beverage&quot;&gt;&lt;/span&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-bottom-area&quot;&gt;
+                                        &lt;!-- btn-wrap --&gt;
+                                        &lt;div class=&quot;btn-wrap&quot;&gt;
+                                            &lt;button type=&quot;button&quot; class=&quot;btn-sm gray20&quot;&gt;&lt;span class=&quot;text&quot;&gt;상세 보기&lt;/span&gt;
+                                            &lt;/button&gt;
+                                            &lt;button disabled type=&quot;button&quot; class=&quot;btn-sm gray90&quot;&gt;&lt;span class=&quot;text&quot;&gt;7월 7일 10:00 오픈예정&lt;/span&gt;
+                                            &lt;/button&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // btn-wrap --&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // coupon-box type-col --&gt;
+
+
+                                &lt;!-- coupon-box type-col --&gt;
+                                &lt;div class=&quot;coupon-box type-col disabled&quot;&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-info-wrap&quot;&gt;
+                                        &lt;div class=&quot;coupon-info-top&quot;&gt;
+                                            &lt;div class=&quot;badge-wrap-md&quot;&gt;
+                                                &lt;span class=&quot;badge-md blue100&quot;&gt;&lt;span class=&quot;text&quot;&gt;한정수량&lt;/span&gt;&lt;/span&gt;
+                                                &lt;span class=&quot;badge-md brown100&quot;&gt;&lt;span class=&quot;text&quot;&gt;횟수제한&lt;/span&gt;&lt;/span&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;coupon-info-middle&quot;&gt;
+                                            &lt;div class=&quot;coupon-text-box&quot;&gt;
+                                                &lt;div class=&quot;coupon-name&quot;&gt;리워드마켓 3시간 무료 주차권&lt;/div&gt;
+                                                &lt;div class=&quot;coupon-desc&quot;&gt;
+                                                    &lt;span class=&quot;value-area&quot;&gt;&lt;span class=&quot;value&quot;&gt;3,000&lt;/span&gt;&lt;span
+                                                            class=&quot;unit&quot;&gt;R&lt;/span&gt;&lt;/span&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;coupon-icon-box&quot;&gt;
+                                                &lt;span class=&quot;ico-rewardmarket-parking&quot;&gt;&lt;/span&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;!-- coupon-bottom-area --&gt;
+                                    &lt;div class=&quot;coupon-bottom-area&quot;&gt;
+                                        &lt;!-- btn-wrap --&gt;
+                                        &lt;div class=&quot;btn-wrap&quot;&gt;
+                                            &lt;button type=&quot;button&quot; class=&quot;btn-sm gray90&quot; disabled&gt;&lt;span class=&quot;text&quot;&gt;교환이 마감되었습니다.&lt;/span&gt;&lt;/button&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- // btn-wrap --&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- coupon-bottom-area --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // coupon-box type-col --&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+
+                    <div class="guide-inner">
+                        <div class="guide-btit">event-coupon-box</div>
+                        <ul class="guide-desc-list">
+                            <li>
+                                <code class="title">구조</code>
+                                <p style="margin-top: 4px;"><code>event-coupon-box</code>
+                                    <br/> > <code>.coupon-info-wrap</code>
+                                    <br/> > <code>coupon-btn</code>
+                                </p>
+                            </li>
+                        </ul>
                         <!-- event-coupon-box -->
                         <div class="event-coupon-box">
-                            <!-- coupon-info-area -->
-                            <div class="coupon-info-area">
+                            <!-- coupon-info-wrap -->
+                            <div class="coupon-info-wrap">
                                 <div class="coupon-text-box">
                                     <div class="coupon-name">자이푸르러그 단일 최대 5% 신백리워드 사은행사/리워드/F&B 쿠폰</div>
                                     <p class="coupon-desc">24.11.11(월)-24.11.30(토)</p>
                                 </div>
                             </div>
-                            <!-- coupon-info-area -->
+                            <!-- coupon-info-wrap -->
                             <!-- coupon-btn -->
                             <button type="button" class="coupon-btn">
                                 <span class="ico-download28"></span><span class="offscreen">쿠폰 다운받기</span>
@@ -248,14 +695,14 @@
 
                         <!-- event-coupon-box -->
                         <div class="event-coupon-box disabled">
-                            <!-- coupon-info-area -->
-                            <div class="coupon-info-area">
+                            <!-- coupon-info-wrap -->
+                            <div class="coupon-info-wrap">
                                 <div class="coupon-text-box">
                                     <div class="coupon-name">자이푸르러그 단일 최대 5% 신백리워드 사은행사/리워드/F&B 쿠폰</div>
                                     <p class="coupon-desc">24.11.11(월)-24.11.30(토)</p>
                                 </div>
                             </div>
-                            <!-- coupon-info-area -->
+                            <!-- coupon-info-wrap -->
                             <!-- coupon-btn -->
                             <button type="button" class="coupon-btn">
                                 <span class="ico-download28"></span><span class="offscreen">쿠폰 다운받기</span>
@@ -263,41 +710,53 @@
                             <!-- coupon-btn -->
                         </div>
                         <!-- // event-coupon-box -->
-                    </div>
 
-                    <div class="guide-inner">
-                        <div class="gray-box-lg">
-                            <!-- coupon-box -->
-                            <div class="coupon-box type-col">
-                                <!-- coupon-info-area -->
-                                <div class="coupon-info-area">
-                                    <div class="coupon-text-box">
-                                        <div class="coupon-name">리워드마켓/타임딜 코스메틱 5만원 할인권</div>
+                        <pre>
+                            <code class="html">
+                                &lt;!-- event-coupon-box --&gt;
+                                &lt;div class=&quot;event-coupon-box&quot;&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-info-wrap&quot;&gt;
+                                        &lt;div class=&quot;coupon-text-box&quot;&gt;
+                                            &lt;div class=&quot;coupon-name&quot;&gt;자이푸르러그 단일 최대 5% 신백리워드 사은행사/리워드/F&amp;B 쿠폰&lt;/div&gt;
+                                            &lt;p class=&quot;coupon-desc&quot;&gt;24.11.11(월)-24.11.30(토)&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;!-- coupon-btn --&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;coupon-btn&quot;&gt;
+                                        &lt;span class=&quot;ico-download28&quot;&gt;&lt;/span&gt;&lt;span class=&quot;offscreen&quot;&gt;쿠폰 다운받기&lt;/span&gt;
+                                    &lt;/button&gt;
+                                    &lt;!-- coupon-btn --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // event-coupon-box --&gt;
 
-                                        <div class="coupon-desc">
-                                            <span class="price"><span class="num">3,000</span><span class="unit">R</span></span>
-                                            <span class="sub-text">50,000원 상당</span>
-                                        </div>
-                                    </div>
-                                    <span class="ico-reward-beverage"></span>
-                                </div>
-                                <!-- coupon-info-area -->
-                                <!-- btn-wrap -->
-                                <div class="btn-wrap">
-                                    <button type="button" class="btn-sm gray20"><span class="text">상세 보기</span></button>
-                                    <button type="button" class="btn-sm gray90"><span class="text">교환하기</span></button>
-                                </div>
-                                <!-- // btn-wrap -->
-                            </div>
-                            <!-- // coupon-box -->
-                        </div>
-                        </div>
+                                &lt;!-- event-coupon-box --&gt;
+                                &lt;div class=&quot;event-coupon-box disabled&quot;&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;div class=&quot;coupon-info-wrap&quot;&gt;
+                                        &lt;div class=&quot;coupon-text-box&quot;&gt;
+                                            &lt;div class=&quot;coupon-name&quot;&gt;자이푸르러그 단일 최대 5% 신백리워드 사은행사/리워드/F&amp;B 쿠폰&lt;/div&gt;
+                                            &lt;p class=&quot;coupon-desc&quot;&gt;24.11.11(월)-24.11.30(토)&lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- coupon-info-wrap --&gt;
+                                    &lt;!-- coupon-btn --&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;coupon-btn&quot;&gt;
+                                        &lt;span class=&quot;ico-download28&quot;&gt;&lt;/span&gt;&lt;span class=&quot;offscreen&quot;&gt;쿠폰 다운받기&lt;/span&gt;
+                                    &lt;/button&gt;
+                                    &lt;!-- coupon-btn --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- // event-coupon-box --&gt;
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- // container-wrapper -->
     </div>
+    <!-- // container-wrapper -->
+</div>
 <!-- // wrapper -->
 </body>
 </html>

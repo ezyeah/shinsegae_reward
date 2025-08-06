@@ -134,12 +134,23 @@
   }
 }
 
-.ico-reward-beverage {
-  //padding-top: calc(1.238095238095238 * 100px);
-  //min-width: 156px;
-  //width: 100%;
+.ico-rewardmarket-beverage {
   width: 156px;
   height: 126px;
   @extend %icon;
-  @include mixins.ratio_images('/assets/images/coupon/ico_rewardmarket_beverage',156px 126px);
+  @include mixins.ratio_images('/assets/images/coupon/ico_rewardmarket_beverage');
+}
+
+.ico-rewardmarket-reward {
+  width: 156px;
+  height: 126px;
+  @extend %icon;
+  @include mixins.ratio_images('/assets/images/coupon/ico_rewardmarket_rewards');
+}
+
+.ico-rewardmarket-parking {
+  width: 156px;
+  height: 126px;
+  @extend %icon;
+  @include mixins.ratio_images('/assets/images/coupon/ico_rewardmarket_parking');
 }
