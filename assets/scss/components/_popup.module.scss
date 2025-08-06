@@ -1,0 +1,238 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+body:is(.dialog-open) {
+  width: 100%;
+  overflow: hidden;
+
+  .wrapper {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  &.ios {
+    touch-action: none;
+  }
+}
+
+[data-role='dialog'] {
+  display: none;
+}
+
+.ui-dialog-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--reVh, 1vh);
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden auto;
+
+  .dialog-close {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: variables.$colorGray90;
+    -webkit-mask-image: url('/assets/images/common/comm_ico_close_h24.svg');
+    mask-image: url('/assets/images/common/comm_ico_close_h24.svg');
+  }
+
+  &:has(.dialog-full, .dialog-bottom) {
+    padding: 0;
+  }
+
+  &.open {
+    @include mixins.justify_width(center, center);
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .ui-dialog {
+      @include mixins.prefix(animation, bottomPopAnimation .25s variables.$easeInOutQuad forwards);
+
+      &.dialog-full {
+        @include mixins.prefix(animation, none);
+      }
+    }
+  }
+
+  .ui-dialog {
+    width: 100% !important;
+    position: relative;
+    max-width: 335px;
+    overflow: hidden;
+    padding: 0;
+
+    &:not(.dialog-full, .dialog-bottom) {
+      @include mixins.justify_width(start, start, column);
+      max-height: calc(var(--reVh) - 40px);
+      padding: 0 20px;
+    }
+
+    .ui-dialog-content {
+      @include mixins.justify_width(stretch, between, column);
+      width: 100% !important;
+      padding: 0;
+      overflow: hidden;
+      background-color: variables.$colorGray00;
+      -webkit-overflow-scrolling: auto;
+      border-radius: 12px;
+      margin-bottom: env(safe-area-inset-bottom);
+      max-height: var(--reVh, 1vh);
+
+      .dialog-header {
+        padding: 20px 54px 20px 20px;
+
+        .dialog-title {
+          @include mixins.font_size_xl('sb',24px);
+        }
+      }
+
+      .dialog-body {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        -webkit-touch-callout: none;
+        overflow: hidden;
+
+        .dialog-inner {
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+      }
+
+      .dialog-footer {
+        padding: 14px 16px 18px;
+      }
+
+      .dialog-close {
+        top: 20px;
+        right: 20px;
+      }
+    }
+
+    &.dialog-full, &.dialog-bottom {
+      .dialog-header {
+        padding: 15.5px 45px 15.5px 18px;
+      }
+      .dialog-footer {
+        position: relative;
+        z-index: 1;
+        padding: 0 15px 16px;
+
+        &::before {
+          content: '';
+          width: 100%;
+          height: 40px;
+          position: absolute;
+          left: 0;
+          top: -40px;
+          background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+        }
+      }
+
+      .dialog-close {
+        top: 16px;
+        right: 18px;
+      }
+    }
+
+    &.dialog-full {
+      max-width: 100%;
+      padding: 0;
+      overflow: hidden;
+
+      .ui-dialog-content {
+        border-radius: 0;
+
+        .dialog-body {
+          .dialog-inner {
+            @include mixins.justify_width(stretch, start, column);
+            min-height: 100%;
+          }
+        }
+      }
+    }
+
+    &.dialog-bottom {
+      max-width: 100%;
+      align-self: flex-end;
+
+      .ui-dialog-content {
+        border-radius: 12px 12px 0 0;
+        max-height: calc(100vh - 40px); //위아래 여백 좌우와 동일하게 (20 + 20)
+
+        .dialog-body {
+          .dialog-inner {
+            min-height: 100%;
+          }
+        }
+      }
+    }
+
+    &.dialog-alert, &.dialog-sm {
+      position: relative;
+      max-height: calc(var(--reVh) - 44px);
+      align-self: center;
+      padding: 0 44px;
+
+      .ui-dialog-content {
+        max-width: 315px;
+        padding: 24px 0 20px;
+
+        .dialog-header {
+          padding: 0;
+          border: none;
+          text-align: center;
+
+          +.dialog-body {
+            margin-top: 10px;
+          }
+        }
+
+        .dialog-body {
+          .dialog-inner {
+            .cont-box-zero {
+              padding-bottom: 0;
+            }
+
+            .cont-inner {
+              padding: 0 16px;
+
+              .alert-desc {
+                color: variables.$colorGray100;
+                @include mixins.font_size_md;
+                word-break: keep-all;
+                word-wrap: break-word;
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        .dialog-footer {
+          padding: 0 16px;
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+
+  .ui-widget-overlay {
+    background: variables.$colorGray100;
+    opacity: 0.3;
+    overflow: hidden;
+    height: var(--reVh);
+  }
+}
+
+@keyframes bottomPopAnimation {
+  0% {
+    margin-bottom: calc(100vh / 5 * -1);
+  }
+  100% {
+    margin-bottom: 0;
+  }
+}
+

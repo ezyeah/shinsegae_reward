@@ -1,0 +1,52 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+$goodsSize: ('xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl');
+
+@each $size in $goodsSize {
+  .goods-group-#{$size} {
+    @include mixins.justify_width(center, start);
+
+    .label {
+      margin-right: 2px;
+    }
+
+    @if ($size == 'xs') { // 12px
+      * {
+        @include mixins.font_size_xs;
+      }
+    } @else if ($size == 'sm') { // 13px
+      * {
+        @include mixins.font_size_sm;
+      }
+    } @else if ($size == 'md') { // 14px
+      * {
+        @include mixins.font_size_md;
+      }
+    } @else if ($size == 'lg') { // 15px
+      * {
+        @include mixins.font_size_lg;
+      }
+    } @else if ($size == 'xl') { // 16px
+      * {
+        @include mixins.font_size_xl;
+      }
+    } @else if ($size == '2xl') { // 20px
+      * {
+        @include mixins.font_size_3xl;
+      }
+    } @else if ($size == '3xl') { // 22px
+      * {
+        @include mixins.font_size_4xl('bold');
+      }
+    } @else if ($size == '4xl') { // 32px
+      * {
+        font-weight: variables.$fontWeightBold;
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: variables.$letterSpacing;
+      }
+    }
+  }
+}

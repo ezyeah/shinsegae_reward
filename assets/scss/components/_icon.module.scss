@@ -1,0 +1,156 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+%icon {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+[class^=ico-] {
+  @extend %icon;
+
+  &[class$="arrow16"] {
+    width: 16px;
+    height: 16px;
+    @include mixins.mask_images('/assets/images/common/comm_ico_arrow_h16');
+
+    &[class*="gray-"] {
+      background-color: variables.$colorGray80;
+    }
+
+    &[class*="blue-"] {
+      background-color: variables.$colorBlue120;
+    }
+  }
+
+  &[class$="arrow18"] {
+    width: 18px;
+    height: 18px;
+    @include mixins.mask_images('/assets/images/common/comm_ico_arrow_h16');
+
+    &[class*="gray-"] {
+      background-color: variables.$colorGray80;
+    }
+  }
+
+  &[class$="arrow25"] {
+    width: 25px;
+    height: 25px;
+    @include mixins.mask_images('/assets/images/common/comm_ico_arrow_h25', #222);
+  }
+
+  &[class$="plus18"] {
+    width: 18px;
+    height: 18px;
+    @include mixins.mask_images('/assets/images/common/comm_ico_plus_h18',variables.$colorGray70);
+  }
+
+  &[class$="close16"] {
+    width: 16px;
+    height: 16px;
+    @include mixins.mask_images('/assets/images/common/comm_ico_close_h16',variables.$colorGray80);
+  }
+}
+
+.ico-coupon18 {
+  @extend %icon;
+  width: 18px;
+  height: 18px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_coupon_h18');
+}
+
+.ico-money16 {
+  @extend %icon;
+  width: 16px;
+  height: 16px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_money_h16');
+}
+
+.ico-reward16 {
+  @extend %icon;
+  width: 16px;
+  height: 16px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_reward_h16');
+}
+
+.ico-wallet16 {
+  @extend %icon;
+  width: 16px;
+  height: 16px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_wallet_h16');
+}
+
+.ico-receipt40 {
+  @extend %icon;
+  width: 40px;
+  height: 40px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_receipt_h40');
+}
+
+.ico-tooltip {
+  @extend %icon;
+  width: 20px;
+  height: 20px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_tooltip_h18');
+  border: 1px solid variables.$colorGray40;
+  border-radius: 36px;
+}
+
+.ico-download28 {
+  @extend %icon;
+  width: 28px;
+  height: 28px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_download_h28');
+}
+
+/* coupon */
+.ico-discount48 {
+  @extend %icon;
+  width: 48px;
+  height: 48px;
+  @include mixins.ratio_images('/assets/images/coupon/ico_discount_h48');
+}
+
+.ico-reward48 {
+  @extend %icon;
+  width: 48px;
+  height: 48px;
+  @include mixins.ratio_images('/assets/images/coupon/ico_reward_h48');
+}
+
+.ico-push-pin{
+  @extend %icon;
+  width: 25px;
+  height: 25px;
+  @include mixins.mask_images('/assets/images/common/comm_ico_push_pin_h25',variables.$colorGray50);
+}
+
+.is-active {
+  .ico-push-pin{
+    background-color : #222;
+  }
+}
+
+.ico-rewardmarket-beverage {
+  width: 156px;
+  height: 126px;
+  @extend %icon;
+  @include mixins.ratio_images('/assets/images/coupon/ico_rewardmarket_beverage');
+}
+
+.ico-rewardmarket-reward {
+  width: 156px;
+  height: 126px;
+  @extend %icon;
+  @include mixins.ratio_images('/assets/images/coupon/ico_rewardmarket_rewards');
+}
+
+.ico-rewardmarket-parking {
+  width: 156px;
+  height: 126px;
+  @extend %icon;
+  @include mixins.ratio_images('/assets/images/coupon/ico_rewardmarket_parking');
+}

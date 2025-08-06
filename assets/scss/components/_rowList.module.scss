@@ -1,0 +1,57 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.row-list {
+  &-lg {
+    .row-item {
+      ~.row-item {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &-md {
+    .row-item {
+      ~.row-item {
+        margin-top: 20px;
+      }
+    }
+
+    &.has-line {
+      .row-item {
+        ~.row-item {
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px solid variables.$colorGray30;
+        }
+      }
+    }
+  }
+
+  &-sm {
+    .row-item {
+      ~.row-item {
+        margin-top: 16px;
+      }
+    }
+
+    &.has-line {
+      .row-item {
+        ~.row-item {
+          margin-top: 16px;
+          padding-top: 16px;
+          border-top: 1px solid variables.$colorGray30;
+        }
+      }
+    }
+  }
+
+  &-xs {
+    .row-item {
+      ~.row-item {
+        margin-top: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+%whiteBox {
+  background-color: variables.$colorGray00;
+  border-radius: 12px;
+}
+
+%grayBox {
+  background-color: variables.$colorGray10;
+  border-radius: 12px;
+}
+
+%grayLineBox {
+  background-color: variables.$colorGray00;
+  border: 1px solid variables.$colorGray40;
+  border-radius: 12px;
+}
+
+%BlueBox {
+  background-color: variables.$colorBlue10;
+  border-radius: 12px;
+}
+
+.white-box {
+  &-lg, &-md, &-sm {
+    @extend %whiteBox;
+  }
+
+  &-lg {
+    padding: 20px;
+  }
+
+  &-md {
+    padding: 16px;
+  }
+
+  &-sm {
+    padding: 12px;
+  }
+}
+
+.gray-box {
+  &-lg, &-md, &-sm {
+    @extend %grayBox;
+  }
+
+  &-lg {
+    padding: 20px;
+  }
+
+  &-md {
+    padding: 16px;
+  }
+
+  &-sm {
+    padding: 12px;
+  }
+}
+
+.gray-line-box {
+  &-lg, &-md, &-sm {
+    @extend %grayLineBox;
+  }
+
+  &-lg {
+    padding: 20px;
+  }
+
+  &-md {
+    padding: 16px;
+  }
+
+  &-sm {
+    padding: 12px;
+  }
+}
+
+.blue-box {
+  &-md {
+    @extend %BlueBox;
+  }
+  &-md {
+    padding: 16px;
+  }
+}

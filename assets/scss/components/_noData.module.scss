@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+%noDataWarpCommon {
+  text-align: center;
+
+  [class^=ico] {
+    ~ .no-data-desc {
+      margin-top: 10px;
+      @include mixins.font_size_md;
+      color: variables.$colorGray70;
+
+      ~.btn-wrap {
+        margin-top: 16px;
+      }
+    }
+  }
+
+}
+
+.no-data-wrap {
+  &-lg {
+    @extend %noDataWarpCommon;
+    padding: 150px 0;
+  }
+
+  &-md {
+    @extend %noDataWarpCommon;
+    padding: 100px 0;
+  }
+
+  &-sm {
+    @extend %noDataWarpCommon;
+    padding: 60px 0;
+  }
+}
