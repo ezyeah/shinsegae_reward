@@ -39,8 +39,7 @@
   &[class$="arrow25"] {
     width: 25px;
     height: 25px;
-    @include mixins.mask_images('/assets/images/common/comm_ico_arrow_h25');
-    background-color: #222;
+    @include mixins.mask_images('/assets/images/common/comm_ico_arrow_h25', #222);
   }
 
   &[class$="plus18"] {
@@ -100,19 +99,30 @@
   border-radius: 36px;
 }
 
-.ico-discount-h48 {
+.ico-download28 {
+  @extend %icon;
+  width: 28px;
+  height: 28px;
+  @include mixins.ratio_images('/assets/images/common/comm_ico_download_h28');
+}
+
+/* coupon */
+.ico-discount48 {
+  @extend %icon;
   width: 48px;
   height: 48px;
   @include mixins.ratio_images('/assets/images/coupon/ico_discount_h48');
 }
 
-.ico-reward-h48 {
+.ico-reward48 {
+  @extend %icon;
   width: 48px;
   height: 48px;
   @include mixins.ratio_images('/assets/images/coupon/ico_reward_h48');
 }
 
 .ico-push-pin{
+  @extend %icon;
   width: 25px;
   height: 25px;
   @include mixins.mask_images('/assets/images/common/comm_ico_push_pin_h25',variables.$colorGray50);
@@ -122,4 +132,14 @@
   .ico-push-pin{
     background-color : #222;
   }
+}
+
+.ico-reward-beverage {
+  //padding-top: calc(1.238095238095238 * 100px);
+  //min-width: 156px;
+  //width: 100%;
+  width: 156px;
+  height: 126px;
+  @extend %icon;
+  @include mixins.ratio_images('/assets/images/coupon/ico_rewardmarket_beverage',156px 126px);
 }
